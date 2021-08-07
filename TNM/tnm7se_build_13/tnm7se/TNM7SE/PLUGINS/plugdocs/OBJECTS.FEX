@@ -1,0 +1,49 @@
+OBJECTS.DAT
+40
+1
+
+Line	Contains
+
+1     object's name
+2     damage when thrown through object
+3     damage when being rammed into object
+4     damage when being whipped into object
+5     damage when being hit with object
+6     damage when object is used on somebody
+7     damage when being choked with object
+8     damage when being stabbed with object
+9     damage when being slashed with object
+10    damage when being whipped with object
+11    damage when being hung with object
+12    damage when move is being done onto object
+13    damage when move is being done through object
+14    damage when move is being done with object
+15    object may break when being used
+16    object may draw blood
+17    wrestlers can be tied to object
+18    object can be used to tie wrestlers to other object
+19    object is worn on head
+20    object is worn on fist
+21    object is worn on leg
+22    (unused)
+23    (unused)
+24    (unused)
+25    (unused)
+26    (unused)
+27    (unused)
+28    (unused)
+29    (unused)
+30    (unused)
+31    (unused)
+32    (unused)
+33    (unused)
+34    (unused)
+35    (unused)
+36    (unused)
+37    (unused)
+38    (unused)
+39    (unused)
+40    (unused)
+    
+    
+    

@@ -1,0 +1,22 @@
+MANAGERS.DAT
+10
+1
+
+Line	Contains
+
+1       manager's name
+2       manager's foreign object
+3       flag
+4       (unused)
+5       (unused)
+6       (unused)
+7       (unused)
+8       (unused)
+9       (unused)
+10      (unused)
+
+
+3 - flag:
+   * bit 0:             true if manager is female
+   * bits 1-4:          interference rating
+   * bits 5-8:          toughness rating

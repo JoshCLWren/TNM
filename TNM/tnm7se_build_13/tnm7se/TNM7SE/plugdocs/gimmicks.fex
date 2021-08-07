@@ -1,0 +1,36 @@
+GIMMICKS.DAT
+7
+1
+
+Line	Contains
+
+1       gimmick match's name
+2       foreign object
+3       flag
+4       (unused)
+5       (unused)
+6       (unused)
+7       (unused)
+
+
+
+3 - flag:
+   * bit 0:             wrestler can be whipped with the object
+   * bit 1:             object can be used on the wrestler
+   * bit 2:             wrestler can be choked with the object
+   * bits 3-4:          wrestler mobility; 0=none, 1=limited, 2=full, 3=not bound
+   * bit 5:             match can end by touching all four turnbuckles
+   * bit 6:             ropes are replaced by barbed wire
+   * bit 7:             ref counts to ten after each fall
+   * bit 8:             pinfalls/submissions count
+   * bit 9:             match can end by stuffing opponent into object
+   * bit 10:            match can end by putting opponent onto object
+   * bit 11:            if a wrestler bleeds, the match ends
+   * bits 12-16:        (unused)
+   * bit 17:            match can end by putting opponent through a table
+   * bit 18:            match starts somewhere in the arena
+   * bit 19:            match starts in the ring
+   * bits 20-21:        (unused)
+   * bit 22:            wrestlers fight with taped fists
+   * bit 23:            object is on a pole
+   * bits 24-31:        (unused)

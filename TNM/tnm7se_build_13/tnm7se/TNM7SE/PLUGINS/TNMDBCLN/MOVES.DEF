@@ -1,0 +1,21 @@
+3:0-15:Counter 1
+6:7-17:Counter 2
+6:18-31:Break Counter
+7:0-11:Style Specific Counter 1 For Technician
+7:12-23:Style Specific Counter 2 For Technician
+8:0-11:Style Specific Counter 1 For Brawler
+8:12-23:Style Specific Counter 2 For Brawler
+9:0-11:Style Specific Counter 1 For High-Flyer
+9:12-23:Style Specific Counter 2 For High-Flyer
+10:0-11:Style Specific Counter 1 For Powerhouse
+10:12-23:Style Specific Counter 2 For Powerhouse
+11:0-11:Style Specific Counter 1 For Wrestler
+11:12-23:Style Specific Counter 2 For Wrestler
+12:0-11:Style Specific Counter 1 For Heel
+12:12-23:Style Specific Counter 2 For Heel
+13:0-11:Style Specific Counter 1 For Old Style
+13:12-23:Style Specific Counter 2 For Old Style
+14:0-11:Style Specific Counter 1 For Martial Artist
+14:12-23:Style Specific Counter 2 For Martial Artist
+15:0-11:Style Specific Counter 1 For Shooter
+15:12-23:Style Specific Counter 2 For Shooters

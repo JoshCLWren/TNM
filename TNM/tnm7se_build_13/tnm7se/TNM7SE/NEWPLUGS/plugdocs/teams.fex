@@ -1,0 +1,46 @@
+TEAMS.DAT
+10
+1
+
+Line	Contains
+
+1       wrestler 1
+2       wrestler 2
+3       team name
+4       finisher
+5	(unused)
+6	(unused)
+7	(unused)
+8	(unused)
+9	(unused)
+10	(unused)
+
+Notes on finisher:
+------------------
+
+a) simple string:                               e.g. Double Flying Fistdrop
+	-> simple finisher
+
+b) simple string with wrestler:                 e.g. Rocket Launcher/Owrt
+        -> simple finisher with particular wrestler going for the pin
+        -> format is always
+                finisher_name/12yz
+           with 12 being the first two characters of the name of the
+           wrestler who goes for the pin and yz being the last two
+           characters of his name
+
+c) simple string with wrestler/ampersand:       e.g. &Doomsday Device/Anal
+        -> simple finisher with particular wrestler going for the pin *and*
+           partner lifting up the opponent
+
+d) combination of moves:                        e.g. !219-208/Jegs
+        -> combination of move numbers from the move database; the example
+           has Brian Knobbs going for move no. 219 (running powerslam) and
+           Jerry Sags ("Jegs") finishing the sequence with a flying elbowdrop
+           (move 208)
+        -> format is always !move1-move2/12yz
+
+e) combination of moves with named move:        e.g. !112-the Saito Suplex/Mato
+        -> combination of a move number from the move database and a named
+           move
+        -> format is always !move1-named_move/12yz

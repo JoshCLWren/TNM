@@ -1,0 +1,209 @@
+WRESTLRS.DAT
+120
+1
+
+Line	Contains
+
+1 	wrestler's name
+2 	abbreviation
+3 	move 1
+4 	move 2
+5 	move 3
+6 	move 4
+7 	move 5
+8 	move 6
+9 	move 7
+10 	move 8
+11 	move 9
+12 	move 10
+13 	move 11
+14 	move 12
+15 	move 13
+16 	move 14
+17 	move 15
+18 	move 16
+19 	move 17
+20 	move 18
+21 	move 19
+22 	move 20
+23 	move 21
+24 	move 22
+25 	move 23
+26 	move 24
+27 	move 25
+28 	move 26
+29 	move 27
+30 	move 28
+31 	move 29
+32 	move 30
+33 	move 31
+34 	move 32
+35 	move 33
+36 	move 34
+37 	move 35
+38 	move 36
+39 	move 37
+40 	move 38
+41 	move 39
+42 	move 40
+43 	move 41
+44 	move 42
+45  	move 43
+46  	move 44
+47  	move 45
+48  	move 46
+49  	move 47
+50  	move 48
+51  	move 49
+52 	move 50
+53 	finisher
+54 	finisher counter 1 + submission move flag
+55 	finisher counters 2 + 3
+56 	finisher similar to move
+57 	work rate
+58 	push
+59 	charisma
+60 	foreign object	
+61 	manager 1
+62 	manager 2
+63 	manager 3
+64 	manager 4
+65 	stamina
+66 	setup move
+67 	weight
+68 	flag 1
+69 	finisher-like move
+70 	flag 2
+71 	setup move + follow-up move
+72 	Cross-Corner Move
+73 	working crowd string
+74 	special move
+75 	corner move 1
+76 	corner move 2
+77 	corner move 3
+78 	nickname
+79 	male/female flag
+80 	hometown
+81 	height
+82 	build
+83 	theme music
+84 	dive 1
+85 	dive 2
+86 	dive 3
+87 	dive 4
+88 	dive 5
+89 	(unused)
+90 	wrestler styles
+91 	head shot
+92 	upper third shot
+93 	head shot key color
+94 	upper third shot key color
+95 	(unused)
+96 	(unused)
+97 	(unused)
+98 	(unused)
+99 	(unused)
+100 	(unused)
+101 	(unused)
+102 	(unused)
+103 	(unused)
+104 	(unused)
+105 	(unused)
+106 	(unused)
+107 	(unused)
+108 	(unused)
+109 	(unused)
+110 	(unused)
+111 	(unused)
+112 	(unused)
+113 	(unused)
+114 	(unused)
+115 	(unused)
+116 	(unused)
+117 	(unused)
+118 	(unused)
+119 	(unused)
+120 	(unused)
+
+
+
+54 - finisher counter 1 + submission move flag:
+   * bits 0-15: 	counter 1 (if 0 then block)
+   * bit 16: 		is true if finisher is a submission move
+   * bits 17-31:	(unused)
+
+55 - finisher counters 2 + 3:
+   * bits 0-15:		counter 2
+   * bits 16-31:	counter 3
+
+56 - finisher similar to move
+   * bits 0-15:		move to which finisher is similar to
+   * bits 16-31:	(unused)
+
+68 - flag 1
+   * bit 0:		Heel Tactics
+   * bit 1:		Throw-Off Turnbuckle
+   * bit 2:		Uses Chairs
+   * bit 3:		Out Of Ropes
+   * bits 5-7:		Opponent's Max Weight - 1
+   * bit 9:		Opponent On Mat
+   * bit 10:		Opponent On Turnbuckle
+   * bit 11: 		Masked
+   * bit 12:		Skins The Cat
+   * bit 13:		Springs To His Feet
+   * bit 14:		Finisher: Wrestler Runs
+   * bit 15:		Finisher: Opponent Runs
+   * bits 16-31:	(unused)
+
+70 - flag 2:
+   * bit 0:		Hulk-Up
+   * bit 1: 		Hard To Pin
+   * bit 2: 		Combo Move exists
+   * bit 3:		Follows In
+   * bit 4:		Illegal
+   * bit 5: 		Sets Up Finisher
+   * bit 7:		Doesn't Submit
+   * bit 8:		Works Crowd
+   * bit 9:		Juices
+   * bit 10:		Signals For Finisher
+   * bit 11: 		Cocky
+   * bit 12:		Sits Up
+   * bit 13: 		Move Out Of Corner
+   * bit 14:		Counter Move In Corner
+   * bit 15:		Opponent Has To Move Out Of The Way
+   * bit 16:		Corner Moves Exist
+   * bit 17:		Finisher Outside Ring
+   * bit 18:		Hardcore Wrestler
+   * bit 19:		Does Moves Through Tables
+   * bit 20:		Finisher Through Table
+   * bit 21:		Begs Off
+   * bit 22: 		Walks Out
+   * bit 23:		Rarely Submits
+   * bit 24: 		No-Sells
+   * bit 25: 		Springs Off Chairs
+   * bit 26:		No Rope Break On Submission Finisher
+   * bit 27:		Gives Sign For Secondary Finisher
+   * bits 28-31:	(unused)
+
+71 - setup move + follow-up move
+   * bits 0-15:		followup move
+   * bits 16-31:	setup move
+
+72 - Cross-Corner Move
+   ! if Cross-Corner Move is -1, then the wrestler uses his finisher as a
+     cross-corner move !
+   * bits 0-15:		cross-corner move
+   * bits 16-31:	(unused)
+
+90 - Wrestler Styles:
+   * bit 0:		Must Not Use Default Counters
+   * bit 1:		technician
+   * bit 2:		brawler
+   * bit 3:		high-flyer
+   * bit 4:		powerhouse
+   * bit 5: 		wrestler
+   * bit 6:		heel
+   * bit 7:		old style
+   * bit 8:		martial artist
+   * bit 9:		shooter
+   * bits 10-31:	(unused)

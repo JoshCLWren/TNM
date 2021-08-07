@@ -1,0 +1,996 @@
+Enter your wrestler's name here.
+**
+Enter your wrestler's complete name including nickname here. E.g.: Randy "Macho Man" Savage
+**
+Check if your wrestler is female.
+**
+How can your wrestler's name be abbreviated ? For instance, Steve Austin's name could be abbreviated
+
+        Austin   or
+        S. Austin
+**
+What town does your wrestler hail from ?
+**
+How tall is your wrestler ?
+
+Enter his height in foot-inch notation, e.g.
+
+        6'3"
+**
+Enter your wrestler's weight here. It must be between 100 and 899 lbs.
+**
+Enter your wrestler's build here.
+
+These are the possibilites:
+
+        þ muscular
+        þ athletic
+        þ lean
+        þ bulky
+        þ obese
+**
+Tell TNM where your wrestler's theme music is at, e.g.
+
+        C:\THEMES\HART.WAV
+        D:\VOC\AUSTIN.VOC
+        E:\NETSCAPE\VADER.AU
+**
+Click to edit your wrestler's moves.
+**
+Click to edit your wrestler's finisher.
+**
+Click to edit your wrestler's dives, i.e. moves he performs from inside the ring to the outside.
+**
+Click to edit your wrestler's attributes, e.g. his push.
+**
+Click to edit your wrestler's managers.
+**
+Click to create a new move.
+**
+Click to create a new manager.
+**
+Click if your wrestler wears a mask.
+
+TNM 7 does not actually use this option yet but will be doing so once the mask plugin is available. Keep checking the Plugins section of the TNM Homepage for more information.
+**
+Click to select a move from the list.
+**
+Click here to go to moves 11 to 20.
+**
+Click to create a new move.
+**
+Click to select a move from the list.
+**
+Click here to go to moves 21 to 30.
+**
+Click to create a new move.
+**
+Click to select a move from the list.
+**
+Click here to go to moves 31 to 40.
+**
+Click to create a new move.
+**
+Click to select a move from the list.
+**
+Click here to go to moves 41 to 50.
+**
+Click to create a new move.
+**
+Click to select a move from the list.
+**
+Click to create a new move.
+**
+Enter your wrestler's finisher here.
+**
+How much may the opponent weigh so your wrestler can execute his finisher ?
+
+You must enter the opponent's weight *class* here:
+
+        1:      less than 220 lbs
+        2:      less than 245 lbs
+        3:      less than 280 lbs
+        4:      less than 320 lbs
+        5:      less than 360 lbs
+        6:      less than 400 lbs
+        7:      less than 450 lbs
+        8:      over 450 lbs
+**
+Check if your wrestler's finisher is a submission move.
+**
+Can your wrestler do his finisher when either he's on the rebound from the ropes or his opponent is ?
+
+If you check this field, please also check either "Wrestler Runs" or "Opponent Runs".
+**
+Does your wrestler give the sign for his finisher prior to executing it ?
+**
+Will your wrestler be doing his finisher outside of the ring ?
+**
+Will your wrestler be doing his finisher through tables ?
+**
+Will the opponent have to be on the mat so your wrestler can do his finisher ?
+**
+Will your wrestler have to set up the opponent on the top turnbuckle prior to going for his finisher ?
+**
+Will interfering wrestlers or managers be able to throw your wrestler off the top turnbuckle when he's going for his finisher ?
+**
+What move is your wrestler's finisher similar to ?
+
+Instead of which move can your wrestler do his finisher ? For instance, if Arn Anderson were to try the Gourdbuster against Scott Hall, Hall could do the Outsider Edge instead of an earringer, which is a counter for the Gourdbuster. In this case, the Outsider Edge is *similar to* an earringer.
+**
+Select a counter to your wrestler's finisher.
+
+If you select "None" the term "Block" will appear. If you want your wrestler's finisher to be blockable, you need to select Block for Counter 1. If Counters 2 or 3 say "Block", no moves are assigned to them.
+**
+What move will your wrestler do prior to going for his finisher ?
+
+Not every wrestler has a setup move, e.g. Shawn Michaels hits the Superkick out of nowhere. Others, like Bret Hart, always perform a certain move before going for their finisher. In Hart's case, that would be a Russian legsweep.
+**
+Some wrestlers have moves which they also get the win with often, for instance Marc Mero's Merosault. If your wrestler possesses such a move, select it here.
+
+NOTE: your wrestler *must* have the move you're selecting in his regular move list !
+**
+Check if your wrestler's finisher can be broken by going to the ropes.
+**
+Check this field if your wrestler's finisher can be performed when the wrestler is running. 
+
+If checked, also check the field "Out Of Ropes".
+**
+Check this field if your wrestler's finisher can be performed when the opponent is running. 
+
+If checked, also check the field "Out Of Ropes".
+**
+Select a dive, i.e. a move your wrestler performs from inside the ring to the outside.
+**
+Click here to create a new dive.
+**
+Select a manager for your wrestler.
+**
+Click to create a new manager.
+**
+Enter your wrestler's work rate in this field. The "work rate" indicates how hard your wrestler tries to give the fans what they want.
+
+Enter a value between 1 and 100.
+**
+Enter your wrestler's push in this field. The higher your wrestler's push is, the more you want him to win.
+
+Enter a value between 1 and 100.
+**
+Enter your wrestler's stamina in this field. The higher your wrestler's stamina is, the longer he'll be able to wrestle before he runs out of gas.
+
+Enter a value between 1 and 100.
+**
+Enter your wrestler's charisma in this field. The higher a wrestler's charisma is, the easier he'll be able to control the fans.
+
+Enter a value between 1 and 100.
+**
+If your wrestler brings a foreign object to the ring with him, enter its name here.
+**
+Check if your wrestler pulls tights/uses the ropes for leverage.
+**
+Check if your wrestler hits other wrestlers with chairs.
+**
+Check if your wrestler sits up like the Undertaker from time to time.
+**
+Check if your wrestler no-sells moves from time to time, i.e. if he isn't phased by them.
+**
+Check if your wrestler is cocky.
+**
+Check if your wrestler may be busted open in a match.
+**
+Check if your wrestler never submits.
+**
+Check if your wrestler is hard to pin.
+**
+Check if your wrestler has a second wind a la Hogan when on the verge of losing.
+**
+Check if your wrestler rarely submits.
+**
+Check if your wrestler uses everything that isn't nailed down in a match.
+**
+Check if your wrestler performs moves through tables.
+**
+Check if your wrestler heads for the dressing room from time to time when on the verge of losing.
+**
+Click here for more attributes.
+**
+Check if your wrestler jumps onto chairs while doing some moves.
+**
+Check if your wrestler begs off.
+**
+Check if your wrestler has the ability of holding on to the top rope and pulling himself back in when thrown over the top rope to the outside.
+**
+Check if your wrestler may kip up / spring up.
+**
+Check if your wrestler doesn't do anything special after whipping the opponent into the turnbuckle.
+**
+Check if your wrestler runs into the turnbuckle executing a move after whipping the opponent into the turnbuckle.
+**
+Check if your wrestler does a move out of the corner after being whipped into the turnbuckle.
+**
+Check if your wrestler does a counter move in the corner when the opponent charges at him.
+**
+Will the opponent have to move out of the way ?
+**
+Click here to select the move your wrestler will perform.
+**
+Enter what will be said when your wrestler interacts with the crowd.
+
+For instance, in Sabu's case TNM gives you
+
+        Sabu points to the ceiling.
+
+You'd enter
+
+        points to the ceiling.
+
+Do not enter the wrestler's name first.
+**
+Will your wrestler have a desperation move like Great Muta's green mist ?
+
+NOTE: DO NOT USE THIS FIELD FOR A REGULAR MOVE SUCH AS THE ANGLE SLAM OR THE ROCK BOTTOM. This will screw up match logic!
+**
+Check if the special move is illegal and may lead to a DQ.
+**
+Check if the special move will lead to your wrestler's finisher.
+**
+Some wrestlers will execute two moves in succession at all times, like Bret Hart does with the side backbreaker/elbow from the second turnbuckle combination.
+
+Select the setup move here (the backbreaker in Hart's case).
+**
+Some wrestlers will execute two moves in succession at all times, like Bret Hart does with the side backbreaker/elbow from the second turnbuckle combination.
+
+Select the followup move here (the elbowdrop in Hart's case).
+**
+Some wrestlers will do a series of moves after backing the opponent into a corner.
+
+Enter them here. The wrestler will do the first move, then the second move and finally the third move - if one was specified.
+**
+Enter the exact path to your web browser here, e.g.
+
+        C:\NETSCAPE\PROGRAM\NETSCAPE.EXE
+**
+Check if your browser runs in Windows.
+**
+Check if TNM's running in Windows 95.
+**
+Enter the foreign object's name here.
+**
+Enter the amount of damage a wrestler suffers when thrown through this foreign object.
+**
+Enter the amount of damage a wrestler suffers when rammed into the object.
+**
+Enter the amount of damage a wrestler suffers when whipped into the object.
+**
+Enter the amount of damage a wrestler suffers when hit with the object.
+**
+Enter the amount of damage a wrestler suffers when the opponent uses the object on him.
+**
+Enter the amount of damage a wrestler suffers when choked with the object.
+**
+Enter the amount of damage a wrestler suffers when stabbed with the object.
+**
+Enter the amount of damage a wrestler suffers when slashed with the object.
+**
+Enter the amount of damage a wrestler suffers when whipped with the object.
+**
+Enter the amount of damage a wrestler suffers when hanged with the object.
+**
+Enter the amount of additional damage a wrestler suffers when the opponent executes a move onto the object with him.
+**
+Enter the amount of additional damage a wrestler suffers when the opponent executes a move through the object with him.
+**
+Enter the amount of additional damage a wrestler suffers when the opponent executes a move with the object on him.
+**
+May the object break when being used ?
+**
+If the object is used, may it cause the recipient of the beating to bleed ?
+**
+Check if wrestlers can be tied to the object.
+**
+Check if wrestlers can be tied to other objects via this object.
+**
+Check if the object is worn on the wrestler's head (e.g. hard hat).
+**
+Check if the object is worn on the wrestler's fist (e.g. brass knuckles).
+**
+Check if the object is worn on the wrestler's leg/foot (e.g. cowboy boots).
+**
+Enter the exact location of the logo you with to use atop every HTML page TNM generates, e.g.
+
+        C:\PIX\PIC4C.GIF
+**
+Tell TNM where to find PKZIP.EXE here, e.g.
+
+        C:\DOS\PKZIP.EXE
+**
+Tell TNM where to find PKUNZIP.EXE here, e.g.
+
+        C:\DOS\PKUNZIP.EXE
+**
+Enter your name here as you gave it to me. Be sure to keep the case exactly like it was.
+**
+Enter your password in capital letters.
+**
+Enter your nine-letter registration code here. Keep capital letters capital.
+**
+If this is checked, all wrestlers will be shown in alphabetical order when scheduling matches etc.
+**
+If this is checked, TNM 7 will show you all wrestlers you have hired in alphabetical order first and all other wrestler in alphabetical order later.
+**
+If this is checked, TNM 7 will show you the wrestlers in the order they come in in the database.
+**
+Enter the move's name *with* an article here (either "a", "an" or "the").
+
+For instance, do not enter
+
+        bodyslam
+
+but
+        a bodyslam
+**
+How much damage will the move do ?
+
+"Easy" moves like bodyslams and such won't go far beyond 20, while killer moves like a top-rope DDT will do around 150 points of damage. The rest is inbetween those two.
+
+A few examples:
+
+   headbutt                25    inside cradle           20
+   flying dropkick         90    Tombstone               90
+   tiger suplex            85    Soviet suplex           65
+   belly-to-belly suplex   80    German suplex           80
+   Asai moonsault         120    choke slam              70
+   figure-four leglock     55    scorpion deathlock      60
+   power bomb             100    superplex              140
+**
+Can the move be done on the rebound from the ropes ?
+**
+Can the move be blocked by the opponent ?
+**
+May a match end with this move, i.e. can the opponent be pinned with it or may he submit to it ?
+**
+Can the move be performed outside of the ring ?
+**
+Select a move with which your move can be countered.
+**
+Will the move automatically lead to a pinfall attempt ? For instance, a small package will do exactly that, as will a German suplex.
+**
+Could a situation where the person executing the move pins himself accidentally arise ?
+**
+Is your move a submission hold ?
+**
+Can the opponent be pinned while he's locked in this submission move ?
+**
+Can the person executing the move be thrown off the top turnbuckle by someone ?
+**
+How much may the opponent weigh so that this move can be done ? For instance, doing a Frankensteiner with someone above 450 pounds is close to impossible.
+
+You must enter the opponent's weight *class* here:
+
+        1: less than 220 lbs
+        2: less than 245 lbs
+        3: less than 280 lbs
+        4: less than 320 lbs
+        5: less than 360 lbs
+        6: less than 400 lbs
+        7: less than 450 lbs
+        8: over 450 lbs      (note: 8 is the same as "NA" here)
+
+If his weight is indifferent (for instance when doing a dropkick), enter
+
+        NA              (not applicable)
+**
+How many weight classes heavier than your wrestler may the opponent be so that the move can be done ?
+
+If any form of power is involved in a move, you may want to consider limiting the maximum weight class difference to 0, which means everyone who's in a lower weight class than your wrester or in the same one (i.e. who's lighter or weighs the same plus minus a few pounds).
+
+On the other end of the spectrum, it doesn't matter if you're doing a dropkick against a 180-pounder or a 500-pounder, it'll still be feasible.
+
+If the difference may be any value (for instance when doing a dropkick), enter
+
+        NA              (not applicable)
+**
+Check if the opponent needs to be set up on the top turnbuckle to do this move.
+**
+Check if the opponent needs to be on the mat to do this move.
+**
+Check if the opponent needs to be standing to do this move.
+**
+Check if the opponent's position doesn't matter when doing this move.
+**
+Check if executing the move will bring the opponent down.
+**
+Click here for more flags.
+**
+Select a move which may break the move you're editing. This only applies to submission moves.
+
+For instance, a sleeperhold can be broken with a jawbreaker.
+**
+TNM 7 has so-called "style-specific counters" for moves.
+
+A "style-specific" counter is a counter which only wrestlers who belong to a certain style of wrestling perform.
+
+For instance, a brawler is more likely to counter a power bomb with a backdrop than with a rana while a high-flyer will likely counter it with a rana instead of a backdrop.
+**
+Enter the maximum height difference between your wrestler and the opponent in inches here.
+
+If your move is similar to a Frankensteiner, you may argue that a 5'10" wrestler won't be able to do it against someone 7'4" large, however he may very well be able to do it against a 6'0" person.
+
+In case the opponent may be two inches higher than your wrestler when performing this move, enter
+
+        2
+
+If the difference may be any value (for instance when doing a dropkick), enter
+
+        NA              (not applicable)
+**
+Can two wrestlers give you this move simultaneously (e.g. a double DDT) ?
+**
+If one wrestler does this move against his opponent, will the wrestler's tag team partner be able to hit the opponent with an aerial move immediately thereafter ?
+
+For example, if wrestler A did a backbreaker, then A's partner could do a moonsault immediately thereafter.
+**
+Will wrestlers be able to do this move against the opponent from the top of the cage ?
+
+Examples here are a superplex or a flying body press.
+**
+Will wrestlers be able to do this move against the opponent from the top of the ladder ?
+
+Examples here are a superplex or a flying body press.
+**
+Will wrestlers be able to do this move against the opponent from a staircase ?
+
+Examples here are a flying clothesline or a flying body press.
+**
+Will wrestlers be able to do this move against the opponent catapulting themselves from a chair ?
+
+Sabu's chair-aided spinning leg lariat is a popular example.
+**
+Can this move be done with the aid with a chair or onto a chair ?
+**
+When going for the pin after this move, is pulling tights sensible ?
+**
+When going for the pin after this move, is using the ropes for leverage sensible ?
+**
+Will the referee count to five when a wrestler uses this move and call for a DQ if the count of five is reached ?
+**
+Check if the person on the receiving edge of the move may collide with the referee.
+**
+Some wrestlers are set to no-sell moves from time to time, i.e. they aren't affected by them at all.
+
+Check if this move is a move that must be sold at all times (e.g. a power bomb).
+**
+Check if this move may be done through a table.
+**
+Check if this move is a submission hold and the wrestler on the receiving end may break it by going into the ropes.
+
+This would not work with a move like Lex Luger's Torture Rack.
+**
+There are certain spots which can used as double team spots.
+
+For instance, one possible spot is a dropkick by one wrestler being followed up by a German suplex by his partner.
+
+The dropkick would have "Double Team Setup Move" checked while the German suplex would have "Double Team Followup Move" checked.
+**
+Check if the move can be done onto a chair.
+**
+Check if the move can knock over a ladder when done against it.
+**
+Certain moves can make the wrestler executing the move end up behind the opponent.
+
+For instance, if a wrestler executes a go-behind, he will end up behind the opponent. If the wrestler counters a back suplex with a slidedown, he will end up behind the opponent (the slidedown would have "Person Doing Move May End Up Behind Opponent" checked).
+
+Once a wrestler is behind his opponent, he can do one of the moves which have "Move Can Be Done From Behind Opponent" checked. An example for such a move is the German suplex. The inside cradle is another. The Victory roll is a third.
+**
+Enter the manager's name here.
+**
+Check if the manager you're adding is female.
+**
+Enter the manager's interference rating here. The number must be between 0 and 10.
+
+0 corresponds with "doesn't interfere at all", while 10 means "interferes whenever possible".
+**
+Enter the manager's toughness rating, which must be between 0 and 10, here.
+
+Managers along the lines of Jim Cornette and Jimmy Hart would score very low, while a former wrestler who still is tough as nails would score very high.
+**
+Enter the manager's foreign object here.
+
+Keep in mind not to enter an article for it, i.e. enter
+
+        tennis racket
+
+not
+        a tennis racket or
+        the tennis racket
+**
+Click here to enter the wrestler database.
+**
+Click here to enter the move database.
+**
+Click here to enter the manager database.
+**
+Click here to enter the tag team database.
+**
+Click here to enter the stable database.
+**
+Click here to enter the dive database.
+**
+Click here to enter the wrestler database.
+**
+Click here to enter the move database.
+**
+Click here to enter the manager database.
+**
+Click here to enter the tag team database.
+**
+Click here to enter the stable database.
+**
+Click here to enter the dive database.
+**
+Enter the name of the move out of the ring you wish to create.
+**
+How much damage will this dive do ?
+**
+Will wrestlers be able to do this move against the opponent from the top of the cage ?
+
+Examples here are a superplex or a flying body press.
+**
+Will wrestlers be able to do this move against the opponent from the top of the ladder ?
+
+An example is a flying body press.
+**
+Will wrestlers be able to do this move against the opponent from the guardrail ?
+
+The Asai moonsault is a good example.
+**
+Will wrestlers be able to do this move against the opponent catapulting themselves from a chair ?
+
+Sabu's chair-aided spinning leg lariat is a popular example.
+**
+Can this move be done with the aid with a chair or onto a chair ?
+**
+Must the wrestler on the receiving end of this dive be affected by it ?
+**
+Check if this dive may be done through a table.
+**
+Can the wrestler performing this dive be thrown off the top turnbuckle ?
+**
+How much may the opponent weigh so that this dive can be done ? For instance, doing a Frankensteiner with someone above 450 pounds is close to impossible.
+
+You must enter the opponent's weight *class* here:
+
+        1: less than 220 lbs
+        2: less than 245 lbs
+        3: less than 280 lbs
+        4: less than 320 lbs
+        5: less than 360 lbs
+        6: less than 400 lbs
+        7: less than 450 lbs
+        8: over 450 lbs      (note: 8 is the same as "NA" here)
+
+If his weight is indifferent (for instance when doing a dropkick), enter
+
+        NA              (not applicable)
+**
+How many weight classes heavier than your wrestler may the opponent be so that the move can be done ?
+
+If any form of power is involved in a move, you may want to consider limiting the maximum weight class difference to 0, which means everyone who's in a lower weight class than your wrester or in the same one (i.e. who's lighter or weighs the same plus minus a few pounds).
+
+On the other end of the spectrum, it doesn't matter if you're doing a dropkick against a 180-pounder or a 500-pounder, it'll still be feasible.
+
+If the difference may be any value (for instance when doing a dropkick), enter
+
+        NA              (not applicable)
+**
+Enter the maximum height difference between your wrestler and the opponent in inches here.
+
+If your move is similar to a Frankensteiner, you may argue that a 5'10" wrestler won't be able to do it against someone 7'4" large, however he may very well be able to do it against a 6'0" person.
+
+In case the opponent may be two inches higher than your wrestler when performing this move, enter
+
+        2
+
+If the difference may be any value (for instance when doing a dropkick), enter
+
+        NA              (not applicable)
+**
+Select a counter to the dive.
+**
+Check if you wish your wrestlers to use foreign objects freely.
+**
+Check if countouts will be allowed.
+**
+Check if DQs will be allowed.
+**
+Check if the match isn't supposed to have a time limit.
+**
+Check if the match will have TNM's built-in time limit for the particular match.
+**
+Check if you want outside interference to happen during this match.
+**
+Check if you wish to give TNM a script to follow in this match.
+
+Essentially, you can tell TNM what to do in a match with this feature, e.g. you could instruct it to have Bret Hart and Shawn Michaels go to a draw, or you could have a two-out-of-three falls match with Hart taking the first fall with the Sharpshooter, Michaels taking the second with a moonsault bodyblock and Hart could hit a German suplex in the third fall with both men being pinned.
+**
+Check if you want this match to be held under gimmick match rules.
+**
+Check if you want a guest referee for this match.
+**
+Will this match be a non-title match ?
+**
+Will this match be a top-contenders match ?
+**
+Can titles change if the champion is disqualified or counted out ?
+**
+Will all managers be banned from ringside ?
+**
+Check if the loser of this match is supposed to leave your circuit.
+
+NOTE:
+The wrestler(s) will *not* be fired automatically. Like in real life, I will leave the decision-making up to the booker. More often than not, wrestlers who lost a loser-leaves-town match returned to their feds within a few months.
+**
+Check if you wish to give this match a descriptive name.
+**
+Check if you wish to watch this match in its entirety.
+**
+Check if you want TNM to run this match without displaying anything on screen.
+**
+Check if you want to see the finish of this match only.
+**
+Check if you wish to join the match in progress.
+**
+Check if there should only be one fall.
+**
+Check if you want the match to go two-out-of-three falls.
+
+To win, a wrestler must beat the opponent twice.
+**
+Check if you want to have a death match.
+
+To win, a wrestler must beat the opponent three times in a row.
+**
+Check if you want to have an iron man match.
+
+The wrestlers will fight until the time limit goes by, and the one who scored the most wins is the winner.
+
+NOTE: DO NOT RUN THIS MATCH WITHOUT A TIME LIMIT !
+**
+Wrestlers will counter moves either with the default counters - the ones specified in the basic move database data - or with so-called "style-specific counters".
+
+A style-specific counter is a counter to a move performed by a wrestler who uses a particular style.
+
+For instance, a high flyer may counter a flying bodypress with a dropkick. Therefore, a style-specific counter for the flying bodypress and for a high flyer is a dropkick.
+**
+If your move is similar to another move from the database, you may copy the other move's style-specific counters into this record; it will save you with some time.
+**
+Check this if your wrestler is *not* supposed to use the default counters for some reason.
+
+This is sensible - for instance - if you wish to create a submission fighter who is supposed to use the shooter counters only.
+
+Please note that this flag *will* be overridden if no style-specific counters exist to a move.
+**
+Check if your wrestler knows his technical wrestling.
+**
+Check if your wrestler knows how to brawl.
+**
+Check if your wrestler knows high-flying moves.
+**
+Check if your wrestler is a powerhouse.
+**
+Check if your wrestler has a background in amateur wrestling.
+**
+Check if your wrestler uses heel tactics, e.g. low blows, when countering moves.
+**
+Check if your wrestler uses old-style (70s, 80s) counters. This may be sensible for older wrestlers.
+**
+Check if your wrestler is a kicker and/or practitioner of the martial arts.
+**
+Check if your wrestler is a strong-style fighter - for instance a shootfighter.
+
+A popular example is Ken Shamrock.
+**
+Enter the stable's name here.
+**
+Click here to change the stable's members.
+**
+Click here to change the stable's managers.
+**
+Enter the gimmick match's name here.
+**
+If there's a foreign object in this match, this is the place to add it.
+**
+Can a wrestler whip the opponent with the foreign object ?
+**
+Can a wrestler use the object on the opponent ?
+**
+Can a wrestler choke the opponent with the foreign object ?
+**
+If the wrestlers are tied to one another with the foreign object, select how bound they are to one another here.
+**
+Do pinfalls count in this match ?
+**
+Can the match end when a wrestler hits all four turnbuckles ?
+**
+After a fall occurs, will the referee count out the wrestler who lost ?
+**
+Can the match be won by putting the opponent through a table ?
+**
+Will the first wrestler to bleed lose ?
+**
+Can the match end when a wrestler stuffs the opponent into the foreign object (e.g. casket) ?
+**
+Can the match end when a wrestler puts the opponent onto the foreign object (e.g. stretcher) ?
+**
+Will the ring ropes be replaced by barbed wire ?
+**
+Click here for more attributes.
+**
+Will the match start somewhere in the arena ?
+**
+Will the match start in the ring ?
+**
+Will the wrestlers fight with taped fists ?
+**
+Will the foreign object be placed on a pole ?
+
+If you choose this option, the first wrestler to retrieve the object from the pole will be able to use it legally.
+**
+Enter the referee's name here.
+**
+Check if your referee is female.
+**
+Enter your referee's latitude here. The more lax your referee is supposed to be, the higher the value.
+
+A lax referee will issue disqualifications far fewer than someone who is extremely stringent.
+
+The allowable range is from 1 to 20.
+
+A referee with a latitude rating of 1 will call for disqualifications a lot more quickly than a referee with a latitude rating of 20.
+**
+Enter the time limit for one-fall matches here.
+**
+Enter the time limit for two-out-of-three-falls matches here.
+**
+Enter the time limit for Iron Man Matches here.
+
+An Iron Man Match is a match which runs for a certain time regardless of how many falls are scored.
+
+After the time limit expires, the wrestler/team who won the most falls wins.
+**
+When two wrestlers start out in WarGames, they will go at it for a certain time before somebody else enters the cage.
+**
+After the first two wrestlers have gone at it in WarGames for a certain time, new wrestlers will enter the cage in fixed intervals.
+
+Please enter the time between wrestler entrances here.
+**
+In Royal Rumbles, wrestlers come to the ring in certain intervals.
+
+Please enter the time between wrestler entrances here.
+**
+Enter your full name here as it shall appear on all pages you create via the HTML gateway.
+**
+Enter your e-mail address here. It's useful for many things, so be sure to always have your current one here.
+**
+If you use the HTML gateway, this picture will be displayed on top of every page.
+**
+Will random no-shows happen ? If this option is turned off, all wrestlers will appear as scheduled.
+**
+Enter the random no-show seed here.
+
+A no-show seed of 80 means that one of 80 wrestlers will no-show.
+**
+If "Use Notepad" is checked, TNM 7 will automatically use Notepad as its standard editor in 32-bit Windows.
+
+Unchecking will make it use an internal mini-editor.
+**
+Check if TNM 7 is supposed to show you the result of each match immediately after it is finished.
+**
+Check if you want TNM to mainly base its match results on the wrestlers' pushes.
+**
+Don't show the wrestlers' crowd heat meters.
+**
+The higher this value is, the more TNM lets winning streaks influence the ratings.
+**
+Will a draw (or double countout, double DQ, double pin) end a wrestler's winning streak ?
+**
+Enter the number of points a wrestler gets for a win in a Round Robin tournament.
+**
+Enter the number of points a wrestler gets for a draw in a Round Robin tournament.
+**
+Enter the typical match length here; the higher the value, the longer your matches will go.
+**
+Check this if you want to see eliminations and entrances highlighted in Battle Royals/Royal Rumbles.
+
+For instance, it will then say:
+
+ ** Hollywood Hogan has been eliminated.
+
+instead of
+
+ Hollywood Hogan has been eliminated.
+**
+Check if you want TNM 7 to include all ring intros in its logfiles.
+**
+Check if intros should be skipped.
+**
+If this option is checked, TNM 7 will show you the energy percentage the wrestlers have remaining during matches.
+**
+Check if the wrestlers are supposed to always go for their finishers after they have hit their setup moves.
+
+This does not mean that wrestlers will *only* go for their finisher after the setup move - it means that *if* they do their setup move they will *always* go for their finisher next.
+**
+Check if you want random outside interference to happen.
+**
+Check if you want the crowd to react to the wrestlers during matches.
+**
+Check if you want TNM 7 to keep your matches running until scheduled interference has taken place.
+
+Uncheck to make TNM 7 behave like an older version in that interference is suggested but not guaranteed.
+**
+If this option is checked, referees will not let matches continue if they reach the time limit.
+**
+If this option is checked, you won't hear the crowd react during ring intros.
+**
+Will the interfering wrestler be allowed to trip the wrestler he's interfering against ?
+**
+Will the interfering wrestler be allowed to jump (attack) the wrestler he's interfering against ?
+**
+Check if the interferer may break pin attempts.
+**
+Will the interfering wrestler be allowed to attack the wrestler he's interfering against outside the ring ?
+**
+Check if the interfering wrestler may hit the wrestler being interfered against with a chair.
+**
+Check if the interfering wrestler may shove the wrestler being interfered against off the top turnbuckle.
+**
+Check if the interferer may break submission holds.
+**
+Check if the interferer may throw a wrestler a foreign object.
+**
+Check if the interferer may prevent a wrestler from escaping pinfall attempts/submission holds via the ropes.
+**
+Check if the interfering wrestler may pull down the top rope
+**
+Enter your wrestler's name here.
+**
+Enter your wrestler's push here.
+
+The higher a wrestler's push, the more likely he is to win.
+**
+Check if your wrestler uses the ropes and pulls tights when going for a pin.
+**
+Select one of your wrestler's manager in this circuit here.
+
+His managers in the main database will not be affected.
+**
+Click here to empty your wrestler's queue.
+
+A wrestler's queue is information about his recent opponents; it is used to determine random outside interference.
+
+Emptying his queue will delete this information.
+**
+Check if your match will have to end with one wrestler quitting.
+**
+Check if your match will take place in a steel cage.
+**
+Check if a ladder will be set up in the ring. To win, a wrestler will have to climb the ladder and retrieve an object.
+**
+Check if your match will have cornermen who are the only ones who can end the match by throwing in the towel.
+**
+Check if pinfalls/submission should be able to occur anywhere in the arena.
+
+If checked, disqualifications and countouts will be disabled.
+**
+Select all browsers TNM shall check your hard disks for.
+**
+Check if you want TNM 7 to attempt running themes through PLANY.EXE when TNM is run in DOS or 16-bit Windows.
+
+Keep in mind that PLANY.EXE needs a considerable amount of conventional memory and TNM 7 will likely not leave enough free memory in most situations.
+**
+Check if TNM 7 isn't supposed to play themes at all in DOS/16-bit Windows.
+**
+Check if TNM 7 should use its internal player for WAV files and the appropriate application for all others.
+
+This is the recommended option and the only one which will allow your TNM to run fullscreen while playing WAV files.
+
+Please note that the is the only scenario where MP3s and Real Audio Files will be played through Winamp and the Real Player.
+**
+Check if TNM 7 must use the Windows Media Player for all themes.
+
+If this option is checked, MP3s and Real Audio files will not be played through their native processing applications. You *can* play them through the Windows Media Player but you need the latest version of the Player which is available from the Microsoft website at www.microsoft.com.
+**
+Check if you want TNM 7 to attempt running themes through PLANY.EXE when TNM is run in 32-bit Windows.
+
+Keep in mind that PLANY.EXE needs a considerable amount of conventional memory and TNM 7 will likely not leave enough free memory in most situations.
+**
+Check if TNM 7 isn't supposed to play themes at all in 32-bit Windows.
+**
+Winamp is the industry standard for playing MP3 files.
+
+Click "Find" to have TNM 7 scan your computer for Winamp.
+
+If you don't have Winamp, you can download it for free from
+
+        http://www.nullsoft.com/amp
+
+Note: Winamp will only be used if "Use Internal Player..." is checked.
+**
+The Real Player is the industry standard for playing Real Audio files.
+
+Click "Find" to have TNM 7 scan your computer for the Real Player.
+
+If you don't have the Real Player, you can download it for free from
+
+        http://www.real.com
+
+Note:
+The Real Player will only be used if "Use Internal Player..." is checked.
+**
+Check this box if you're having trouble getting themes to play during introductions using the new Multimedia Engine.
+
+This will send TNM 7 Second Edition into compatibility mode.
+**
+Check if you wish your wrestlers to use foreign objects freely.
+**
+Check if countouts will be allowed.
+**
+Check if DQs will be allowed.
+**
+Check if the match isn't supposed to have a time limit.
+**
+Check if the match will have TNM's built-in time limit for the particular match.
+**
+Check if you want outside interference to happen during this match.
+**
+Check if you wish to give TNM a script to follow in this match.
+
+Essentially, you can tell TNM what to do in a match with this feature, e.g. you could instruct it to have Bret Hart and Shawn Michaels go to a draw, or you could have a two-out-of-three falls match with Hart taking the first fall with the Sharpshooter, Michaels taking the second with a moonsault bodyblock and Hart could hit a German suplex in the third fall with both men being pinned.
+**
+Check if you want this match to be held under gimmick match rules.
+**
+Check if you want a guest referee for this match.
+**
+Will this match be a non-title match ?
+**
+Will this match be a top-contenders match ?
+**
+Can titles change if the champion is disqualified or counted out ?
+**
+Will all managers be banned from ringside ?
+**
+Check if the loser of this match is supposed to leave your circuit.
+
+NOTE:
+The wrestler(s) will *not* be fired automatically. Like in real life, I will leave the decision-making up to the booker. More often than not, wrestlers who lost a loser-leaves-town match returned to their feds within a few months.
+**
+Check if you wish to give this match a descriptive name.
+**
+Check if you wish to watch this match in its entirety.
+**
+Check if you want TNM to run this match without displaying anything on screen.
+**
+Check if you want to see the finish of this match only.
+**
+Check if you wish to join the match in progress.
+**
+Check if there should only be one fall.
+**
+Check if you want the match to go two-out-of-three falls.
+
+To win, a wrestler must beat the opponent twice.
+**
+Check if you want to have a death match.
+
+To win, a wrestler must beat the opponent three times in a row.
+**
+Check if you want to have an iron man match.
+
+The wrestlers will fight until the time limit goes by, and the one who scored the most wins is the winner.
+
+NOTE: DO NOT RUN THIS MATCH WITHOUT A TIME LIMIT !
+**
+Check if you want your match to be run under Captain's Rules.
+
+To win a match under Captain's Rules, you must either pin the team captain (the first wrestler selected per team) or two of his team members.
+**

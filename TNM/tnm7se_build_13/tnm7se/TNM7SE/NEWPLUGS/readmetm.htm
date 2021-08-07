@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>
+TNM7.COM - Home of the Wrestling Simulator
+</title>
+<style type="text/css">
+<!--
+A:visited{text-decoration:none;color:#0000b0;}
+A:hover{text-decoration:underline;color:#957c7d;}
+A:link{text-decoration:none;color:#0000b0;}
+TD {font-family:arial,helvetica,verdana;font-size:10pt;color:#000000;font-weight:bold}
+TH {font-family:arial,helvetica,verdana;font-size:10pt;color:#000000;font-weight:extrabold;background:#c0c0c0;}
+form{display:inline;} 
+//-->
+</style>
+<script language="JavaScript1.1">
+
+function openSubWin(strURL, pixW, pixH,scrollbar)
+
+{
+	if (scrollbar=="") scrollbar="no";
+	strLocation = strURL;
+	strWHandle = "sdcSubWin"+pixW;
+	strProps = "resizable=yes,scrollbars="+scrollbar+",toolbar=no,location=no,directories=no,status=yes,menubar=no,width=" + pixW + ",height=" + pixH + ",top=10,left=10";
+	remote=window.open(strLocation, strWHandle, strProps);
+  	if (remote.opener == null)
+    		remote.opener = window;
+  	remote.opener.name = "myWindow";
+}
+</script>
+</head>
+<body bgcolor="#ffffff" marginwidth=0 marginheight=0 topmargin=0 leftmargin=0>
+<u><font face="Arial,helvetica,verdana" size=+1>Main Form</font></u><br>
+<table>
+<tr valign=top><td colspan=2>
+<img src="tmw-img1.gif">
+</td></tr>
+<tr valign=top><td width=5% align=right>
+1)
+</td><td>
+Select the wrestler you want in the treeview control on the left.
+</td></tr>
+<tr valign=top><td width=5% align=right>
+2)
+</td><td>
+If the wrestler has already been assigned themes, they will appear on the top right hand side. Every theme comes in pairs of an Entrance Theme (which is played during ring intros) and an Exit Theme (which is played if/when the wrestler wins his match).
+</td></tr>
+<tr valign=top><td width=5% align=right>
+3)
+</td><td>
+To preview an Entrance Theme, highlight the line in the top-right window and click the "Play Entrance" button. To preview an Exit Theme, highlight the appropriate line and click the "Play Exit" button.
+</td></tr>
+<tr valign=top><td width=5% align=right>
+4a)
+</td><td>
+To edit a theme pair already assigned, double-click the appropriate line in the top right hand window or highlight the line and click "Edit Theme".
+</td></tr>
+<tr valign=top><td width=5% align=right>
+4b)
+</td><td>
+To add a new theme pair, click "Add Theme".
+</td></tr>
+<tr valign=top><td width=5% align=right>
+4c)
+</td><td>
+To delete a theme pair, click the appropriate line and hit the [DEL] key. Should you wish to delete a single theme only, use the "Edit Theme" feature and delete the line containing the theme you wish to delete.
+</td></tr>
+<tr valign=top><td width=5% align=right>
+5)
+</td><td>
+In cases 4a and 4b, a new form will pop up.
+</td></tr>
+<tr valign=top><td></td><td>
+<img src="tmw-img2.gif">
+</td></tr>
+<tr valign=top><td width=5% align=right>
+6)
+</td><td>
+This form has two fields:
+<ul>
+<li>Entrance Theme: Click the "..." button to the right to browse your local PC for relevant themes.
+<li>Exit Theme: Click the "..." button to the right to browse your local PC for relevant themes.
+</ul>
+It also has buttons for previewing the theme(s) you selected which read "Play". Click "Cancel" to return to the previous form without saving and "OK" to save the changes you made.
+</td></tr>
+</table>
+</body>
+</html>

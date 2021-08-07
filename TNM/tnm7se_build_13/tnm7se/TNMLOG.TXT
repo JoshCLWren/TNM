@@ -1,0 +1,10 @@
+In copyfile: ..\PLUGINS\INTERVWG\DATA\cardc.txt         plugin.fin
+Opening source file.
+Opened source file.
+Deleting destination file.
+Opening destination file.
+Opened destination file.
+Length of file: 0           blocks: 0 
+Defining string k and reading.
+Putting.
+

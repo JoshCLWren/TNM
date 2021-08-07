@@ -1,0 +1,62 @@
+3:0-15:Move 1
+4:0-15:Move 2
+5:0-15:Move 3
+6:0-15:Move 4
+7:0-15:Move 5
+8:0-15:Move 6
+9:0-15:Move 7
+10:0-15:Move 8
+11:0-15:Move 9
+12:0-15:Move 10
+13:0-15:Move 11
+14:0-15:Move 12
+15:0-15:Move 13
+16:0-15:Move 14
+17:0-15:Move 15
+18:0-15:Move 16
+19:0-15:Move 17
+20:0-15:Move 18
+21:0-15:Move 19
+22:0-15:Move 20
+23:0-15:Move 21
+24:0-15:Move 22
+25:0-15:Move 23
+26:0-15:Move 24
+27:0-15:Move 25
+28:0-15:Move 26
+29:0-15:Move 27
+30:0-15:Move 28
+31:0-15:Move 29
+32:0-15:Move 30
+33:0-15:Move 31
+34:0-15:Move 32
+35:0-15:Move 33
+36:0-15:Move 34
+37:0-15:Move 35
+38:0-15:Move 36
+39:0-15:Move 37
+40:0-15:Move 38
+41:0-15:Move 39
+42:0-15:Move 40
+43:0-15:Move 41
+44:0-15:Move 42
+45:0-15:Move 43
+46:0-15:Move 44
+47:0-15:Move 45
+48:0-15:Move 46
+49:0-15:Move 47
+50:0-15:Move 48
+51:0-15:Move 49
+52:0-15:Move 50
+54:0-15:Counter 1
+55:0-15:Counter 2
+55:16-31:Counter 3
+56:0-15:Finisher Similar To
+66:0-15:Setup Move
+69:0-15:Finisher-Like Move
+71:0-15:Setup-Move
+71:16-31:Follow-Up Move
+72:0-15:Cross-Corner Move
+75:0-15:Corner Move 1
+76:0-15:Corner Move 2
+77:0-15:Corner Move 3

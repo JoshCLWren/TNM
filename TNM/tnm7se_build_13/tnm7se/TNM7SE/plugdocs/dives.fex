@@ -1,0 +1,62 @@
+DIVES.DAT
+10
+1
+
+Line	Contains
+
+1       dive's name
+2       damage
+3       counter 1
+4       flag
+5       weights
+6       height difference/counter 2
+7       (unused)
+8       (unused)
+9       (unused)
+10      (unused)
+
+
+
+2 - damage:
+   * bits 0-9:          damage the dive does
+   * bits 10-31:        (unused)
+
+3 - counter 1/move type:
+   * bits 0-15:         counter 1
+   * bits 16-31:        (unused)
+
+4 - flag:
+   * bit 0:             wrestler doing dive can be thrown off the top turnbuckle
+   * bit 1:             (unused)
+   * bit 2:             (unused)
+   * bit 3:             (unused)
+   * bit 4:             (unused)
+   * bit 5:             (unused)
+   * bit 6:             (unused)
+   * bit 7:             must be sold
+   * bit 8:             (unused)
+   * bit 9:             (unused)
+   * bit 10:            (unused)
+   * bit 11:            (unused)
+   * bit 12:            (unused)
+   * bit 13:            (unused)
+   * bit 14:            (unused)
+   * bit 15:            can be done through table
+   * bit 16:            (unused)
+   * bit 17:            (unused)
+   * bit 18:            (unused)
+   * bit 19:            can be done off of cage
+   * bit 20:            can be done off of ladder
+   * bit 21:            can be done off of staircase
+   * bit 22:            can be done off of chair
+   * bit 23:            can be done with chair
+   * bits 24-31:        (unused)
+
+5 - weights:
+   * bits 0-3:          opponent's maximum weight class
+   * bits 4-7:          maximum weight class difference
+
+6 - height difference/counter 2/break counter:
+   * bits 0-6:          maximum height difference in inches
+   * bits 7-17:         counter 2
+   * bits 18-31:        unused

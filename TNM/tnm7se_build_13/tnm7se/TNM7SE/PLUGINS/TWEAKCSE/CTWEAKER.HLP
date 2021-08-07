@@ -1,0 +1,344 @@
+This number designates how likely random (i.e., unbooked) interference is to happen.
+
+If you enter 50, it means: honor TNM's default.
+
+If you enter 100, it means: "I want interference to happen half as often as it usually would in TNM".
+
+If you enter 25, it means: "I want interference to happen twice as often as it usually would in TNM".
+
+Default value for this field is 50.
+**
+This number designates how likely mask spots are to happen. This refers to mask pulling first and foremost.
+
+If you enter 50, it means: honor TNM's default.
+
+If you enter 100, it means: "I want mask spots to happen half as often as they usually would in TNM".
+
+If you enter 25, it means: "I want mask spots to happen twice as often as they usually would in TNM".
+
+Default value for this field is 50.
+**
+If checked, random interference will be turned off in this circuit.
+**
+If checked, mask spots such as mask pulling will not happen in this circuit.
+**
+If checked, injuries will not happen in this circuit.
+**
+This number designates how likely ref bumps are to happen.
+
+If you enter 50, it means: honor TNM's default.
+
+If you enter 100, it means: "I want ref bumps to happen half as often as they usually would in TNM".
+
+If you enter 25, it means: "I want ref bumps to happen twice as often as they usually would in TNM".
+
+Default value for this field is 50.
+**
+This number designates how likely it is for a wrestler in a submission move that can also cause a pinfall to find his shoulders on the mat.
+
+If you enter 50, it means: honor TNM's default.
+
+If you enter 100, it means: "I want the spot to happen half as often as it usually would in TNM".
+
+If you enter 25, it means: "I want the spot to happen twice as often as it usually would in TNM".
+
+Default value for this field is 50.
+
+Leave the field blank to disable pinfalls in submission holds altogether.
+**
+If checked, refs will not be bumped in this circuit.
+**
+If checked, champions will not be able to use their title belts as weapons in this circuit.
+**
+If checked, no-selling will be deactivated in this circuit.
+**
+If checked, foreign objects will not be utilized in this circuit.
+**
+If checked, walkouts will not happen in this circuit.
+**
+If checked, wrestlers will try to finish off their opponent after he is knocked out cold.
+**
+If checked, it will allow faces to engage in mask pulling. Usually this is prevented from happening by the engine.
+**
+If checked, outside interference will be highlighted during the match play-by-play.
+
+It will be led off by two asterisks (*), e.g.
+
+    ** Steve Austin trips Eric Bischoff
+**
+Usually, time goes by in TNM matches at a certain pace. Some users may find that pace to be too slow, some may find it too quick.
+
+Time progression allows you to increase or decrease the time it takes for wrestlers to do moves.
+
+It should always be used in conjunction with the "Hit Factor" field which influences how much damage moves do.
+
+Increasing Time Progression without also increasing Hit Factor will lead to more time limit draws.
+
+If you enter 50, it means: honor TNM's default.
+If you enter 100, it means: "I want time to progress TWICE as quickly as it usually would in TNM".
+If you enter 25, it means: "I want time to progess HALF as quickly as it usually would in TNM".
+
+IMPORTANT: THIS IS THE OPPOSITE BEHAVIOUR OF THE SEED FIELDS!!!
+
+Default value for this field is 50.
+**
+Usually, actions wrestlers do to each other cause a certain amount of damage in TNM.
+
+The "Hit Factor" field lets you influence how much damage moves do.
+
+If you increase the "Hit Factor", match times will decrease because individual moves will do more damage.
+
+If you decrease the "Hit Factor", match times will increase because moves do less damage.
+
+You should use this field in conjunction with "Time Progression".
+**
+Enter the maximum number of matches you want TNM 7 to accept per card.
+
+Please keep in mind that the higher this number is, the more memory will be taken up by TNM 7.
+
+If you find yourself unable to schedule cards at any point, reduce this number.
+
+Tournaments count as one match.
+**
+If checked, ALL wrestlers will be able to perform their finisher outside the ring in Falls Count Anywhere Matches.
+
+Default behaviour is to only allow those wrestlers to perform their finisher outside whose records indicate it as being possible.
+**
+If your circuit is in regular mode, wrestlers will have to be hired for you to be able to use them.
+
+You can only hire wrestlers for 52 cards, 99 cards with this plugin.
+
+The Card Multiplier allows you to extend that number as you please. If you set it to 10, a contract with 52 cards remaining will in reality have 520 cards remaining.
+
+Internally, this is done by only deducting a card from a wrestler's contract every x cards that take place.
+
+x in this sentence equals the value in Card Multiplier.
+**
+This field's purpose is to allow for promotions where wrestlers' finishers are given a greater emphasis.
+
+Enter a percentage (0 to 100) into this field.
+
+0 has a special meaning. It means: "deactivate" meaning that TNM's match engine will go about its business as if this field didn't exist.
+
+If set to 100, all matches that end in a pinfall or a submission end with a wrestler's finisher.
+**
+Sometimes wrestlers are being used multiple times on the same card.
+
+If a wrestler has to wrestle for a second (third, fourth, ...) time on the same card, he will start out at the energy level he last had when he finished the prior match PLUS whatever energy he could recover in the meantime.
+
+The Energy Regeneration field works just like the Time Progression and Hit Factor fields.
+
+50 is the default value and means: have them recover as TNM would normally see fit.
+
+100 means: have them recover twice as quickly.
+
+25 means: have them recover half as quickly.
+**
+Checking this option will bring up a menu which lets you limit the type of outside interference in any given match.
+
+Please note that having this option enabled will most likely drag out all matches which have outside interference - scheduled or random.
+
+Caution is advised.
+**
+This number designates how likely injuries are.
+
+For instance, if you enter 70 in the field, one out of every 70 wrestlers will be injured in a match on average.
+
+Entering a 1 will cause every wrestler to get injured in every match.
+
+The higher the number, the more unlikely injuries will be.
+**
+TNM 7 comes with a HTML Gateway which is useful for posting circuits on the web.
+
+It generates HTML files from all your cards in a folder called HTML which resides in the circuit's folder.
+
+Usually TNM 7 will generate a bare-bones-HTML file which may not suit the site you're trying to construct.
+
+If you want your circuit's HTML pages to follow certain design guidelines which you use for your site, these two fields let you specify what HTML code TNM 7 should put in BEFORE the HTML code it outputs and what HTML code TNM 7 is supposed to put in AFTER its own output.
+
+As an example, take a look at http://www.tnm7.com/pbwwf/2/WELCOME.HTM. This circuit's HTML code was generated entirely by TNM 7 using the HTML head and HTML foot template features.
+**
+If checked, title holders will not be treated preferentially when calculating the overall ratings.
+**
+For every win a wrestler scores, he is awarded a number of points when the ratings are being calculated.
+
+Default is 500.
+**
+For every match a wrestler loses, a number of points is deducted when the ratings are being computed.
+
+Default is 250.
+**
+Title holders usually get a large point bonus for every title they hold.
+
+Default is 10000.
+**
+Will a draw (or double countout, double DQ, double pin) end a wrestler's winning streak ?
+**
+The higher this value is, the more TNM lets winning streaks influence the ratings.
+**
+If checked, Elimination Matches with two or three wrestlers per side will be counted in the ratings.
+**
+If checked, TNM will let you enter your comments for a match directly after it has finished.
+
+This commentary will then be inserted into the match results directly after the match.
+**
+TNM 7 SE keeps track of "inter-match comments" via a special tag. 
+
+If you would like these comments to disappear when you view the card again later on, check this.
+**
+Usually, TNM will ask you to enter your comments on the card after the card has finished.
+
+If inter-match commentary is activated, there usually should be no need to post-card commentary.
+
+If checked, post-card commentary will be omitted.
+**
+When your circuit is in regular mode and you have to hire wrestlers, checking this box will keep your hired wrestlers from quitting or giving notice.
+**
+Hardcore wrestlers often leave the ring to grab a foreign object and bring this foreign object into the ring. Check this box to turn off this behavior.
+**
+Over time, wrestlers have started doing more and more spectacular moves.
+
+A legend from the 1980s will often have very basic moves such as bodyslams, hiptosses and small packages aside from his finisher.
+
+With some 2020s wrestlers, half their movesets consist of high-impact moves such as springboard legdrops, top-rope superkicks and more.
+
+If you add up the damage values of all moves a wrestler does, you will most likely end up with a value for a 2020s wrestler which more than doubles - sometimes even triples or quadruples - that of a 1980s wrestler.
+
+This puts the 1980s wrestler at a massive disadvantage and will lead to modern wrestlers beating older-era wrestlers in the majority of cases.
+
+Check this box to make every wrestler's average damage per move be the same, thus bringing a level playing field to matches between wrestlers from different generations.
+**
+In cases where there is a massive difference in stats between the two wrestlers in the ring, checking this option will make the favored wrestler do more damage than the overmatched wrestler, thus leading to quicker and often more decisive finishes.
+**
+Some wrestlers perform finishers which can be done while the wrestler or the opponent is running.
+
+This is signified by the box "Out Of Ropes" being checked in the wrestler's record in the TNM Control Center.
+
+It is important to understand that if "Out Of Ropes" is checked, the wrestler will ALSO be able to do his finisher in such a situation. It doesn't mean that he will ONLY do his move out of the ropes.
+
+If you want that to happen, check "Finisher: Always Run/Whip Into Ropes" and make sure "Wrestler Runs", "Opponent Runs" or both are checked in the wrestler's record.
+**
+When using the HTML Tree feature to export your card's results and finishes to a format usable on the web, the oldest card is usually listed first. Check this if you would like to reverse the order so the newest card is listed first.
+**
+By activating this option, a wrestler's push will be prioritized when it comes to determining match endings.
+**
+How likely will it be that a FACE wrestler attacks a FACE referee?
+
+Enter 0 to deactivate the spot totally.
+
+50 is the default value and means: leave it up to the simulator.
+
+100 means: have the spot occur half as often as it usually would.
+
+25 means: have the spot occur twice as often as it usually would.
+**
+How likely will it be that a HEEL wrestler attacks a FACE referee?
+
+Enter 0 to deactivate the spot totally.
+
+50 is the default value and means: leave it up to the simulator.
+
+100 means: have the spot occur half as often as it usually would.
+
+25 means: have the spot occur twice as often as it usually would.
+**
+How likely will it be that a NEUTRAL wrestler attacks a FACE referee?
+
+Enter 0 to deactivate the spot totally.
+
+50 is the default value and means: leave it up to the simulator.
+
+100 means: have the spot occur half as often as it usually would.
+
+25 means: have the spot occur twice as often as it usually would.
+**
+How likely will it be that a FACE wrestler attacks a HEEL referee?
+
+Enter 0 to deactivate the spot totally.
+
+50 is the default value and means: leave it up to the simulator.
+
+100 means: have the spot occur half as often as it usually would.
+
+25 means: have the spot occur twice as often as it usually would.
+**
+How likely will it be that a HEEL wrestler attacks a HEEL referee?
+
+Enter 0 to deactivate the spot totally.
+
+50 is the default value and means: leave it up to the simulator.
+
+100 means: have the spot occur half as often as it usually would.
+
+25 means: have the spot occur twice as often as it usually would.
+**
+How likely will it be that a NEUTRAL wrestler attacks a HEEL referee?
+
+Enter 0 to deactivate the spot totally.
+
+50 is the default value and means: leave it up to the simulator.
+
+100 means: have the spot occur half as often as it usually would.
+
+25 means: have the spot occur twice as often as it usually would.
+**
+If checked, a standby referee will come to the ring if the official is out cold.
+**
+How likely is the spot going to happen in matches?
+
+50 is the default and means: leave it as TNM would normally do it.
+
+100 means: have the spot happen half as often as TNM would normally have it happen.
+
+25 means: have the spot occur twice as often as TNM usually would have it occur.
+**
+If checked, a DQ can be issued for this spot. If unchecked, referees will warn a wrestler performing the spot but will not disqualify him.
+**
+How likely is a disqualification going to happen?
+
+This field is inactive unless the adjacent "DQ?" field is checked.
+
+50 is the default and means: leave it as TNM would normally do it.
+
+100 means: have the DQ happen half as often as TNM would normally have it happen.
+
+25 means: have the DQ be called twice as often as TNM usually would have it be called.
+**
+If "Apply" is checked for this line, the flag is always checked or unchecked when booking matches depending on what is selected.
+**
+When booking matches, only one of the flags "Watch Match", "Skip Match", "Finish Only" and "Join In Progress" may be checked at any time.
+
+Here you can set which flag is supposed to be set when booking matches.
+
+To do so, activate "Apply" for this block (clicking one will active all four) and select "Check" for the flag you'd like to have checked.
+
+If "Apply" is unchecked, TNM will behave as if this block didn't exist.
+**
+When booking matches, only one of the flags "1 Fall", "2/3 Falls", "Death Match", "Iron Man Match" may be checked at any time.
+
+Here you can set which flag is supposed to be set when booking matches.
+
+To do so, activate "Apply" for this block (clicking one will active all four) and select "Check" for the flag you'd like to have checked.
+
+If "Apply" is unchecked, TNM will behave as if this block didn't exist.
+**
+If checked, TNM 7 will automatically save all match results with the complete play-by-play attached instead of just a finish. It will do so for ALL matches which will need a lot of hard disk space.
+**
+If checked, titles will be defended even if there was a no-show in the title match.
+
+If Triple H held your world title and was set to defend it against Booker T and Triple H no-showed, you could have him replaced with Rob Van Dam and then the Booker-Van Dam winner would emerge as new champion.
+**
+Enter the time limit for this type of match in seconds.
+**
+If "Activate" is checked, all matches will have the time limit indicated in the field "For All Matches".
+**
+This one is tricky.
+
+In the global options, you can set time limits for one-fall, two-out-of-three fall etc matches.
+
+If "Add Time For Multiple-Fall Matches" is activated, the differential between the selected fall type and a one-fall match is added on top of the time limit which you designate for the match type here.
+
+Example: you are about to run a tag team match (1800 second time limit) with Iron Man Match rules (2700 second time limit). In the global options, one-fall matches have a 1200 second time limit.
+
+Your match will then have a time limit of 1800 + (2700-1200) second = 3300 second time limit.
+**

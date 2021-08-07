@@ -1,0 +1,30 @@
+Kazuchika Okada
+	Kazuchika Okada
+		             1             1            -50 
+		             5             5             0 
+		             100           100           0 
+		             0             0 
+		             0             0 
+		Factor:  0 
+	Chris Jericho
+		             1             2             50 
+		             5             5             0 
+		             100           90            0 
+		             0             0 
+		             0             0 
+		Factor:  216 
+Chris Jericho
+	Kazuchika Okada
+		             2             1             50 
+		             5             5             0 
+		             90            100           0 
+		             0             0 
+		             0             0 
+		Factor:  216 
+	Chris Jericho
+		             2             2            -50 
+		             5             5             0 
+		             90            90            0 
+		             0             0 
+		             0             0 
+		Factor:  0 

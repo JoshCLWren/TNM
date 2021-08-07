@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>
+TNM7.COM - Home of the Wrestling Simulator
+</title>
+<style type="text/css">
+<!--
+A:visited{text-decoration:none;color:#0000b0;}
+A:hover{text-decoration:underline;color:#957c7d;}
+A:link{text-decoration:none;color:#0000b0;}
+TD {font-family:arial,helvetica,verdana;font-size:10pt;color:#000000;font-weight:bold}
+TH {font-family:arial,helvetica,verdana;font-size:10pt;color:#000000;font-weight:extrabold;background:#c0c0c0;}
+form{display:inline;} 
+//-->
+</style>
+<script language="JavaScript1.1">
+
+function openSubWin(strURL, pixW, pixH,scrollbar)
+
+{
+	if (scrollbar=="") scrollbar="no";
+	strLocation = strURL;
+	strWHandle = "sdcSubWin"+pixW;
+	strProps = "resizable=yes,scrollbars="+scrollbar+",toolbar=no,location=no,directories=no,status=yes,menubar=no,width=" + pixW + ",height=" + pixH + ",top=10,left=10";
+	remote=window.open(strLocation, strWHandle, strProps);
+  	if (remote.opener == null)
+    		remote.opener = window;
+  	remote.opener.name = "myWindow";
+}
+</script>
+</head>
+<body bgcolor="#ffffff" marginwidth=0 marginheight=0 topmargin=0 leftmargin=0>
+&nbsp;<u><font face="Arial,helvetica,verdana" size=+1>Main Form</font></u><br>
+<table>
+<tr valign=top><td colspan=2>
+<img src="ccimg1.gif">
+</td></tr>
+<tr valign=top><td colspan=2>
+The main form is divided up into two sections.
+<p>
+<font size=+1>Section 1: Wrestler List</font><p>
+<table cellpadding=0 cellspacing=0><tr valign=top><td width=10% bgcolor="#D4D0C8">
+<img src="ccimg2.gif">
+</td><td>&nbsp;&nbsp;</td><td valign=top>
+Use this section to determine, whose crowd chants you'd like to edit.<p>
+<font color=blue>Situation 1: The wrestler is in the listbox already</font><br>
+This means that crowd chants for the wrestler have already been assigned. Just click his name in the list to bring up his chants.<p>
+<font color=blue>Situation 2: The wrestler isn't in the listbox yet but is in the drop-down list on top of the frame</font><br>
+This means that no chants are available for this wrestler yet, however he is in TNM's wrestler database. Click his name in the drop-down list (1, 2) and then click "Add Wrestler" (3) to add him to the list (4).<p>
+(1) <img align=top src="ccimg3.gif">
+&nbsp;=>&nbsp;
+(2) <img align=top src="ccimg4.gif">
+&nbsp;=>&nbsp;
+<br>
+<hr>
+&nbsp;=>&nbsp;
+(3) <img align=top src="ccimg4b.gif">
+&nbsp;=>&nbsp;
+(4) <img align=top src="ccimg5.gif">
+<p>
+<font color=blue>Situation 3: The wrestler isn't in the listbox yet nor is he in the drop-down list on top of the frame</font><br>
+This means the wrestler doesn't exist in TNM's wrestler database, nor are there any pre-assigned chants for him. Enter his name into the drop-down box (1), then click "Add Wrestler" (2) to bring him into the list (3).<p>
+(1) <img align=top src="ccimg6.gif">
+&nbsp;=>&nbsp;
+(2) <img align=top src="ccimg4b.gif">
+&nbsp;=>&nbsp;
+<br>
+<hr>
+&nbsp;=>&nbsp;
+(3) <img align=top src="ccimg7.gif">
+<tr><td colspan=3>
+&nbsp;<p>
+<font size=+1>Section 2: The Crowd Chants</font>
+</td></tr>
+<tr valign=top><td width=10% bgcolor="#D4D0C8">
+<img src="ccimg8.gif">
+</td><td>&nbsp;</td><td>
+There are three different chant categories:
+<ol>
+<li>Face Chants: the crowd chants these when a wrestler is a face to them
+<li>Heel Chants: the crowd chants these when a wrestler is a heel to them
+<li>Status-Independent Chants: these are used regardless of a wrestler's face or heel status - e.g. Ric Flair's 'WHOOO'.
+</ol>
+<font color=red>Imporant:</font> Face and Heel chants can be assigned at the same time. However, if you assign Status-Independent Chants, the Face and Heel chant tabs should remain empty.
+<p>
+To assign, edit or delete chants, just click the relevant tab (Face, Heel, Status-Independent) and then edit the text in the text box below - one chant per line.
+</td></tr></table>
+
+</td></tr>
+</table>
+</body>
+</html>

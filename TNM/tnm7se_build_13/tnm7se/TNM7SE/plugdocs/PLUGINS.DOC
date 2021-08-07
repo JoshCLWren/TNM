@@ -1,0 +1,2067 @@
+ ÛÛÛÛÛÛÛÛ» ÛÛÛ»  ÛÛ» ÛÛÛ»  ÛÛÛ»    ÛÛÛÛÛÛ»
+ ÈÍÍÛÛÉÍÍ¼ ÛÛÛÛ» ÛÛº ÛÛÛÛ»ÛÛÛÛº    ÈÍÍÍÛÛº    The Wrestling Simulator
+    ÛÛº    ÛÛÉÛÛ»ÛÛº ÛÛÉÛÛÛÉÛÛº       ÛÛÉ¼    ~~~~~~~~~~~~~~~~~~~~~~~
+    ÛÛº    ÛÛº ÛÛÛÛº ÛÛº ÛÉ¼ÛÛº      ÛÛÉ¼     
+    ÛÛº    ÛÛº  ÛÛÛº ÛÛº È¼ ÛÛº      ÛÛº      Plugin Programmer's Reference
+    ÈÍ¼    ÈÍ¼  ÈÍÍ¼ ÈÍ¼    ÈÍ¼      ÈÍ¼      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º±±±±±±±±±±±±±±±±±±±±±±±±±±±  Introduction  ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+  As you likely know, one of TNM 7's new killer features is its ability
+  to incorporate plugins into the mix.
+
+  This is a new experience for all of us - you as the developers who want
+  to see their programs work with TNM 7 and me, the person having to write
+  the plugin interface as a whole and the accompanying documentation.
+
+  There's one thing I want to clear up before we get started: TNM 7's
+  Plugin Interface is far from being static. It will certainly be changed
+  over the weeks and months to come.
+
+  At the moment, all plugins are invoked by opening a special menu and
+  selecting a plugin. My goal is to eventually allow for plugins to create
+  new match types which integrate into TNM 7 like the built-in matches do.
+
+  Mike Sweetser, for instance, is currently working on a Brawl For All
+  plugin. As of this writing, when invoking the plugin, you need to enter
+  the names of the two wrestlers you want to pit against one another.
+
+  Eventually, I see the "Brawl For All" match being an option on the match
+  scheduling screen - which means the plugin will be "fed" its data in a form
+  where no additional user interaction is necessary for the match to begin.
+
+
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º±±±±±±±±±±±±±±±±±±±±±±±±±±±  Where We Are  ±±±±±±±±±±±±±±±±±±±±±±±±±±±±±º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+  The current Plugin Interface version is 1.1.
+
+  TNM 7 is organized in the following way:
+
+    * PROGRAM:  contains all program files
+    * DATA:     contains all data files
+    * PLUGINS:  contains all plugin .INF-files and the directories which
+                host the actual plugin programs
+
+  In addition, TNM 7 has a directory for every existing circuit.
+
+  There are two different types of plugins, regular plugins and so-called
+  "circuit plugins".
+
+  The main differences are their purpose and the place where they are
+  executed. A circuit plugin usually performs an action which is sensible
+  at circuit-level only, e.g. a logfile formatter. Running such a plugin
+  outside of a circuit makes no sense. The opposite is true for regular
+  plugins. What would the purpose of running the TNM 7 Diagnostics Utility
+  in a circuit directory be ?
+
+  When TNM 7 is started up, it's running in the TNM 7 root directory, i.e.
+  the directory containing the PROGRAM, DATA and PLUGINS directories.
+
+  This is the same environment in which regular plugins run. Of TNM 7's
+  program code, only the main progam and the TNM ControlCenter run in this
+  environment.
+
+  Once you switch over to a circuit, TNM 7 starts running in the circuit's
+  directory (e.g. C:\TNM7\WWF). While this doesn't sound like a biggie, it
+  is. As soon as you move away from TNM 7's root directory, all file
+  locations change.
+
+  For instance, before entering a circuit, the wrestler database could be
+  accessed by opening DATA\WRESTLRS.DAT (more info on this later). Once you're
+  in a circuit, the path is ..\DATA\WRESTLRS.DAT.
+
+  The same goes for every other file. While a circuit plugin has to access
+  TNM 7's configuration file by opening ..\TNM.CNF, a regular plugin will
+  find it by opening TNM.CNF.
+
+  You have to make up your mind concerning what kind of plugin you want to
+  write *before* coding the first line. The first step *always* is to
+  decide what kind of a plugin to make.
+
+  Will you plugin be more useful as a general tool or rather on a circuit
+  level ?
+
+  Once that decision has been made, you can start coding.
+
+  Some examples for accessing files as a regular plugin or as a circuit
+  plugin:
+
+  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+  ³ File              ³ Regular Plugin         ³ Circuit Plugin         ³
+  ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+  ³ TNM 7 Config File ³ TNM.CNF                ³ ..\TNM.CNF             ³
+  ³ Wrestler Database ³ DATA\WRESTLRS.DAT      ³ ..\DATA\WRESTLRS.DAT   ³
+  ³ Move Database     ³ DATA\MOVES.DAT         ³ ..\DATA\MOVES.DAT      ³
+  ³ Circuit Config    ³ CARD.LGS               ³ ..\CARD.LGS            ³
+  ³ TNM 7 Manual      ³ TNM7.DOC               ³ ..\TNM7.DOC            ³
+  ³ Circuit's Logfile ³ inaccessible !         ³ MATCHES.LOG            ³
+  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º±±±±±±±±±±±±±±±±±±±±  Finding Your Way In TNM 7  ±±±±±±±±±±±±±±±±±±±±±±±º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+  There are many things you need to know if you want to write more than
+  just a generic plugin.
+
+  Let's start basic and find out what the files do. All files not listed
+  are used for internal purposes only or aren't important to you.
+
+  ÃÄ CARD.LGS                          records which circuits exist
+  ÃÄ TNM.BUI                           holds all administrative backup info
+  ÃÄ TNM.CNF                           TNM 7's main configuration file
+  ÃÄ TNM7.DOC                          TNM 7's documentation
+  ÃÄ TNM70.HLP                         TNM 7 IntelliHelp data file
+  ÃÄ BACKUP\                           contains the backups listed in TNM.BUI
+  ÃÄ DATA\                             look for all global databases here
+  ³  ÃÄ DIVES.DAT                      dive database
+  ³  ÃÄ GIMMICKS.DAT                   gimmick match database
+  ³  ÃÄ MANAGERS.DAT                   manager database
+  ³  ÃÄ MOVES.DAT                      move database
+  ³  ÃÄ OBJECTS.DAT                    foreign object database
+  ³  ÃÄ REFEREES.DEF                   default referees
+  ³  ÃÄ STABLES.DAT                    stable database
+  ³  ÃÄ TEAMS.DAT                      tag team database
+  ³  ÃÄ TNM.INF                        quick lookaside database
+  ³  ÃÄ WRESTLRS.DAT                   wrestler database
+  ³  ÀÄ *.IDX                          indexes for quicker access to DATs
+  ÃÄ PLUGINS\                          this should be of interest :-)
+  ³  ÃÄ PLUGIN1.INF                    authenticity/info file for PLUGIN1
+  ³  ÃÄ PLUGIN2.INF                    authenticity/info file for PLUGIN2
+  ³  ÃÄ PLUGIN1\                       directory hosting the PLUGIN1 files
+  ³  ³  ÃÄ PLUGIN1.EXE                 executable for PLUGIN1
+  ³  ³  ÀÄ PLUGIN1.*                   other files which PLUGIN1 needs
+  ³  ÀÄ PLUGIN2\                       directory hosting the PLUGIN2 files
+  ³     ÃÄ PLUGIN2.EXE                 executable for PLUGIN2
+  ³     ÀÄ PLUGIN2.*                   other files which PLUGIN2 needs
+  ÃÄ PROGRAM\                          various files which aren't of interest
+  ÀÄ XXXCIRCUIT\                       directory belonging to any directory
+     ÃÄ LOGFILES\                      contains logfiles after STRIPLG7 ran
+     ÃÄ RROBINS\                       contains round robin lineups/standings
+     ³  ÃÄ RR*.DAT                     DON'T TOUCH !
+     ³  ÃÄ RR*.INF                     participants - DON'T TOUCH !
+     ³  ÀÄ RR*.RUN                     is created when tournament is finished
+     ³                                 DON'T TOUCH !
+     ÃÄ SAVEDLUP\                      saved lineups
+     ÃÄ CARD.BOO                       will heels be booed ?
+     ÃÄ CARD.CFG                       circuit in e-mail mode ?
+     ÃÄ CARD.CNF                       compiled file which is fed to the
+     ³                                 match processor; contains lineup
+     ÃÄ CARD.DOL                       is logfile on ?
+     ÃÄ CARD.EXT                       is hardcore mode on ?
+     ÃÄ CARD.FDW                       wrestler queue file
+     ÃÄ CARD.INF                       how many cards the circuit contains
+     ÃÄ CARD.INJ                       who's injured ?
+     ÃÄ CARD.LOL                       how many old-style (pre-7) cards does
+     ³                                 the circuit contain ?
+     ÃÄ CARD.OVV                       contains card names
+     ÃÄ CARD.PTS                       singles points file
+     ÃÄ CARD.TTL                       contains the titles a circuit has
+     ÃÄ CARD.WHT                       contains the wrestlers' heat
+     ÃÄ CARDCA.*                       match comments
+     ÃÄ CARDFA.*                       match finishes
+     ÃÄ CARDRA.*                       match results
+     ÃÄ CARDS.PTS                      six man tag points file
+     ÃÄ CARDSA.*                       scheduled cards
+     ÃÄ CARDT.PTS                      tag points file
+     ÃÄ CARDTA.*                       title archive
+     ÃÄ CIRCDB.DAT                     circuit wrestler database
+     ÃÄ MATCHES.LOG                    logfile
+     ÃÄ REFEREES.DAT                   circuit referee database
+     ÃÄ STABLES.DAT                    circuit-specific stable database
+     ÃÄ STABLES.IDX                    index file for STABLES.DAT
+     ÃÄ TEAMS.DAT                      circuit-specific tag team database 
+     ÀÄ TEAMS.IDX                      index file for TEAMS.DAT
+
+
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º±±±±±±±±±±±±±±±±±±  Plugin Developing Guidelines  ±±±±±±±±±±±±±±±±±±±±±±º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+  All plugins are called in a uniform way by TNM 7's Plugin Interface 1.1:
+
+    plugin_executable plugin_program_directory plugin_data_directory
+
+  Example (circuit plugin named PLUGTEST.EXE):
+
+    ..\PLUGINS\PLUGTEST\PLUGTEST.EXE C:\TNM7\PLUGINS\PLUGTEST C:\TNM7\PLUGINS\PLUGTEST\DATA
+
+  That means your program will be passed two parameters via the command
+  line:
+
+  a) its program directory
+     -> you need this to access any resource files your program comes with,
+        for instance bitmaps and compile-time data files
+     -> to access these files, you simply need to take the resource's
+        location relative to your program file (e.g. BITMAPS\BITMAP1.BMP)
+        and append it to the program directory passed through the command
+        line (don't forget to put a "\" between the parts !), giving you
+        C:\TNM7\PLUGINS\PLUGTEST\BITMAPS\BITMAP1.BMP - which is the location
+        where your resource will be found
+     -> under no circumstances should you hardcode any paths into your
+        program; always use the plugin_program_directory variable and the
+        relative location of your resource !
+  b) its data directory
+     -> this is the ONLY place your plugin is allowed to write its data to !
+     -> it is your job to make sure the data directory exists before writing
+        files to it; create it if it doesn't exist
+
+  There are certain restrictions that we place on you, the plugin developers.
+  Exceptions from these restrictions may be granted on a case-by-case basis.
+
+  1. Your plugins must not write data anywhere but in the directory passed
+     via the command line. In particular, we absolutely forbid write access
+     to any of TNM 7's data files. Exceptions may be granted if you really
+     know what you're doing. Ask first, though.
+  2. Your plugins must clear the screen on exit.
+  3. In order to turn your programs into true plugins, you need to send them
+     to copp@tnm7.com. You will then receive an authorization file for each
+     of them (*.INF). TNM 7 will not accept your programs as plugins without
+     those files.
+
+  In addition to these restrictions, there are certain recommendations we
+  make:
+
+  1. All text-mode plugins should display a center-aligned copyright notice
+     in the last line of the screen, white (color 15) on dark red (color 4).
+  2. If your plugin creates any temporary files, always delete them before
+     exiting.
+  3. If necessary, add some kind of documentation to your plugin and make it
+     accessible from the program.
+
+  You are not limited in any way when it comes to the programming language
+  you want to use. TNM 7 allows you to create your plugins in any language
+  which can generate EXE-files.
+
+  QBASIC won't do because its files come as source code. Source code files
+  can not be used as TNM 7 plugins !
+
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º±±±±±±±±±±±±±±±  Description Of The File Structures  ±±±±±±±±±±±±±±±±±±±º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+  1. CARD.LGS:
+  ÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the names and locations of all your circuits
+
+    Structure:
+      circuit_name 1
+      circuit_directory 1
+
+      circuit_name 2
+      circuit_directory 2
+
+      ...
+
+    Example:
+      WWF Circuit
+      WWF
+
+      WCW Circuit
+      WCW
+
+
+    Additional Information:
+      One record consists of three lines, the two shown above and an
+      empty line; this empty line has to be there although it isn't used
+      anymore. It used to host the logo to be shown when entering the
+      circuit. This feature was cut when TNM V6.0 was released since it
+      only worked in DOS and fullscreen Windows.
+
+
+  2. TNM.BUI:
+  ÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the names and locations of all your backups
+
+    Structure:
+      backup_filename 1
+      compression method [zip or empty] 1
+      backup_name 1
+      date at which the backup was generated 1
+      backup_filename 2
+      compression method [zip or empty] 2
+      backup_name 2
+      date at which the backup was generated 2
+      ...
+
+    Example:
+      BACKUP_Z.TBU
+      zip
+      Test Backup
+      07-09-1998
+      BACK~001.TBU
+      zip
+      Before importing Robert's stuff
+      07-10-1998
+      BACK~002.TBU
+      zip
+      Before deleting doubles
+      07-10-1998
+
+    Additional Information:
+      One record consists of four lines as shown above. The backup's filename
+      is relative to the BACKUP directory.
+
+
+  3. TNM.CNF:
+  ÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      TNM 7 Configuration File
+
+    Structure:
+      key1=value1
+      key2=value2
+      key3=value3
+      key4=value4
+      ...
+
+    Example:
+      DelayBetweenMoves=330
+      SpeakDelay=10000
+      AlwaysPerformFinisherAfterSetup=1
+      TimeLimitOneFall=1200
+      TimeLimitTwoOfThreeFalls=2700
+      TimeLimitIronMan=3600
+      WarGamesPeriodOne=300
+      WarGamesPeriodOther=120
+
+    Additional Information:
+      You can also store options specific to your plugin in this file.
+      However, we recommend using a configuration file of your own to allow
+      the user to uninstall plugins without a trace. If you're writing a
+      circuit plugin, the file can be found at ..\TNM.CNF. For regular
+      plugins, it's at TNM.CNF.
+      
+
+  4. DIVES.DAT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Holds TNM 7's dive database
+
+    Structure: (use the database browser for details)
+      n (number of dives)
+      dive 1's name
+      damage
+      counter 1
+      flag
+      weights
+      height difference/counter 2
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      dive 2's name
+      damage
+      counter 1
+      flag
+      weights
+      height difference/counter 2
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      ...
+      dive n's name
+      damage
+      counter 1
+      flag
+      weights
+      height difference/counter 2
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+
+    Example:
+      40 
+      a tope
+      100 
+      0 
+      4194432 
+      136 
+      100 
+     
+     
+     
+     
+      a somersault plancha
+      120 
+      83 
+      5800064 
+      136 
+      100 
+     
+     
+     
+     
+      ...
+      a springboard corkscrew plancha
+      80 
+      0 
+      128 
+      136 
+      100 
+     
+     
+    Additional Information:
+      Every record consists of ten fields of which six are used at present.
+      Use the database browser for more detailed information on how exactly
+      dive records look and how they are to be interpreted.
+
+      All counters are move numbers.
+      
+
+  5. GIMMICKS.DAT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Holds TNM 7's gimmick match database
+
+    Structure: (use the database browser for details)
+      n (number of gimmick matches)
+      gimmick match 1's name
+      foreign object
+      flag
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      gimmick match 2's name
+      foreign object
+      flag
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      ...
+      gimmick match n's name
+      foreign object
+      flag
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+
+    Example:
+      18
+      Singapore Cane Match
+      Singapore cane
+      415
+
+
+
+
+      Ladder Match
+      ladder
+      26
+
+
+
+
+      ...
+      Ultimate Weapon Death Match
+      the Flaming Metal Barbed Wire Baseball Bat with small 10,000 Volt Lightbulbs wrapped around it and a mix of thumbtacks and nails stuck to it
+      8913370 
+
+
+    Additional Information:
+      Each record consists of seven lines of which three are used at this
+      point. Use the database browser for more detailed information on how
+      exactly gimmick match records look and how they are to be interpreted.
+
+
+  6. MANAGERS.DAT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Holds TNM 7's manager database
+
+    Structure: (use the database browser for details)
+      n (number of managers)
+      manager 1's name
+      manager's foreign object
+      flag
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      manager 2's name
+      manager's foreign object
+      flag
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      ...
+      manager n's name
+      manager's foreign object
+      flag
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+
+    Example:
+      58 
+      Jimmy Hart
+      megaphone
+      160 
+     
+     
+     
+     
+     
+     
+     
+      Paul Bearer
+      urn
+      170 
+     
+     
+     
+     
+     
+     
+     
+      ...
+      Roger Ferrari
+      champagne bottle
+      245 
+     
+    Additional Information:
+      Each record consists of ten lines of which three are used at this
+      point. Use the database browser for more detailed information on how
+      exactly manager records look and how they are to be interpreted.
+
+
+  7. MOVES.DAT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Holds TNM 7's move database
+
+    Structure: (use the database browser for details)
+      n (number of moves)
+      move 1's name
+      damage/blockable
+      counter 1/move type
+      flag
+      weights
+      height difference/counter 2/break counter
+      style-specific counters: Technician
+      style-specific counters: Brawler
+      style-specific counters: High-Flyer
+      style-specific counters: Powerhouse
+      style-specific counters: Wrestler
+      style-specific counters: Heel
+      style-specific counters: Old Style
+      style-specific counters: Martial Artist
+      style-specific counters: Shooter
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      move 2's name
+      damage/blockable
+      counter 1/move type
+      flag
+      weights
+      height difference/counter 2/break counter
+      style-specific counters: Technician
+      style-specific counters: Brawler
+      style-specific counters: High-Flyer
+      style-specific counters: Powerhouse
+      style-specific counters: Wrestler
+      style-specific counters: Heel
+      style-specific counters: Old Style
+      style-specific counters: Martial Artist
+      style-specific counters: Shooter
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      ...
+      move n's name
+      damage/blockable
+      counter 1/move type
+      flag
+      weights
+      height difference/counter 2/break counter
+      style-specific counters: Technician
+      style-specific counters: Brawler
+      style-specific counters: High-Flyer
+      style-specific counters: Powerhouse
+      style-specific counters: Wrestler
+      style-specific counters: Heel
+      style-specific counters: Old Style
+      style-specific counters: Martial Artist
+      style-specific counters: Shooter
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+
+    Additional Information:
+      Each record consists of 27 lines of which fifteen are used at this
+      point. Use the database browser for more detailed information on how
+      exactly move records look and how they are to be interpreted.
+
+      All counters are move numbers.
+
+
+  8. OBJECTS.DAT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Holds TNM 7's foreign object database
+
+    Structure: (use the database browser for details)
+      n (number of foreign objects)
+      object 1's name
+      damage when thrown through object
+      damage when being rammed into object
+      damage when being whipped into object
+      damage when being hit with object
+      damage when object is used on somebody
+      damage when being choked with object
+      damage when being stabbed with object
+      damage when being slashed with object
+      damage when being whipped with object
+      damage when being hung with object
+      damage when move is being done onto object
+      damage when move is being done through object
+      damage when move is being done with object
+      object may break when being used
+      object may draw blood
+      wrestlers can be tied to object
+      object can be used to tie wrestlers to other object
+      object is worn on head
+      object is worn on fist
+      object is worn on leg
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      object 2's name
+      damage when thrown through object
+      damage when being rammed into object
+      damage when being whipped into object
+      damage when being hit with object
+      damage when object is used on somebody
+      damage when being choked with object
+      damage when being stabbed with object
+      damage when being slashed with object
+      damage when being whipped with object
+      damage when being hung with object
+      damage when move is being done onto object
+      damage when move is being done through object
+      damage when move is being done with object
+      object may break when being used
+      object may draw blood
+      wrestlers can be tied to object
+      object can be used to tie wrestlers to other object
+      object is worn on head
+      object is worn on fist
+      object is worn on leg
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      ...
+      object n's name
+      damage when thrown through object
+      damage when being rammed into object
+      damage when being whipped into object
+      damage when being hit with object
+      damage when object is used on somebody
+      damage when being choked with object
+      damage when being stabbed with object
+      damage when being slashed with object
+      damage when being whipped with object
+      damage when being hung with object
+      damage when move is being done onto object
+      damage when move is being done through object
+      damage when move is being done with object
+      object may break when being used
+      object may draw blood
+      wrestlers can be tied to object
+      object can be used to tie wrestlers to other object
+      object is worn on head
+      object is worn on fist
+      object is worn on leg
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+
+    Additional Information:
+      Each record consists of 40 lines of which 21 are used at this point.
+      Use the database browser for more detailed information on how exactly
+      move records look and how they are to be interpreted.
+
+
+  9. REFEREES.DEF/REFEREES.DAT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Hold TNM 7's default (REFEREES.DEF) and circuit-specific (REFEREES.DAT)
+      referees
+
+    Structure: 
+      n (number of referees)
+      referee 1's name
+      male (0) / female (1) flag
+      stringency
+      (unused)
+      (unused)
+      referee 2's name
+      male (0) / female (1) flag
+      stringency
+      (unused)
+      (unused)
+      ...
+      referee n's name
+      male (0) / female (1) flag
+      stringency
+      (unused)
+      (unused)
+
+    Additional Information:
+      Each record consists of five lines of which three are used at this
+      point. The referees' stringency is valid in the 1 to 20 region with 1
+      being the most stringent and 20 being the least stringent.
+
+
+  10. STABLES.DAT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+   Purpose:
+      Hold TNM 7's stable database.
+
+    Structure: 
+      n (number of stables)
+      stable 1's name
+      m (number of wrestlers in stable)
+      wrestler 1
+      wrestler 2
+      ...
+      wrestler m
+      manager 1
+      manager 2
+      manager 3
+      manager 4
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      stable 2's name
+      m (number of wrestlers in stable)
+      wrestler 1
+      wrestler 2
+      ...
+      wrestler m
+      manager 1
+      manager 2
+      manager 3
+      manager 4
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      ...
+      stable n's name
+      m (number of wrestlers in stable)
+      index of wrestler 1
+      index of wrestler 2
+      ...
+      index of wrestler m
+      manager 1
+      manager 2
+      manager 3
+      manager 4
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+
+    Additional Information:
+      Please make sure you understand 
+      point. The referees' stringency is valid in the 1 to 20 region with 1
+      being the most stringent and 20 being the least stringent.
+
+      All managers are numbers, not names. For instance, if you find a
+      manager to be "37" and the 37th manager on the copy of TNM 7 is
+      Eric Bischoff, Bischoff manages the stable.
+
+
+  11. TEAMS.DAT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Hold TNM 7's tag team database.
+
+    Structure: (use the database browser for details)
+      n (number of teams)
+      name of first wrestler on team 1
+      name of second wrestler on team 1
+      team name 1
+      tag finisher
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      name of first wrestler on team 2
+      name of second wrestler on team 2
+      team name 2
+      tag finisher
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      ...
+      name of first wrestler on team n
+      name of second wrestler on team n
+      team name n
+      tag finisher
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+
+    Additional Information:
+      Each record consists of ten lines of which four are used at this
+      point. Use the database browser for more detailed information on how
+      exactly tag team records look and how they are to be interpreted.
+
+      Not every team needs to have a name, and not all teams need to have
+      tag finishers. 
+
+
+  12. TNM.INF:
+  ÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Lets you look up the number of wrestlers, moves and managers quickly
+      without opening all three respective data files.
+
+    Structure:
+      number of wrestlers
+      number of moves
+      number of managers
+
+    Additional Information:
+      None.
+
+
+  13. WRESTLRS.DAT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Hold TNM 7's wrestler database.
+
+    Structure: (use the database browser for details)
+      n (number of wrestlers)
+      wrestler 1's name
+      abbreviation
+      move 1
+      move 2
+      move 3
+      move 4
+      move 5
+      move 6
+      move 7
+      move 8
+      move 9
+      move 10
+      move 11
+      move 12
+      move 13
+      move 14
+      move 15
+      move 16
+      move 17
+      move 18
+      move 19
+      move 20
+      move 21
+      move 22
+      move 23
+      move 24
+      move 25
+      move 26
+      move 27
+      move 28
+      move 29
+      move 30
+      move 31
+      move 32
+      move 33
+      move 34
+      move 35
+      move 36
+      move 37
+      move 38
+      move 39
+      move 40
+      move 41
+      move 42
+      move 43
+      move 44
+      move 45
+      move 46
+      move 47
+      move 48
+      move 49
+      move 50
+      finisher
+      finisher counter 1 + submission move flag
+      finisher counters 2 + 3
+      finisher similar to move
+      work rate
+      push
+      charisma
+      foreign object 
+      manager 1
+      manager 2
+      manager 3
+      manager 4
+      stamina
+      setup move
+      weight
+      flag 1
+      finisher-like move
+      flag 2
+      setup move + follow-up move
+      Cross-Corner Move
+      working crowd string
+      special move
+      corner move 1
+      corner move 2
+      corner move 3
+      nickname
+      male/female flag
+      hometown
+      height
+      build
+      theme music
+      dive 1
+      dive 2
+      dive 3
+      dive 4
+      dive 5
+      (unused)
+      wrestler styles
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      ...
+      wrestler n's name
+      abbreviation
+      move 1
+      move 2
+      move 3
+      move 4
+      move 5
+      move 6
+      move 7
+      move 8
+      move 9
+      move 10
+      move 11
+      move 12
+      move 13
+      move 14
+      move 15
+      move 16
+      move 17
+      move 18
+      move 19
+      move 20
+      move 21
+      move 22
+      move 23
+      move 24
+      move 25
+      move 26
+      move 27
+      move 28
+      move 29
+      move 30
+      move 31
+      move 32
+      move 33
+      move 34
+      move 35
+      move 36
+      move 37
+      move 38
+      move 39
+      move 40
+      move 41
+      move 42
+      move 43
+      move 44
+      move 45
+      move 46
+      move 47
+      move 48
+      move 49
+      move 50
+      finisher
+      finisher counter 1 + submission move flag
+      finisher counters 2 + 3
+      finisher similar to move
+      work rate
+      push
+      charisma
+      foreign object 
+      manager 1
+      manager 2
+      manager 3
+      manager 4
+      stamina
+      setup move
+      weight
+      flag 1
+      finisher-like move
+      flag 2
+      setup move + follow-up move
+      Cross-Corner Move
+      working crowd string
+      special move
+      corner move 1
+      corner move 2
+      corner move 3
+      nickname
+      male/female flag
+      hometown
+      height
+      build
+      theme music
+      dive 1
+      dive 2
+      dive 3
+      dive 4
+      dive 5
+      (unused)
+      wrestler styles
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+
+    Additional Information:
+      Each record consists of 120 lines of which 90 are used at this point.
+      Use the database browser for more detailed information on how
+      exactly wrestler records look and how they are to be interpreted.
+
+      All moves and counters referenced here are move numbers. All dives are
+      dive numbers. All managers are manager numbers.
+
+
+  14. *.IDX:
+  ÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Index files which allow for quicker random access to the various
+      databases.
+
+    Structure:
+      file position where record 1 starts
+      file position where record 2 starts
+      file position where record 3 starts
+      ...
+      file position where second-to-last record starts
+      file position where last record starts
+
+    Additional Information:
+      All indexes start at a base of 0, i.e. when you open a file for random
+      access, its position is assumed as zero. This is true for many
+      programming languages. However, if the one you are using uses a base
+      of 1, you need to add 1 to all index values to get the correct starting
+      position.
+
+      The wrestler database, for instance, is pushing 600k at the time this
+      is being written. If you wish to access wrestler 845 of 846, you should
+      definitely not read all 844 records before his comes. Since all
+      wrestler records consist of 120 lines, you'd be reading a total of
+      101,401 lines of data before you've retrieved the wrestler record you
+      need.
+
+      Obviously, this is far too slow. This is where the index files come in
+      handy. Instead of going through the 844 records before the record you
+      need, you simply open the index file first, go through the 844 record
+      starting positions you need and retrieve the position where your record
+      starts. Then you close the index file (if you don't need it anymore) and
+      open the database you actually need. Do a SEEK to the record position
+      you retrieved from the index file and then you can immediately start
+      reading the data of the record you want and need - and nothing else.
+
+      This brings down the number of lines you have to read from 101,401 to
+      965 - which means your code will work over 100 times faster !
+
+      Take my advice and use the index files whenever possible. You won't
+      regret it.
+
+    Example:
+      Let's assume you have a small wrestler database with only four
+      wrestlers.
+
+      The 120-line record for the first wrestler, Jimmy Snuka, will start at
+      file position 5 (let's not forget that the first line in the file
+      contains the number of wrestlers, hence the first record can't start at
+      position 0). Let's also assume that all wrestler records are 600 bytes
+      long - which is a fairly accurate number for most.
+
+      This means that Rey Misterio Jr.'s record will start at position 605,
+      The Warlord starts at position 1205 and Bill Goldberg is last starting
+      at position 1805.
+
+      Your WRESTLRS.DAT file looks like this:
+            4
+            Jimmy Snuka
+            <119 other lines of data>
+            Rey Misterio Jr.
+            <119 other lines of data>
+            The Warlord
+            <119 other lines of data>
+            Bill Goldberg
+            <119 other lines of data>
+
+      The index file, WRESTLRS.IDX, will have the following structure in
+      this example:
+            5
+            605
+            1205
+            1805
+
+    Step-By-Step Instructions On Using Indexes:
+      0) your goal is to access record x in the data file
+      1) open index file
+      2) read x lines of data from the index file; the x-th line of data is
+         the starting position of record x in the database; we'll call it
+         start_pos
+      3) close the index file
+      4) open the data file
+      5) seek to position start_pos in the data file
+      6) the file will not be at the position where record x starts
+      7) read record
+      8) close data file
+
+      Obviously, if you need to access multiple wrestlers out-of-order, it
+      is a good idea to read the contents of the index file into an array in
+      memory and keep referencing that instead of opening the index file
+      each and every time you need to access something.
+
+    Sample Implementation In BASIC:
+
+      function seekRecord&(byval database$,byval recordnumber)
+      ' database$ is the base file name for a database, e.g. WRESTLRS,
+      ' MOVES, MANAGERS, STABLES etc
+      ' recordnumber is the number of the record you wish to access
+      '
+      ' seekRecord& returns an open file number which points to the
+      ' start of the record you wish to access
+      '
+            f=freefile
+            open database$+".idx" for input as#f
+            g=freefile
+            open database$+".dat" for input as#g
+            input#g,nrofrecords
+            if recordnumber>nrofrecords then
+                  close#g
+                  close#f
+                  function=-1 ' return no pointer if the number of available
+                              ' records is smaller than the record you want
+                              ' to retrieve
+            end function
+            for a=1 to recordnumber
+                  input#f,index
+            next
+            close#f
+            seek#g,index
+            function=g
+      end function
+
+    Sample Code For Using seekRecord&():
+      deflng a-z
+      database$="WRESTLRS" ' use wrestler database
+      do
+            input "What record number do you want to access ? ",r
+            if r=0 then exit do
+            f=seekRecord(database$,r)     ' open database and go to right
+                                          ' position
+            if f=-1 then                  ' record didn't exist
+                  print "Sorry... record doesn't exist."
+            else
+                  line input#f,x$
+                  print "First line of record is: "x$
+            end if
+            close#f                       ' close database
+      loop
+
+
+  15. CARD.BOO:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Indicates whether or not heels will be booed in your circuit.
+
+    Structure:
+      flag if heels will be booed or not
+      
+    Additional Information:
+      If the flag equals 1, heels will be booed. Otherwise everybody is
+      cheered.
+
+
+  16. CARD.CFG:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Indicates in what mode your circuit is being operated.
+
+    Structure:
+      flag
+      
+    Additional Information:
+      If the flag equals 1, the circuit is in e-mail mode. If it is 0, the
+      circuit is in regular mode.
+
+
+  17. CARD.CFG:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains compiled information which is fed to the match processor
+
+    Structure:
+      will be documented once TNM 7 is able to support plugins which
+      function as match processors
+      
+    Additional Information:
+      None at this point.
+
+
+  18. CARD.DOL:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Stores information on whether or not your logfile is on and what
+      printer port is supposed to be used.
+
+    Structure:
+      flag
+      printer port
+
+    Additional Information:
+      If flag is 1, the logfile is on. It is off if flag equals 0. Printer
+      port can be "LPT1", "LPT2", "COM1" or "COM2".
+
+
+  19. CARD.EXT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Indicates if hardcore more is turned on.
+
+    Structure:
+      flag
+      
+    Additional Information:
+      If the flag equals 1, the circuit is in hardcore mode. If it is 0, the
+      circuit is in regular mode.
+
+
+  20. CARD.FDW:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the wrestlers' recent opponents.
+
+    Structure:
+      wrestler name 1
+      recent opponent(s) 1
+      recent opponent(s) 2
+      recent opponent(s) 3
+      recent opponent(s) 4
+      wrestler name 2
+      recent opponent(s) 1
+      recent opponent(s) 2
+      recent opponent(s) 3
+      recent opponent(s) 4
+      ...
+      wrestler name n
+      recent opponent(s) 1
+      recent opponent(s) 2
+      recent opponent(s) 3
+      recent opponent(s) 4
+            
+    Additional Information:
+      TNM 7 updates this file at runtime. If a wrestler fights somebody
+      new, this new opponent will move to the top of the list and the others
+      move one notch down. If the wrestler fights somebody who already is in
+      his list of recent opponents, this opponent will move back up to 1
+      with the others adjusting accordingly.
+
+
+  21. CARD.INF:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the number of cards in your circuit.
+
+    Structure:
+      number of cards
+
+    Additional Information:
+      None.
+
+
+  22. CARD.INJ:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the database of injured wrestlers.
+
+    Structure:
+      number of injured wrestler or injured wrestler's name
+      number of months wrestler will remain out of action
+      number of injured wrestler or injured wrestler's name
+      number of months wrestler will remain out of action
+      number of injured wrestler or injured wrestler's name
+      number of months wrestler will remain out of action
+      ...
+      number of injured wrestler or injured wrestler's name
+      number of months wrestler will remain out of action
+
+    Additional Information:
+      When a wrestler is injured, his name is placed in this file along
+      with the number of months he'll be out. Later on, TNM 7 transforms
+      the wrestler's name into his number so don't be surprised if you only
+      see numbers here with one name interspersed and the name then
+      suddenly disappears.
+
+
+  23. CARD.LOL:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the number of cards in the circuit which were migrated from
+      TNM V6.xx.
+
+    Structure:
+      oldnr = number of cards done in TNM V6.xx
+
+    Additional Information:
+      During the TNM 7 updating routine, a user's circuits will be
+      transferred to TNM 7. TNM 7's title handler is infinitely more
+      powerful than TNM V6.xx's title handler. As a consequence, there is
+      no way of converting TNM V6.2 cards into TNM 7 cards. However, TNM 7
+      provides legacy support for the old title handler so that title changes
+      occurring in the first oldnr cards will also be recognized when
+      browsing the card results. TNM 7 uses CARD.LOL to know where the switch
+      from TNM V6.xx to TNM 7 took place.
+
+
+  24. CARD.OVV:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the names of all cards in the circuit.
+
+    Structure:
+      name of card 1
+      name of card 2
+      name of card 3
+      ...
+      name of card n
+
+    Additional Information:
+      None.
+
+
+  25. CARD.PTS/CARDS.PTS/CARDT.PTS:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      CARD.PTS contains the singles win-loss records, CARDT.PTS the tag team
+      win-loss records and CARDS.PTS the six-man tag win-loss records.
+
+    Structure:
+      wrestler name 1
+      total points accumulated
+      matches
+      wins
+      losses
+      draws
+      winning streak
+      wrestler name 2
+      total points accumulated
+      matches
+      wins
+      losses
+      draws
+      winning streak
+      ...
+      wrestler name n
+      total points accumulated
+      matches
+      wins
+      losses
+      draws
+      winning streak
+
+    Additional Information:
+      The records are in no particular order. This information is a big
+      part in determining the ratings, although it is not the only factor.
+
+
+  26. CARD.TTL:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      CARD.TTL contains the titles and title holders your circuit has.
+
+    Structure:
+      number of titles
+      title holder 1
+      title name 1
+      title flag 1
+      title holder 2
+      title name 2
+      title flag 3
+      ...
+      title holder n
+      title name n
+      title flag n
+
+    Additional Information:
+      The flag is 1 for a singles title, 2 for a tag title and so on. The
+      maximum is 5 for a ten-man tag title.
+
+
+  27. CARD.WHT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the base heat of all wrestlers.
+
+    Structure:
+      base heat for wrestler 1
+      base heat for wrestler 2
+      base heat for wrestler 3
+      ...
+      base heat for wrestler n
+
+    Additional Information:
+      Each base heat value is between 1 (worst) and 10 (best). The records
+      are in the same order as in WRESTLRS.DAT and CIRCDB.DAT.
+
+
+  28. CARDFA.*:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the finishes for a number of cards.
+
+    Structure:
+      combined number of lines for finishes for first card in set
+      <x lines of text>
+      combined number of lines for finishes for second card in set
+      <y lines of text>
+      ...
+      combined number of lines for finishes for last card in set
+      <z lines of text>
+
+    Additional Information:
+      As is the case with the other CARD?A.* files, every set can contain
+      up to 30 records. For instance, CARDFA.001 contains the finishes for
+      your first 30 cards. CARDFA.002 contains the finishes for the next 30
+      and so on.
+
+      Don't touch this file in any way.
+
+
+  29. CARDCA.*:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the comments for a number of cards.
+
+    Structure:
+      number of lines in comment for first card in set
+      <x lines of text>
+      number of lines in comment for second card in set
+      <y lines of text>
+      ...
+      number of lines in comment for last card in set
+      <z lines of text>
+
+    Additional Information:
+      As is the case with the other CARD?A.* files, every set can contain
+      up to 30 records. For instance, CARDCA.001 contains the comments for
+      your first 30 cards. CARDCA.002 contains the comments for the next 30
+      and so on.
+
+      Don't touch this file in any way.
+
+
+  30. CARDRA.*:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the results for a number of cards.
+
+    Structure:
+      number of lines in results for first card in set
+      x = number of lines in results for first match of the card
+      match name
+      <x lines of text>
+      y = number of lines in results for first match of the card
+      match name
+      <y lines of text>
+      ...
+      z = number of lines in results for first match of the card
+      match name
+      <z lines of text>
+      number of lines in results for second card in set
+      x = number of lines in results for first match of the card
+      match name
+      <x lines of text>
+      y = number of lines in results for first match of the card
+      match name
+      <y lines of text>
+      ...
+      z = number of lines in results for first match of the card
+      match name
+      <z lines of text>
+      number of lines in results for third card in set
+      x = number of lines in results for first match of the card
+      match name
+      <x lines of text>
+      y = number of lines in results for first match of the card
+      match name
+      <y lines of text>
+      ...
+      z = number of lines in results for first match of the card
+      match name
+      <z lines of text>
+      ... and so on...
+
+    Additional Information:
+      As is the case with the other CARD?A.* files, every set can contain
+      up to 30 records. For instance, CARDRA.001 contains the results for
+      your first 30 cards. CARDRA.002 contains the results for the next 30
+      and so on.
+
+      If a match name ends in "\", a finish was saved for that match.
+
+      Don't touch this file in any way.
+
+
+  31. CARDSA.*:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains a number of scheduled cards.
+
+    Structure:
+      number of lines the first card is long
+      name of card
+      m=number of matches
+            n=number of wrestlers in match 1
+                  wrestler number 1 in match 1
+                  unused
+                  wrestler's name
+                  wrestler number 2 in match 1
+                  unused
+                  wrestler's name
+                  ...
+                  wrestler number n in match 1
+                  unused
+                  wrestler's name
+            n=number of wrestlers in match 2
+                  wrestler number 1 in match 2
+                  unused
+                  wrestler's name
+                  wrestler number 2 in match 2
+                  unused
+                  wrestler's name
+                  ...
+                  wrestler number n in match 2
+                  unused
+                  wrestler's name
+            ...
+            n=number of wrestlers in match m
+                  wrestler number 1 in match m
+                  unused
+                  wrestler's name
+                  wrestler number 2 in match m
+                  unused
+                  wrestler's name
+                  ...
+                  wrestler number n in match m
+                  unused
+                  wrestler's name
+      number of lines the second card is long
+      name of card
+      m=number of matches
+            n=number of wrestlers in match 1
+                  wrestler number 1 in match 1
+                  unused
+                  wrestler's name
+                  wrestler number 2 in match 1
+                  unused
+                  wrestler's name
+                  ...
+                  wrestler number n in match 1
+                  unused
+                  wrestler's name
+            n=number of wrestlers in match 2
+                  wrestler number 1 in match 2
+                  unused
+                  wrestler's name
+                  wrestler number 2 in match 2
+                  unused
+                  wrestler's name
+                  ...
+                  wrestler number n in match 2
+                  unused
+                  wrestler's name
+            ...
+            n=number of wrestlers in match m
+                  wrestler number 1 in match m
+                  unused
+                  wrestler's name
+                  wrestler number 2 in match m
+                  unused
+                  wrestler's name
+                  ...
+                  wrestler number n in match m
+                  unused
+                  wrestler's name
+      ...
+      number of lines the last card in set is long
+      name of card
+      m=number of matches
+            n=number of wrestlers in match 1
+                  wrestler number 1 in match 1
+                  unused
+                  wrestler's name
+                  wrestler number 2 in match 1
+                  unused
+                  wrestler's name
+                  ...
+                  wrestler number n in match 1
+                  unused
+                  wrestler's name
+            n=number of wrestlers in match 2
+                  wrestler number 1 in match 2
+                  unused
+                  wrestler's name
+                  wrestler number 2 in match 2
+                  unused
+                  wrestler's name
+                  ...
+                  wrestler number n in match 2
+                  unused
+                  wrestler's name
+            ...
+            n=number of wrestlers in match m
+                  wrestler number 1 in match m
+                  unused
+                  wrestler's name
+                  wrestler number 2 in match m
+                  unused
+                  wrestler's name
+                  ...
+                  wrestler number n in match m
+                  unused
+                  wrestler's name
+
+    Additional Information:
+      As is the case with the other CARD?A.* files, every set can contain
+      up to 30 records. For instance, CARDSA.001 contains the schedules for
+      your first 30 cards. CARDSA.002 contains the schedules for the next 30
+      and so on.
+
+      Don't touch this file in any way.
+
+
+  32. CARDTA.*:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the title databases for a number of cards.
+
+    Structure:
+      number of lines in title archive for first card
+            number of titles
+            title holder 1
+            title name 1
+            title flag 1
+            title holder 2
+            title name 2
+            title flag 3
+            ...
+            title holder n
+            title name n
+            title flag n
+      number of lines in title archive for second card
+            number of titles
+            title holder 1
+            title name 1
+            title flag 1
+            title holder 2
+            title name 2
+            title flag 3
+            ...
+            title holder n
+            title name n
+            title flag n
+      ...
+      number of lines in title archive for last card in set
+            number of titles
+            title holder 1
+            title name 1
+            title flag 1
+            title holder 2
+            title name 2
+            title flag 3
+            ...
+            title holder n
+            title name n
+            title flag n
+
+    Additional Information:
+      As is the case with the other CARD?A.* files, every set can contain
+      up to 30 records. For instance, CARDTA.001 contains the titles for
+      your first 30 cards. CARDCA.002 contains the titles for the next 30
+      and so on.
+
+      Don't touch this file in any way.
+
+
+  33. CIRCDB.DAT:
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+    Purpose:
+      Contains the circuit-specific wrestler data.
+
+    Structure:
+      number of wrestlers
+      wrestler 1's name
+      wrestler's push
+      wrestler's contractual status
+      flag
+      manager 1
+      manager 2
+      manager 3
+      manager 4
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      wrestler 2's name
+      wrestler's push
+      wrestler's contractual status
+      flag
+      manager 1
+      manager 2
+      manager 3
+      manager 4
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      ...
+      wrestler n's name
+      wrestler's push
+      wrestler's contractual status
+      flag
+      manager 1
+      manager 2
+      manager 3
+      manager 4
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+      (unused)
+
+    Additional Information:
+      Contractual status (cstat) is:
+                      100:  not hired
+                       <0:  locked for next -cstat cards
+            1<=cstat<=100:  hired for cstat cards
+                 200, 300:  available for one more card 
+
+      Bit 2 of flag indicates if a wrestler pulls tights/uses the ropes (1)
+      or not (0). Bits 0 and 1 taken together specify the type of wrestler.
+      0 means "face", 1 means "heel" and 2 means "neutral".
+
+      All managers are manager numbers.
+
+
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º±±±±±±±±±±±±±±±±±±±±±±±±  Where We're Heading  ±±±±±±±±±±±±±±±±±±±±±±±±±º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+   As has been indicated already, this is not the end of the road. The
+   Plugin Interface will improve constantly as long as there is demand
+   for it to improve.
+
+   For instance, I will be adding a registration scheme which plugin
+   authors can use to sell their plugins to users. It'll take care of
+   generating registration codes and validating them - a quite touchy
+   subject if you're not doing it completely professionally.
+
+   To this day, there is no key generator for TNM V6.2plus or TNM 7 and
+   for good reason: the algorithms used for generation and validation are
+   completely waterproof.
+
+   Obviously, a long time was spent and a lot of know-how was invested into
+   developing them.
+
+   Thus far, TNM 7's Plugin Interface does not allow for commercial plugins.
+
+   One of the next releases of the Interface will contain code to handle
+   just that.
+
+   What is the point I'm trying to make ?
+
+   TNM 7 will contain a version file in the future where it notes which
+   version of the Plugin Interface is installed.
+
+   This file will reside in DATA\PLGCVERS.DAT and you, as a plugin developer,
+   should equip the plugins you are writing *today* to support version
+   control.
+
+   I recommend checking if DATA\PLGCVERS.DAT (..\DATA\PLGCVERS.DAT for a
+   circuit plugin) exists. If not, it's safe to say that the Interface
+   version is 1.1 or lower.
+
+   If it does exist, open the file and read the one and only line in it
+   which'll be a floating point number (e.g. 1.2). If your plugin was
+   written for a later version of the Plugin Connector, then display a
+   message that it won't run and quit immediately.
+
+   For instance, if you write a commercial plugin and want to use TNM 7's
+   registration scheme for it, and TNM 7 only starts supporting commercial
+   plugins with Interface version 2.1, then check the PLGCVERS.DAT file
+   to come up with the installed version.
+
+   If you find out that the installed version doesn't yet support commercial
+   plugins, exit gracefully to protect your property.
+
+   Again, please let me stress that it is *your* responsibility to make sure
+   your plugins know when to exit in order to not ruin anything.
+ 
+   A second thing which I want to add eventually is support for new match
+   types like the Brawl For All plugin Mike Sweetser currently is working
+   on. They'll only be a hit if they integrate into TNM 7 seamlessly. We
+   can't expect the user to enter the wrestlers' names manually.
+
+   There are certain mountains which I'll have to climb before this feature
+   can be implemented but it is possible and you can rest assured it will
+   not be forgotten.
+
+
+
+ ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+ º±±±±±±±±±±±±±±±±±±±±±±±±±±±  Closing Words  ±±±±±±±±±±±±±±±±±±±±±±±±±±±±º
+ ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+    
+    This ends version 1.0 of the Plugin Creators' manual.
+
+    I'm sure I've left out some vital information here or there and I'd
+    be awfully grateful if anybody pointed out something they don't
+    understand so I can gradually improve this manual.
+
+    Thanks for reading and happy programming !
+
+
+
+
+
+
+
+
+
+                                                      Last Revised 9/14/98

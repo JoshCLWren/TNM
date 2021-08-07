@@ -1,0 +1,176 @@
+<html>
+<head>
+<title>
+TNM7.COM - Home of the Wrestling Simulator
+</title>
+<style type="text/css">
+<!--
+A:visited{text-decoration:none;color:#0000b0;}
+A:hover{text-decoration:underline;color:#957c7d;}
+A:link{text-decoration:none;color:#0000b0;}
+TD {font-family:arial,helvetica,verdana;font-size:10pt;color:#000000;font-weight:bold}
+TH {font-family:arial,helvetica,verdana;font-size:10pt;color:#000000;font-weight:extrabold;background:#c0c0c0;}
+form{display:inline;} 
+//-->
+</style>
+<script language="JavaScript1.1">
+
+function openSubWin(strURL, pixW, pixH,scrollbar)
+
+{
+	if (scrollbar=="") scrollbar="no";
+	strLocation = strURL;
+	strWHandle = "sdcSubWin"+pixW;
+	strProps = "resizable=yes,scrollbars="+scrollbar+",toolbar=no,location=no,directories=no,status=yes,menubar=no,width=" + pixW + ",height=" + pixH + ",top=10,left=10";
+	remote=window.open(strLocation, strWHandle, strProps);
+  	if (remote.opener == null)
+    		remote.opener = window;
+  	remote.opener.name = "myWindow";
+}
+</script>
+</head>
+<body bgcolor="#ffffff" marginwidth=0 marginheight=0 topmargin=0 leftmargin=0>
+&nbsp;<u><font face="Arial,helvetica,verdana" size=+1>Main Form</font></u><br>
+<table>
+<tr valign=top><td colspan=2>
+<img src="img1.gif">
+</td></tr>
+<tr valign=top><td colspan=2>
+The main form is divided up into four sections.
+<p>
+<font size=+1>Section 1: Ratings Options And Weight Classes</font><p>
+<table cellpadding=0 cellspacing=0><tr><td width=10%>
+<img src="img2.gif">
+</td><td>&nbsp;&nbsp;</td><td valign=top>
+Use this section to select which wrestlers you wish to list in your ratings and what ratings to display.<p>
+You can decide between Singles Ratings, Tag Team Ratings, Six Man Tag Team Ratings and Overall Ratings. The first three being self explanatory, Overall Ratings are compiled by adding up wrestlers' records from all three ratings to give the wrestler one overall rating.<p>
+Furthermore, you can limit the number of wrestlers displayed by selecting to display male wrestlers only, female wrestlers only or all wrestlers (default).<p>
+Click a weight class in the list to limit the ratings to wrestlers falling under a certain weight class (either through their real weight as stored in TNM's main database or through manually assigning them to a weight class - see further down). See below for instructions on how to add, edit or delete a weight class.<p>
+If you want to see wrestlers from a certain "Brand" only, click the brand name you want.<p>
+Finally, you can sort your ratings by different criteria. "Ranking" the the default TNM ranking system based on total points accumulated divided by number of matches. For a straight win-loss-draw ranking, use the "Wins" option. "Losses" sorts by most losses, "Draws" by most draws. "Name" gives you an alphabetical listing of your wrestlers with their individual win-loss-records.<p>
+Selecting "Streak" sorts your wrestlers by the number of matches in which they have gone undefeated uninterrupted. If somebody loses, his streak is reset. If somebody is in a draw of any sort, his streak is reset if this option is checked in TNM 7 SE's main Options screen under General Options.<p>
+Normally, the "Normal" radio button is selected meaning that the ratings are sorted from best to worst. If you select "Inverted" instead, the ratings will be sorted from worst to best, or - in the case of "Name" being selected as sorting criterion - from "Z" to "A".
+</td></tr></table>
+<br>
+<p>
+<font color=blue>Adding A Weight Class</font><br>
+To add a weight class, click the "Add Class" button. The following form will pop up:<p>
+<img src="img3.gif">
+<p>
+Enter the weight class' name into the "Weight Class Name" field. It is suggested that you call your weightclasses "XXX Division".<p>
+Enter the minimum and maximum cutoff weights onto the appropriate fields and click the "OK" button.<p>
+If you want to go back to the main screen without adding the weight class, click "Cancel".<p>
+Note: Weight classes may overlap. In that case, a wrestler belongs to more than one weight class, unless you specified the weight class the wrestler is supposed to belong to (see below).<p>
+
+<font color=blue>Editing A Weight Class</font><br>
+Select a weight class and then click the "Edit Class" button or double-click any weight class entry.<p>
+
+<font color=blue>Deleting A Weight Class</font><br>
+Select a weight class and then click the "Delete Class" button.<p>
+Note: When a weight class is deleted, all wrestlers belonging to this weight class will be reset to their default weight class. All titles belonging to this weight class will have their weight class removed.
+<p>
+<font color=blue>Adding A Brand</font><br>
+To add a brand, click the "1 Add Brand" button. The following form will pop up:<p>
+<img src="img3b.gif">
+<p>
+Enter the brand's name into the window, then click the "OK" button.<p>
+<font color=blue>Editing A Brand</font><br>
+Select a brand and then click the "2 Edit Brand" button.<p>
+<font color=blue>Deleting A Brand</font><br>
+Select a brand and then click the "3 Del. Brand" button.<p>
+Note: When a brand is deleted, all wrestlers belonging to this brand will be reset to the default brand. All titles belonging to this brand will have their brand removed.
+<p>
+<font size=+1>Section 2a: The Ratings Window</font><p>
+<img src="img4.gif">
+<p>
+The Ratings Window displays the ratings as selected in Section 1.<p>
+Uncheck "Show Record" to remove the wins, losses, draws and streak of the wrestlers/teams from the window, for instance in cases where the team names are too long for the field provided.<p>
+Click "Export Ratings" to open the current ratings selection in Notepad.<p>
+<font size=+1>Section 2b: Editing Weight Class Rules</font><p>
+<img src="img5.gif">
+<p>
+At times, a wrestler may compete outside his given weight class. For instance, Rey Misterio competed against heavyweights on Smackdown for several months. In such a case, you might want to list the wrestler in question in the division you're having him or her compete in.<p>
+To do this, click the "Edit Rules" button, which brings up the following form:<p>
+<img src="img6.gif">
+<p>
+Use this form to assign weight classes to wrestlers not normally competing in this weight class. You can also use this form to ensure that a specific wrestler is listed in one weight class only even if you are using overlapping weight classes in your circuit.<p>
+<p>
+First, select a weight class from the dropdown list. Once that is done, a list of wrestlers will appear in the listbox below:
+<p>
+<img src="img7.gif">
+<p>
+When selecting the "Cruiserweight Division", any wrestler clicked in the listbox will be assigned to the Cruiserweight Division. To unassign the wrestler, click his name again. The background behind his name will then go white.<p>
+You can freely use the dropdown box without leaving the dialog - TNM 7 SE will record the changes you make to each division.<p>
+If you're not satisfied with the changes you made, click "Cancel" to dismiss them all - not just for the currently selected weight class but all weight classes. Click "OK" to confirm the assignments you made and the ratings and top contenders lists will immediately reflect these changes.<p>
+
+<font size=+1>Section 2c: Editing Brand Mapping</font><p>
+<img src="img5b.gif">
+<p>
+In some circuits, you might want to separate your wrestlers into certain brands. 
+To do this, click the "Brand Mapping" button, which brings up the following form:<p>
+<img src="img6b.gif">
+<p>
+Use this form to assign certain wrestlers to certain brands. Wrestlers who are not assigned to a brand will only be listed when selecting "All".
+<p>
+First, select a brand from the dropdown list. Once that is done, a list of wrestlers will appear in the listbox below:
+<p>
+<img src="img7b.gif">
+<p>
+When selecting the "WWE RAW" brand, any wrestler clicked in the listbox will be assigned to the RAW brand. To unassign the wrestler, click his name again. The background behind his name will then go white.<p>
+You can freely use the dropdown box without leaving the dialog - TNM 7 SE will record the changes you make to each brand.<p>
+If you're not satisfied with the changes you made, click "Cancel" to dismiss them all - not just for the currently selected brand but all brands. Click "OK" to confirm the assignments you made and the ratings and top contenders lists will immediately reflect these changes.<p>
+
+
+<font size=+1>Section 3: The Titles Window</font><p>
+<img src="img8.gif">
+<p>
+On the lower third of the program window, you'll notice a list of all brands you have on the left, the titles from your circuit (separated by brands) in the middle and a field labeled "Top Contender List" on the right. This section concerns the list of titles in the middle, as selected by clicking a brand on the left.<p>
+Click any of the title names to bring up a list of its "Top Contenders". Refer to the section below to find out how the top contenders are computed and what you can do with them.<p>
+This is the place where you can assign a weight class and/or a gender to one of your circuit's titles.<p>
+<font color=blue>Assigning Specific Limitations To A Title</font><br>
+Double-click any title to bring up this form:<p>
+<img src="img9.gif">
+<p>
+Use this form to limit the wrestlers contending for this particular title to a certain weight class, a certain gender, both or - the default - none.
+Have the title be limited to wrestlers who fight a cetain style (see wrestler's record in the ControlCenter) or be specific to a certain brand.
+<p>
+After you have assigned either to the title, the computation of the title's top contenders list will be altered until you lift the restriction, delete the weight class or brand or the title.<p>
+<p>
+<font size=+1>Section 4: The Top Contenders Window</font><p>
+<img src="img10.gif">
+<p>
+When a title is selected on the lower left-hand side of the screen, TNM 7 SE computes a list of five top contenders for this title. These top contenders are ranked.<p>
+With very few exceptions, every wrestler from the ratings may only contend for one singles title. Every team from the ratings may only contend for one tag or six-man title.<p>
+A wrestler may contend for multiple titles if he is a champion or if this circuit has complex assignments of weight classes to titles and wrestlers to fixed weight classes.<p>
+<font color=blue>How Does TNM Decide Who Is A Top Contender For What?</font><br>
+Generally speaking, the ratings list as TNM computes it and you know it is only used as a rough basis for computing top contenders lists.<p>
+For every title, holders of up to two lower-ranked titles will be added to the list of top contenders - if they compete in the same weight class which the current title is assigned.<p>
+For every title, starting from the top title to the lowest-ranked title, its top contender list will be filled up to a capacity of five members by going through the ratings in that particular weight class from top to bottom. Higher-ranked champions are excluded.<p>
+When the list of top contenders has been established, TNM now enters into a very complex ranking program. Top contenders are not necessarily put in the order they have in the general TNM ratings.<p>
+Rather than following that route, TNM checks all cards in your circuit for matches of the top contenders against one another or against the champion they are being ranked for.<p>
+In the end, TNM comes up with a number for every wrestler which may be positive or negative. The more positive the number is, the higher-ranked the contender will be.<p>
+Wrestlers receive points for every win or draw and are deducted points for every loss:
+<ul>
+<li>Singles wins net up to four points for the winner:
+	<ul>
+	<li>four points for a finisher victory,
+	<li>three points for a pinfall or submission win or any other win not mentioned here (e.g. climbing out of the cage),
+	<li>two points for a disqualification or a countout
+	</ul>
+<li>Draws, double countouts, double disqualifications and no contests net one point for the participants.
+<li>Singles losses score the same amount of negative points.
+<li>A win/loss by a singles wrestler in a tag team match, six-man, eight-man and so on, an elimination match or a battle royal scores only if the win was over or the loss was against somebody else from the top contenders list or the champion. If the wrestler wasn't involved in the decision, no points are awarded for the win and no points are deducted for the loss. Historically, this is one of the two most popular ways to get over a new challenger.
+<li>Matches against the champion score double.
+</ul>	
+In case you're interested in how TNM arrives at the number the wrestler is ranked by, double-click his name to launch the appropriate logfile in Notepad which could look like this:
+<p>
+<img src="img11.gif">
+<p>
+<font size=+1>End Notes</font><p>
+If you assign a weight class to a title, this will only affect this plugin's behaviour. If you pit a heavyweight against a cruiserweight champion, TNM 7 SE will still acknowledge title changes if you don't specifically make the match a non-title match.<p>
+This plugin is best used for singles titles. Although it can also handle tag team titles and six man tag team titles, due to the nature of singles wrestlers vs tag team wrestlers, the top contenders list will be constructed with far more thought for a singles title than a tag team title.
+
+</td></tr>
+</table>
+</body>
+</html>
