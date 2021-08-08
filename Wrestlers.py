@@ -1,3 +1,6 @@
+import json
+
+
 db = "TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/WRESTLRS.DAT"
 wrestler_list = []
 wrestler_name = 1
@@ -95,14 +98,41 @@ with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/TEAMS.DAT") as tags:
             tag_team_count += 1
 print(tag_teams)
 
-with open("wrestler_db.txt", "w") as file:
-    for wrestler in wrestler_list:
-        file.write("%s\n" % wrestler)
 
-with open("circuit_roster_db.txt", "w") as file:
-    for circuit in circuit_roster:
-        file.write("%s\n" % circuit)
+class json_convert(dict):
+    def __str__(self):
+        return json.dumps(self)
 
-with open("tag_team_roster.txt", "w") as file:
-    for tag in tag_teams:
-        file.write("%s\n" % tag)
+
+with open("wrestler_db.json", "w") as file:
+    file.write('{"wrestlers": [')
+    for index, wrestler in enumerate(wrestler_list):
+        wrestler = json_convert(wrestler)
+        last_spot = len(wrestler_list) - 1
+        if index == last_spot:
+            file.write(f"{wrestler}\n")
+        else:
+            file.write(f"{wrestler},\n")
+    file.write("]}")
+
+with open("circuit_roster_db.json", "w") as file:
+    file.write('{"Circuits": [')
+    for index, circuit in enumerate(circuit_roster):
+        circuit = json_convert(circuit)
+        last_spot = len(circuit_roster) - 1
+        if index == last_spot:
+            file.write(f"{circuit}\n")
+        else:
+            file.write(f"{circuit}\n,")
+    file.write("]}")
+
+with open("tag_team_roster.json", "w") as file:
+    file.write('{"tag_teams": [')
+    for index, tag in enumerate(tag_teams):
+        tag = json_convert(tag)
+        last_spot = len(tag_teams) - 1
+        if index == last_spot:
+            file.write(f"{tag}\n")
+        else:
+            file.write(f"{tag}\n,")
+    file.write("]}")
