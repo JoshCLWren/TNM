@@ -25,24 +25,25 @@ def Show(tv_show, match_total=3):
     tag_match = 99
     handicap = 100
     print(f"Welcome to {tv_show}!")
+    wwe_shows = ["Raw", "Smackdown"]
+    if tv_show == "IMPACT":
+        teams = 11
+    else:
+        teams = 24
     for match in range(1, match_total):
         match_picker = roll()
-        if match < match_total:
-            if (
-                match_picker < twenty_four_seven_match
-                and tv_show is "Raw"
-                or "Smackdown"
-            ):
+        if match < match_total and "CMLL" not in tv_show:
+            if match_picker < twenty_four_seven_match and tv_show in wwe_shows:
                 print(
                     f"Match {match} will be a {combatent_picker()} 24/7 Title Defense"
                 )
-            else:
-                print(f"Match {match} will be a singles match")
+            elif match_picker < twenty_four_seven_match and tv_show not in wwe_shows:
+                print(f"Match {match} will be a male one on one singles match")
             if (
                 match_picker > twenty_four_seven_match
                 and match_picker <= vanilla_singles
             ):
-                print(f"Match {match} will be a singles match")
+                print(f"Match {match} will be a {gender_picker()} singles match")
             if match_picker > vanilla_singles and match_picker <= multi_man_tag:
                 print(f"Match {match} will be a {team_sizer()} tag match")
             if (
@@ -50,15 +51,36 @@ def Show(tv_show, match_total=3):
                 and match_picker < handicap
                 or match_picker == tag_match
             ):
-                print(f"Match {match} will be a{tag_match_maker()}")
+                print(f"Match {match} will be a{tag_match_maker(teams)}")
             if match_picker == handicap:
                 handicap_1 = roll(1, 5)
                 handicap_2 = roll(2, 5)
                 if handicap_1 == handicap_2:
                     handicap_2 = roll(2, 5)
                 print(
-                    f"Match {match + 1} will be a {handicap_1} on {handicap_2} handicap match"
+                    f"Match {match} will be a {handicap_1} on {handicap_2} handicap match"
                 )
+
+        if match < match_total and "CMLL" in tv_show:
+            teams = 13
+            trio = 70
+            tag = 85
+            singles_lightning = 100
+            if match_picker <= trio:
+                stables = 18
+                stables_list = []
+                for stable in range(1, stables):
+                    stables_list.append(stable)
+                stable_1 = random.choice(stables_list)
+                stables_list.remove(stable_1)
+                stable_2 = random.choice(stables_list)
+                stables_list.remove(stable_2)
+                teams = f"team {stable_1} and team {stable_2}"
+                print(f"Match {match} will be a 2/3 falls trios match between {teams}")
+            if match_picker > trio and match_picker <= tag:
+                print(f"Match {match} will be a 2/3 {tag_match_maker(teams)}")
+            if match_picker > tag and match_picker <= singles_lightning:
+                print(f"Match {match} will be a one fall lightning singles match!")
 
     elimination_match = 10
     number_1_contender_match = 75
@@ -157,13 +179,13 @@ def tag_match_maker(teams=24):
         team_2 = team_1 - 1
     if Show == "205":
         genders = "male"
-        return f" male tag-team contest between {team_1} and team {team_2}."
+        return f"male tag-team contest between {team_1} and team {team_2}."
     if genders == "intergender":
         tag = "n unprecedented intergender tag-team contest"
     if genders == "female":
-        tag = " female tag-team contest"
+        tag = "female tag-team contest"
     if genders == "male":
-        tag = f" male tag-team contest between team {team_1} and team {team_2}."
+        tag = f"male tag-team contest between team {team_1} and team {team_2}."
     return tag
 
 
@@ -185,6 +207,15 @@ def title(tv_show="Raw"):
         ]
     if tv_show == "205":
         titles = ["Cruiserweight Championship"]
+    if tv_show == "IMPACT":
+        titles = [
+            "IMPACT World Championship",
+            "IMPACT X Division Championship",
+            "IMPACT World Tag Team Championship",
+            "IMPACT Knockout Championship",
+        ]
+    if tv_show == "CMLL":
+        titles = ["CMLL World Tag Team Championship"]
     return random.choice(titles)
 
 
@@ -194,13 +225,19 @@ while cont == "yes" or cont == "y":
     print("1. Raw")
     print("2. Smackdown")
     print("3. 205")
+    print("4. IMPACT")
+    print("5. CMLL")
     tv_show = int(input())
     if tv_show == 1:
         tv_show = "Raw"
     elif tv_show == 2:
         tv_show = "Smackdown"
-    else:
+    elif tv_show == 3:
         tv_show = "205"
+    elif tv_show == 4:
+        tv_show = "IMPACT"
+    else:
+        tv_show = "CMLL"
     print(f"How many matches will {tv_show} have?")
     match_amount = int(input())
     Show(tv_show, match_amount)
