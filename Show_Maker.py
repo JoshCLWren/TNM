@@ -24,12 +24,19 @@ def Show(tv_show, match_total=3):
     multi_man_tag = 73
     tag_match = 99
     handicap = 100
+    if tv_show == "ROH":
+        vanilla_singles = 33
+        multi_man_tag = 66
+        tag_match = 100
+        handicap = 101
     print(f"Welcome to {tv_show}!")
     wwe_shows = ["Raw", "Smackdown"]
     if tv_show == "IMPACT":
         teams = 11
     else:
         teams = 24
+    if tv_show == "ROH":
+        teams = 13
     for match in range(1, match_total):
         match_picker = roll()
         if match < match_total and "CMLL" not in tv_show:
@@ -45,13 +52,13 @@ def Show(tv_show, match_total=3):
             ):
                 print(f"Match {match} will be a {gender_picker()} singles match")
             if match_picker > vanilla_singles and match_picker <= multi_man_tag:
-                print(f"Match {match} will be a {team_sizer()} tag match")
+                print(f"Match {match} will be a {team_sizer(tv_show)} tag match")
             if (
                 match_picker > multi_man_tag
                 and match_picker < handicap
                 or match_picker == tag_match
             ):
-                print(f"Match {match} will be a{tag_match_maker(teams)}")
+                print(f"Match {match} will be a {tag_match_maker(teams)}")
             if match_picker == handicap:
                 handicap_1 = roll(1, 5)
                 handicap_2 = roll(2, 5)
@@ -136,12 +143,30 @@ def gender_picker(male=70, female=99, intergender=100):
 
 
 def team_sizer(
-    three=500, four=994, five=995, six=996, seven=997, eight=998, nine=999, ten=1000
+    tv_show,
+    three=500,
+    four=994,
+    five=995,
+    six=996,
+    seven=997,
+    eight=998,
+    nine=999,
+    ten=1000,
 ):
     team_sizer_roll = roll()
     genders = gender_picker()
-    if Show == "205":
+    if tv_show == "205" or tv_show == "ROH":
         genders = "male"
+    if tv_show == "ROH":
+        stables = 4
+        stables_list = []
+        for stable in range(1, stables):
+            stables_list.append(stable)
+        stable_1 = random.choice(stables_list)
+        stables_list.remove(stable_1)
+        stable_2 = random.choice(stables_list)
+        stables_list.remove(stable_2)
+        teams = f"team {stable_1} and team {stable_2}"
     if genders == "male" or genders == "intergender":
         if team_sizer_roll < three:
             team_size = "6-Man"
@@ -159,6 +184,9 @@ def team_sizer(
             team_size = "18-man"
         else:
             team_size = "20-man"
+        if tv_show == "ROH":
+            team_size = f"6-Man between {teams}"
+            return team_size
     else:
         # I don't think there are enough women in each circuit to warrent more than 5 v 5
         if team_sizer_roll < three:
@@ -215,7 +243,15 @@ def title(tv_show="Raw"):
             "IMPACT Knockout Championship",
         ]
     if tv_show == "CMLL":
-        titles = ["CMLL World Tag Team Championship"]
+        titles = (["CMLL World Tag Team Championship"],)
+    if tv_show == "ROH":
+        titles = [
+            "ROH World Championship",
+            "ROH World Tag Team Championship",
+            "ROH World Tag Team Championship",
+            "ROH Six-Man Tag Team Championship",
+            "Women of Honor World Championship",
+        ]
     return random.choice(titles)
 
 
@@ -227,6 +263,7 @@ while cont == "yes" or cont == "y":
     print("3. 205")
     print("4. IMPACT")
     print("5. CMLL")
+    print("6. ROH")
     tv_show = int(input())
     if tv_show == 1:
         tv_show = "Raw"
@@ -236,8 +273,10 @@ while cont == "yes" or cont == "y":
         tv_show = "205"
     elif tv_show == 4:
         tv_show = "IMPACT"
-    else:
+    elif tv_show == 5:
         tv_show = "CMLL"
+    else:
+        tv_show = "ROH"
     print(f"How many matches will {tv_show} have?")
     match_amount = int(input())
     Show(tv_show, match_amount)
