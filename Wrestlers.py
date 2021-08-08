@@ -60,14 +60,14 @@ for circuit in circuits:
                 )
                 circuit_wrestler_name_line_number += 18
             if index == contract_status:
-                if int(line.strip()) > 1 and int(line.strip()) < 53:
+                if int(line.strip()) > 0 and int(line.strip()) < 53:
                     circuit_roster[circuit_counter]["roster"][
                         circuit_roster_count
                     ].append({"contract_length": int(line.strip())})
                 else:
                     circuit_roster[circuit_counter]["roster"][
                         circuit_roster_count
-                    ].append({"contract_length": "unsigned"})
+                    ].append({"contract_length": 0})
                 contract_status += 18
                 circuit_roster_count += 1
 
@@ -76,14 +76,28 @@ for circuit in circuits:
     circuit_counter += 1
     circuit_roster_count = 0
 
-print(circuit_roster)
+for index, circuit in enumerate(circuit_roster):
+    for wrestler in circuit_roster[index]["roster"]:
+        import pdb
+
+        pdb.set_trace()
+
+        if wrestler[1]["contract_length"] == 0:
+            circuit_roster[index]["roster"].remove(wrestler)
+            print(f"removed {wrestler}")
+            import pdb
+
+            pdb.set_trace()
+    # import pdb
+
+    # pdb.set_trace()
 tag_team_name = 3
 tag_team_count = 0
 tag_teams = []
 member_1 = 1
 member_2 = 2
 
-print("*" * 100)
+# print("*" * 100)
 with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/TEAMS.DAT") as tags:
     for index, line in enumerate(tags):
         if index == member_1:
@@ -96,7 +110,7 @@ with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/TEAMS.DAT") as tags:
             tag_teams[tag_team_count]["Tag Team Name"] = line.strip()
             tag_team_name += 10
             tag_team_count += 1
-print(tag_teams)
+# print(tag_teams)
 
 
 class json_convert(dict):
