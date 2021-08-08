@@ -1,4 +1,4 @@
-db = "WRESTLRS.DAT"
+db = "TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/WRESTLRS.DAT"
 wrestler_list = []
 wrestler_name = 1
 work_rate = 57
