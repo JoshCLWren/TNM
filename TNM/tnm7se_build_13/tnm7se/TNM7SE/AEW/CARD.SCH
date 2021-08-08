@@ -1,7 +1,13 @@
  0 
- 14 
+ 537 
  0
-Chris Jericho
- 37 
+Psycho Clown
+ 543 
  0
-Kenny Omega
+Dr. Wagner Jr.
+ 534 
+ 0
+Blue Demon Jr.
+ 545 
+ 0
+Taurus

@@ -1,2 +1,5 @@
-Great Muta and Tommy Dreamer defeated Johnny Impact and Michael Elgin when Dreamer pinned M. Elgin with the Dreamer DDT in 0:14:17. 
-Rating: ** 3/4
+Brian Cage defeated Jimmy Jacobs, Rohit Raju and Dave Crist:
+         x D. Crist beat J. Jacobs via the Square and Compass in 0:04:58
+         x D. Crist beat R. Raju via a diving senton in 0:13:08
+         x B. Cage beat D. Crist via the Drill Claw in 0:19:53
+Rating: ** 1/2

@@ -1,2 +1,2 @@
-Chris Jericho pinned Kenny Omega with the Judas Effect in 0:11:58. 
-Rating: *** 3/4
+Blue Demon Jr. and Taurus defeated Psycho Clown and Dr. Wagner Jr. when Taurus pinned Psycho Clown with the Tauro Driver in 0:10:21. 
+Rating: ** 1/2

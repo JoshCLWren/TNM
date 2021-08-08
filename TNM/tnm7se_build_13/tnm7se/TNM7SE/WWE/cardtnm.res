@@ -1,2 +1,2 @@
-Akira Tozawa defeated Cedric Alexander and Drew Gulak when A. Tozawa pinned C. Alexander with the Drop Zone in 0:13:39. 
-Rating: ****
+Lana defeated Charlotte Flair and Becky Lynch when Lana pinned Charlotte after a torture rack into a double knee backbreaker in 0:13:18. 
+Rating: ** 3/4
