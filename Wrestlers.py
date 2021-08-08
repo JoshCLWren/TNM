@@ -36,12 +36,6 @@ with open(db) as wrestlers:
             wrestler_list[wrestle_count]["gender"] = sex
             gender += 120
             wrestle_count += 1
-            # wrestler_list[wrestle_count]["circuits"] = []
-            # wrestler_list[wrestle_count]["tag_teams"] = []
-            # wrestler_list[wrestle_count]["stables"] = []
-
-    print(wrestler_list)
-    print(wrestler_total)
 
 circuits = ["AEW", "CMLL", "IMPACT", "MLW", "NJPW", "NXT", "ROH", "WWE"]
 circuit_roster = []
@@ -78,8 +72,6 @@ for circuit in circuits:
     contract_status = 4
     circuit_counter += 1
     circuit_roster_count = 0
-# print(circuit_roster)
-# bad_contract_values = [0, 100, 1, "1", "0"]
 
 print(circuit_roster)
 tag_team_name = 3
@@ -102,3 +94,15 @@ with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/TEAMS.DAT") as tags:
             tag_team_name += 10
             tag_team_count += 1
 print(tag_teams)
+
+with open("wrestler_db.txt", "w") as file:
+    for wrestler in wrestler_list:
+        file.write("%s\n" % wrestler)
+
+with open("circuit_roster_db.txt", "w") as file:
+    for circuit in circuit_roster:
+        file.write("%s\n" % circuit)
+
+with open("tag_team_roster.txt", "w") as file:
+    for tag in tag_teams:
+        file.write("%s\n" % tag)
