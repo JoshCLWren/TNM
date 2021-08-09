@@ -18,6 +18,9 @@ with open(db) as wrestlers:
             wrestler_total = line.strip()
         if index == wrestler_name:
             wrestler_list.append({"name": line.strip()})
+            wrestler_list[wrestle_count]["circuits"] = []
+            wrestler_list[wrestle_count]["tag teams"] = []
+            wrestler_list[wrestle_count]["stables"] = []
             wrestler_name += 120
         if index == work_rate:
             wrestler_list[wrestle_count]["work_rate"] = line.strip()
@@ -30,7 +33,6 @@ with open(db) as wrestlers:
             charisma += 120
         if index == weight:
             wrestler_list[wrestle_count]["weight"] = line.strip()
-            wrestler_list[wrestle_count]["circuits"] = []
             weight += 120
         if index == gender:
             if line.strip() == "1":
@@ -40,6 +42,7 @@ with open(db) as wrestlers:
             wrestler_list[wrestle_count]["gender"] = sex
             gender += 120
             wrestle_count += 1
+
 
 circuits = ["AEW", "CMLL", "IMPACT", "MLW", "NJPW", "NXT", "ROH", "WWE"]
 circuit_roster = []
@@ -54,7 +57,7 @@ filepaths = []
 
 for circuit in circuits:
     with open(f"TNM/tnm7se_build_13/tnm7se/TNM7SE/{circuit}/CIRCDB.DAT") as circuit_db:
-        circuit_roster.append({"circuit_name": circuit, "roster": []})
+        circuit_roster.append({"circuit_name": circuit, "roster": [], "tag teams": []})
         for index, line in enumerate(circuit_db):
             if index == circuit_wrestler_name_line_number:
                 circuit_roster[circuit_counter]["roster"].append(
@@ -106,12 +109,6 @@ tag_teams = []
 member_1 = 1
 member_2 = 2
 
-for wrestler in wrestler_list:
-    for circuit in circuit_roster:
-        for wrassler in circuit["roster"]:
-            if wrassler[0]["name"] == wrestler["name"]:
-                wrestler["circuits"].append(circuit["circuit_name"])
-
 
 with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/TEAMS.DAT") as tags:
     for index, line in enumerate(tags):
@@ -125,7 +122,30 @@ with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/TEAMS.DAT") as tags:
             tag_teams[tag_team_count]["Tag Team Name"] = line.strip()
             tag_team_name += 10
             tag_team_count += 1
-# print(tag_teams)
+
+for wrestler in wrestler_list:
+    for circuit in circuit_roster:
+        for wrassler in circuit["roster"]:
+            if wrassler[0]["name"] == wrestler["name"]:
+                wrestler["circuits"].append(circuit["circuit_name"])
+    for tag in tag_teams:
+        if tag["Member 1"] == wrestler["name"]:
+            if tag["Tag Team Name"] == "":
+                tag["Tag Team Name"] = f'{tag["Member 1"]}/{tag["Member 2"]}'
+
+            wrestler["tag teams"].append(
+                {
+                    "Tag Team Name": tag["Tag Team Name"],
+                    "Partner": tag["Member 2"],
+                }
+            )
+        if tag["Member 2"] == wrestler["name"]:
+            wrestler["tag teams"].append(
+                {
+                    "Tag Team Name": tag["Tag Team Name"],
+                    "Partner": tag["Member 1"],
+                }
+            )
 
 
 class json_convert(dict):
