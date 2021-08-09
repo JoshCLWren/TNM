@@ -30,6 +30,7 @@ with open(db) as wrestlers:
             charisma += 120
         if index == weight:
             wrestler_list[wrestle_count]["weight"] = line.strip()
+            wrestler_list[wrestle_count]["circuits"] = []
             weight += 120
         if index == gender:
             if line.strip() == "1":
@@ -105,7 +106,13 @@ tag_teams = []
 member_1 = 1
 member_2 = 2
 
-# print("*" * 100)
+for wrestler in wrestler_list:
+    for circuit in circuit_roster:
+        for wrassler in circuit["roster"]:
+            if wrassler[0]["name"] == wrestler["name"]:
+                wrestler["circuits"].append(circuit["circuit_name"])
+
+
 with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/TEAMS.DAT") as tags:
     for index, line in enumerate(tags):
         if index == member_1:
