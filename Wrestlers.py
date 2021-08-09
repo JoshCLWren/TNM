@@ -44,7 +44,8 @@ circuits = ["AEW", "CMLL", "IMPACT", "MLW", "NJPW", "NXT", "ROH", "WWE"]
 circuit_roster = []
 circuit_wrestler_name_line_number = 1
 circuit_counter = 0
-contract_status = 4
+contract_status = 3
+personality = 4
 circuit_roster_count = 0
 
 folderpath = r"TNM/tnm7se_build_13/tnm7se/TNM7SE/"
@@ -69,11 +70,30 @@ for circuit in circuits:
                         circuit_roster_count
                     ].append({"contract_length": 0})
                 contract_status += 18
+            if index == personality:
+                if int(line.strip()) == 0:
+                    circuit_roster[circuit_counter]["roster"][
+                        circuit_roster_count
+                    ].append({"personality": "face"})
+                if int(line.strip()) == 1:
+                    circuit_roster[circuit_counter]["roster"][
+                        circuit_roster_count
+                    ].append({"personality": "heel"})
+                if int(line.strip()) == 2:
+                    circuit_roster[circuit_counter]["roster"][
+                        circuit_roster_count
+                    ].append({"personality": "tweener"})
+                if int(line.strip()) == 3:
+                    circuit_roster[circuit_counter]["roster"][
+                        circuit_roster_count
+                    ].append({"personality": "jobber"})
+                personality += 18
                 circuit_roster_count += 1
 
     circuit_wrestler_name_line_number = 1
-    contract_status = 4
+    contract_status = 3
     circuit_counter += 1
+    personality = 4
     circuit_roster_count = 0
 
 for lst in circuit_roster:
