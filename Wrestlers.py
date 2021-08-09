@@ -76,21 +76,9 @@ for circuit in circuits:
     circuit_counter += 1
     circuit_roster_count = 0
 
-for index, circuit in enumerate(circuit_roster):
-    for wrestler in circuit_roster[index]["roster"]:
-        import pdb
+for lst in circuit_roster:
+    lst["roster"] = [x for x in lst["roster"] if x[1]["contract_length"] != 0]
 
-        pdb.set_trace()
-
-        if wrestler[1]["contract_length"] == 0:
-            circuit_roster[index]["roster"].remove(wrestler)
-            print(f"removed {wrestler}")
-            import pdb
-
-            pdb.set_trace()
-    # import pdb
-
-    # pdb.set_trace()
 tag_team_name = 3
 tag_team_count = 0
 tag_teams = []
