@@ -218,7 +218,9 @@ def tag_match_maker(teams=24):
     return tag
 
 
+# title isn't working right now...
 def title(tv_show="Raw"):
+    titles = ["Championship"]
     if tv_show == "Raw":
         titles = [
             "World Championship",
@@ -284,9 +286,6 @@ while cont == "yes" or cont == "y":
         tv_show = "CMLL"
     elif tv_show == 6:
         tv_show = "ROH"
-    else:
-        print("Farewell")
-        break
     print(f"How many matches will {tv_show} have?")
     match_amount = int(input())
     Show(tv_show, match_amount)

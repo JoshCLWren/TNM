@@ -1,4 +1,5 @@
 import json
+import re
 
 
 def db_builder():
@@ -13,6 +14,7 @@ def db_builder():
     # gender is 1 for female and blank for male
     wrestle_count = 0
     wrestler = {}
+    idcount = 1
     with open(db) as wrestlers:
         for index, line in enumerate(wrestlers):
             if index == 0:
@@ -22,6 +24,8 @@ def db_builder():
                 wrestler_list[wrestle_count]["circuits"] = []
                 wrestler_list[wrestle_count]["tag teams"] = []
                 wrestler_list[wrestle_count]["stables"] = []
+                wrestler_list[wrestle_count]["id"] = idcount
+                idcount += 1
                 wrestler_name += 120
             if index == work_rate:
                 wrestler_list[wrestle_count]["work_rate"] = line.strip()
@@ -171,6 +175,44 @@ def db_builder():
                 new_tags.append(tag)
         circuit["tag teams"] = new_tags
 
+    # adding wrestler index to wrestler object
+    with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/WRESTLRS.IDX") as wrestler_index:
+        index_list = []
+        for line in wrestler_index:
+            index_list.append({"index": line.strip()})
+    for id, wrestler in zip(index_list, wrestler_list):
+        wrestler["index"] = id["index"]
+
+    stable_count = -1
+    stable_list = []
+    stable_total = 0
+
+    with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/STABLES.DAT") as stables:
+        for index, line in enumerate(stables):
+            if index == 0:
+                stable_total = line.strip()
+            if (
+                line.strip().isalpha() == True
+                or " " in line.strip()
+                or "-" in line.strip()
+            ):
+                stable_count += 1
+                stable_list.append({"Stable Name": line.strip()})
+                stable_list[stable_count]["ids"] = []
+            if (
+                line.strip().isdigit() == True
+                and line.strip() != stable_total
+                and line.strip() != "0"
+            ):
+                stable_list[stable_count]["ids"].append(line.strip())
+
+    for stable in stable_list:
+        if len(stable["ids"]) > 1:
+            member_count = stable["ids"][0]
+            stable["member count"] = member_count
+        else:
+            stable["member count"] = 0
+
     class json_convert(dict):
         def __str__(self):
             return json.dumps(self)
@@ -206,4 +248,15 @@ def db_builder():
                 file.write(f"{tag}\n")
             else:
                 file.write(f"{tag}\n,")
+        file.write("]}")
+
+    with open("stables.json", "w") as file:
+        file.write('{"stables": [')
+        for index, stable in enumerate(stable_list):
+            stable = json_convert(stable)
+            last_spot = len(stable_list) - 1
+            if index == last_spot:
+                file.write(f"{stable}\n")
+            else:
+                file.write(f"{stable}\n,")
         file.write("]}")
