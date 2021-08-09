@@ -15,6 +15,7 @@
 # Super shows have multiple main events and gimmick matches
 # Royal Rumbles/war games/elimination chambers have wrestlers and are only on Super Shows
 import random
+import migrations
 
 
 def Show(tv_show, match_total=3):
@@ -257,6 +258,12 @@ def title(tv_show="Raw"):
 
 cont = "yes"
 while cont == "yes" or cont == "y":
+    print("Build/Update Databases?")
+    build_db = input()
+    if build_db == "y":
+        migrations.db_builder()
+    else:
+        "Please Proceed"
     print("Which show are you making?")
     print("1. Raw")
     print("2. Smackdown")
@@ -264,7 +271,7 @@ while cont == "yes" or cont == "y":
     print("4. IMPACT")
     print("5. CMLL")
     print("6. ROH")
-    tv_show = int(input())
+    tv_show = input()
     if tv_show == 1:
         tv_show = "Raw"
     elif tv_show == 2:
@@ -275,8 +282,11 @@ while cont == "yes" or cont == "y":
         tv_show = "IMPACT"
     elif tv_show == 5:
         tv_show = "CMLL"
-    else:
+    elif tv_show == 6:
         tv_show = "ROH"
+    else:
+        print("Farewell")
+        break
     print(f"How many matches will {tv_show} have?")
     match_amount = int(input())
     Show(tv_show, match_amount)
