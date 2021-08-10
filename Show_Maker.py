@@ -99,7 +99,7 @@ def Show(tv_show, match_total=3):
     if main_event_roll == battle_royal:
         main_event = "20 Man Battle Royal"
     if main_event_roll <= elimination_match:
-        main_event = f"{team_sizer()} elimination match"
+        main_event = f"{team_sizer(tv_show)} elimination match"
     if (
         main_event_roll > elimination_match
         and main_event_roll < title_defense
@@ -273,18 +273,19 @@ while cont == "yes" or cont == "y":
     print("4. IMPACT")
     print("5. CMLL")
     print("6. ROH")
-    tv_show = input()
-    if tv_show == 1:
+    tv_input = int(input())
+
+    if tv_input == 1:
         tv_show = "Raw"
-    elif tv_show == 2:
-        tv_show = "Smackdown"
-    elif tv_show == 3:
+    elif tv_input == 2:
+        tv_input = "Smackdown"
+    elif tv_input == 3:
         tv_show = "205"
-    elif tv_show == 4:
+    elif tv_input == 4:
         tv_show = "IMPACT"
-    elif tv_show == 5:
+    elif tv_input == 5:
         tv_show = "CMLL"
-    elif tv_show == 6:
+    elif tv_input == 6:
         tv_show = "ROH"
     print(f"How many matches will {tv_show} have?")
     match_amount = int(input())
