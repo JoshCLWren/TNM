@@ -14,8 +14,11 @@
 # Feuds are a wrestler/tag-team/stable vs wrestler/tag-team/stable
 # Super shows have multiple main events and gimmick matches
 # Royal Rumbles/war games/elimination chambers have wrestlers and are only on Super Shows
+from circuit_assets import circuit_assets
 import random
 import migrations
+import circuit_assets
+import time
 
 
 def Show(tv_show, match_total=3):
@@ -264,6 +267,8 @@ while cont == "yes" or cont == "y":
     build_db = input()
     if build_db == "y":
         migrations.db_builder()
+        time.sleep(5)
+        circuit_assets.circuit_assets()
     else:
         "Please Proceed"
     print("Which show are you making?")

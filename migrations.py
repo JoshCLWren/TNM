@@ -213,6 +213,26 @@ def db_builder():
         else:
             stable["member count"] = 0
 
+    # adding stables to wrestlers
+    for stable in stable_list:
+        stable_member_ids = []
+        for index, member in enumerate(stable["ids"]):
+            # first index is the member count and we skip it
+            if index == 0:
+                pass
+            else:
+                stable_member_ids.append(int(member))
+        stable_members = []
+        for wrestler in wrestler_list:
+            if wrestler["id"] in stable_member_ids:
+                stable_members.append(wrestler["name"])
+                wrestler["stables"].append(
+                    {
+                        "Stable Name": stable["Stable Name"],
+                        "Member Ids": stable_member_ids,
+                    }
+                )
+
     class json_convert(dict):
         def __str__(self):
             return json.dumps(self)
