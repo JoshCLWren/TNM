@@ -19,6 +19,7 @@ import random
 import migrations
 import circuit_assets
 import time
+import json
 
 
 def Show(tv_show, match_total=3):
@@ -261,6 +262,37 @@ def title(tv_show="Raw"):
     return random.choice(titles)
 
 
+def roster_builder(tv_show):
+    wwe_products = ["Raw", "Smackdown", "205"]
+
+    if tv_show == "ROH":
+        tv_show = "CMLL"
+    if tv_show in wwe_products:
+        circuit = "WWE"
+    else:
+        circuit = tv_show.upper()
+
+    circuit_json = open("circuit_roster_db.json")
+    circuit_json = json.load(circuit_json)
+
+    # todo: add filter to only add stables with more than one member
+
+    # todo: add injured wrestlers and eligible wrestlers. stored in card.inj of each circuit
+    for promotion in circuit_json["Circuits"]:
+        if promotion["circuit_name"] == circuit:
+            circuit_roster = {
+                "Hired Wrestlers": promotion["Wrestler List"],
+                "Tag Teams": promotion["tag teams"],
+                "Hired Tag List": promotion["Hired Tag List"],
+                "Stables": promotion["Stables"],
+                "Stable List": promotion["Stable List"],
+            }
+    import pdb
+
+    pdb.set_trace()
+    return circuit_roster
+
+
 cont = "yes"
 while cont == "yes" or cont == "y":
     print("Build/Update Databases?")
@@ -292,6 +324,8 @@ while cont == "yes" or cont == "y":
         tv_show = "CMLL"
     elif tv_input == 6:
         tv_show = "ROH"
+    roster_builder(tv_show)
+
     print(f"How many matches will {tv_show} have?")
     match_amount = int(input())
     Show(tv_show, match_amount)
