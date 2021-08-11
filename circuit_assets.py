@@ -6,7 +6,9 @@
 # may need a relational database for this.
 
 import json
+import logging
 
+logging.warning("circuit_assets.py")
 data = open("wrestler_db.json")
 
 data = json.load(data)
@@ -15,15 +17,21 @@ data = json.load(data)
 def circuit_assets():
     circuit_json = open("circuit_roster_db.json")
     circuit_json = json.load(circuit_json)
+    logging.warning("Loading circuit_roster_db.json")
     data = open("wrestler_db.json")
     data = json.load(data)
-
+    logging.warning("Loading wrestler_bd.json")
     for circuit in circuit_json["Circuits"]:
+        logging.warning(f"Parsing {circuit['circuit_name']}")
         hired_wrestler_ids = []
         hired_wrestlers = []
         hired_wrestlers_names = []
+
         for wrestler in data["wrestlers"]:
             if circuit["circuit_name"] in wrestler["circuits"]:
+                logging.warning(
+                    f"Mapping {wrestler['name']} to {circuit['circuit_name']}"
+                )
                 hired_wrestlers.append(wrestler)
                 hired_wrestlers_names.append(wrestler["name"])
                 hired_wrestler_ids.append(wrestler["id"])
@@ -32,7 +40,9 @@ def circuit_assets():
 
         hired_tags_names = []
         hired_tag_teams = []
+        logging.warning("Finding tag teams for hired wrestlers")
         for wrestler in hired_wrestlers:
+
             for tag in wrestler["tag teams"]:
                 if (
                     tag["Partner"] in hired_wrestlers_names
@@ -46,6 +56,9 @@ def circuit_assets():
                             "Member 2": tag["Partner"],
                         }
                     )
+                    logging.warning(
+                        f"Adding {tag['Tag Team Name']} to {circuit['circuit_name']}"
+                    )
 
         circuit["Hired Tag List"] = hired_tags_names
 
@@ -53,6 +66,9 @@ def circuit_assets():
         hired_stables = []
         stables = open("stables.json")
         stables = json.load(stables)
+        logging.warning(
+            f"Mapping stables to hired wrestlers in {circuit['circuit_name']}"
+        )
         for stable in stables["stables"]:
             for index, id in enumerate(stable["ids"]):
                 if index == 0:
@@ -63,6 +79,7 @@ def circuit_assets():
                             id = int(id) - 1
                             hired_stable_names.append(stable["Stable Name"])
                             hired_stables.append(stable)
+                            logging.warning(f"Adding {stable['Stable Name']}")
         hired_stable_copy = []
         # remove unusable first index of stable ids
         for index, stable in enumerate(hired_stables):
@@ -79,15 +96,21 @@ def circuit_assets():
                     "Member Ids": id_list,
                 }
             )
+            logging.warning(f"Removing duplicate {stable['Stable Name']}")
+
         hired_stables = hired_stable_copy
 
         for stable in hired_stables:
+            logging.warning(f"Mapping {stable['Stable Name']} to hired wrstlers")
             member_names = []
             for id in stable["Member Ids"]:
                 # The id corresponds to normal list indexing but is one greater
                 wrestler_id = int(id) - 1
                 if data["wrestlers"][wrestler_id]["name"] in hired_wrestlers_names:
                     member_names.append(data["wrestlers"][wrestler_id]["name"])
+                    logging.warning(
+                        f"Adding {data['wrestlers'][wrestler_id]['name']} to {stable['Stable Name']}"
+                    )
             stable["Members"] = member_names
             stable["Hired Members"] = len(stable["Members"])
 
@@ -98,8 +121,12 @@ def circuit_assets():
 
         injured_list = []
         injured_wrestler_count = 0
+        logging.warning("Finding Injured Wrestlers")
         try:
             with open(f"{filepath}{circuit['circuit_name']}/CARD.INJ") as injuries:
+                logging.warning(
+                    f" Processing {filepath}{circuit['circuit_name']}/CARD.INJ"
+                )
                 for index, line in enumerate(injuries):
                     if index % 2 == 0:
                         wrestler_name_or_id = line.strip()
@@ -112,19 +139,21 @@ def circuit_assets():
                         if isinstance(wrestler_name_or_id, int) == False:
                             injured_wrestler = wrestler_name_or_id
                         injured_list.append({"name": injured_wrestler})
+                        logging.warning(
+                            f"Adding {injured_wrestler} to the injured wrestler list"
+                        )
 
                     else:
                         injured_list[injured_wrestler_count]["injury length"] = int(
                             line.strip()
                         )
                         injured_wrestler_count += 1
-                    print(circuit["circuit_name"])
-                    print(injured_list)
             circuit["injury names"] = []
             for wrestler in injured_list:
                 circuit["injury names"].append(wrestler["name"])
             circuit["injured list"] = injured_list
         except FileNotFoundError:
+            logging.warning(f"File Not Found for {circuit['circuit_name']}")
             pass
 
     circuit_roster = circuit_json["Circuits"]
@@ -133,6 +162,7 @@ def circuit_assets():
         def __str__(self):
             return json.dumps(self)
 
+    logging.warning("Updating circuit_roster_db.json with all circuit specific data")
     with open("circuit_roster_db.json", "w") as file:
         file.write('{"Circuits": [')
         for index, circuit in enumerate(circuit_roster):
@@ -143,3 +173,4 @@ def circuit_assets():
             else:
                 file.write(f"{circuit}\n,")
         file.write("]}")
+    logging.warning("Done...")

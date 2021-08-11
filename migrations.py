@@ -1,5 +1,7 @@
 import json
-import re
+import logging
+
+logging.warning("migrations.py")
 
 
 def db_builder():
@@ -15,12 +17,14 @@ def db_builder():
     wrestle_count = 0
     wrestler = {}
     idcount = 1
+    logging.warning("Opening {db}")
     with open(db) as wrestlers:
         for index, line in enumerate(wrestlers):
             if index == 0:
                 wrestler_total = line.strip()
             if index == wrestler_name:
                 wrestler_list.append({"name": line.strip()})
+                logging.warning(f"adding {line.strip()}")
                 wrestler_list[wrestle_count]["circuits"] = []
                 wrestler_list[wrestle_count]["tag teams"] = []
                 wrestler_list[wrestle_count]["stables"] = []
@@ -46,6 +50,7 @@ def db_builder():
                     sex = "male"
                 wrestler_list[wrestle_count]["gender"] = sex
                 gender += 120
+
                 wrestle_count += 1
 
     circuits = ["AEW", "CMLL", "IMPACT", "MLW", "NJPW", "NXT", "ROH", "WWE"]
@@ -58,11 +63,12 @@ def db_builder():
 
     folderpath = r"TNM/tnm7se_build_13/tnm7se/TNM7SE/"
     filepaths = []
-
+    logging.warning("Building Circuit Databases")
     for circuit in circuits:
         with open(
             f"TNM/tnm7se_build_13/tnm7se/TNM7SE/{circuit}/CIRCDB.DAT"
         ) as circuit_db:
+            logging.warning(f"parsing {circuit}")
             circuit_roster.append(
                 {"circuit_name": circuit, "roster": [], "tag teams": []}
             )
@@ -71,8 +77,10 @@ def db_builder():
                     circuit_roster[circuit_counter]["roster"].append(
                         [{"name": line.strip()}]
                     )
+                    logging.warning(f"adding {line.strip()} to {circuit}")
                     circuit_wrestler_name_line_number += 18
                 if index == contract_status:
+                    logging.warning("Adding Contract Status")
                     if int(line.strip()) > 0 and int(line.strip()) < 53:
                         circuit_roster[circuit_counter]["roster"][
                             circuit_roster_count
@@ -83,6 +91,7 @@ def db_builder():
                         ].append({"contract_length": 0})
                     contract_status += 18
                 if index == personality:
+                    logging.warning("Adding Personality")
                     if int(line.strip()) == 0:
                         circuit_roster[circuit_counter]["roster"][
                             circuit_roster_count
@@ -99,6 +108,7 @@ def db_builder():
                         circuit_roster[circuit_counter]["roster"][
                             circuit_roster_count
                         ].append({"personality": "jobber"})
+                        logging.warning("Jobber Detected")
                     personality += 18
                     circuit_roster_count += 1
 
@@ -117,6 +127,7 @@ def db_builder():
     member_1 = 1
     member_2 = 2
 
+    logging.warning("Processing TEAMS.DAT")
     with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/TEAMS.DAT") as tags:
         for index, line in enumerate(tags):
             if index == member_1:
@@ -127,9 +138,11 @@ def db_builder():
                 member_2 += 10
             if index == tag_team_name:
                 tag_teams[tag_team_count]["Tag Team Name"] = line.strip()
+                logging.warning(f"Adding {line.strip()}")
                 tag_team_name += 10
                 tag_team_count += 1
 
+    logging.warning(f"Adding tag teams to circuit")
     for wrestler in wrestler_list:
         for circuit in circuit_roster:
             for wrassler in circuit["roster"]:
@@ -168,6 +181,7 @@ def db_builder():
                             )
 
     # remove duplicate tag teams from circuits
+    logging.warning("Removing Tag Duplicates")
     for circuit in circuit_roster:
         new_tags = []
         for tag in circuit["tag teams"]:
@@ -176,6 +190,7 @@ def db_builder():
         circuit["tag teams"] = new_tags
 
     # adding wrestler index to wrestler object
+    logging.warning("Adding TNM index values to each wrestler")
     with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/WRESTLRS.IDX") as wrestler_index:
         index_list = []
         for line in wrestler_index:
@@ -187,6 +202,7 @@ def db_builder():
     stable_list = []
     stable_total = 0
 
+    logging.warning(f"Adding Stables to {circuit['circuit_name']}")
     with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/STABLES.DAT") as stables:
         for index, line in enumerate(stables):
             if index == 0:
@@ -198,6 +214,7 @@ def db_builder():
             ):
                 stable_count += 1
                 stable_list.append({"Stable Name": line.strip()})
+                logging.warning(f"adding {line.strip()}")
                 stable_list[stable_count]["ids"] = []
             if (
                 line.strip().isdigit() == True
@@ -214,6 +231,7 @@ def db_builder():
             stable["member count"] = 0
 
     # adding stables to wrestlers
+    logging.warning("Adding Wrestlers to Stables")
     for stable in stable_list:
         stable_member_ids = []
         for index, member in enumerate(stable["ids"]):
@@ -237,6 +255,7 @@ def db_builder():
         def __str__(self):
             return json.dumps(self)
 
+    logging.warning("Creating wrestler_db.json")
     with open("wrestler_db.json", "w") as file:
         file.write('{"wrestlers": [')
         for index, wrestler in enumerate(wrestler_list):
@@ -248,6 +267,7 @@ def db_builder():
                 file.write(f"{wrestler},\n")
         file.write("]}")
 
+    logging.warning("Creating circuit_roster_db.json")
     with open("circuit_roster_db.json", "w") as file:
         file.write('{"Circuits": [')
         for index, circuit in enumerate(circuit_roster):
@@ -259,6 +279,7 @@ def db_builder():
                 file.write(f"{circuit}\n,")
         file.write("]}")
 
+    logging.warning("Creating wrestler_db.json")
     with open("tag_team_roster.json", "w") as file:
         file.write('{"tag_teams": [')
         for index, tag in enumerate(tag_teams):
@@ -269,7 +290,7 @@ def db_builder():
             else:
                 file.write(f"{tag}\n,")
         file.write("]}")
-
+    logging.warning("Creating stables.json")
     with open("stables.json", "w") as file:
         file.write('{"stables": [')
         for index, stable in enumerate(stable_list):

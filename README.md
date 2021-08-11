@@ -29,3 +29,7 @@ Need to make a wrestlers table, a tag team table, and a stable table
 Can't seem to find out how to use .dat to determine what circuit they are in so may need to ingest that manually with roster files.
 
 Need to also have a circuit table so that
+
+looks like brands are stored in circuit/brands.dat
+championships are stored in circuit/details.ttl with brand info as well
+circuit/wwcl.dat looks liek breakdown of who is in each brand

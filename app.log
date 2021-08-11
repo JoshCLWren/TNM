@@ -1,0 +1,111 @@
+Building Roster for 205 with input 3
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Matches = 3
+Building Show
+92 was rolled with 1 and 100 indexes
+Match Roll for index 1 is 92
+Tag Match Maker
+33 was rolled with 1 and 100 indexes
+Gender Picker is below
+male
+15 was rolled with 1 and 24 indexes
+12 was rolled with 1 and 24 indexes
+Tag Match
+23 was rolled with 1 and 100 indexes
+Match Roll for index 2 is 23
+98 was rolled with 1 and 100 indexes
+Gender Picker is below
+female
+Singles Match gendered
+85 was rolled with 1 and 100 indexes
+Main even roll = 85
+12 was rolled with 1 and 100 indexes
+Combatent Picker
+Triangle Match
+Title is Cruiserweight Championship
+#1 contender match
+42 was rolled with 1 and 100 indexes
+Combatent Picker
+Triangle Match
+Title is Cruiserweight Championship
+Title match
+Building Roster for 205 with input 7
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Matches = 9
+Building Show
+34 was rolled with 1 and 100 indexes
+Match Roll for index 1 is 34
+32 was rolled with 1 and 100 indexes
+Gender Picker is below
+male
+Singles Match gendered
+60 was rolled with 1 and 100 indexes
+Match Roll for index 2 is 60
+Team Sizer
+2 was rolled with 1 and 100 indexes
+7 was rolled with 1 and 100 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+44 was rolled with 1 and 100 indexes
+Match Roll for index 3 is 44
+91 was rolled with 1 and 100 indexes
+Gender Picker is below
+female
+Singles Match gendered
+57 was rolled with 1 and 100 indexes
+Match Roll for index 4 is 57
+Team Sizer
+67 was rolled with 1 and 100 indexes
+57 was rolled with 1 and 100 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+9 was rolled with 1 and 100 indexes
+Match Roll for index 5 is 9
+Singles Match non gendered
+12 was rolled with 1 and 100 indexes
+Match Roll for index 6 is 12
+Singles Match non gendered
+51 was rolled with 1 and 100 indexes
+Match Roll for index 7 is 51
+Team Sizer
+17 was rolled with 1 and 100 indexes
+27 was rolled with 1 and 100 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+25 was rolled with 1 and 100 indexes
+Match Roll for index 8 is 25
+44 was rolled with 1 and 100 indexes
+Gender Picker is below
+male
+Singles Match gendered
+44 was rolled with 1 and 100 indexes
+Main even roll = 44
+29 was rolled with 1 and 100 indexes
+Combatent Picker
+Triangle Match
+Title is Cruiserweight Championship
+#1 contender match
