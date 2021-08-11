@@ -8,6 +8,14 @@
 import json
 import logging
 
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
+
+logging.basicConfig(
+    filename="asset.log",
+    filemode="w",
+    format="%(message)s",
+)
 logging.warning("circuit_assets.py")
 data = open("wrestler_db.json")
 
