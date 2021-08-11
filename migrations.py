@@ -264,48 +264,17 @@ def db_builder():
             return json.dumps(self)
 
     logging.warning("Creating wrestler_db.json")
-    with open("wrestler_db.json", "w") as file:
-        file.write('{"wrestlers": [')
-        for index, wrestler in enumerate(wrestler_list):
-            wrestler = json_convert(wrestler)
-            last_spot = len(wrestler_list) - 1
-            if index == last_spot:
-                file.write(f"{wrestler}\n")
-            else:
-                file.write(f"{wrestler},\n")
-        file.write("]}")
+    with open("wrestler_db.json", "w") as fp:
+        json.dump({"wrestlers": wrestler_list}, fp, indent=2)
 
     logging.warning("Creating circuit_roster_db.json")
-    with open("circuit_roster_db.json", "w") as file:
-        file.write('{"Circuits": [')
-        for index, circuit in enumerate(circuit_roster):
-            circuit = json_convert(circuit)
-            last_spot = len(circuit_roster) - 1
-            if index == last_spot:
-                file.write(f"{circuit}\n")
-            else:
-                file.write(f"{circuit}\n,")
-        file.write("]}")
+    with open("circuit_roster_db.json", "w") as fp:
+        json.dump({"Circuits": circuit_roster}, fp, indent=2)
 
-    logging.warning("Creating wrestler_db.json")
-    with open("tag_team_roster.json", "w") as file:
-        file.write('{"tag_teams": [')
-        for index, tag in enumerate(tag_teams):
-            tag = json_convert(tag)
-            last_spot = len(tag_teams) - 1
-            if index == last_spot:
-                file.write(f"{tag}\n")
-            else:
-                file.write(f"{tag}\n,")
-        file.write("]}")
+    logging.warning("Creating tag_team_roster.json")
+    with open("tag_team_roster.json", "w") as fp:
+        json.dump({"tag_teams": tag_teams}, fp, indent=2)
+
     logging.warning("Creating stables.json")
-    with open("stables.json", "w") as file:
-        file.write('{"stables": [')
-        for index, stable in enumerate(stable_list):
-            stable = json_convert(stable)
-            last_spot = len(stable_list) - 1
-            if index == last_spot:
-                file.write(f"{stable}\n")
-            else:
-                file.write(f"{stable}\n,")
-        file.write("]}")
+    with open("stables.json", "w") as fp:
+        json.dump({"stables": stable_list}, fp, indent=2)

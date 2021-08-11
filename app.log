@@ -13209,7 +13209,7 @@ adding MAD
 Adding Wrestlers to Stables
 Creating wrestler_db.json
 Creating circuit_roster_db.json
-Creating wrestler_db.json
+Creating tag_team_roster.json
 Creating stables.json
 Sleeping 5 seconds
 Building Circuit Assets
@@ -14133,7 +14133,7 @@ Finding Injured Wrestlers
  Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/WWE/CARD.INJ
 Updating circuit_roster_db.json with all circuit specific data
 Done...
-Building Roster for ROH with input 6
+Building Roster for Raw with input 1
 Building Roster
 Opening circuit_roster_db.json
 processing AEW
@@ -14144,66 +14144,3 @@ processing NJPW
 processing NXT
 processing ROH
 processing WWE
-Matches = 9
-Building Show
-19 was rolled with 1 and 100 indexes
-Match Roll for index 1 is 19
-18 was rolled with 1 and 100 indexes
-Gender Picker is below
-male
-Singles Match gendered
-63 was rolled with 1 and 100 indexes
-Match Roll for index 2 is 63
-Team Sizer
-23 was rolled with 1 and 100 indexes
-55 was rolled with 1 and 100 indexes
-Gender Picker is below
-male
-team 1 and team 3
-X man/woman Tag Match
-90 was rolled with 1 and 100 indexes
-Match Roll for index 3 is 90
-Tag Match Maker
-27 was rolled with 1 and 100 indexes
-Gender Picker is below
-male
-1 was rolled with 1 and 13 indexes
-6 was rolled with 1 and 13 indexes
-Tag Match
-60 was rolled with 1 and 100 indexes
-Match Roll for index 4 is 60
-Team Sizer
-47 was rolled with 1 and 100 indexes
-40 was rolled with 1 and 100 indexes
-Gender Picker is below
-male
-team 3 and team 1
-X man/woman Tag Match
-19 was rolled with 1 and 100 indexes
-Match Roll for index 5 is 19
-87 was rolled with 1 and 100 indexes
-Gender Picker is below
-female
-Singles Match gendered
-95 was rolled with 1 and 100 indexes
-Match Roll for index 6 is 95
-Tag Match Maker
-76 was rolled with 1 and 100 indexes
-Gender Picker is below
-female
-12 was rolled with 1 and 13 indexes
-4 was rolled with 1 and 13 indexes
-Tag Match
-3 was rolled with 1 and 100 indexes
-Match Roll for index 7 is 3
-Singles Match non gendered
-1 was rolled with 1 and 100 indexes
-Match Roll for index 8 is 1
-Singles Match non gendered
-46 was rolled with 1 and 100 indexes
-Main even roll = 46
-19 was rolled with 1 and 100 indexes
-Combatent Picker
-Triangle Match
-Title is ROH Six-Man Tag Team Championship
-#1 contender match

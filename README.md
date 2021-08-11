@@ -30,6 +30,7 @@ Can't seem to find out how to use .dat to determine what circuit they are in so 
 
 Need to also have a circuit table so that
 
+Notes for adding brands/titles to circuits
 looks like brands are stored in circuit/brands.dat
 championships are stored in circuit/details.ttl with brand info as well
 circuit/wwcl.dat looks liek breakdown of who is in each brand

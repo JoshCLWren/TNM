@@ -316,6 +316,7 @@ def roster_builder(tv_show):
     # todo: add filter to only add stables with more than one member
 
     # todo: add injured wrestlers and eligible wrestlers. stored in card.inj of each circuit
+
     for promotion in circuit_json["Circuits"]:
         logging.warning(f'processing {promotion["circuit_name"]}')
         if promotion["circuit_name"] == circuit:
@@ -325,7 +326,14 @@ def roster_builder(tv_show):
                 "Hired Tag List": promotion["Hired Tag List"],
                 "Stables": promotion["Stables"],
                 "Stable List": promotion["Stable List"],
+                "injured names": promotion["injury names"],
+                "Eligible Roster": [],
+                "Busy Wrestler": [],
             }
+            for wrestler in promotion["Wrestler List"]:
+                if wrestler not in promotion["injury names"]:
+                    circuit_roster["Eligible Roster"].append(wrestler)
+
     return circuit_roster
 
 

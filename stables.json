@@ -1,42 +1,453 @@
-{"stables": [{"Stable Name": "SCU", "ids": ["3", "15", "27", "67"], "member count": "3"}
-,{"Stable Name": "STRONGHEARTS", "ids": ["3", "81", "87", "88"], "member count": "3"}
-,{"Stable Name": "Los Hijos del Infierno", "ids": ["3", "310", "314", "315"], "member count": "3"}
-,{"Stable Name": "Contra Unit", "ids": ["3", "330", "351", "354"], "member count": "3"}
-,{"Stable Name": "The Desi Hit Squad", "ids": ["3", "375", "378", "381", "22"], "member count": "3"}
-,{"Stable Name": "The Forgotten Sons", "ids": ["3", "268", "274", "278"], "member count": "3"}
-,{"Stable Name": "The Undisputed Era", "ids": ["4", "238", "241", "250", "254"], "member count": "4"}
-,{"Stable Name": "British Strong Style", "ids": ["3", "285", "289", "290"], "member count": "3"}
-,{"Stable Name": "Bullet Club", "ids": ["23", "238", "1", "104", "450", "452", "17", "486", "488", "132", "455", "460", "461", "143", "37", "149", "297", "48", "53", "494", "472", "447", "448", "485"], "member count": "23"}
-,{"Stable Name": "Chaos", "ids": ["10", "455", "457", "463", "467", "470", "479", "480", "481", "482", "483"], "member count": "10"}
-,{"Stable Name": "Suzuki-gun", "ids": ["9", "329", "454", "40", "466", "167", "471", "473", "484", "298"], "member count": "9"}
-,{"Stable Name": "Los Ingobernables de Japon", "ids": ["5", "451", "442", "456", "443", "469"], "member count": "5"}
-,{"Stable Name": "Villian Enterprises", "ids": ["4", "401", "406", "297", "418"], "member count": "4"}
-,{"Stable Name": "The Rascalz", "ids": ["3", "361", "386", "388"], "member count": "3"}
-,{"Stable Name": "oVe", "ids": ["3", "360", "365", "374"], "member count": "3"}
-,{"Stable Name": "Los Guerreros Laguna", "ids": ["5", "311", "312", "319", "523", "303"], "member count": "5"}
-,{"Stable Name": "La Peste Negra", "ids": ["5", "307", "507", "318", "301", "514"], "member count": "5"}
-,{"Stable Name": "La Ola Negra", "ids": ["4", "501", "503", "506", "521"], "member count": "4"}
-,{"Stable Name": "Los Dinamitas", "ids": ["4", "522", "528", "529", "325"], "member count": "4"}
-,{"Stable Name": "El Cl4n", "ids": ["3", "524", "532", "531"], "member count": "3"}
-,{"Stable Name": "Lifeblood", "ids": ["5", "399", "453", "437", "415", "426"], "member count": "5"}
-,{"Stable Name": "Shane Taylor Promotions", "ids": ["3", "438", "417", "423"], "member count": "3"}
-,{"Stable Name": "Shinobi Shadow Squad", "ids": ["2", "405", "436"], "member count": "2"}
-,{"Stable Name": "Kingdom", "ids": ["3", "416", "425", "427"], "member count": "3"}
-,{"Stable Name": "Taguchi Japan", "ids": ["3", "458", "437", "468"], "member count": "3"}
-,{"Stable Name": "El Sky Team", "ids": ["3", "323", "321", "305"], "member count": "3"}
-,{"Stable Name": "La Dinastia Casas", "ids": ["3", "507", "301", "518"], "member count": "3"}
-,{"Stable Name": "La Excelencia Tapatia", "ids": ["3", "505", "325", "519"], "member count": "3"}
-,{"Stable Name": "La Familia Real", "ids": ["2", "508", "305"], "member count": "2"}
-,{"Stable Name": "La Rebellion", "ids": ["3", "359", "25", "59"], "member count": "3"}
-,{"Stable Name": "La Sangre Dinamita", "ids": ["3", "528", "529", "522"], "member count": "3"}
-,{"Stable Name": "Los Cancerberos Del Infierno", "ids": ["3", "311", "513", "322"], "member count": "3"}
-,{"Stable Name": "Los Compadres Del Mal", "ids": ["2", "508", "515"], "member count": "2"}
-,{"Stable Name": "Los Dinamitas", "ids": ["4", "528", "529", "325", "522"], "member count": "4"}
-,{"Stable Name": "Los Divinos Laguneros", "ids": ["3", "324", "502", "306"], "member count": "3"}
-,{"Stable Name": "Los Hell Brothers", "ids": ["3", "524", "315", "532"], "member count": "3"}
-,{"Stable Name": "Los Hijos Del Infierno", "ids": ["3", "310", "314", "315"], "member count": "3"}
-,{"Stable Name": "Los Ingobernables", "ids": ["2", "512", "421"], "member count": "2"}
-,{"Stable Name": "Los Mercenarios", "ids": [], "member count": 0}
-,{"Stable Name": "Los Radicales", "ids": ["3", "524", "521", "532"], "member count": "3"}
-,{"Stable Name": "MAD", "ids": ["4", "30", "371", "346", "531"], "member count": "4"}
-]}
+{
+  "stables": [
+    {
+      "Stable Name": "SCU",
+      "ids": [
+        "3",
+        "15",
+        "27",
+        "67"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "STRONGHEARTS",
+      "ids": [
+        "3",
+        "81",
+        "87",
+        "88"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Los Hijos del Infierno",
+      "ids": [
+        "3",
+        "310",
+        "314",
+        "315"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Contra Unit",
+      "ids": [
+        "3",
+        "330",
+        "351",
+        "354"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "The Desi Hit Squad",
+      "ids": [
+        "3",
+        "375",
+        "378",
+        "381",
+        "22"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "The Forgotten Sons",
+      "ids": [
+        "3",
+        "268",
+        "274",
+        "278"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "The Undisputed Era",
+      "ids": [
+        "4",
+        "238",
+        "241",
+        "250",
+        "254"
+      ],
+      "member count": "4"
+    },
+    {
+      "Stable Name": "British Strong Style",
+      "ids": [
+        "3",
+        "285",
+        "289",
+        "290"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Bullet Club",
+      "ids": [
+        "23",
+        "238",
+        "1",
+        "104",
+        "450",
+        "452",
+        "17",
+        "486",
+        "488",
+        "132",
+        "455",
+        "460",
+        "461",
+        "143",
+        "37",
+        "149",
+        "297",
+        "48",
+        "53",
+        "494",
+        "472",
+        "447",
+        "448",
+        "485"
+      ],
+      "member count": "23"
+    },
+    {
+      "Stable Name": "Chaos",
+      "ids": [
+        "10",
+        "455",
+        "457",
+        "463",
+        "467",
+        "470",
+        "479",
+        "480",
+        "481",
+        "482",
+        "483"
+      ],
+      "member count": "10"
+    },
+    {
+      "Stable Name": "Suzuki-gun",
+      "ids": [
+        "9",
+        "329",
+        "454",
+        "40",
+        "466",
+        "167",
+        "471",
+        "473",
+        "484",
+        "298"
+      ],
+      "member count": "9"
+    },
+    {
+      "Stable Name": "Los Ingobernables de Japon",
+      "ids": [
+        "5",
+        "451",
+        "442",
+        "456",
+        "443",
+        "469"
+      ],
+      "member count": "5"
+    },
+    {
+      "Stable Name": "Villian Enterprises",
+      "ids": [
+        "4",
+        "401",
+        "406",
+        "297",
+        "418"
+      ],
+      "member count": "4"
+    },
+    {
+      "Stable Name": "The Rascalz",
+      "ids": [
+        "3",
+        "361",
+        "386",
+        "388"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "oVe",
+      "ids": [
+        "3",
+        "360",
+        "365",
+        "374"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Los Guerreros Laguna",
+      "ids": [
+        "5",
+        "311",
+        "312",
+        "319",
+        "523",
+        "303"
+      ],
+      "member count": "5"
+    },
+    {
+      "Stable Name": "La Peste Negra",
+      "ids": [
+        "5",
+        "307",
+        "507",
+        "318",
+        "301",
+        "514"
+      ],
+      "member count": "5"
+    },
+    {
+      "Stable Name": "La Ola Negra",
+      "ids": [
+        "4",
+        "501",
+        "503",
+        "506",
+        "521"
+      ],
+      "member count": "4"
+    },
+    {
+      "Stable Name": "Los Dinamitas",
+      "ids": [
+        "4",
+        "522",
+        "528",
+        "529",
+        "325"
+      ],
+      "member count": "4"
+    },
+    {
+      "Stable Name": "El Cl4n",
+      "ids": [
+        "3",
+        "524",
+        "532",
+        "531"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Lifeblood",
+      "ids": [
+        "5",
+        "399",
+        "453",
+        "437",
+        "415",
+        "426"
+      ],
+      "member count": "5"
+    },
+    {
+      "Stable Name": "Shane Taylor Promotions",
+      "ids": [
+        "3",
+        "438",
+        "417",
+        "423"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Shinobi Shadow Squad",
+      "ids": [
+        "2",
+        "405",
+        "436"
+      ],
+      "member count": "2"
+    },
+    {
+      "Stable Name": "Kingdom",
+      "ids": [
+        "3",
+        "416",
+        "425",
+        "427"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Taguchi Japan",
+      "ids": [
+        "3",
+        "458",
+        "437",
+        "468"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "El Sky Team",
+      "ids": [
+        "3",
+        "323",
+        "321",
+        "305"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "La Dinastia Casas",
+      "ids": [
+        "3",
+        "507",
+        "301",
+        "518"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "La Excelencia Tapatia",
+      "ids": [
+        "3",
+        "505",
+        "325",
+        "519"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "La Familia Real",
+      "ids": [
+        "2",
+        "508",
+        "305"
+      ],
+      "member count": "2"
+    },
+    {
+      "Stable Name": "La Rebellion",
+      "ids": [
+        "3",
+        "359",
+        "25",
+        "59"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "La Sangre Dinamita",
+      "ids": [
+        "3",
+        "528",
+        "529",
+        "522"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Los Cancerberos Del Infierno",
+      "ids": [
+        "3",
+        "311",
+        "513",
+        "322"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Los Compadres Del Mal",
+      "ids": [
+        "2",
+        "508",
+        "515"
+      ],
+      "member count": "2"
+    },
+    {
+      "Stable Name": "Los Dinamitas",
+      "ids": [
+        "4",
+        "528",
+        "529",
+        "325",
+        "522"
+      ],
+      "member count": "4"
+    },
+    {
+      "Stable Name": "Los Divinos Laguneros",
+      "ids": [
+        "3",
+        "324",
+        "502",
+        "306"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Los Hell Brothers",
+      "ids": [
+        "3",
+        "524",
+        "315",
+        "532"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Los Hijos Del Infierno",
+      "ids": [
+        "3",
+        "310",
+        "314",
+        "315"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "Los Ingobernables",
+      "ids": [
+        "2",
+        "512",
+        "421"
+      ],
+      "member count": "2"
+    },
+    {
+      "Stable Name": "Los Mercenarios",
+      "ids": [],
+      "member count": 0
+    },
+    {
+      "Stable Name": "Los Radicales",
+      "ids": [
+        "3",
+        "524",
+        "521",
+        "532"
+      ],
+      "member count": "3"
+    },
+    {
+      "Stable Name": "MAD",
+      "ids": [
+        "4",
+        "30",
+        "371",
+        "346",
+        "531"
+      ],
+      "member count": "4"
+    }
+  ]
+}
