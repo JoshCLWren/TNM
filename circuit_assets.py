@@ -94,6 +94,39 @@ def circuit_assets():
         circuit["Stables"] = hired_stables
         circuit["Stable List"] = hired_stable_names
 
+        filepath = "TNM/tnm7se_build_13/tnm7se/TNM7SE/"
+
+        injured_list = []
+        injured_wrestler_count = 0
+        try:
+            with open(f"{filepath}{circuit['circuit_name']}/CARD.INJ") as injuries:
+                for index, line in enumerate(injuries):
+                    if index % 2 == 0:
+                        wrestler_name_or_id = line.strip()
+                        try:
+                            wrestler_name_or_id = int(wrestler_name_or_id)
+                            wrestler_id = wrestler_name_or_id - 1
+                            injured_wrestler = data["wrestlers"][wrestler_id]["name"]
+                        except ValueError:
+                            pass
+                        if isinstance(wrestler_name_or_id, int) == False:
+                            injured_wrestler = wrestler_name_or_id
+                        injured_list.append({"name": injured_wrestler})
+
+                    else:
+                        injured_list[injured_wrestler_count]["injury length"] = int(
+                            line.strip()
+                        )
+                        injured_wrestler_count += 1
+                    print(circuit["circuit_name"])
+                    print(injured_list)
+            circuit["injury names"] = []
+            for wrestler in injured_list:
+                circuit["injury names"].append(wrestler["name"])
+            circuit["injured list"] = injured_list
+        except FileNotFoundError:
+            pass
+
     circuit_roster = circuit_json["Circuits"]
 
     class json_convert(dict):
