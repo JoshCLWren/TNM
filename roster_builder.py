@@ -1,9 +1,9 @@
 import logging
 import json
-from roster import roster
 
 
 def roster_builder(tv_show, busy_wrestlers=[]):
+    print(busy_wrestlers)
     logging.warning("Building Roster")
     wwe_products = ["Raw", "Smackdown", "205"]
 
@@ -31,11 +31,25 @@ def roster_builder(tv_show, busy_wrestlers=[]):
             female_jobbers = []
             female_anti_heroes = []
             errors = []
+            busy_wrestler_dicts = []
+            for person in busy_wrestlers:
+                for wrestler in promotion["roster"]:
+                    if wrestler[0]["name"] in person:
+                        busy_wrestler_dicts.append(wrestler)
+            print(len(promotion["roster"]))
+            if len(busy_wrestler_dicts) != 0:
+                for record in busy_wrestler_dicts:
+                    promotion["roster"].remove(record)
+                    promotion["Wrestler List"].remove(record[0]["name"])
+            print(len(promotion["roster"]))
             for wrestler in promotion["roster"]:
                 personality = wrestler[2]["personality"]
                 gender = wrestler[3]["gender"]
                 name = wrestler[0]["name"]
                 # anti-heroes are faces that employ heel tactics
+                if name == "Ortiz":
+                    print(name)
+                    print("*" * 88)
                 if gender == "male":
                     if personality == "face":
                         male_faces.append(name)
@@ -100,8 +114,12 @@ def roster_builder(tv_show, busy_wrestlers=[]):
                 "Eligible Roster": [],
                 "Busy Wrestlers": busy_wrestlers,
             }
+            print(busy_wrestlers)
             for wrestler in promotion["Wrestler List"]:
-                if wrestler not in promotion["injury names"]:
+                if (
+                    wrestler not in promotion["injury names"]
+                    and wrestler not in busy_wrestlers
+                ):
                     circuit_roster["Eligible Roster"].append(wrestler)
             # the idea is to make matches heel vs face matches that
             # only have wrestlers that aren't in Busy Wrestlers
@@ -109,15 +127,16 @@ def roster_builder(tv_show, busy_wrestlers=[]):
             # except for 24/7 or other exceptions I can't think of
             # the circuit_roster dictionary will need to be mutated with each match
             # Injured non/title holders can't wrestler
+    print(circuit_roster["Male Ready Heels"])
+    print("Current hired wrestlers below")
+    print(len(circuit_roster["Hired Wrestlers"]))
+    print(f"busy{busy_wrestlers}")
+    return circuit_roster
 
-    with open("roster.py", "w") as roster:
-        roster.write(f"roster = {str(circuit_roster)}")
 
-
-def roster_updater(busy_wrestlers=[]):
+def roster_updater(tv_show, busy_wrestlers, roster):
     for wrestler in busy_wrestlers:
         if wrestler not in roster["Busy Wrestlers"]:
             roster["Busy Wrestlers"].append(wrestler)
-
-    with open("roster.py", "w") as new_roster:
-        new_roster.write(f"roster = {str(roster)}")
+    print(roster["Busy Wrestlers"])
+    roster_builder(tv_show, roster["Busy Wrestlers"])

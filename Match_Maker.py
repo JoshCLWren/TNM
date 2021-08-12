@@ -9,7 +9,6 @@ from utilities import (
     tag_match_maker,
 )
 import random
-from roster import roster
 
 
 def main_event(tv_show):
@@ -66,12 +65,19 @@ def matches(tv_show, match_total, roster):
             if match_picker < twenty_four_seven_match and tv_show in wwe_shows:
                 combatents = combatent_picker()
                 people = combatents[0]
-                contestents = roster_selector(people=people, champion="24/7")
-                contestents
+                contestents = roster_selector(
+                    tv_show=tv_show, people=people, champion="24/7", roster=roster
+                )
+
                 print(f"Match {match} will be a {combatents[1]} 24/7 Title Defense")
+                print(f"- Match Participants are: {contestents}")
                 logging.warning("24/7 match")
             elif match_picker < twenty_four_seven_match and tv_show not in wwe_shows:
+                contestents = roster_selector(
+                    tv_show=tv_show, roster=roster, people=2, gender="Male"
+                )
                 print(f"Match {match} will be a male one on one singles match")
+                print(f"- Match Participants are: {contestents}")
                 logging.warning("Singles Match non gendered")
             if (
                 match_picker > twenty_four_seven_match
@@ -127,14 +133,77 @@ def matches(tv_show, match_total, roster):
     print(f"The Main Event will be a {main_event(tv_show)}")
 
 
-def roster_selector(people, champion=None, gender=None):
+def roster_selector(tv_show, people, roster, champion=None, gender=None):
     # now I need champions added to circuit db.
+    contestants = []
+    for guy in roster["Busy Wrestlers"]:
+        try:
+            roster["Male Ready Heels"].remove(guy)
+        except:
+            pass
+    for guy in roster["Busy Wrestlers"]:
+        try:
+            roster["Male Ready Faces"].remove(guy)
+        except:
+            pass
+    for guy in roster["Busy Wrestlers"]:
+        try:
+            roster["Male Ready Anti Heroes"].remove(guy)
+        except:
+            pass
+    for guy in roster["Busy Wrestlers"]:
+        try:
+            roster["Male Ready Tweeners"].remove(guy)
+        except:
+            pass
+    for guy in roster["Busy Wrestlers"]:
+        try:
+            roster["Male Ready Jobbers"].remove(guy)
+        except:
+            pass
     if champion == "24/7":
-        contestants = []
+
         for grapplers in range(1, people):
             contestant = random.choice(roster["Hired Wrestlers"])
             roster["Hired Wrestlers"].remove(contestant)
             contestants.append(contestant)
+    if gender == "Male":
+        male_non_heels = (
+            roster["Male Ready Faces"]
+            + roster["Male Ready Anti Heroes"]
+            + roster["Male Ready Tweeners"]
+            + roster["Male Ready Jobbers"]
+        )
+        print(roster["Male Ready Heels"])
+        if roster["Male Ready Heels"] == []:
+            heel = False
+            try:
+                contestant1 = random.choice(roster["Male Ready Anti Heroes"])
+            except IndexError:
+                try:
+                    contestant1 = random.choice(roster["Male Ready Faces"])
+                except IndexError:
+                    return print("Ran out of Dudes, dude.")
+        else:
+            heel = True
+            contestant1 = random.choice(roster["Male Ready Heels"])
+        contestants.append(contestant1)
+        for grapplers in range(1, people):
+            if male_non_heels == []:
+                break
+            if heel == False:
+                male_non_heels = (
+                    roster["Male Ready Faces"]
+                    + roster["Male Ready Tweeners"]
+                    + roster["Male Ready Jobbers"]
+                )
+            try:
+                contestant = random.choice(male_non_heels)
+            except IndexError:
+                print("Out of Wrestlers. Everybody go home.")
+                break
+            contestants.append(contestant)
+    print(contestants)
+    roster_updater(tv_show, contestants, roster)
 
-    roster_updater(contestants)
     return contestants

@@ -1,6 +1,6 @@
 Start of session
-2021-08-11-22:56:03
-Building Roster for Raw with input 1
+2021-08-12-00:59:20
+Building Roster for IMPACT with input 4
 Building Roster
 Opening circuit_roster_db.json
 processing AEW
@@ -11,3 +11,862 @@ processing NJPW
 processing NXT
 processing ROH
 processing WWE
+Matches = 100
+Building Show
+99 was rolled with 1 and 101 indexes
+Match Roll for index 1 is 99
+Tag Match Maker
+78 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+5 was rolled with 1 and 11 indexes
+1 was rolled with 1 and 11 indexes
+Tag Match
+66 was rolled with 1 and 101 indexes
+Match Roll for index 2 is 66
+Team Sizer
+87 was rolled with 1 and 101 indexes
+43 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+67 was rolled with 1 and 101 indexes
+Match Roll for index 3 is 67
+Team Sizer
+78 was rolled with 1 and 101 indexes
+21 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+23 was rolled with 1 and 101 indexes
+Match Roll for index 4 is 23
+100 was rolled with 1 and 101 indexes
+Gender Picker is below
+intergender
+Singles Match gendered
+79 was rolled with 1 and 101 indexes
+Match Roll for index 5 is 79
+Tag Match Maker
+8 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+6 was rolled with 1 and 11 indexes
+1 was rolled with 1 and 11 indexes
+Tag Match
+62 was rolled with 1 and 101 indexes
+Match Roll for index 6 is 62
+Team Sizer
+70 was rolled with 1 and 101 indexes
+63 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+48 was rolled with 1 and 101 indexes
+Match Roll for index 7 is 48
+10 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+86 was rolled with 1 and 101 indexes
+Match Roll for index 8 is 86
+Tag Match Maker
+54 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+2 was rolled with 1 and 11 indexes
+9 was rolled with 1 and 11 indexes
+Tag Match
+62 was rolled with 1 and 101 indexes
+Match Roll for index 9 is 62
+Team Sizer
+93 was rolled with 1 and 101 indexes
+91 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Team size = 6-Woman
+X man/woman Tag Match
+55 was rolled with 1 and 101 indexes
+Match Roll for index 10 is 55
+Team Sizer
+20 was rolled with 1 and 101 indexes
+48 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+57 was rolled with 1 and 101 indexes
+Match Roll for index 11 is 57
+Team Sizer
+61 was rolled with 1 and 101 indexes
+58 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+12 was rolled with 1 and 101 indexes
+Match Roll for index 12 is 12
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+13 was rolled with 1 and 101 indexes
+Match Roll for index 13 is 13
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+48 was rolled with 1 and 101 indexes
+Match Roll for index 14 is 48
+8 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+23 was rolled with 1 and 101 indexes
+Match Roll for index 15 is 23
+29 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+19 was rolled with 1 and 101 indexes
+Match Roll for index 16 is 19
+72 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Singles Match gendered
+95 was rolled with 1 and 101 indexes
+Match Roll for index 17 is 95
+Tag Match Maker
+53 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+1 was rolled with 1 and 11 indexes
+4 was rolled with 1 and 11 indexes
+Tag Match
+7 was rolled with 1 and 101 indexes
+Match Roll for index 18 is 7
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+1 was rolled with 1 and 101 indexes
+Match Roll for index 19 is 1
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+22 was rolled with 1 and 101 indexes
+Match Roll for index 20 is 22
+58 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+54 was rolled with 1 and 101 indexes
+Match Roll for index 21 is 54
+Team Sizer
+61 was rolled with 1 and 101 indexes
+79 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Team size = 6-Woman
+X man/woman Tag Match
+15 was rolled with 1 and 101 indexes
+Match Roll for index 22 is 15
+56 was rolled with 1 and 101 indexes
+Match Roll for index 23 is 56
+Team Sizer
+77 was rolled with 1 and 101 indexes
+97 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Team size = 6-Woman
+X man/woman Tag Match
+90 was rolled with 1 and 101 indexes
+Match Roll for index 24 is 90
+Tag Match Maker
+45 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+9 was rolled with 1 and 11 indexes
+5 was rolled with 1 and 11 indexes
+Tag Match
+33 was rolled with 1 and 101 indexes
+Match Roll for index 25 is 33
+98 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Singles Match gendered
+55 was rolled with 1 and 101 indexes
+Match Roll for index 26 is 55
+Team Sizer
+32 was rolled with 1 and 101 indexes
+91 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Team size = 6-Woman
+X man/woman Tag Match
+45 was rolled with 1 and 101 indexes
+Match Roll for index 27 is 45
+64 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+44 was rolled with 1 and 101 indexes
+Match Roll for index 28 is 44
+34 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+1 was rolled with 1 and 101 indexes
+Match Roll for index 29 is 1
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+50 was rolled with 1 and 101 indexes
+Match Roll for index 30 is 50
+69 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+8 was rolled with 1 and 101 indexes
+Match Roll for index 31 is 8
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+76 was rolled with 1 and 101 indexes
+Match Roll for index 32 is 76
+Tag Match Maker
+24 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+10 was rolled with 1 and 11 indexes
+10 was rolled with 1 and 11 indexes
+Tag Match
+38 was rolled with 1 and 101 indexes
+Match Roll for index 33 is 38
+10 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+95 was rolled with 1 and 101 indexes
+Match Roll for index 34 is 95
+Tag Match Maker
+17 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+1 was rolled with 1 and 11 indexes
+2 was rolled with 1 and 11 indexes
+Tag Match
+78 was rolled with 1 and 101 indexes
+Match Roll for index 35 is 78
+Tag Match Maker
+79 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+3 was rolled with 1 and 11 indexes
+8 was rolled with 1 and 11 indexes
+Tag Match
+26 was rolled with 1 and 101 indexes
+Match Roll for index 36 is 26
+29 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+70 was rolled with 1 and 101 indexes
+Match Roll for index 37 is 70
+Team Sizer
+7 was rolled with 1 and 101 indexes
+49 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+36 was rolled with 1 and 101 indexes
+Match Roll for index 38 is 36
+37 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+4 was rolled with 1 and 101 indexes
+Match Roll for index 39 is 4
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+98 was rolled with 1 and 101 indexes
+Match Roll for index 40 is 98
+Tag Match Maker
+90 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+4 was rolled with 1 and 11 indexes
+9 was rolled with 1 and 11 indexes
+Tag Match
+67 was rolled with 1 and 101 indexes
+Match Roll for index 41 is 67
+Team Sizer
+98 was rolled with 1 and 101 indexes
+71 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Team size = 6-Woman
+X man/woman Tag Match
+19 was rolled with 1 and 101 indexes
+Match Roll for index 42 is 19
+70 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+91 was rolled with 1 and 101 indexes
+Match Roll for index 43 is 91
+Tag Match Maker
+42 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+9 was rolled with 1 and 11 indexes
+5 was rolled with 1 and 11 indexes
+Tag Match
+90 was rolled with 1 and 101 indexes
+Match Roll for index 44 is 90
+Tag Match Maker
+92 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+3 was rolled with 1 and 11 indexes
+1 was rolled with 1 and 11 indexes
+Tag Match
+7 was rolled with 1 and 101 indexes
+Match Roll for index 45 is 7
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+36 was rolled with 1 and 101 indexes
+Match Roll for index 46 is 36
+1 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+90 was rolled with 1 and 101 indexes
+Match Roll for index 47 is 90
+Tag Match Maker
+38 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+1 was rolled with 1 and 11 indexes
+8 was rolled with 1 and 11 indexes
+Tag Match
+70 was rolled with 1 and 101 indexes
+Match Roll for index 48 is 70
+Team Sizer
+65 was rolled with 1 and 101 indexes
+46 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+81 was rolled with 1 and 101 indexes
+Match Roll for index 49 is 81
+Tag Match Maker
+41 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+5 was rolled with 1 and 11 indexes
+3 was rolled with 1 and 11 indexes
+Tag Match
+94 was rolled with 1 and 101 indexes
+Match Roll for index 50 is 94
+Tag Match Maker
+79 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+1 was rolled with 1 and 11 indexes
+9 was rolled with 1 and 11 indexes
+Tag Match
+79 was rolled with 1 and 101 indexes
+Match Roll for index 51 is 79
+Tag Match Maker
+99 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+2 was rolled with 1 and 11 indexes
+10 was rolled with 1 and 11 indexes
+Tag Match
+44 was rolled with 1 and 101 indexes
+Match Roll for index 52 is 44
+57 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+1 was rolled with 1 and 101 indexes
+Match Roll for index 53 is 1
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+95 was rolled with 1 and 101 indexes
+Match Roll for index 54 is 95
+Tag Match Maker
+79 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+6 was rolled with 1 and 11 indexes
+8 was rolled with 1 and 11 indexes
+Tag Match
+82 was rolled with 1 and 101 indexes
+Match Roll for index 55 is 82
+Tag Match Maker
+4 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+6 was rolled with 1 and 11 indexes
+8 was rolled with 1 and 11 indexes
+Tag Match
+40 was rolled with 1 and 101 indexes
+Match Roll for index 56 is 40
+27 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+92 was rolled with 1 and 101 indexes
+Match Roll for index 57 is 92
+Tag Match Maker
+3 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+8 was rolled with 1 and 11 indexes
+9 was rolled with 1 and 11 indexes
+Tag Match
+47 was rolled with 1 and 101 indexes
+Match Roll for index 58 is 47
+13 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+4 was rolled with 1 and 101 indexes
+Match Roll for index 59 is 4
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+12 was rolled with 1 and 101 indexes
+Match Roll for index 60 is 12
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+13 was rolled with 1 and 101 indexes
+Match Roll for index 61 is 13
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+55 was rolled with 1 and 101 indexes
+Match Roll for index 62 is 55
+Team Sizer
+72 was rolled with 1 and 101 indexes
+86 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Team size = 6-Woman
+X man/woman Tag Match
+21 was rolled with 1 and 101 indexes
+Match Roll for index 63 is 21
+61 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+13 was rolled with 1 and 101 indexes
+Match Roll for index 64 is 13
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+40 was rolled with 1 and 101 indexes
+Match Roll for index 65 is 40
+50 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+86 was rolled with 1 and 101 indexes
+Match Roll for index 66 is 86
+Tag Match Maker
+9 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+1 was rolled with 1 and 11 indexes
+2 was rolled with 1 and 11 indexes
+Tag Match
+89 was rolled with 1 and 101 indexes
+Match Roll for index 67 is 89
+Tag Match Maker
+71 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+6 was rolled with 1 and 11 indexes
+8 was rolled with 1 and 11 indexes
+Tag Match
+78 was rolled with 1 and 101 indexes
+Match Roll for index 68 is 78
+Tag Match Maker
+94 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+6 was rolled with 1 and 11 indexes
+7 was rolled with 1 and 11 indexes
+Tag Match
+79 was rolled with 1 and 101 indexes
+Match Roll for index 69 is 79
+Tag Match Maker
+12 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+3 was rolled with 1 and 11 indexes
+2 was rolled with 1 and 11 indexes
+Tag Match
+20 was rolled with 1 and 101 indexes
+Match Roll for index 70 is 20
+93 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Singles Match gendered
+25 was rolled with 1 and 101 indexes
+Match Roll for index 71 is 25
+66 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+66 was rolled with 1 and 101 indexes
+Match Roll for index 72 is 66
+Team Sizer
+77 was rolled with 1 and 101 indexes
+17 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+59 was rolled with 1 and 101 indexes
+Match Roll for index 73 is 59
+Team Sizer
+94 was rolled with 1 and 101 indexes
+99 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Team size = 6-Woman
+X man/woman Tag Match
+76 was rolled with 1 and 101 indexes
+Match Roll for index 74 is 76
+Tag Match Maker
+28 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+6 was rolled with 1 and 11 indexes
+2 was rolled with 1 and 11 indexes
+Tag Match
+77 was rolled with 1 and 101 indexes
+Match Roll for index 75 is 77
+Tag Match Maker
+27 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+6 was rolled with 1 and 11 indexes
+10 was rolled with 1 and 11 indexes
+Tag Match
+85 was rolled with 1 and 101 indexes
+Match Roll for index 76 is 85
+Tag Match Maker
+32 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+2 was rolled with 1 and 11 indexes
+1 was rolled with 1 and 11 indexes
+Tag Match
+58 was rolled with 1 and 101 indexes
+Match Roll for index 77 is 58
+Team Sizer
+61 was rolled with 1 and 101 indexes
+32 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+71 was rolled with 1 and 101 indexes
+Match Roll for index 78 is 71
+Team Sizer
+14 was rolled with 1 and 101 indexes
+5 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+69 was rolled with 1 and 101 indexes
+Match Roll for index 79 is 69
+Team Sizer
+7 was rolled with 1 and 101 indexes
+71 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Team size = 6-Woman
+X man/woman Tag Match
+92 was rolled with 1 and 101 indexes
+Match Roll for index 80 is 92
+Tag Match Maker
+20 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+9 was rolled with 1 and 11 indexes
+3 was rolled with 1 and 11 indexes
+Tag Match
+66 was rolled with 1 and 101 indexes
+Match Roll for index 81 is 66
+Team Sizer
+7 was rolled with 1 and 101 indexes
+72 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Team size = 6-Woman
+X man/woman Tag Match
+63 was rolled with 1 and 101 indexes
+Match Roll for index 82 is 63
+Team Sizer
+41 was rolled with 1 and 101 indexes
+95 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Team size = 6-Woman
+X man/woman Tag Match
+46 was rolled with 1 and 101 indexes
+Match Roll for index 83 is 46
+43 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+13 was rolled with 1 and 101 indexes
+Match Roll for index 84 is 13
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+49 was rolled with 1 and 101 indexes
+Match Roll for index 85 is 49
+12 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+48 was rolled with 1 and 101 indexes
+Match Roll for index 86 is 48
+99 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Singles Match gendered
+6 was rolled with 1 and 101 indexes
+Match Roll for index 87 is 6
+Building Roster
+Opening circuit_roster_db.json
+processing AEW
+processing CMLL
+processing IMPACT
+processing MLW
+processing NJPW
+processing NXT
+processing ROH
+processing WWE
+Singles Match non gendered
+34 was rolled with 1 and 101 indexes
+Match Roll for index 88 is 34
+62 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+44 was rolled with 1 and 101 indexes
+Match Roll for index 89 is 44
+15 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+40 was rolled with 1 and 101 indexes
+Match Roll for index 90 is 40
+77 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+Singles Match gendered
+52 was rolled with 1 and 101 indexes
+Match Roll for index 91 is 52
+Team Sizer
+72 was rolled with 1 and 101 indexes
+13 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Team size = 6-Man
+X man/woman Tag Match
+84 was rolled with 1 and 101 indexes
+Match Roll for index 92 is 84
+Tag Match Maker
+24 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+4 was rolled with 1 and 11 indexes
+1 was rolled with 1 and 11 indexes
+Tag Match
+43 was rolled with 1 and 101 indexes
+Match Roll for index 93 is 43
+61 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+31 was rolled with 1 and 101 indexes
+Match Roll for index 94 is 31
+30 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+49 was rolled with 1 and 101 indexes
+Match Roll for index 95 is 49
+42 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+99 was rolled with 1 and 101 indexes
+Match Roll for index 96 is 99
+Tag Match Maker
+86 was rolled with 1 and 101 indexes
+Gender Picker is below
+female
+6 was rolled with 1 and 11 indexes
+2 was rolled with 1 and 11 indexes
+Tag Match
+25 was rolled with 1 and 101 indexes
+Match Roll for index 97 is 25
+38 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+96 was rolled with 1 and 101 indexes
+Match Roll for index 98 is 96
+Tag Match Maker
+42 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+8 was rolled with 1 and 11 indexes
+4 was rolled with 1 and 11 indexes
+Tag Match
+43 was rolled with 1 and 101 indexes
+Match Roll for index 99 is 43
+19 was rolled with 1 and 101 indexes
+Gender Picker is below
+male
+Singles Match gendered
+92 was rolled with 1 and 101 indexes
+Main even roll = 92
+37 was rolled with 1 and 101 indexes
+Combatent Picker
+[3, 'Triangle Match']
+Title is IMPACT X Division Championship
+#1 contender match
+25 was rolled with 1 and 101 indexes
+Combatent Picker
+[3, 'Triangle Match']
+Title is IMPACT World Tag Team Championship
+Title match

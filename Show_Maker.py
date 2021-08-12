@@ -38,8 +38,6 @@ logging.warning(datetime.today().strftime("%Y-%m-%d-%H:%M:%S"))
 
 def Show(roster, tv_show, match_total=3):
     print(f"Welcome to {tv_show}!")
-    with open("roster.py", "w") as roster:
-        roster.write("roster = []")
     matches(roster=roster, tv_show=tv_show, match_total=match_total)
 
 
