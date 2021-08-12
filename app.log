@@ -1,5 +1,5 @@
 Start of session
-2021-08-11-20:11:05
+2021-08-11-22:56:03
 Building Roster for Raw with input 1
 Building Roster
 Opening circuit_roster_db.json
@@ -11,66 +11,3 @@ processing NJPW
 processing NXT
 processing ROH
 processing WWE
-Matches = 9
-Building Show
-8 was rolled with 1 and 101 indexes
-Match Roll for index 1 is 8
-72 was rolled with 1 and 101 indexes
-Combatent Picker
-Fatal Four Way
-24/7 match
-80 was rolled with 1 and 101 indexes
-Match Roll for index 2 is 80
-Tag Match Maker
-11 was rolled with 1 and 101 indexes
-Gender Picker is below
-male
-3 was rolled with 1 and 24 indexes
-20 was rolled with 1 and 24 indexes
-Tag Match
-42 was rolled with 1 and 101 indexes
-Match Roll for index 3 is 42
-73 was rolled with 1 and 101 indexes
-Gender Picker is below
-female
-Singles Match gendered
-9 was rolled with 1 and 101 indexes
-Match Roll for index 4 is 9
-28 was rolled with 1 and 101 indexes
-Combatent Picker
-Triangle Match
-24/7 match
-31 was rolled with 1 and 101 indexes
-Match Roll for index 5 is 31
-39 was rolled with 1 and 101 indexes
-Gender Picker is below
-male
-Singles Match gendered
-32 was rolled with 1 and 101 indexes
-Match Roll for index 6 is 32
-76 was rolled with 1 and 101 indexes
-Gender Picker is below
-female
-Singles Match gendered
-10 was rolled with 1 and 101 indexes
-Match Roll for index 7 is 10
-77 was rolled with 1 and 101 indexes
-Combatent Picker
-Fatal Four Way
-24/7 match
-56 was rolled with 1 and 101 indexes
-Match Roll for index 8 is 56
-Team Sizer
-54 was rolled with 1 and 101 indexes
-75 was rolled with 1 and 101 indexes
-Gender Picker is below
-female
-Team size = 6-Woman
-X man/woman Tag Match
-72 was rolled with 1 and 101 indexes
-Main even roll = 72
-17 was rolled with 1 and 101 indexes
-Combatent Picker
-Triangle Match
-Title is Raw Tag Championship
-#1 contender match

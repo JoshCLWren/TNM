@@ -38,6 +38,8 @@ logging.warning(datetime.today().strftime("%Y-%m-%d-%H:%M:%S"))
 
 def Show(roster, tv_show, match_total=3):
     print(f"Welcome to {tv_show}!")
+    with open("roster.py", "w") as roster:
+        roster.write("roster = []")
     matches(roster=roster, tv_show=tv_show, match_total=match_total)
 
 
@@ -81,7 +83,7 @@ while cont == "yes" or cont == "y":
     print(f"How many matches will {tv_show} have?")
     match_total = int(input())
     logging.warning(f"Matches = {match_total}")
-    logging.warning(f"Building Show")
+    logging.warning("Building Show")
 
     Show(tv_show=tv_show, match_total=match_total, roster=roster)
     print("Again?")

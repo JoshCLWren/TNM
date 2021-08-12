@@ -1,4 +1,5 @@
 import logging
+from roster_builder import roster_updater
 from utilities import (
     roll,
     combatent_picker,
@@ -8,6 +9,7 @@ from utilities import (
     tag_match_maker,
 )
 import random
+from roster import roster
 
 
 def main_event(tv_show):
@@ -62,9 +64,11 @@ def matches(tv_show, match_total, roster):
         logging.warning(f"Match Roll for index {match} is {match_picker}")
         if match < match_total and "CMLL" not in tv_show:
             if match_picker < twenty_four_seven_match and tv_show in wwe_shows:
-                print(
-                    f"Match {match} will be a {combatent_picker()} 24/7 Title Defense"
-                )
+                combatents = combatent_picker()
+                people = combatents[0]
+                contestents = roster_selector(people=people, champion="24/7")
+                contestents
+                print(f"Match {match} will be a {combatents[1]} 24/7 Title Defense")
                 logging.warning("24/7 match")
             elif match_picker < twenty_four_seven_match and tv_show not in wwe_shows:
                 print(f"Match {match} will be a male one on one singles match")
@@ -121,3 +125,16 @@ def matches(tv_show, match_total, roster):
                 print(f"Match {match} will be a one fall lightning singles match!")
                 logging.warning("cmll lightning single fall match")
     print(f"The Main Event will be a {main_event(tv_show)}")
+
+
+def roster_selector(people, champion=None, gender=None):
+    # now I need champions added to circuit db.
+    if champion == "24/7":
+        contestants = []
+        for grapplers in range(1, people):
+            contestant = random.choice(roster["Hired Wrestlers"])
+            roster["Hired Wrestlers"].remove(contestant)
+            contestants.append(contestant)
+
+    roster_updater(contestants)
+    return contestants

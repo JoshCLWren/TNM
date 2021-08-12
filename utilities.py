@@ -7,11 +7,11 @@ def combatent_picker(one_on_one_seed=10, triangle_seed=60, four_way_seed=100):
     logging.warning("Combatent Picker")
     combatents = ""
     if picker < one_on_one_seed:
-        combatents = "One on One"
+        combatents = [2, "One on One"]
     elif picker > one_on_one_seed and picker < triangle_seed:
-        combatents = "Triangle Match"
+        combatents = [3, "Triangle Match"]
     else:
-        combatents = "Fatal Four Way"
+        combatents = [4, "Fatal Four Way"]
     logging.warning(combatents)
     return combatents
 
