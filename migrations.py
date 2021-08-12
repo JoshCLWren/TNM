@@ -128,7 +128,12 @@ def db_builder():
 
     for lst in circuit_roster:
         lst["roster"] = [x for x in lst["roster"] if x[1]["contract_length"] != 0]
-
+    # add genders to circuit wresterl dbs
+    for circuit in circuit_roster:
+        for performer in circuit["roster"]:
+            for wrestler in wrestler_list:
+                if performer[0]["name"] == wrestler["name"]:
+                    performer.append({"gender": wrestler["gender"]})
     tag_team_name = 3
     tag_team_count = 0
     tag_teams = []

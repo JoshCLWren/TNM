@@ -38,7 +38,7 @@ def main_event(tv_show):
     return main_event
 
 
-def matches(tv_show, match_total):
+def matches(tv_show, match_total, roster):
     twenty_four_seven_match = 15
     vanilla_singles = 50
     multi_man_tag = 73
