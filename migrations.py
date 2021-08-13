@@ -10,6 +10,9 @@ logging.basicConfig(
     format="%(message)s",
 )
 logging.warning("migrations.py")
+import sqlite3
+
+con = sqlite3.connect("my-test.db")
 
 
 def db_builder():
@@ -132,6 +135,7 @@ def db_builder():
             for wrestler in wrestler_list:
                 if performer[0]["name"] == wrestler["name"]:
                     performer.append({"gender": wrestler["gender"]})
+
     tag_team_name = 3
     tag_team_count = 0
     tag_teams = []
@@ -209,6 +213,18 @@ def db_builder():
     for id, wrestler in zip(index_list, wrestler_list):
         wrestler["index"] = id["index"]
 
+    for wrestler in wrestler_list:
+        wrestler["charisma"] = wrestler["charimsa"]
+        wrestler["tnm_index"] = wrestler["index"]
+        del wrestler["circuits"]
+        del wrestler["tag teams"]
+        del wrestler["stables"]
+        del wrestler["id"]
+        query = "INSERT INTO WRESTLERS (name, work_rate, push, charisma, weight, gender, tnm_index) VALUES (:name, :work_rate, :push, :charisma, :weight, :gender, :tnm_index);"
+        con.execute(query, wrestler)
+    import pdb
+
+    pdb.set_trace()
     stable_count = -1
     stable_list = []
     stable_total = 0
