@@ -156,3 +156,25 @@ def title(tv_show="Raw"):
     random_title = random.choice(titles)
     logging.warning(f"Title is {random_title}")
     return random_title
+
+
+def check_dupes(list, item):
+    if item not in list:
+        list.append(item)
+    else:
+        return list
+    return list
+
+
+def prepare_columns(table, **kwargs):
+    field_string = ""
+
+    for field in kwargs:
+        field_string += f"{field} = %({field})s, "
+
+    field_string = field_string[: len(field_string) - 2]
+
+    sql = f"""UPDATE {table}
+            SET {field_string} WHERE id = %(id)s
+            RETURNING *;"""
+    return sql

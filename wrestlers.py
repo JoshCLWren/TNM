@@ -1,7 +1,5 @@
-import psycopg2.extras
-
-con = psycopg2.connect("dbname=test user=postgres")
-cursor = con.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
+from database import cursor, con, wrestler_table
+import utilities
 
 
 def wrestler_serializer():
@@ -65,24 +63,7 @@ def seed_wrestlers(wrestler_list, drop=True, create_table=True):
         cursor.execute("DROP TABLE wrestlers;")
 
     if create_table == True:
-        with con:
-            cursor.execute(
-                """
-              CREATE TABLE IF NOT EXISTS WRESTLERS(
-              id bigserial PRIMARY KEY,
-              name VARCHAR,
-              work_rate INTEGER,
-              push INTEGER,
-              charisma INTEGER,
-              weight INTEGER,
-              gender VARCHAR,
-              tnm_index INTEGER,
-              circuits INTEGER[] DEFAULT '{}',
-              tag_teams INTEGER[] DEFAULT '{}',
-              stables INTEGER[] DEFAULT '{}'
-              );
-                """
-            )
+        wrestler_table()
 
     for wrestler in wrestler_list:
         query = """
@@ -93,22 +74,30 @@ def seed_wrestlers(wrestler_list, drop=True, create_table=True):
             cursor.execute(query, wrestler)
 
 
-def add_circuit(wrestler_id, circuit_id):
-    """Adds a circuit to a wrestlers circuit array column"""
+def patch_wrestler(wrestler_id, column, new_value):
+    """Changes the value of a given column to the new_value if it's not a duplicate"""
     wrestler = get_by_id(wrestler_id)
 
-    if circuit_id not in wrestler["circuits"]:
-        wrestler["circuits"].append(circuit_id)
+    column_type = type(wrestler[column])
+
+    new_value_type = type(new_value)
+
+    if isinstance(wrestler[column], list):
+        if new_value_type == int:
+            utilities.check_dupes(wrestler[column], new_value)
+        else:
+            return wrestler
     else:
-        return wrestler
+        if new_value_type == column_type:
+            wrestler[column] = new_value
+        else:
+            return wrestler
 
-    query = """
-            UPDATE WRESTLERS
-            SET circuits = %(circuits)s WHERE id = %(id)s
-            RETURNING *;
-            """
+    kwargs = {"id": wrestler_id, column: wrestler[column]}
 
-    cursor.execute(query, {"id": wrestler_id, "circuits": wrestler["circuits"]})
+    query = utilities.prepare_columns(table="wrestlers", **kwargs)
+
+    cursor.execute(query, kwargs)
 
     wrestler = cursor.fetchone()
 
@@ -117,7 +106,26 @@ def add_circuit(wrestler_id, circuit_id):
 
 def get_by_id(id):
     """Returns a wrestler with the matching id"""
+    with con:
+        cursor.execute("Select * from wrestlers where id = %(id)s;", {"id": id})
 
-    cursor.execute("Select * from wrestlers where id = %(id)s;", {"id": id})
+    return cursor.fetchone()
+
+
+def get_all_wrestlers():
+    """Returns all the wrestlers in the table"""
+    with con:
+        cursor.execute("Select * from wrestlers;")
+
+    return cursor.fetchall()
+
+
+def get_by_name(wrestler_name):
+    """queries the wrestler table by the name value passed"""
+    with con:
+        cursor.execute(
+            "Select * from wrestlers where name = %(wrestler_name)s;",
+            {"wrestler_name": wrestler_name},
+        )
 
     return cursor.fetchone()

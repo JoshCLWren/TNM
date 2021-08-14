@@ -7,6 +7,8 @@
 
 import json
 import logging
+import circuits
+import wrestlers
 
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
@@ -23,12 +25,11 @@ data = json.load(data)
 
 
 def circuit_assets():
-    circuit_json = open("circuit_roster_db.json")
-    circuit_json = json.load(circuit_json)
-    logging.warning("Loading circuit_roster_db.json")
-    data = open("wrestler_db.json")
-    data = json.load(data)
-    logging.warning("Loading wrestler_bd.json")
+    circuit_json = circuits.get_all_circuits()
+    data = wrestlers.get_all_wrestlers()
+    import pdb
+
+    pdb.set_trace()
     for circuit in circuit_json["Circuits"]:
         logging.warning(f"Parsing {circuit['circuit_name']}")
         hired_wrestler_ids = []
