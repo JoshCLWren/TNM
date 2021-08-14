@@ -10,59 +10,15 @@ logging.basicConfig(
     format="%(message)s",
 )
 logging.warning("migrations.py")
-import sqlite3
+import psycopg2
+import wrestlers
 
-con = sqlite3.connect("my-test.db")
+con = psycopg2.connect("dbname=test user=postgres")
+cursor = con.cursor()
 
 
 def db_builder():
-    db = "TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/WRESTLRS.DAT"
-    wrestler_list = []
-    wrestler_name = 1
-    work_rate = 57
-    push = 58
-    charisma = 59
-    weight = 67
-    gender = 79
-    # gender is 1 for female and blank for male
-    wrestle_count = 0
-    wrestler = {}
-    idcount = 1
-    logging.warning("Opening {db}")
-    with open(db) as wrestlers:
-        for index, line in enumerate(wrestlers):
-            if index == 0:
-                wrestler_total = line.strip()
-            if index == wrestler_name:
-                wrestler_list.append({"name": line.strip()})
-                logging.warning(f"adding {line.strip()}")
-                wrestler_list[wrestle_count]["circuits"] = []
-                wrestler_list[wrestle_count]["tag teams"] = []
-                wrestler_list[wrestle_count]["stables"] = []
-                wrestler_list[wrestle_count]["id"] = idcount
-                idcount += 1
-                wrestler_name += 120
-            if index == work_rate:
-                wrestler_list[wrestle_count]["work_rate"] = line.strip()
-                work_rate += 120
-            if index == push:
-                wrestler_list[wrestle_count]["push"] = line.strip()
-                push += 120
-            if index == charisma:
-                wrestler_list[wrestle_count]["charimsa"] = line.strip()
-                charisma += 120
-            if index == weight:
-                wrestler_list[wrestle_count]["weight"] = line.strip()
-                weight += 120
-            if index == gender:
-                if line.strip() == "1":
-                    sex = "female"
-                else:
-                    sex = "male"
-                wrestler_list[wrestle_count]["gender"] = sex
-                gender += 120
-
-                wrestle_count += 1
+    wrestler_list = wrestlers.wrestler_serializer()
 
     circuits = ["AEW", "CMLL", "IMPACT", "MLW", "NJPW", "NXT", "ROH", "WWE"]
     circuit_roster = []
@@ -206,25 +162,14 @@ def db_builder():
 
     # adding wrestler index to wrestler object
     logging.warning("Adding TNM index values to each wrestler")
-    with open("TNM/tnm7se_build_13/tnm7se/TNM7SE/DATA/WRESTLRS.IDX") as wrestler_index:
-        index_list = []
-        for line in wrestler_index:
-            index_list.append({"index": line.strip()})
-    for id, wrestler in zip(index_list, wrestler_list):
-        wrestler["index"] = id["index"]
 
-    for wrestler in wrestler_list:
-        wrestler["charisma"] = wrestler["charimsa"]
-        wrestler["tnm_index"] = wrestler["index"]
-        del wrestler["circuits"]
-        del wrestler["tag teams"]
-        del wrestler["stables"]
-        del wrestler["id"]
-        query = "INSERT INTO WRESTLERS (name, work_rate, push, charisma, weight, gender, tnm_index) VALUES (:name, :work_rate, :push, :charisma, :weight, :gender, :tnm_index);"
-        con.execute(query, wrestler)
+    x = cursor.execute("Select * from Wrestlers;")
+    x = cursor.fetchall()
+    x = len(x)
     import pdb
 
     pdb.set_trace()
+
     stable_count = -1
     stable_list = []
     stable_total = 0
@@ -282,9 +227,7 @@ def db_builder():
         def __str__(self):
             return json.dumps(self)
 
-    logging.warning("Creating wrestler_db.json")
-    with open("wrestler_db.json", "w") as fp:
-        json.dump({"wrestlers": wrestler_list}, fp, indent=2)
+    wrestlers.seed_wrestlers()
 
     logging.warning("Creating circuit_roster_db.json")
     with open("circuit_roster_db.json", "w") as fp:
