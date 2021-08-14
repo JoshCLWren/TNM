@@ -1,7 +1,7 @@
-import psycopg2
+import psycopg2.extras
 
 con = psycopg2.connect("dbname=test user=postgres")
-cursor = con.cursor()
+cursor = con.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
 
 def wrestler_serializer():
@@ -77,9 +77,9 @@ def seed_wrestlers(wrestler_list, drop=True, create_table=True):
               weight INTEGER,
               gender VARCHAR,
               tnm_index INTEGER,
-              circuits INTEGER[],
-              tag_teams INTEGER[],
-              stables INTEGER[]
+              circuits INTEGER[] DEFAULT '{}',
+              tag_teams INTEGER[] DEFAULT '{}',
+              stables INTEGER[] DEFAULT '{}'
               );
                 """
             )
@@ -95,35 +95,12 @@ def seed_wrestlers(wrestler_list, drop=True, create_table=True):
 
 def add_circuit(wrestler_id, circuit_id):
     """Adds a circuit to a wrestlers circuit array column"""
-    cursor.execute(
-        """
-                    SELECT circuits FROM wrestlers WHERE id = %(id)s;
-                    """,
-        {"id": wrestler_id},
-    )
+    wrestler = get_by_id(wrestler_id)
 
-    circuit_ids = cursor.fetchone()
-
-    circuit_ids = list(circuit_ids)
-
-    copy_circuits = []
-
-    for circuit in circuit_ids:
-        if circuit == None:
-            circuit_ids.remove(circuit)
-        if isinstance(circuit, list):
-            for number in circuit:
-                copy_circuits.append(number)
-        else:
-            print("what?")
-            print(circuit)
-
-    circuit_ids = copy_circuits
-
-    if circuit_id not in circuit_ids:
-        circuit_ids.append(circuit_id)
+    if circuit_id not in wrestler["circuits"]:
+        wrestler["circuits"].append(circuit_id)
     else:
-        get_by_id(wrestler_id)
+        return wrestler
 
     query = """
             UPDATE WRESTLERS
@@ -131,7 +108,7 @@ def add_circuit(wrestler_id, circuit_id):
             RETURNING *;
             """
 
-    cursor.execute(query, {"id": wrestler_id, "circuits": circuit_ids})
+    cursor.execute(query, {"id": wrestler_id, "circuits": wrestler["circuits"]})
 
     wrestler = cursor.fetchone()
 
