@@ -5,22 +5,11 @@
 # random match builders need to be heel vs face
 # may need a relational all_wrestlersbase for this.
 
-import json
 import logging
 import circuits
 import wrestlers
 import tag_teams
 import stables
-
-for handler in logging.root.handlers[:]:
-    logging.root.removeHandler(handler)
-
-logging.basicConfig(
-    filename="asset.log",
-    filemode="w",
-    format="%(message)s",
-)
-logging.warning("circuit_assets.py")
 
 
 def circuit_assets():

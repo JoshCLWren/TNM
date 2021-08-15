@@ -27,7 +27,7 @@ for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
 
 logging.basicConfig(
-    filename="app.log",
+    filename="applog.txt",
     filemode="w",
     format="%(message)s",
 )
