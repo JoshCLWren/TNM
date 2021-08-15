@@ -40,7 +40,8 @@ def circuit_table():
           faces INTEGER[] DEFAULT '{}',
           anti_heroes INTEGER[] DEFAULT '{}',
           tweeners INTEGER[] DEFAULT '{}',
-          jobbers INTEGER[] DEFAULT '{}'
+          jobbers INTEGER[] DEFAULT '{}',
+          championships VARCHAR[] DEFAULT '{}'
         );
       """
         )
@@ -71,3 +72,24 @@ def stables_table():
         );
             """
         )
+
+
+def shows_table():
+    with con:
+        cursor.execute(
+            """
+                CREATE TABLE IF NOT EXISTS SHOWS(
+                    id bigserial PRIMARY KEY,
+                    name VARCHAR,
+                    participants integer[] DEFAULT '{}',
+                    matches integer[] DEFAULT '{}'
+                )
+            """
+        )
+
+
+# stable tags?
+# championships?
+# brands?
+# are matches another table with Show ids?
+# how to not repeat matches from "Week to week"?
