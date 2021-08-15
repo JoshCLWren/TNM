@@ -30,31 +30,6 @@ def circuit_assets():
     map_injuries_to_circuits(all_circuits)
     map_circuit_to_wrestlers(all_circuits)
     map_tags_to_circuits(all_circuits, all_tags)
-    #     logging.warning(f"Parsing {circuit['circuit_name']}")
-
-    #     hired_tags_names = []
-    #     hired_tag_teams = []
-    #     logging.warning("Finding tag teams for hired wrestlers")
-    #     for wrestler in all_wrestlers:
-
-    #         for tag in wrestler["tag teams"]:
-    #             if (
-    #                 tag["Partner"] in hired_wrestlers_names
-    #                 and tag["Tag Team Name"] not in hired_tags_names
-    #             ):
-    #                 hired_tags_names.append(tag["Tag Team Name"])
-    #                 hired_tag_teams.append(
-    #                     {
-    #                         "Tag Team Name": tag["Tag Team Name"],
-    #                         "Member 1": wrestler["name"],
-    #                         "Member 2": tag["Partner"],
-    #                     }
-    #                 )
-    #                 logging.warning(
-    #                     f"Adding {tag['Tag Team Name']} to {circuit['circuit_name']}"
-    #                 )
-
-    #     circuit["Hired Tag List"] = hired_tags_names
 
     # hired_stable_names = []
     # hired_stables = []
@@ -113,23 +88,6 @@ def circuit_assets():
 
     # circuit_roster = all_circuits["Circuits"]
 
-    # class json_convert(dict):
-    #     def __str__(self):
-    #         return json.dumps(self)
-
-    # logging.warning("Updating circuit_roster_db.json with all circuit specific all_wrestlers")
-    # with open("circuit_roster_db.json", "w") as file:
-    #     file.write('{"Circuits": [')
-    #     for index, circuit in enumerate(circuit_roster):
-    #         circuit = json_convert(circuit)
-    #         last_spot = len(circuit_roster) - 1
-    #         if index == last_spot:
-    #             file.write(f"{circuit}\n")
-    #         else:
-    #             file.write(f"{circuit}\n,")
-    #     file.write("]}")
-    # logging.warning("Done...")
-
 
 def map_injuries_to_circuits(all_circuits):
     """Maps over the CARD.INJ of each circuit and updates the injury list"""
@@ -186,3 +144,27 @@ def map_tags_to_circuits(all_circuits, all_tags):
             if len(tag_members) == 2:
                 circuit["tag_teams"].append(tag["id"])
         circuits.patch_circuit(circuit["id"], "tag_teams", circuit["tag_teams"])
+
+
+def map_stables_to_wrestlers_and_circuits(stable_list):
+    """Maps over the stable list add adds them to wrestlers and circuits"""
+    # # adding stables to wrestlers
+    # logging.warning("Adding Wrestlers to Stables")
+    # for stable in stable_list:
+    #     stable_member_ids = []
+    #     for index, member in enumerate(stable["ids"]):
+    #         # first index is the member count and we skip it
+    #         if index == 0:
+    #             pass
+    #         else:
+    #             stable_member_ids.append(int(member))
+    #     stable_members = []
+    #     for wrestler in wrestler_list:
+    #         if wrestler["id"] in stable_member_ids:
+    #             stable_members.append(wrestler["name"])
+    #             wrestler["stables"].append(
+    #                 {
+    #                     "Stable Name": stable["Stable Name"],
+    #                     "Member Ids": stable_member_ids,
+    #                 }
+    #             )
