@@ -1,5 +1,5 @@
 Start of session
-2021-08-15-12:43:42
+2021-08-15-12:49:39
 Building Migrations
 Building Circuit Databases
 parsing AEW
@@ -12435,57 +12435,17 @@ Finding Injured Wrestlers
 Finding Injured Wrestlers
 Finding Injured Wrestlers
  Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/WWE/CARD.INJ
-Matches = 6
+Matches = 1
 Building Show
-86 was rolled with 1 and 101 indexes
-Match Roll for index 1 is 86
-Tag Match Maker
-34 was rolled with 1 and 101 indexes
-Gender Picker is below
-male
-5 was rolled with 1 and 13 indexes
-11 was rolled with 1 and 13 indexes
-Tag Match
-88 was rolled with 1 and 101 indexes
-Match Roll for index 2 is 88
-Tag Match Maker
-52 was rolled with 1 and 101 indexes
-Gender Picker is below
-male
-3 was rolled with 1 and 13 indexes
-10 was rolled with 1 and 13 indexes
-Tag Match
-78 was rolled with 1 and 101 indexes
-Match Roll for index 3 is 78
-Tag Match Maker
-93 was rolled with 1 and 101 indexes
-Gender Picker is below
-female
-4 was rolled with 1 and 13 indexes
-7 was rolled with 1 and 13 indexes
-Tag Match
-77 was rolled with 1 and 101 indexes
-Match Roll for index 4 is 77
-Tag Match Maker
-72 was rolled with 1 and 101 indexes
-Gender Picker is below
-female
-7 was rolled with 1 and 13 indexes
-1 was rolled with 1 and 13 indexes
-Tag Match
-83 was rolled with 1 and 101 indexes
-Match Roll for index 5 is 83
-Tag Match Maker
-20 was rolled with 1 and 101 indexes
-Gender Picker is below
-male
-1 was rolled with 1 and 13 indexes
-1 was rolled with 1 and 13 indexes
-Tag Match
-21 was rolled with 1 and 101 indexes
-Main even roll = 21
-3 was rolled with 1 and 101 indexes
+81 was rolled with 1 and 101 indexes
+Main even roll = 81
+28 was rolled with 1 and 101 indexes
 Combatent Picker
-[2, 'One on One']
-Title is Women of Honor World Championship
+[3, 'Triangle Match']
+Title is Raw Tag Championship
 #1 contender match
+24 was rolled with 1 and 101 indexes
+Combatent Picker
+[3, 'Triangle Match']
+Title is Raw Women's Championship
+Title match

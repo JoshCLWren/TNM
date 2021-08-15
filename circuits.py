@@ -93,15 +93,6 @@ def seed_circuits(circuit_rosters, drop=True, create_table=True):
 
             wrestler = wrestlers.get_by_name(grappler[0]["name"])
             grapplers.append(wrestler["id"])
-
-            if grappler[2]["personality"] not in [
-                "face",
-                "heel",
-                "tweener",
-                "jobber",
-                "anti-hero",
-            ]:
-                raise Exception
             if grappler[2]["personality"] == "anti-hero":
                 circuit["anti_heroes"].append(wrestler["id"])
             else:
