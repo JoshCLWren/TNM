@@ -1,3 +1,3 @@
 @echo off
-.\plugins\IMPWIZ\IMPWIZ.exe .\plugins\IMPWIZ .\plugins\IMPWIZ\data
+.\plugins\PLUGDOCS\PLUGDOCS.exe .\plugins\PLUGDOCS .\plugins\PLUGDOCS\data
 program\card

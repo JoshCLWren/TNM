@@ -1,3 +1,3 @@
 @echo off
-..\plugins\TWEAKCSE\TWEAKCSE.exe ..\plugins\TWEAKCSE ..\plugins\TWEAKCSE\data
+..\plugins\TNMWCWZB\TNMWCWZB.exe ..\plugins\TNMWCWZB ..\plugins\TNMWCWZB\data
 ..\program\pbr ..\program\cardpri.pbc

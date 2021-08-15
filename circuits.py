@@ -33,6 +33,7 @@ def circuit_serializer(
                     "anti_heroes": [],
                     "tweeners": [],
                     "jobbers": [],
+                    "championships": [],
                 }
             )
             for index, line in enumerate(circuit_db):
@@ -72,8 +73,14 @@ def circuit_serializer(
                     personality += 18
                     circuit_roster_count += 1
         circuit_counter += 1
-    for lst in circuit_roster:
-        lst["wrestlers"] = [x for x in lst["wrestlers"] if x[1]["contract_length"] != 0]
+
+    for circuit in circuit_roster:
+        circuit["wrestlers"] = [
+            wrestler
+            for wrestler in circuit["wrestlers"]
+            if wrestler[1]["contract_length"] != 0
+        ]
+        circuit["championships"] = championship_serializer(circuit["name"])
     return circuit_roster
 
 
@@ -101,8 +108,8 @@ def seed_circuits(circuit_rosters, drop=True, create_table=True):
         circuit["wrestlers"] = grapplers
 
         query = """
-              INSERT INTO CIRCUITS (name, stables, tag_teams, wrestlers, injuries, heels, faces, anti_heroes, tweeners, jobbers)
-              values (%(name)s, %(stables)s, %(tag_teams)s, %(wrestlers)s, %(injuries)s, %(heels)s, %(faces)s, %(anti_heroes)s, %(tweeners)s, %(jobbers)s)
+              INSERT INTO CIRCUITS (name, stables, tag_teams, wrestlers, injuries, heels, faces, anti_heroes, tweeners, jobbers, championships)
+              values (%(name)s, %(stables)s, %(tag_teams)s, %(wrestlers)s, %(injuries)s, %(heels)s, %(faces)s, %(anti_heroes)s, %(tweeners)s, %(jobbers)s, %(championships)s)
 
               """
         with con:
@@ -187,3 +194,24 @@ def personality_switch(argument):
     switcher = {0: "face", 1: "heel", 2: "tweener", 3: "jobber", 5: "anti-hero"}
 
     return switcher.get(argument, "nothing")
+
+
+def championship_serializer(circuit):
+    """maps over the circuit/details.ttl file and adds championships to the circuit table"""
+    titles = []
+    title_index_count = 0
+    try:
+        with open(
+            f"TNM/tnm7se_build_13/tnm7se/TNM7SE/{circuit}/details.ttl"
+        ) as championships:
+            for index, line in enumerate(championships):
+                if index == title_index_count:
+                    titles.append(line.strip())
+                    title_index_count += 3
+    except FileNotFoundError:
+        print(
+            f"No titles found in {circuit}, try opening weight class wizard and trying again."
+        )
+        pass
+
+    return titles
