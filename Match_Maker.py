@@ -9,6 +9,7 @@ from utilities import (
     tag_match_maker,
 )
 import random
+import circuits
 
 
 def main_event(tv_show):
@@ -39,7 +40,8 @@ def main_event(tv_show):
     return main_event
 
 
-def matches(tv_show, match_total, roster):
+def matches(tv_show, match_total):
+    roster = circuits.get_by_name(tv_show)
     twenty_four_seven_match = 15
     vanilla_singles = 50
     multi_man_tag = 73

@@ -107,6 +107,12 @@ def seed_circuits(circuit_rosters, drop=True, create_table=True):
 
             wrestler = wrestlers.get_by_name(grappler[0]["name"])
             grapplers.append(wrestler["id"])
+            if grappler[0]["personality"] == "face":
+                import pdb
+
+                pdb.set_trace()
+                # Figure out how to do dictionary mapping for a psuedo case statement to add
+                # personality array values
         circuit["wrestlers"] = grapplers
 
         query = """
@@ -181,3 +187,11 @@ def patch_circuit(circuit_id, column, new_value):
     circuit = cursor.fetchone()
 
     return circuit
+
+
+def get_by_name(name):
+    """Retrieves the circuit with the name"""
+    with con:
+        cursor.execute("Select * from circuits where name = %(name)s;", {"name": name})
+
+    return cursor.fetchone()

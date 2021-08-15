@@ -1,4 +1,3 @@
-import json
 import logging
 
 for handler in logging.root.handlers[:]:
@@ -10,7 +9,6 @@ logging.basicConfig(
     format="%(message)s",
 )
 logging.warning("migrations.py")
-import psycopg2
 import wrestlers
 import circuits
 import tag_teams
@@ -35,3 +33,6 @@ def db_builder():
     database.stables_table()
     stable_list = stables.stable_serializer()
     stables.seed_stables(stable_list)
+
+    wrestlers.map_stables_to_wrestlers()
+    wrestlers.map_tags_to_wrestlers()

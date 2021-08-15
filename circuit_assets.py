@@ -10,6 +10,7 @@ import logging
 import circuits
 import wrestlers
 import tag_teams
+import stables
 
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
@@ -27,66 +28,11 @@ def circuit_assets():
     all_circuits = circuits.get_all_circuits()
     all_wrestlers = wrestlers.get_all_wrestlers()
     all_tags = tag_teams.get_all_tags()
+    all_stables = stables.get_all_stables()
     map_injuries_to_circuits(all_circuits)
     map_circuit_to_wrestlers(all_circuits)
     map_tags_to_circuits(all_circuits, all_tags)
-
-    # hired_stable_names = []
-    # hired_stables = []
-    # stables = open("stables.json")
-    # stables = json.load(stables)
-    # logging.warning(
-    #     f"Mapping stables to hired wrestlers in {circuit['circuit_name']}"
-    # )
-    # for stable in stables["stables"]:
-    #     for index, id in enumerate(stable["ids"]):
-    #         if index == 0:
-    #             pass
-    #         else:
-    #             if int(id) in hired_wrestler_ids:
-    #                 if stable not in hired_stables:
-    #                     id = int(id) - 1
-    #                     hired_stable_names.append(stable["Stable Name"])
-    #                     hired_stables.append(stable)
-    #                     logging.warning(f"Adding {stable['Stable Name']}")
-    # hired_stable_copy = []
-    # # remove unusable first index of stable ids
-    # for index, stable in enumerate(hired_stables):
-    #     id_list = []
-    #     for dex, id in enumerate(stable["ids"]):
-    #         if dex == 0:
-    #             pass
-    #         else:
-    #             id_list.append(id)
-    #     hired_stable_copy.append(
-    #         {
-    #             "Stable Name": stable["Stable Name"],
-    #             "Global Member Count": stable["member count"],
-    #             "Member Ids": id_list,
-    #         }
-    #     )
-    #     logging.warning(f"Removing duplicate {stable['Stable Name']}")
-
-    # hired_stables = hired_stable_copy
-
-    # for stable in hired_stables:
-    #     logging.warning(f"Mapping {stable['Stable Name']} to hired wrstlers")
-    #     member_names = []
-    #     for id in stable["Member Ids"]:
-    #         # The id corresponds to normal list indexing but is one greater
-    #         wrestler_id = int(id) - 1
-    #         if all_wrestlers["wrestlers"][wrestler_id]["name"] in hired_wrestlers_names:
-    #             member_names.append(all_wrestlers["wrestlers"][wrestler_id]["name"])
-    #             logging.warning(
-    #                 f"Adding {all_wrestlers['wrestlers'][wrestler_id]['name']} to {stable['Stable Name']}"
-    #             )
-    #     stable["Members"] = member_names
-    #     stable["Hired Members"] = len(stable["Members"])
-
-    # circuit["Stables"] = hired_stables
-    # circuit["Stable List"] = hired_stable_names
-
-    # circuit_roster = all_circuits["Circuits"]
+    map_stables_to_circuits(all_stables, all_circuits)
 
 
 def map_injuries_to_circuits(all_circuits):
@@ -146,25 +92,13 @@ def map_tags_to_circuits(all_circuits, all_tags):
         circuits.patch_circuit(circuit["id"], "tag_teams", circuit["tag_teams"])
 
 
-def map_stables_to_wrestlers_and_circuits(stable_list):
+def map_stables_to_circuits(stables, all_circuits):
     """Maps over the stable list add adds them to wrestlers and circuits"""
-    # # adding stables to wrestlers
-    # logging.warning("Adding Wrestlers to Stables")
-    # for stable in stable_list:
-    #     stable_member_ids = []
-    #     for index, member in enumerate(stable["ids"]):
-    #         # first index is the member count and we skip it
-    #         if index == 0:
-    #             pass
-    #         else:
-    #             stable_member_ids.append(int(member))
-    #     stable_members = []
-    #     for wrestler in wrestler_list:
-    #         if wrestler["id"] in stable_member_ids:
-    #             stable_members.append(wrestler["name"])
-    #             wrestler["stables"].append(
-    #                 {
-    #                     "Stable Name": stable["Stable Name"],
-    #                     "Member Ids": stable_member_ids,
-    #                 }
-    #             )
+
+    for circuit in all_circuits:
+        for stable in stables:
+            for id in stable["members"]:
+                if id in circuit["wrestlers"]:
+                    if stable["id"] not in circuit["stables"]:
+                        circuit["stables"].append(stable["id"])
+        circuits.patch_circuit(circuit["id"], "stables", circuit["stables"])

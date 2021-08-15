@@ -1,5 +1,7 @@
 from database import cursor, con, wrestler_table
 import utilities
+import stables
+import tag_teams
 
 
 def wrestler_serializer():
@@ -82,11 +84,17 @@ def patch_wrestler(wrestler_id, column, new_value):
 
     new_value_type = type(new_value)
 
+    mistypes = []
+
     if isinstance(wrestler[column], list):
         if new_value_type == int:
             utilities.check_dupes(wrestler[column], new_value)
         else:
-            return wrestler
+            for number in new_value:
+                if isinstance(number, int):
+                    utilities.check_dupes(wrestler[column], number)
+                else:
+                    mistypes.append(number)
     else:
         if new_value_type == column_type:
             wrestler[column] = new_value
@@ -129,3 +137,29 @@ def get_by_name(wrestler_name):
         )
 
     return cursor.fetchone()
+
+
+def map_stables_to_wrestlers():
+    """Maps the stable ids to each wrestler"""
+
+    stables_list = stables.get_all_stables()
+
+    for stable in stables_list:
+        for member in stable["members"]:
+            wrestler = get_by_id(member)
+            wrestler["stables"].append(stable["id"])
+
+            patch_wrestler(wrestler["id"], "stables", wrestler["stables"])
+
+
+def map_tags_to_wrestlers():
+    """Maps the tag ids to each wrestler"""
+
+    tags_list = tag_teams.get_all_tags()
+
+    for tag in tags_list:
+        for member in tag["tag_team_members"]:
+            wrestler = get_by_id(member)
+            wrestler["tag_teams"].append(tag["id"])
+
+            patch_wrestler(wrestler["id"], "tag_teams", wrestler["tag_teams"])

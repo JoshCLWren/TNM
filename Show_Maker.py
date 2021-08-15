@@ -36,9 +36,9 @@ logging.warning("Start of session")
 logging.warning(datetime.today().strftime("%Y-%m-%d-%H:%M:%S"))
 
 
-def Show(roster, tv_show, match_total=3):
+def Show(tv_show, match_total=3):
     print(f"Welcome to {tv_show}!")
-    matches(roster=roster, tv_show=tv_show, match_total=match_total)
+    matches(tv_show=tv_show, match_total=match_total)
 
 
 cont = "yes"
@@ -76,14 +76,12 @@ while cont == "yes" or cont == "y":
         tv_show = "CMLL"
     elif tv_input == 6:
         tv_show = "ROH"
-    logging.warning(f"Building Roster for {tv_show} with input {tv_input}")
-    roster = roster_builder(tv_show)
 
     print(f"How many matches will {tv_show} have?")
     match_total = int(input())
     logging.warning(f"Matches = {match_total}")
     logging.warning("Building Show")
 
-    Show(tv_show=tv_show, match_total=match_total, roster=roster)
+    Show(tv_show=tv_show, match_total=match_total)
     print("Again?")
     cont = input()

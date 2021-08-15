@@ -49,3 +49,12 @@ def seed_stables(stable_list, drop=True, create_table=True):
                 """
         with con:
             cursor.execute(query, stable_copy)
+
+
+def get_all_stables():
+    """Returns all stables in the db"""
+
+    with con:
+        cursor.execute("Select * from stables;")
+
+    return cursor.fetchall()
