@@ -1,5 +1,5 @@
 Start of session
-2021-08-15-02:08:36
+2021-08-15-12:34:02
 Building Migrations
 Building Circuit Databases
 parsing AEW
@@ -276,7 +276,6 @@ Adding Personality
 adding Sunny Daze to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding Ananya Clarke to AEW
 Adding Contract Status
 Adding Personality
@@ -289,7 +288,6 @@ Adding Personality
 adding Ace Romero to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding Antonia Franklin to AEW
 Adding Contract Status
 Adding Personality
@@ -299,7 +297,6 @@ Adding Personality
 adding Dustin Thomas to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding Pearlie Stone to AEW
 Adding Contract Status
 Adding Personality
@@ -690,7 +687,6 @@ Adding Personality
 adding Kent Carter to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding Aleister Black to AEW
 Adding Contract Status
 Adding Personality
@@ -988,7 +984,6 @@ Adding Personality
 adding Estella Conway to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding Alexander Hammerstone to AEW
 Adding Contract Status
 Adding Personality
@@ -1058,25 +1053,21 @@ Adding Personality
 adding Major Hopper to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding Josef Samael to AEW
 Adding Contract Status
 Adding Personality
 adding Tony Peck to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding John Robertson to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding Simon Gotch to AEW
 Adding Contract Status
 Adding Personality
 adding Scott Parrish to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding Alisha Edwards to AEW
 Adding Contract Status
 Adding Personality
@@ -1200,11 +1191,9 @@ Adding Personality
 adding Matilda Phillips to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding Debra Hardy to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding Angelina Love to AEW
 Adding Contract Status
 Adding Personality
@@ -1352,7 +1341,6 @@ Adding Personality
 adding Noel Hood to AEW
 Adding Contract Status
 Adding Personality
-Jobber Detected
 adding Tama Tonga to AEW
 Adding Contract Status
 Adding Personality
@@ -12430,3 +12418,29 @@ Adding Personality
 adding La Parka to WWE
 Adding Contract Status
 Adding Personality
+Sleeping 5 seconds
+Building Circuit Assets
+Finding Injured Wrestlers
+ Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/AEW/CARD.INJ
+Finding Injured Wrestlers
+ Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/CMLL/CARD.INJ
+Finding Injured Wrestlers
+ Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/IMPACT/CARD.INJ
+Finding Injured Wrestlers
+ Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/MLW/CARD.INJ
+Finding Injured Wrestlers
+ Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/NJPW/CARD.INJ
+Finding Injured Wrestlers
+ Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/NXT/CARD.INJ
+Finding Injured Wrestlers
+Finding Injured Wrestlers
+ Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/WWE/CARD.INJ
+Matches = 1
+Building Show
+57 was rolled with 1 and 101 indexes
+Main even roll = 57
+21 was rolled with 1 and 101 indexes
+Combatent Picker
+[3, 'Triangle Match']
+Title is World Championship
+#1 contender match

@@ -62,27 +62,13 @@ def circuit_serializer(
                 if index == personality:
                     logging.warning("Adding Personality")
                     line = int(line.strip())
-                    if line == 0:
-                        circuit_roster[circuit_counter]["wrestlers"][
-                            circuit_roster_count
-                        ].append({"personality": "face"})
-                    elif line == 1:
-                        circuit_roster[circuit_counter]["wrestlers"][
-                            circuit_roster_count
-                        ].append({"personality": "heel"})
-                    elif line == 2:
-                        circuit_roster[circuit_counter]["wrestlers"][
-                            circuit_roster_count
-                        ].append({"personality": "tweener"})
-                    elif line == 3:
-                        circuit_roster[circuit_counter]["wrestlers"][
-                            circuit_roster_count
-                        ].append({"personality": "jobber"})
-                        logging.warning("Jobber Detected")
-                    else:
-                        circuit_roster[circuit_counter]["wrestlers"][
-                            circuit_roster_count
-                        ].append({"personality": "anti-hero"})
+                    persona = personality_switch(line)
+                    circuit_roster[circuit_counter]["wrestlers"][
+                        circuit_roster_count
+                    ].append({"personality": persona})
+                    if personality == "nothing":
+                        raise Exception
+
                     personality += 18
                     circuit_roster_count += 1
         circuit_counter += 1
@@ -107,12 +93,20 @@ def seed_circuits(circuit_rosters, drop=True, create_table=True):
 
             wrestler = wrestlers.get_by_name(grappler[0]["name"])
             grapplers.append(wrestler["id"])
-            if grappler[0]["personality"] == "face":
-                import pdb
 
-                pdb.set_trace()
-                # Figure out how to do dictionary mapping for a psuedo case statement to add
-                # personality array values
+            if grappler[2]["personality"] not in [
+                "face",
+                "heel",
+                "tweener",
+                "jobber",
+                "anti-hero",
+            ]:
+                raise Exception
+            if grappler[2]["personality"] == "anti-hero":
+                circuit["anti_heroes"].append(wrestler["id"])
+            else:
+                circuit[f"{grappler[2]['personality']}s"].append(wrestler["id"])
+
         circuit["wrestlers"] = grapplers
 
         query = """
@@ -195,3 +189,10 @@ def get_by_name(name):
         cursor.execute("Select * from circuits where name = %(name)s;", {"name": name})
 
     return cursor.fetchone()
+
+
+def personality_switch(argument):
+    """returns the corresponding tnm value with a real text equivilant"""
+    switcher = {0: "face", 1: "heel", 2: "tweener", 3: "jobber", 5: "anti-hero"}
+
+    return switcher.get(argument, "nothing")
