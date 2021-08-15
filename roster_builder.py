@@ -1,5 +1,5 @@
 import logging
-import json
+import circuits
 
 
 def roster_builder(tv_show, busy_wrestlers=[]):
@@ -13,11 +13,10 @@ def roster_builder(tv_show, busy_wrestlers=[]):
         circuit = "WWE"
     else:
         circuit = tv_show.upper()
-    logging.warning("Opening circuit_roster_db.json")
-    circuit_json = open("circuit_roster_db.json")
-    circuit_json = json.load(circuit_json)
 
-    for promotion in circuit_json["Circuits"]:
+    all_circuits = circuits.get_all_circuits()
+
+    for promotion in all_circuits["Circuits"]:
         logging.warning(f'processing {promotion["circuit_name"]}')
         if promotion["circuit_name"] == circuit:
             male_heels = []
