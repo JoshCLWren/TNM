@@ -75,7 +75,7 @@ def seed_wrestlers(wrestler_list, drop=True, create_table=True):
 
 
 def patch_wrestler(wrestler_id, column, new_value):
-    """Changes the value of a given column to the new_value if it's not a duplicate"""
+    """Changes the value of a given column to include the new_value if it's not a duplicate"""
     wrestler = get_by_id(wrestler_id)
 
     column_type = type(wrestler[column])

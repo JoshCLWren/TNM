@@ -106,7 +106,6 @@ def seed_circuits(circuit_rosters, drop=True, create_table=True):
                 grappler[0]["name"] = "Arturo Ruas"
 
             wrestler = wrestlers.get_by_name(grappler[0]["name"])
-            print(grappler)
             grapplers.append(wrestler["id"])
         circuit["wrestlers"] = grapplers
 
@@ -117,7 +116,6 @@ def seed_circuits(circuit_rosters, drop=True, create_table=True):
               """
         with con:
             cursor.execute(query, circuit)
-    circuit_assets.circuit_assets()
 
 
 def get_all_circuits():
@@ -183,7 +181,3 @@ def patch_circuit(circuit_id, column, new_value):
     circuit = cursor.fetchone()
 
     return circuit
-
-
-# def add_wrestlers_to_circuit():
-#   wrestlers =

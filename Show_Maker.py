@@ -44,12 +44,13 @@ def Show(roster, tv_show, match_total=3):
 cont = "yes"
 while cont == "yes" or cont == "y":
     print("Build/Update Databases?")
-    build_db = input()
+    # build_db = input()
+    build_db = "y"
     if build_db == "y":
         logging.warning("Building Migrations")
         migrations.db_builder()
         logging.warning("Sleeping 5 seconds")
-        time.sleep(5)
+        # time.sleep(5)
         logging.warning("Building Circuit Assets")
         circuit_assets.circuit_assets()
     else:
