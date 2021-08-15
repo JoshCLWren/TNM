@@ -7,21 +7,21 @@ from database import cursor, con
 
 fake_circuit = {
     "name": "WWF",
-    "stables": None,
-    "tag_teams": None,
-    "wrestlers": None,
-    "injuries": None,
-    "heels": None,
-    "faces": None,
-    "anti_heroes": None,
-    "tweeners": None,
-    "jobbers": None,
+    "stables": [],
+    "tag_teams": [],
+    "wrestlers": [],
+    "injuries": [],
+    "heels": [],
+    "faces": [],
+    "anti_heroes": [],
+    "tweeners": [],
+    "jobbers": [],
 }
 
 
 def test_circuit_serializer():
     """Tests Dropping and Rebuilding table and adding one circuit"""
-    circuits.seed_wrestlers([fake_circuit])
+    circuits.seed_circuits([fake_circuit])
 
     circuits_in_db = circuits.get_all_circuits()
 
@@ -73,7 +73,16 @@ def test_adding_a_wrestler_to_a_circuit():
     """Ensure that we can add a wrestler to a circuit"""
     circuit = circuits.get_by_id(1)
 
-    circuits.patch_circuit(
-        circuit["id"],
-        "wrestlers",
+    circuits.patch_circuit(circuit["id"], "wrestlers", 600)
+    assert circuit
+
+
+def test_passing_a_list_to_patch():
+    """Ensure that if a list is passed the patch method checks the types of the list and updates"""
+    circuit = circuits.get_by_id(1)
+
+    circuit_with_more_injuries = circuits.patch_circuit(
+        circuit["id"], "injuries", [1, 2, 3, 4]
     )
+
+    assert circuit != circuit_with_more_injuries

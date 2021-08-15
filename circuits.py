@@ -25,14 +25,14 @@ def circuit_serializer(
                 {
                     "name": circuit,
                     "wrestlers": [],
-                    "tag_teams": None,
-                    "stables": None,
-                    "injuries": None,
-                    "heels": None,
-                    "faces": None,
-                    "anti_heroes": None,
-                    "tweeners": None,
-                    "jobbers": None,
+                    "tag_teams": [],
+                    "stables": [],
+                    "injuries": [],
+                    "heels": [],
+                    "faces": [],
+                    "anti_heroes": [],
+                    "tweeners": [],
+                    "jobbers": [],
                 }
             )
             for index, line in enumerate(circuit_db):
@@ -102,7 +102,11 @@ def seed_circuits(circuit_rosters, drop=True, create_table=True):
     for circuit in circuit_rosters:
         grapplers = []
         for grappler in circuit["wrestlers"]:
+            if grappler[0]["name"] == "Adrian Jaoude":
+                grappler[0]["name"] = "Arturo Ruas"
+
             wrestler = wrestlers.get_by_name(grappler[0]["name"])
+            print(grappler)
             grapplers.append(wrestler["id"])
         circuit["wrestlers"] = grapplers
 
@@ -147,17 +151,23 @@ def update_circuit(**kwargs):
 
 def patch_circuit(circuit_id, column, new_value):
     """Update a single column on a circuit"""
+
     circuit = get_by_id(circuit_id)
 
     column_type = type(circuit[column])
 
     new_value_type = type(new_value)
 
+    mistypes = []
     if isinstance(circuit[column], list):
         if new_value_type == int:
             utilities.check_dupes(circuit[column], new_value)
-        else:
-            return circuit
+        elif new_value_type == list:
+            for number in new_value:
+                if isinstance(number, int):
+                    utilities.check_dupes(circuit[column], number)
+                else:
+                    mistypes.append(number)
     else:
         if new_value_type == column_type:
             circuit[column] = new_value

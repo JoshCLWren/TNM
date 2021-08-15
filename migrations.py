@@ -168,6 +168,6 @@ def db_builder():
     with open("tag_team_roster.json", "w") as fp:
         json.dump({"tag_teams": tag_teams}, fp, indent=2)
 
-    logging.warning("Creating stables.json")
-    with open("stables.json", "w") as fp:
-        json.dump({"stables": stable_list}, fp, indent=2)
+    # logging.warning("Creating stables.json")
+    # with open("stables.json", "w") as fp:
+    #     json.dump({"stables": stable_list}, fp, indent=2)

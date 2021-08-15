@@ -1,6 +1,6 @@
 import psycopg2.extras
 
-con = psycopg2.connect("dbname=test user=postgres")
+con = psycopg2.connect("dbname=tnm user=postgres")
 cursor = con.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
 
 
