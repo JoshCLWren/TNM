@@ -3,110 +3,102 @@
 # what tags/stables are available in a circuit
 # Which wrestlers have appeared on the card already
 # random match builders need to be heel vs face
-# may need a relational database for this.
+# may need a relational all_wrestlersbase for this.
 
 import json
+import logging
+import circuits
+import wrestlers
+import tag_teams
+import stables
 
-data = open("wrestler_db.json")
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
 
-data = json.load(data)
+logging.basicConfig(
+    filename="asset.log",
+    filemode="w",
+    format="%(message)s",
+)
+logging.warning("circuit_assets.py")
 
 
 def circuit_assets():
-    circuit_json = open("circuit_roster_db.json")
-    circuit_json = json.load(circuit_json)
-    data = open("wrestler_db.json")
-    data = json.load(data)
+    """Map over all the specifics to a circuit and add them to each circuit"""
+    all_circuits = circuits.get_all_circuits()
+    all_wrestlers = wrestlers.get_all_wrestlers()
+    all_tags = tag_teams.get_all_tags()
+    all_stables = stables.get_all_stables()
+    map_injuries_to_circuits(all_circuits)
+    map_circuit_to_wrestlers(all_circuits)
+    map_tags_to_circuits(all_circuits, all_tags)
+    map_stables_to_circuits(all_stables, all_circuits)
 
-    for circuit in circuit_json["Circuits"]:
-        hired_wrestler_ids = []
-        hired_wrestlers = []
-        hired_wrestlers_names = []
-        for wrestler in data["wrestlers"]:
-            if circuit["circuit_name"] in wrestler["circuits"]:
-                hired_wrestlers.append(wrestler)
-                hired_wrestlers_names.append(wrestler["name"])
-                hired_wrestler_ids.append(wrestler["id"])
 
-        circuit["Wrestler List"] = hired_wrestlers_names
+def map_injuries_to_circuits(all_circuits):
+    """Maps over the CARD.INJ of each circuit and updates the injury list"""
 
-        hired_tags_names = []
-        hired_tag_teams = []
-        for wrestler in hired_wrestlers:
-            for tag in wrestler["tag teams"]:
-                if (
-                    tag["Partner"] in hired_wrestlers_names
-                    and tag["Tag Team Name"] not in hired_tags_names
-                ):
-                    hired_tags_names.append(tag["Tag Team Name"])
-                    hired_tag_teams.append(
-                        {
-                            "Tag Team Name": tag["Tag Team Name"],
-                            "Member 1": wrestler["name"],
-                            "Member 2": tag["Partner"],
-                        }
-                    )
+    filepath = "TNM/tnm7se_build_13/tnm7se/TNM7SE/"
+    for circuit in all_circuits:
 
-        circuit["Hired Tag List"] = hired_tags_names
+        circuit["injuries"] = []
+        injured_wrestler_count = 0
+        logging.warning("Finding Injured Wrestlers")
 
-        hired_stable_names = []
-        hired_stables = []
-        stables = open("stables.json")
-        stables = json.load(stables)
-        for stable in stables["stables"]:
-            for index, id in enumerate(stable["ids"]):
-                if index == 0:
-                    pass
+        try:
+            with open(f"{filepath}{circuit['name']}/CARD.INJ") as injuries:
+                logging.warning(f" Processing {filepath}{circuit['name']}/CARD.INJ")
+                for index, line in enumerate(injuries):
+                    if index % 2 == 0:
+                        wrestler_id = line.strip()
+                        try:
+                            wrestler_id = int(wrestler_id)
+                            wrestler_id = wrestler_id - 1
+                        except ValueError:
+                            wrestler = wrestlers.get_by_name(wrestler_id)
+                            wrestler_id = wrestler["id"]
+                        circuit["injuries"].append(wrestler_id)
+
+                    else:
+                        injured_wrestler_count += 1
+        except FileNotFoundError:
+            pass
+
+        circuits.update_circuit(**circuit)
+
+
+def map_circuit_to_wrestlers(all_circuits):
+    """maps each id in each circit wrestler to each wrestler"""
+
+    for circuit in all_circuits:
+        for wrestler in circuit["wrestlers"]:
+            wrestlers.patch_wrestler(wrestler, "circuits", circuit["id"])
+
+
+def map_tags_to_circuits(all_circuits, all_tags):
+    """maps each id in tag to each circuit"""
+
+    for circuit in all_circuits:
+        for tag in all_tags:
+            tag_members = []
+            for member in tag["tag_team_members"]:
+
+                if member in circuit["wrestlers"]:
+                    tag_members.append(member)
                 else:
-                    if int(id) in hired_wrestler_ids:
-                        if stable not in hired_stables:
-                            id = int(id) - 1
-                            hired_stable_names.append(stable["Stable Name"])
-                            hired_stables.append(stable)
-        hired_stable_copy = []
-        # remove unusable first index of stable ids
-        for index, stable in enumerate(hired_stables):
-            id_list = []
-            for dex, id in enumerate(stable["ids"]):
-                if dex == 0:
-                    pass
-                else:
-                    id_list.append(id)
-            hired_stable_copy.append(
-                {
-                    "Stable Name": stable["Stable Name"],
-                    "Global Member Count": stable["member count"],
-                    "Member Ids": id_list,
-                }
-            )
-        hired_stables = hired_stable_copy
+                    continue
+            if len(tag_members) == 2:
+                circuit["tag_teams"].append(tag["id"])
+        circuits.patch_circuit(circuit["id"], "tag_teams", circuit["tag_teams"])
 
-        for stable in hired_stables:
-            member_names = []
-            for id in stable["Member Ids"]:
-                # The id corresponds to normal list indexing but is one greater
-                wrestler_id = int(id) - 1
-                if data["wrestlers"][wrestler_id]["name"] in hired_wrestlers_names:
-                    member_names.append(data["wrestlers"][wrestler_id]["name"])
-            stable["Members"] = member_names
-            stable["Hired Members"] = len(stable["Members"])
 
-        circuit["Stables"] = hired_stables
-        circuit["Stable List"] = hired_stable_names
+def map_stables_to_circuits(stables, all_circuits):
+    """Maps over the stable list add adds them to wrestlers and circuits"""
 
-    circuit_roster = circuit_json["Circuits"]
-
-    class json_convert(dict):
-        def __str__(self):
-            return json.dumps(self)
-
-    with open("circuit_roster_db.json", "w") as file:
-        file.write('{"Circuits": [')
-        for index, circuit in enumerate(circuit_roster):
-            circuit = json_convert(circuit)
-            last_spot = len(circuit_roster) - 1
-            if index == last_spot:
-                file.write(f"{circuit}\n")
-            else:
-                file.write(f"{circuit}\n,")
-        file.write("]}")
+    for circuit in all_circuits:
+        for stable in stables:
+            for id in stable["members"]:
+                if id in circuit["wrestlers"]:
+                    if stable["id"] not in circuit["stables"]:
+                        circuit["stables"].append(stable["id"])
+        circuits.patch_circuit(circuit["id"], "stables", circuit["stables"])
