@@ -1,0 +1,805 @@
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 00:19:18
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1868
+CreateProcess ret: 1
+Plugin Process ID: 1696
+Plugin Thread ID:  632
+Process Handle:    92
+Thread Handle:     96
+21 wrestlers: Tommy Dreamer, Sunny Daze, Sonny Kiss, Shawn Spears, Orange Cassidy, Michael Nakazawa, Maxwell Jacob Friedman, Marq Quen, Marko Stunt, Luchasaurus, Jungle Boy, Joey Janela, Jimmy Havoc, Isiah Kassidy, Glacier, Dustin Thomas, Brian Pillman Jr., Brandon Cutler, Billy, Ace Romero, Adam Page
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -1.45439216225896E-14 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 00:20:04
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   2016
+CreateProcess ret: 1
+Plugin Process ID: 1884
+Plugin Thread ID:  1500
+Process Handle:    92
+Thread Handle:     96
+6 wrestlers: Christopher Daniels, Frankie Kazarian, Scorpio Sky, CIMA, El Lindaman, T-HAWK
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -5.46229728115577E-14 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 00:22:36
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   308
+CreateProcess ret: 1
+Plugin Process ID: 208
+Plugin Thread ID:  1420
+Process Handle:    92
+Thread Handle:     96
+4 wrestlers: Britt Baker, Awesome Kong, Kylie Rae, Nyla Rose
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 8.1823436914874E-14 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 00:23:01
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   288
+CreateProcess ret: 1
+Plugin Process ID: 184
+Plugin Thread ID:  2040
+Process Handle:    92
+Thread Handle:     96
+21 wrestlers: Tommy Dreamer, Sunny Daze, Sonny Kiss, Shawn Spears, Orange Cassidy, Michael Nakazawa, Maxwell Jacob Friedman, Marq Quen, Marko Stunt, Luchasaurus, Jungle Boy, Joey Janela, Jimmy Havoc, Isiah Kassidy, Glacier, Dustin Thomas, Brian Pillman Jr., Brandon Cutler, Billy, Ace Romero, Adam Page
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 7.09432512735475E-14 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 00:23:15
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   252
+CreateProcess ret: 1
+Plugin Process ID: 1616
+Plugin Thread ID:  1164
+Process Handle:    92
+Thread Handle:     96
+6 wrestlers: Christopher Daniels, Frankie Kazarian, Scorpio Sky, CIMA, El Lindaman, T-HAWK
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -8.91509088774001E-14 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 00:25:27
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   312
+CreateProcess ret: 1
+Plugin Process ID: 180
+Plugin Thread ID:  1968
+Process Handle:    92
+Thread Handle:     96
+21 wrestlers: Tommy Dreamer, Sunny Daze, Sonny Kiss, Shawn Spears, Orange Cassidy, Michael Nakazawa, Maxwell Jacob Friedman, Marq Quen, Marko Stunt, Luchasaurus, Jungle Boy, Joey Janela, Jimmy Havoc, Isiah Kassidy, Glacier, Dustin Thomas, Brian Pillman Jr., Brandon Cutler, Billy, Ace Romero, Adam Page
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -1.0369483049999E-13 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 00:27:26
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   412
+CreateProcess ret: 1
+Plugin Process ID: 1496
+Plugin Thread ID:  1780
+Process Handle:    92
+Thread Handle:     96
+21 wrestlers: Tommy Dreamer, Sunny Daze, Sonny Kiss, Shawn Spears, Orange Cassidy, Michael Nakazawa, Maxwell Jacob Friedman, Marq Quen, Marko Stunt, Luchasaurus, Jungle Boy, Joey Janela, Jimmy Havoc, Isiah Kassidy, Glacier, Dustin Thomas, Brian Pillman Jr., Brandon Cutler, Billy, Ace Romero, Adam Page
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -8.91509088774001E-14 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 00:28:08
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   248
+CreateProcess ret: 1
+Plugin Process ID: 1036
+Plugin Thread ID:  744
+Process Handle:    92
+Thread Handle:     96
+6 wrestlers: Christopher Daniels, Austin Gunn, Scorpio Sky, CIMA, El Lindaman, T-HAWK
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 1.63202784619898E-14 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 00:35:56
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1460
+CreateProcess ret: 1
+Plugin Process ID: 528
+Plugin Thread ID:  556
+Process Handle:    92
+Thread Handle:     96
+21 wrestlers: Tommy Dreamer, Sunny Daze, Sonny Kiss, Shawn Spears, Orange Cassidy, Michael Nakazawa, Maxwell Jacob Friedman, Marq Quen, Marko Stunt, Luchasaurus, Jungle Boy, Joey Janela, Matt Jackson, Isiah Kassidy, Glacier, Dustin Thomas, Brian Pillman Jr., Brandon Cutler, Billy, Ace Romero, Adam Page
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -1.31006316905768E-13 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 01:50:33
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1728
+CreateProcess ret: 1
+Plugin Process ID: 1776
+Plugin Thread ID:  1616
+Process Handle:    92
+Thread Handle:     96
+21 wrestlers: Tommy Dreamer, Sunny Daze, Sonny Kiss, Shawn Spears, Orange Cassidy, Michael Nakazawa, Maxwell Jacob Friedman, Marq Quen, Marko Stunt, Luchasaurus, Jungle Boy, Joey Janela, Jimmy Havoc, Isiah Kassidy, Glacier, Dustin Thomas, Brian Pillman Jr., Brandon Cutler, Billy, Ace Romero, Adam Page
+Scanning open windows for launched application.
+Plugin PID: 1776 with window handle 2752852
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 117.725 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225786
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 01:55:10
+Command line raw:  [590450,110,145,646,432] ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     110
+Desired y pos:     145
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   592
+CreateProcess ret: 1
+Plugin Process ID: 1164
+Plugin Thread ID:  1476
+Process Handle:    92
+Thread Handle:     96
+6 wrestlers: Christopher Daniels, Frankie Kazarian, Scorpio Sky, CIMA, El Lindaman, T-HAWK
+Scanning open windows for launched application.
+Plugin PID: 1164 with window handle 524926
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -2.32702745961433E-13 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 01:55:23
+Command line raw:  [590450,110,145,646,432] ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     110
+Desired y pos:     145
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   224
+CreateProcess ret: 1
+Plugin Process ID: 476
+Plugin Thread ID:  1460
+Process Handle:    92
+Thread Handle:     96
+4 wrestlers: Britt Baker, Awesome Kong, Kylie Rae, Nyla Rose
+Scanning open windows for launched application.
+Plugin PID: 476 with window handle 590462
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 4.19599999999996 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 01:55:37
+Command line raw:  [590450,110,145,646,432] ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     110
+Desired y pos:     145
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   252
+CreateProcess ret: 1
+Plugin Process ID: 1420
+Plugin Thread ID:  416
+Process Handle:    92
+Thread Handle:     96
+4 wrestlers: Chuck Taylor, Trent, Angelico, Jack Evans
+Scanning open windows for launched application.
+Plugin PID: 1420 with window handle 655998
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -7.99360577730113E-14 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 01:55:47
+Command line raw:  [590450,110,145,646,432] ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     110
+Desired y pos:     145
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   556
+CreateProcess ret: 1
+Plugin Process ID: 1480
+Plugin Thread ID:  280
+Process Handle:    92
+Thread Handle:     96
+6 wrestlers: Hikaru Shida, Riho, Ryo Mizunami, Aja Kong, Emi Sakura, Yuka Sakazaki
+Scanning open windows for launched application.
+Plugin PID: 1480 with window handle 721534
+Waiting for process to terminate.
+Returned from WaitForSingleObject after .810999999999869 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 01:55:58
+Command line raw:  [590450,110,145,646,432] ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     110
+Desired y pos:     145
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1868
+CreateProcess ret: 1
+Plugin Process ID: 1740
+Plugin Thread ID:  544
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Cody, Dustin Rhodes
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -1.89182003396127E-13 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 01:56:08
+Command line raw:  [590450,110,145,646,432] ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     110
+Desired y pos:     145
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1376
+CreateProcess ret: 1
+Plugin Process ID: 1276
+Plugin Thread ID:  1496
+Process Handle:    92
+Thread Handle:     96
+4 wrestlers: Matt Jackson, Nick Jackson, Penta el Zero M, Fenix
+Scanning open windows for launched application.
+Plugin PID: 1276 with window handle 852606
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 5.10702591327572E-14 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 01:56:19
+Command line raw:  [590450,110,145,646,432] ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     110
+Desired y pos:     145
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1632
+CreateProcess ret: 1
+Plugin Process ID: 164
+Plugin Thread ID:  1172
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Kip Sabian, Sammy Guevara
+Scanning open windows for launched application.
+Plugin PID: 164 with window handle 918142
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 2.47357689886485E-13 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 01:56:51
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1364
+CreateProcess ret: 1
+Plugin Process ID: 788
+Plugin Thread ID:  468
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Chris Jericho, Kenny Omega
+Scanning open windows for launched application.
+Plugin PID: 788 with window handle 983678
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 1.51300000000043 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-08-2021 13:45:15
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   2920
+CreateProcess ret: 1
+Plugin Process ID: 3968
+Plugin Thread ID:  1004
+Process Handle:    120
+Thread Handle:     124
+2 wrestlers: Fabi Apache, Aja Kong
+Scanning open windows for launched application.
+Plugin PID: 3968 with window handle 525034
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 1.63069557856943E-12 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-08-2021 13:45:22
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   3412
+CreateProcess ret: 1
+Plugin Process ID: 3284
+Plugin Thread ID:  3632
+Process Handle:    120
+Thread Handle:     124
+2 wrestlers: Sammy Guevara, Maximo
+Scanning open windows for launched application.
+Plugin PID: 3284 with window handle 590570
+Waiting for process to terminate.
+Returned from WaitForSingleObject after .953999999997848 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-08-2021 13:45:29
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   3560
+CreateProcess ret: 1
+Plugin Process ID: 172
+Plugin Thread ID:  3432
+Process Handle:    120
+Thread Handle:     124
+4 wrestlers: Laredo Kid, Taya Valkyrie, Daga, Tessa Blanchard
+Scanning open windows for launched application.
+Plugin PID: 172 with window handle 656106
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 1.74082970261224E-13 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-08-2021 13:45:37
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1680
+CreateProcess ret: 1
+Plugin Process ID: 3184
+Plugin Thread ID:  2060
+Process Handle:    120
+Thread Handle:     124
+6 wrestlers: Aero Star, Puma King, Angelico, Chessman, Killer Kross, Monster Clown
+Scanning open windows for launched application.
+Plugin PID: 3184 with window handle 721642
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 1.4566126083082E-12 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-08-2021 13:45:45
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   2736
+CreateProcess ret: 1
+Plugin Process ID: 3384
+Plugin Thread ID:  1696
+Process Handle:    120
+Thread Handle:     124
+4 wrestlers: La Parka, Ortiz, Rey Escorpion, El Texano Jr.
+Scanning open windows for launched application.
+Plugin PID: 3384 with window handle 787178
+Waiting for process to terminate.
+Returned from WaitForSingleObject after .483000000000874 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-08-2021 13:45:52
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   2384
+CreateProcess ret: 1
+Plugin Process ID: 2916
+Plugin Thread ID:  3152
+Process Handle:    120
+Thread Handle:     124
+4 wrestlers: Penta el Zero M, Fenix, Matt Jackson, Nick Jackson
+Scanning open windows for launched application.
+Plugin PID: 2916 with window handle 852714
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -3.08375547319883E-12 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-08-2021 13:46:01
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\AEW
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   4068
+CreateProcess ret: 1
+Plugin Process ID: 1324
+Plugin Thread ID:  2396
+Process Handle:    120
+Thread Handle:     124
+4 wrestlers: Psycho Clown, Dr. Wagner Jr., Blue Demon Jr., Taurus
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 2.38742359215394E-12 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command

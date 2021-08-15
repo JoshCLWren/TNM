@@ -1,0 +1,355 @@
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         07-31-2021 11:57:22
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   3720
+CreateProcess ret: 1
+Plugin Process ID: 3980
+Plugin Thread ID:  1348
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Adam Page, Aja Kong
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -1.17239551400416E-13 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         07-31-2021 23:27:43
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   428
+CreateProcess ret: 1
+Plugin Process ID: 560
+Plugin Thread ID:  556
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Adam Page, Aja Kong
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 4.68958205601666E-13 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         07-31-2021 23:29:56
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   236
+CreateProcess ret: 1
+Plugin Process ID: 280
+Plugin Thread ID:  252
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Adam Page, Aja Kong
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -9.30810983845731E-13 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         07-31-2021 23:30:36
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   436
+CreateProcess ret: 1
+Plugin Process ID: 232
+Plugin Thread ID:  712
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Adam Page, Aja Kong
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -4.77484718430787E-12 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         07-31-2021 23:31:53
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1276
+CreateProcess ret: 1
+Plugin Process ID: 1564
+Plugin Thread ID:  1568
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Adam Page, Aja Kong
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 3.84403620046214E-12 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         07-31-2021 23:33:19
+Command line raw:  [393652,22,29,646,432] ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     22
+Desired y pos:     29
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1736
+CreateProcess ret: 1
+Plugin Process ID: 1748
+Plugin Thread ID:  1312
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Adam Page, Aja Kong
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 1.3997691894474E-12 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         07-31-2021 23:37:02
+Command line raw:  [721336,88,116,646,432] ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     88
+Desired y pos:     116
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1024
+CreateProcess ret: 1
+Plugin Process ID: 564
+Plugin Thread ID:  176
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Adam Page, Aja Kong
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -5.12301312483032E-12 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         07-31-2021 23:38:29
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   704
+CreateProcess ret: 1
+Plugin Process ID: 1204
+Plugin Thread ID:  1948
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Adam Page, Aja Kong
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 3.60955709766131E-12 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         07-31-2021 23:43:29
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   636
+CreateProcess ret: 1
+Plugin Process ID: 1956
+Plugin Thread ID:  204
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Adam Page, Aja Kong
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 4.65405491922866E-12 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         07-31-2021 23:49:30
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   2016
+CreateProcess ret: 1
+Plugin Process ID: 556
+Plugin Thread ID:  528
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Ananya Clarke, Alex Reynolds
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after -1.16529008664656E-12 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225785
+! No match engine log available
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 01:53:35
+Command line raw:  ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     0
+Desired y pos:     0
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1928
+CreateProcess ret: 1
+Plugin Process ID: 1964
+Plugin Thread ID:  776
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Adam Page, Aja Kong
+Scanning open windows for launched application.
+Plugin PID: 1964 with window handle 3146056
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 9.16299999999992 seconds
+GetExitCodeProcess: returned 1 with exit code 3221225786
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
+***************************************************************
+*                      New Plugin Launch                      *
+***************************************************************
+-> Handing off control to W32GateC
+******
+Log entry:         08-01-2021 01:54:38
+Command line raw:  [590450,110,145,646,432] ..\plugins\tnmmatch\tnmmatch.exe
+Application:       ..\plugins\tnmmatch\tnmmatch.exe
+Command line post: 
+Current directory: C:\TNM\tnm7se_build_13\tnm7se\tnm7se\TEST
+Desired x pos:     110
+Desired y pos:     145
+Window title:      TNM - New Generation Match Engine
+Curr process ID:   1776
+CreateProcess ret: 1
+Plugin Process ID: 1728
+Plugin Thread ID:  2032
+Process Handle:    92
+Thread Handle:     96
+2 wrestlers: Alex Reynolds, Ananya Clarke
+Scanning open windows for launched application.
+No plugin found.
+Waiting for process to terminate.
+Returned from WaitForSingleObject after 2.93098878501041E-14 seconds
+GetExitCodeProcess: returned 1 with exit code 0
+=> Looks OK
+*** Match engine log:
+   -> Match Engine Console started and running
+   -> About to run match
+   -> Outputting match results
+   -> Finishing up and exiting match engine
+Exiting console invokation layer
+-> Returned from W32GateC
+**** waiting for next command
