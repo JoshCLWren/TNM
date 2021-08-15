@@ -183,6 +183,11 @@ def patch_circuit(circuit_id, column, new_value):
 
 def get_by_name(name):
     """Retrieves the circuit with the name"""
+    wwe_products = ["Raw", "Smackdown", "205"]
+    if name == "ROH":
+        name = "CMLL"
+    if name in wwe_products:
+        name = "WWE"
     with con:
         cursor.execute("Select * from circuits where name = %(name)s;", {"name": name})
 

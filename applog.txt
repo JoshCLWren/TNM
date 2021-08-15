@@ -1,5 +1,5 @@
 Start of session
-2021-08-15-15:08:41
+2021-08-15-15:41:59
 Building Migrations
 Building Circuit Databases
 parsing AEW
@@ -12726,12 +12726,5 @@ Finding Injured Wrestlers
 Finding Injured Wrestlers
 Finding Injured Wrestlers
  Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/WWE/CARD.INJ
-Matches = 1
+Matches = 4
 Building Show
-11 was rolled with 1 and 101 indexes
-Main even roll = 11
-9 was rolled with 1 and 101 indexes
-Combatent Picker
-[2, 'One on One']
-Title is Raw Tag Championship
-#1 contender match

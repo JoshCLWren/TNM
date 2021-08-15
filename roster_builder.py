@@ -131,11 +131,3 @@ def roster_builder(tv_show, busy_wrestlers=[]):
     print(len(circuit_roster["Hired Wrestlers"]))
     print(f"busy{busy_wrestlers}")
     return circuit_roster
-
-
-def roster_updater(tv_show, busy_wrestlers, roster):
-    for wrestler in busy_wrestlers:
-        if wrestler not in roster["Busy Wrestlers"]:
-            roster["Busy Wrestlers"].append(wrestler)
-    print(roster["Busy Wrestlers"])
-    roster_builder(tv_show, roster["Busy Wrestlers"])

@@ -10,6 +10,7 @@ from utilities import (
 )
 import random
 import circuits
+import wrestlers
 
 
 def main_event(tv_show):
@@ -40,8 +41,7 @@ def main_event(tv_show):
     return main_event
 
 
-def matches(tv_show, match_total):
-    roster = circuits.get_by_name(tv_show)
+def matches(tv_show, circuit, match_total, eligible_participants):
     twenty_four_seven_match = 15
     vanilla_singles = 50
     multi_man_tag = 73
@@ -52,8 +52,6 @@ def matches(tv_show, match_total):
         multi_man_tag = 66
         tag_match = 100
         handicap = 101
-
-    wwe_shows = ["Raw", "Smackdown"]
     if tv_show == "IMPACT":
         teams = 11
     else:
@@ -64,19 +62,19 @@ def matches(tv_show, match_total):
         match_picker = roll()
         logging.warning(f"Match Roll for index {match} is {match_picker}")
         if match < match_total and "CMLL" not in tv_show:
-            if match_picker < twenty_four_seven_match and tv_show in wwe_shows:
+            if match_picker < twenty_four_seven_match and circuit["name"] == "WWE":
                 combatents = combatent_picker()
                 people = combatents[0]
-                contestents = roster_selector(
-                    tv_show=tv_show, people=people, champion="24/7", roster=roster
+                roster_mutation = roster_selector(
+                    tv_show=tv_show,
+                    people=people,
+                    champion="24/7",
+                    roster=eligible_participants,
                 )
-
-                print(f"Match {match} will be a {combatents[1]} 24/7 Title Defense")
-                print(f"- Match Participants are: {contestents}")
-                logging.warning("24/7 match")
-            elif match_picker < twenty_four_seven_match and tv_show not in wwe_shows:
-                contestents = roster_selector(
-                    tv_show=tv_show, roster=roster, people=2, gender="Male"
+                twenty_four_seven_match(roster_mutation, match, combatents)
+            elif match_picker < twenty_four_seven_match and circuit["name"] != "WWE":
+                roster_mutation = roster_selector(
+                    tv_show=tv_show, people=2, roster=eligible_participants, people=2, gender="Male"
                 )
                 print(f"Match {match} will be a male one on one singles match")
                 print(f"- Match Participants are: {contestents}")
@@ -136,76 +134,86 @@ def matches(tv_show, match_total):
 
 
 def roster_selector(tv_show, people, roster, champion=None, gender=None):
-    # now I need champions added to circuit db.
+    circuit = circuits.get_by_name(tv_show)
+    males = []
+    eligible_males = [x for x in roster if x[0] in males]
+    # need to figure out this list comprehension and also what I'm going to do with personalities
+
+    females= []
     contestants = []
-    for guy in roster["Busy Wrestlers"]:
-        try:
-            roster["Male Ready Heels"].remove(guy)
-        except:
-            pass
-    for guy in roster["Busy Wrestlers"]:
-        try:
-            roster["Male Ready Faces"].remove(guy)
-        except:
-            pass
-    for guy in roster["Busy Wrestlers"]:
-        try:
-            roster["Male Ready Anti Heroes"].remove(guy)
-        except:
-            pass
-    for guy in roster["Busy Wrestlers"]:
-        try:
-            roster["Male Ready Tweeners"].remove(guy)
-        except:
-            pass
-    for guy in roster["Busy Wrestlers"]:
-        try:
-            roster["Male Ready Jobbers"].remove(guy)
-        except:
-            pass
     if champion == "24/7":
-
         for grapplers in range(1, people):
-            contestant = random.choice(roster["Hired Wrestlers"])
-            roster["Hired Wrestlers"].remove(contestant)
+            contestant = random.choice(roster)
+            roster.remove(contestant)
             contestants.append(contestant)
-    if gender == "Male":
-        male_non_heels = (
-            roster["Male Ready Faces"]
-            + roster["Male Ready Anti Heroes"]
-            + roster["Male Ready Tweeners"]
-            + roster["Male Ready Jobbers"]
-        )
-        print(roster["Male Ready Heels"])
-        if roster["Male Ready Heels"] == []:
-            heel = False
-            try:
-                contestant1 = random.choice(roster["Male Ready Anti Heroes"])
-            except IndexError:
-                try:
-                    contestant1 = random.choice(roster["Male Ready Faces"])
-                except IndexError:
-                    return print("Ran out of Dudes, dude.")
+            roster_mutation = {"contestants": contestants, "eligible_participants": roster}
+
+            return roster_mutation
+    for performer in roster:
+        grappler = wrestlers.get_by_id(performer)
+        if grappler["gender"] == "male":
+            males.append(performer)
+        elif grappler["gender"] == "female":
+            females.append(performer)
         else:
-            heel = True
-            contestant1 = random.choice(roster["Male Ready Heels"])
-        contestants.append(contestant1)
-        for grapplers in range(1, people):
-            if male_non_heels == []:
-                break
-            if heel == False:
-                male_non_heels = (
-                    roster["Male Ready Faces"]
-                    + roster["Male Ready Tweeners"]
-                    + roster["Male Ready Jobbers"]
-                )
-            try:
-                contestant = random.choice(male_non_heels)
-            except IndexError:
-                print("Out of Wrestlers. Everybody go home.")
-                break
-            contestants.append(contestant)
-    print(contestants)
-    roster_updater(tv_show, contestants, roster)
+            import pdb
 
-    return contestants
+            pdb.set_trace()
+    for person in people:
+        if gender == "Male":
+            contestant = random.choice(eligible_males)
+            male_non_heels = (
+                roster["Male Ready Faces"]
+                + roster["Male Ready Anti Heroes"]
+                + roster["Male Ready Tweeners"]
+                + roster["Male Ready Jobbers"]
+            )
+            print(roster["Male Ready Heels"])
+            if roster["Male Ready Heels"] == []:
+                heel = False
+                try:
+                    contestant1 = random.choice(roster["Male Ready Anti Heroes"])
+                except IndexError:
+                    try:
+                        contestant1 = random.choice(roster["Male Ready Faces"])
+                    except IndexError:
+                        return print("Ran out of Dudes, dude.")
+            else:
+                heel = True
+                contestant1 = random.choice(roster["Male Ready Heels"])
+            contestants.append(contestant1)
+            for grapplers in range(1, people):
+                if male_non_heels == []:
+                    break
+                if heel == False:
+                    male_non_heels = (
+                        roster["Male Ready Faces"]
+                        + roster["Male Ready Tweeners"]
+                        + roster["Male Ready Jobbers"]
+                    )
+                try:
+                    contestant = random.choice(male_non_heels)
+                except IndexError:
+                    print("Out of Wrestlers. Everybody go home.")
+                    break
+                contestants.append(contestant)
+    print(contestants)
+
+    roster_mutation = {"contestants": contestants, "eligible_participants": roster}
+
+    return roster_mutation
+
+
+def match_string(roster_mutation):
+    participants_string = ""
+    participants = wrestlers.get_by_id(roster_mutation["contestants"])
+    for participant in participants:
+        participants_string += f"{participant['name']} "
+    return participants_string
+
+
+def twenty_four_seven_match(roster_mutation, match, combatents):
+    participants_string = match_string(roster_mutation)
+    print(f"Match {match} will be a {combatents[1]} 24/7 Title Defense")
+    print(f"- Match Participants are: {participants_string}")
+    logging.warning("24/7 match")

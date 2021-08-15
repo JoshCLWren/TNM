@@ -88,6 +88,23 @@ def shows_table():
         )
 
 
+def championship():
+    # draft for potential championship table
+    with con:
+        cursor.execute(
+            """
+                CREATE TABLE IF NOT EXISTS CHAMPIONSHIPS(
+                    id bigserial PRIMARY KEY,
+                    name VARCHAR,
+                    weightclass VARCHAR,
+                    brand_id INTEGER,
+                    show_id INTEGER,
+                    title_holder INTEGER
+                )
+            """
+        )
+
+
 # stable tags?
 # championships?
 # brands?
