@@ -82,6 +82,7 @@ while cont == "yes" or cont == "y":
 
     print(f"How many matches will {tv_show} have?")
     match_total = int(input())
+
     logging.warning(f"Matches = {match_total}")
     logging.warning("Building Show")
 

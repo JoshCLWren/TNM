@@ -1,5 +1,4 @@
 import logging
-from roster_builder import roster_updater
 from utilities import (
     roll,
     combatent_picker,
@@ -11,6 +10,7 @@ from utilities import (
 import random
 import circuits
 import wrestlers
+import stables
 
 
 def main_event(tv_show):
@@ -41,8 +41,10 @@ def main_event(tv_show):
     return main_event
 
 
-def matches(tv_show, circuit, match_total, eligible_participants):
-    twenty_four_seven_match = 15
+def matches(tv_show, circuit, eligible_participants, match_total):
+    print("*" * 88)
+    print(match_total)
+    _twenty_four_seven_match = 15
     vanilla_singles = 50
     multi_man_tag = 73
     tag_match = 99
@@ -58,11 +60,11 @@ def matches(tv_show, circuit, match_total, eligible_participants):
         teams = 24
     if tv_show == "ROH":
         teams = 13
-    for match in range(1, match_total):
+    for match in [*range(0, match_total)]:
         match_picker = roll()
         logging.warning(f"Match Roll for index {match} is {match_picker}")
         if match < match_total and "CMLL" not in tv_show:
-            if match_picker < twenty_four_seven_match and circuit["name"] == "WWE":
+            if match_picker < _twenty_four_seven_match and circuit["name"] == "WWE":
                 combatents = combatent_picker()
                 people = combatents[0]
                 roster_mutation = roster_selector(
@@ -72,23 +74,40 @@ def matches(tv_show, circuit, match_total, eligible_participants):
                     roster=eligible_participants,
                 )
                 twenty_four_seven_match(roster_mutation, match, combatents)
-            elif match_picker < twenty_four_seven_match and circuit["name"] != "WWE":
+            elif match_picker < _twenty_four_seven_match and circuit["name"] != "WWE":
                 roster_mutation = roster_selector(
-                    tv_show=tv_show, people=2, roster=eligible_participants, people=2, gender="Male"
+                    tv_show=tv_show,
+                    roster=eligible_participants,
+                    people=2,
+                    gender="Male",
                 )
-                print(f"Match {match} will be a male one on one singles match")
-                print(f"- Match Participants are: {contestents}")
+                singles_match(roster_mutation, match)
                 logging.warning("Singles Match non gendered")
             if (
-                match_picker > twenty_four_seven_match
+                match_picker > _twenty_four_seven_match
                 and match_picker <= vanilla_singles
             ):
-                print(
-                    f"Match {match} will be a {gender_picker(show=tv_show)} singles match"
+                gender = gender_picker(show=tv_show)
+                roster_mutation = roster_selector(
+                    tv_show=tv_show,
+                    roster=eligible_participants,
+                    people=2,
+                    gender=gender,
                 )
+                singles_match(roster_mutation, match)
                 logging.warning(f"Singles Match gendered")
             if match_picker > vanilla_singles and match_picker <= multi_man_tag:
-                print(f"Match {match} will be a {team_sizer(tv_show)} tag match")
+                x_man_match = team_sizer(tv_show)
+                roster_mutation = roster_selector(
+                    tv_show=tv_show,
+                    roster=eligible_participants,
+                    people=x_man_match["team_size"],
+                    gender=gender_picker(show=tv_show),
+                    _stables=True,
+                    team1=x_man_match["team1"],
+                    team2=x_man_match["team2"],
+                )
+                multi_persons_match(x_man_match, match, roster_mutation)
                 logging.warning("X man/woman Tag Match")
             if (
                 match_picker > multi_man_tag
@@ -108,96 +127,115 @@ def matches(tv_show, circuit, match_total, eligible_participants):
                 logging.warning(f"{handicap_1} on {handicap_2} Handicap match")
 
         if match < match_total and "CMLL" in tv_show:
-            teams = 13
             trio = 70
             tag = 85
             singles_lightning = 100
             if match_picker <= trio:
-                stables = 18
-                stables_list = []
-                for stable in range(1, stables):
-                    stables_list.append(stable)
-                stable_1 = random.choice(stables_list)
-                stables_list.remove(stable_1)
-                stable_2 = random.choice(stables_list)
-                stables_list.remove(stable_2)
-                teams = f"team {stable_1} and team {stable_2}"
-                print(f"Match {match} will be a 2/3 falls trios match between {teams}")
+                x_man_match = team_sizer(tv_show, trio=True)
+                roster_mutation = roster_selector(
+                    tv_show=tv_show,
+                    roster=eligible_participants,
+                    people=x_man_match["team_size"],
+                    gender=gender,
+                    _stables=True,
+                    team1=x_man_match["team1"],
+                    team2=x_man_match["team2"],
+                )
+                multi_persons_match(x_man_match, match, roster_mutation)
+
                 logging.warning("Trios Match")
             if match_picker > trio and match_picker <= tag:
                 print(f"Match {match} will be a 2/3 {tag_match_maker(teams, tv_show)}")
                 logging.warning("2/3 tag match")
             if match_picker > tag and match_picker <= singles_lightning:
                 print(f"Match {match} will be a one fall lightning singles match!")
+                roster_mutation = roster_selector(
+                    tv_show=tv_show,
+                    roster=eligible_participants,
+                    people=2,
+                    gender="Male",
+                )
+                singles_match(roster_mutation, match)
                 logging.warning("cmll lightning single fall match")
     print(f"The Main Event will be a {main_event(tv_show)}")
 
 
-def roster_selector(tv_show, people, roster, champion=None, gender=None):
-    circuit = circuits.get_by_name(tv_show)
-    males = []
-    eligible_males = [x for x in roster if x[0] in males]
-    # need to figure out this list comprehension and also what I'm going to do with personalities
+def roster_selector(
+    tv_show,
+    people,
+    roster,
+    champion=None,
+    gender=None,
+    _stables=False,
+    team1=[],
+    team2=[],
+):
+    """Iterates through a given list of eligible ids and attempts to make matches that make sense"""
 
-    females= []
+    eligible_wrestlers = roster_mapper(roster, tv_show=tv_show)
     contestants = []
     if champion == "24/7":
-        for grapplers in range(1, people):
+        for grapplers in [*range(0, people)]:
             contestant = random.choice(roster)
             roster.remove(contestant)
             contestants.append(contestant)
-            roster_mutation = {"contestants": contestants, "eligible_participants": roster}
+            roster_mutation = {
+                "contestants": contestants,
+                "eligible_participants": roster,
+            }
 
             return roster_mutation
-    for performer in roster:
-        grappler = wrestlers.get_by_id(performer)
-        if grappler["gender"] == "male":
-            males.append(performer)
-        elif grappler["gender"] == "female":
-            females.append(performer)
-        else:
+    if _stables == False:
+        for person in [*range(1, people)]:
             import pdb
 
             pdb.set_trace()
-    for person in people:
-        if gender == "Male":
-            contestant = random.choice(eligible_males)
-            male_non_heels = (
-                roster["Male Ready Faces"]
-                + roster["Male Ready Anti Heroes"]
-                + roster["Male Ready Tweeners"]
-                + roster["Male Ready Jobbers"]
-            )
-            print(roster["Male Ready Heels"])
-            if roster["Male Ready Heels"] == []:
-                heel = False
-                try:
-                    contestant1 = random.choice(roster["Male Ready Anti Heroes"])
-                except IndexError:
-                    try:
-                        contestant1 = random.choice(roster["Male Ready Faces"])
-                    except IndexError:
-                        return print("Ran out of Dudes, dude.")
-            else:
-                heel = True
-                contestant1 = random.choice(roster["Male Ready Heels"])
-            contestants.append(contestant1)
-            for grapplers in range(1, people):
-                if male_non_heels == []:
-                    break
-                if heel == False:
-                    male_non_heels = (
-                        roster["Male Ready Faces"]
-                        + roster["Male Ready Tweeners"]
-                        + roster["Male Ready Jobbers"]
-                    )
-                try:
-                    contestant = random.choice(male_non_heels)
-                except IndexError:
-                    print("Out of Wrestlers. Everybody go home.")
-                    break
-                contestants.append(contestant)
-    print(contestants)
+            opponents = opponent_dict(eligible_wrestlers, gender)
+            if len(opponents) < 5:
+                persona = persona_finder(opponents, person)
+                opponents.pop(wrestlers.get_by_id(person)[persona])
+            contestant = random.choice(eligible_wrestlers[gender])
+            contestants.append(contestant)
+            roster.remove(contestant)
+            eligible_wrestlers = roster_mapper(roster, tv_show)
+    if _stables == True:
+        people_on_each_side = people / 2
+        stable1 = stable_member_mapper(roster, team1)
+        stable2 = stable_member_mapper(roster, team2)
+        if len(stable1) > people_on_each_side:
+            team_a = random.choices(stable1, k=people_on_each_side)
+            for member in team_a:
+                roster.remove(member)
+        elif len(stable1) < people_on_each_side:
+            team_a = stable1
+            for member in team_a:
+                roster.remove(member)
+            spots_left = people_on_each_side - len(team_a)
+            fillers = random.choices(roster, k=spots_left)
+            for member in fillers:
+                team_a.append(member)
+                roster.remove(member)
+        else:
+            team_a = stable1
+        if len(stable2) > people_on_each_side:
+            team_b = random.choices(stable2, k=people_on_each_side)
+            for member in team_b:
+                roster.remove(member)
+        elif len(stable2) < people_on_each_side:
+            team_b = stable2
+            for member in team_b:
+                roster.remove(member)
+            spots_left = people_on_each_side - len(team_b)
+            fillers = random.choices(roster, k=spots_left)
+            for member in fillers:
+                team_b.append(member)
+                roster.remove(member)
+        else:
+            team_b = stable2
+        return {
+            "contestants": {"team_a": team_a, "team_b": team_b},
+            "eligible_participants": roster,
+        }
 
     roster_mutation = {"contestants": contestants, "eligible_participants": roster}
 
@@ -206,9 +244,18 @@ def roster_selector(tv_show, people, roster, champion=None, gender=None):
 
 def match_string(roster_mutation):
     participants_string = ""
-    participants = wrestlers.get_by_id(roster_mutation["contestants"])
-    for participant in participants:
-        participants_string += f"{participant['name']} "
+    if isinstance(roster_mutation["contestants"], list):
+        participants = wrestlers.get_by_id(roster_mutation["contestants"])
+        for participant in participants:
+            participants_string += f"{participant['name']} "
+    if isinstance(roster_mutation["contestants"], dict):
+        team_1_string = ""
+        for member in roster_mutation["contestants"]["team_a"]:
+            team_1_string += f'{wrestlers.get_by_id(member)["name"]} '
+        team_2_string = ""
+        for member in roster_mutation["contestants"]["team_b"]:
+            team_2_string += f'{wrestlers.get_by_id(member)["name"]} '
+        participants_string = f"{team_1_string} vs {team_2_string}"
     return participants_string
 
 
@@ -217,3 +264,101 @@ def twenty_four_seven_match(roster_mutation, match, combatents):
     print(f"Match {match} will be a {combatents[1]} 24/7 Title Defense")
     print(f"- Match Participants are: {participants_string}")
     logging.warning("24/7 match")
+
+
+def singles_match(roster_mutation, match):
+    participants_string = match_string(roster_mutation)
+    print(f"Match {match} will be a male one on one singles match")
+    print(f"- Match Participants are: {participants_string}")
+
+
+def multi_persons_match(x_man_match, match, roster_mutation):
+    participants_string = match_string(roster_mutation)
+    team_1_name = stables.get_by_id(x_man_match["team1"])["name"]
+    team_2_name = stables.get_by_id(x_man_match["team2"])["name"]
+    print(f"Match {match} will be a {x_man_match['team_size']} tag match")
+    print(f"{team_1_name} vs {team_2_name}")
+    print(f"- Match Participants are: {participants_string}")
+
+
+def persona_finder(opponents, person):
+    for persona in opponents:
+        for id in opponents:
+            if id == person:
+                return persona
+
+
+def roster_mapper(roster, tv_show):
+    heels = [
+        heel
+        for heel in roster
+        if wrestlers.get_by_id(heel)["id"] in circuits.get_by_name(tv_show)["heels"]
+    ]
+    faces = [
+        face
+        for face in roster
+        if wrestlers.get_by_id(face)["id"] in circuits.get_by_name(tv_show)["faces"]
+    ]
+    tweeners = [
+        tweener
+        for tweener in roster
+        if wrestlers.get_by_id(tweener)["id"]
+        in circuits.get_by_name(tv_show)["tweeners"]
+    ]
+    jobbers = [
+        jobber
+        for jobber in roster
+        if wrestlers.get_by_id(jobber)["id"] in circuits.get_by_name(tv_show)["jobbers"]
+    ]
+    anti_heroes = [
+        anti_heroe
+        for anti_heroe in roster
+        if wrestlers.get_by_id(anti_heroe)["id"]
+        in circuits.get_by_name(tv_show)["anti_heroes"]
+    ]
+
+    males = [
+        girl
+        for girl in roster
+        if wrestlers.get_by_id(girl)["gender"] == "male" and girl in roster
+    ]
+    females = [
+        girl
+        for girl in roster
+        if wrestlers.get_by_id(girl)["gender"] == "female" and girl in roster
+    ]
+    eligible_wrestlers = {
+        "male": males,
+        "female": females,
+        "heels": heels,
+        "faces": faces,
+        "tweeners": tweeners,
+        "jobbers": jobbers,
+        "anti_heroes": anti_heroes,
+    }
+    return eligible_wrestlers
+
+
+def gendered_persona(eligible_wrestlers, persona, gender):
+    return list(set(eligible_wrestlers[persona]) & set(eligible_wrestlers[gender]))
+
+
+def opponent_dict(eligible_wrestlers, gender):
+    {
+        "heels": gendered_persona(eligible_wrestlers, "heels", gender),
+        "faces": gendered_persona(eligible_wrestlers, "faces", gender),
+        "tweeners": gendered_persona(eligible_wrestlers, "tweeners", gender),
+        "jobbers": gendered_persona(eligible_wrestlers, "jobbers", gender),
+        "anti_heroes": gendered_persona(eligible_wrestlers, "anti_heroes", gender),
+    }
+
+
+def stable_member_mapper(roster, stable_id):
+    stable = stables.get_by_id(stable_id)
+
+    employees = []
+    for member in stable["members"]:
+        for wrestler in roster:
+            if member == wrestler:
+                employees.append(member)
+    return employees

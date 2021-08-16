@@ -58,3 +58,18 @@ def get_all_stables():
         cursor.execute("Select * from stables;")
 
     return cursor.fetchall()
+
+
+def get_by_id(id):
+    """Returns the stable specified"""
+    import pdb
+
+    pdb.set_trace()
+    with con:
+        cursor.execute("select * from stables where id = %(id)s;", {"id": id})
+
+    stable = cursor.fetchone()
+
+    if stable == None:
+        return None
+    return stable
