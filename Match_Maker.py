@@ -187,10 +187,8 @@ def roster_selector(
             return roster_mutation
     if _stables == False:
         for person in [*range(1, people)]:
-            import pdb
-
-            pdb.set_trace()
             opponents = opponent_dict(eligible_wrestlers, gender)
+
             if len(opponents) < 5:
                 persona = persona_finder(opponents, person)
                 opponents.pop(wrestlers.get_by_id(person)[persona])
@@ -200,6 +198,9 @@ def roster_selector(
             eligible_wrestlers = roster_mapper(roster, tv_show)
     if _stables == True:
         people_on_each_side = people / 2
+        import pdb
+
+        pdb.set_trace()
         stable1 = stable_member_mapper(roster, team1)
         stable2 = stable_member_mapper(roster, team2)
         if len(stable1) > people_on_each_side:
@@ -344,7 +345,7 @@ def gendered_persona(eligible_wrestlers, persona, gender):
 
 
 def opponent_dict(eligible_wrestlers, gender):
-    {
+    return {
         "heels": gendered_persona(eligible_wrestlers, "heels", gender),
         "faces": gendered_persona(eligible_wrestlers, "faces", gender),
         "tweeners": gendered_persona(eligible_wrestlers, "tweeners", gender),
@@ -354,6 +355,7 @@ def opponent_dict(eligible_wrestlers, gender):
 
 
 def stable_member_mapper(roster, stable_id):
+
     stable = stables.get_by_id(stable_id)
 
     employees = []

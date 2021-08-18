@@ -39,6 +39,7 @@ def seed_stables(stable_list, drop=True, create_table=True):
         stables_table()
 
     for stable in stable_list:
+
         stable_copy = {}
         stable_copy["name"] = stable["Stable Name"]
         stable_copy["members"] = stable["ids"][1:]
@@ -62,9 +63,7 @@ def get_all_stables():
 
 def get_by_id(id):
     """Returns the stable specified"""
-    import pdb
 
-    pdb.set_trace()
     with con:
         cursor.execute("select * from stables where id = %(id)s;", {"id": id})
 

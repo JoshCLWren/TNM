@@ -16,6 +16,7 @@ fake_circuit = {
     "anti_heroes": [],
     "tweeners": [],
     "jobbers": [],
+    "championships": [],
 }
 
 
