@@ -1,5 +1,5 @@
 Start of session
-2021-08-18-07:07:29
+2021-08-18-23:39:30
 Building Migrations
 Building Circuit Databases
 parsing AEW
@@ -12728,14 +12728,8 @@ Finding Injured Wrestlers
  Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/WWE/CARD.INJ
 Matches = 11
 Building Show
-11 was rolled with 1 and 101 indexes
-Match Roll for index 0 is 11
-63 was rolled with 1 and 101 indexes
-Combatent Picker
-[4, 'Fatal Four Way']
-24/7 match
-24 was rolled with 1 and 101 indexes
-Match Roll for index 1 is 24
-36 was rolled with 1 and 101 indexes
+44 was rolled with 1 and 101 indexes
+Match Roll for index 0 is 44
+13 was rolled with 1 and 101 indexes
 Gender Picker is below
 male

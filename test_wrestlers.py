@@ -4,23 +4,37 @@ import wrestlers
 from database import cursor, con
 import psycopg2
 
-fake_wrestler = {
-    "name": "Mr. X",
-    "work_rate": 99,
-    "push": 98,
-    "charisma": 97,
-    "weight": 98,
-    "gender": "male",
-    "tnm_index": 1,
-    "circuits": None,
-    "tag_teams": None,
-    "stables": None,
-}
+
+def fake_wrestler(
+    name="Mr. X",
+    work_rate=99,
+    push=98,
+    charisma=97,
+    weight=98,
+    gender="male",
+    tnm_index=1,
+    circuits=[],
+    tag_teams=[],
+    stables=[],
+):
+    fake_wrestler = {
+        "name": name,
+        "work_rate": work_rate,
+        "push": push,
+        "charisma": charisma,
+        "weight": weight,
+        "gender": gender,
+        "tnm_index": tnm_index,
+        "circuits": circuits,
+        "tag_teams": tag_teams,
+        "stables": stables,
+    }
+    return fake_wrestler
 
 
 def test_wrestler_serializer():
     """Tests Dropping and rebuilding table and adding one wrestler"""
-    wrestlers.seed_wrestlers([fake_wrestler])
+    wrestlers.seed_wrestlers([fake_wrestler()])
 
     wrestlers_in_db = wrestlers.get_all_wrestlers()
 
@@ -113,8 +127,9 @@ def test_patching_tag_teams():
     # check that it did not change the value to the wrong type and new value passed
     assert wrestler["weight"] != "x"
 
+    mr_x = fake_wrestler()
     # check that the column is unchanged
-    assert wrestler["weight"] == fake_wrestler["weight"]
+    assert wrestler["weight"] == mr_x["weight"]
 
     # check sending a non integer into a array of integers column
 

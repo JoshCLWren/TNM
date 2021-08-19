@@ -178,12 +178,18 @@ def patch_circuit(circuit_id, column, new_value):
 
     circuit = cursor.fetchone()
 
+    if column == "wrestlers":
+        import pdb
+
+        pdb.set_trace()
+
     return circuit
 
 
 def get_by_name(name):
     """Retrieves the circuit with the name"""
-    wwe_products = ["Raw", "Smackdown", "205"]
+    name = name.upper()
+    wwe_products = ["RAW", "SMACKDOWN", "205"]
     if name == "ROH":
         name = "CMLL"
     if name in wwe_products:
@@ -220,3 +226,18 @@ def championship_serializer(circuit):
         pass
 
     return titles
+
+
+def post_circuit(**circuit):
+    """adds a row to the circuit table"""
+
+    query = """
+              INSERT INTO CIRCUITS (name, stables, tag_teams, wrestlers, injuries, heels, faces, anti_heroes, tweeners, jobbers, championships)
+              values (%(name)s, %(stables)s, %(tag_teams)s, %(wrestlers)s, %(injuries)s, %(heels)s, %(faces)s, %(anti_heroes)s, %(tweeners)s, %(jobbers)s, %(championships)s)
+              returning *;
+
+              """
+    with con:
+        cursor.execute(query, circuit)
+
+    return cursor.fetchone()

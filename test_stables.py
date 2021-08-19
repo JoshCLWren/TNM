@@ -5,13 +5,15 @@ import wrestlers
 import stables
 from database import cursor, con
 
-fake_stable = {"Stable Name": "nwo", "ids": [1, 2, 3]}
+
+def fake_stable():
+    return {"Stable Name": "nwo", "ids": [1, 2, 3]}
 
 
 def test_stable_serializer():
     """Tests Dropping and rebuilding stables table"""
 
-    stables.seed_stables([fake_stable])
+    stables.seed_stables([fake_stable()])
 
     stables_in_db = stables.get_all_stables()
 

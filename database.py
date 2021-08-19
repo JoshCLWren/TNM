@@ -81,9 +81,19 @@ def shows_table():
                 CREATE TABLE IF NOT EXISTS SHOWS(
                     id bigserial PRIMARY KEY,
                     name VARCHAR,
-                    participants integer[] DEFAULT '{}',
-                    matches integer[] DEFAULT '{}'
-                )
+                    busy_wrestlers integer[] DEFAULT '{}',
+                    matches integer[] DEFAULT '{}',
+                    eligble_wrestlers integer[] DEFAULT '{}',
+                    ready_male_heels integer[] DEFAULT '{}',
+                    ready_male_faces integer[] DEFAULT '{}',
+                    ready_male_tweeners integer[] DEFAULT '{}',
+                    ready_male_jobbers integer[] DEFAULT '{}',
+                    ready_male_anti_heroes integer[] DEFAULT '{}',
+                    ready_female_heels integer[] DEFAULT '{}',
+                    ready_female_faces integer[] DEFAULT '{}',
+                    ready_female_tweeners integer[] DEFAULT '{}',
+                    ready_female_jobbers integer[] DEFAULT '{}',
+                    ready_female_anti_heroes integer[] DEFAULT '{}');
             """
         )
 

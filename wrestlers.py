@@ -174,3 +174,17 @@ def map_tags_to_wrestlers():
             wrestler["tag_teams"].append(tag["id"])
 
             patch_wrestler(wrestler["id"], "tag_teams", wrestler["tag_teams"])
+
+
+def post_wrestler(**wrestler):
+    """Adds a wrestler row to the table"""
+
+    query = """
+                INSERT INTO WRESTLERS (name, work_rate, push, charisma, weight, gender, tnm_index)
+                VALUES (%(name)s, %(work_rate)s, %(push)s, %(charisma)s, %(weight)s, %(gender)s, %(tnm_index)s)
+                returning *;
+                """
+    with con:
+        cursor.execute(query, wrestler)
+
+    return cursor.fetchone()
