@@ -164,7 +164,7 @@ def roster_selector(
 ):
     """Iterates through a given list of eligible ids and attempts to make matches that make sense"""
 
-    roster = show["eligble_wrestlers"]
+    roster = show["eligible_wrestlers"]
     contestants = []
     if champion == "24/7":
         for grapplers in [*range(0, people)]:
@@ -391,7 +391,7 @@ def stable_member_mapper(show, stable_id):
     flat_list = [item for sublist in pool for item in sublist]
     stable = stables.get_by_id(stable_id)
     if stable == None:
-        employees = show["eligble_wrestlers"]
+        employees = show["eligible_wrestlers"]
     try:
         for member in stable["members"]:
             for wrestler in flat_list:
@@ -408,7 +408,7 @@ def contestant_tracker(show, gender, contestants=[]):
     flat_list = gender_divide(show, gender)
     contestant = random.choice(flat_list)
     contestants.append(contestant)
-    show["eligble_wrestlers"].remove(contestant)
+    show["eligible_wrestlers"].remove(contestant)
     return contestants
 
 

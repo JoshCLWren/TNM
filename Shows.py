@@ -12,7 +12,7 @@ def create_show(name, match_total):
     males = []
     females = []
 
-    eligble_wrestlers = []
+    eligible_wrestlers = []
     ready_male_heels = []
     ready_male_faces = []
     ready_male_tweeners = []
@@ -26,7 +26,7 @@ def create_show(name, match_total):
 
     for wrestler in circuit["wrestlers"]:
         if wrestler not in circuit["injuries"]:
-            eligble_wrestlers.append(wrestler)
+            eligible_wrestlers.append(wrestler)
         gender = "male"
         if wrestlers.get_by_id(wrestler)["gender"] == gender:
             males.append(wrestler)
@@ -55,7 +55,7 @@ def create_show(name, match_total):
     show = {
         "name": name,
         "busy_wrestlers": [],
-        "eligble_wrestlers": eligble_wrestlers,
+        "eligible_wrestlers": eligible_wrestlers,
         "matches": [match_total],
     }
 
@@ -71,11 +71,11 @@ def create_show(name, match_total):
     show["ready_female_anti_heroes"] = ready_male_anti_heroes
 
     sql = """INSERT INTO SHOWS
-        (name, busy_wrestlers, matches, eligble_wrestlers, ready_male_heels, ready_male_faces,
+        (name, busy_wrestlers, matches, eligible_wrestlers, ready_male_heels, ready_male_faces,
         ready_male_tweeners, ready_male_jobbers, ready_male_anti_heroes, ready_female_heels,
         ready_female_faces, ready_female_tweeners, ready_female_jobbers, ready_female_anti_heroes)
         VALUES
-        (%(name)s, %(busy_wrestlers)s, %(matches)s, %(eligble_wrestlers)s, %(ready_male_heels)s,
+        (%(name)s, %(busy_wrestlers)s, %(matches)s, %(eligible_wrestlers)s, %(ready_male_heels)s,
         %(ready_male_faces)s,
         %(ready_male_tweeners)s, %(ready_male_jobbers)s, %(ready_male_anti_heroes)s,
         %(ready_female_heels)s,
@@ -92,9 +92,9 @@ def create_show(name, match_total):
     Match_Maker.main_event(tv_show=name)
 
 
-def patch_show_roster(eligble_wrestlers, id):
+def patch_show_roster(eligible_wrestlers, id):
     """Takes an updated list of of wrestlers and updates the match row"""
-    kwargs = {"eligble_wrestlers": eligble_wrestlers, "id": id}
+    kwargs = {"eligible_wrestlers": eligible_wrestlers, "id": id}
     query = utilities.prepare_columns(table="matches", **kwargs)
 
     cursor.execute(query, kwargs)

@@ -83,17 +83,14 @@ def shows_table():
                     name VARCHAR,
                     busy_wrestlers integer[] DEFAULT '{}',
                     matches integer[] DEFAULT '{}',
-                    eligble_wrestlers integer[] DEFAULT '{}',
-                    ready_male_heels integer[] DEFAULT '{}',
-                    ready_male_faces integer[] DEFAULT '{}',
-                    ready_male_tweeners integer[] DEFAULT '{}',
-                    ready_male_jobbers integer[] DEFAULT '{}',
-                    ready_male_anti_heroes integer[] DEFAULT '{}',
-                    ready_female_heels integer[] DEFAULT '{}',
-                    ready_female_faces integer[] DEFAULT '{}',
-                    ready_female_tweeners integer[] DEFAULT '{}',
-                    ready_female_jobbers integer[] DEFAULT '{}',
-                    ready_female_anti_heroes integer[] DEFAULT '{}');
+                    eligible_wrestlers integer[] DEFAULT '{}',
+                    heels integer[] DEFAULT '{}',
+                    faces integer[] DEFAULT '{}',
+                    tweeners integer[] DEFAULT '{}',
+                    jobbers integer[] DEFAULT '{}',
+                    anti_heroes integer[] DEFAULT '{}',
+                    males integer[] DEFAULT '{}',
+                    females integer[] DEFAULT '{}');
             """
         )
 
