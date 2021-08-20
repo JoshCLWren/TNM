@@ -91,3 +91,15 @@ def get_all_tags():
         cursor.execute("Select * from tagteams;")
 
     return cursor.fetchall()
+
+
+def post_tag_team(**tag):
+    """Adds a tag to the db"""
+
+    query = """
+                INSERT INTO TAGTEAMS (name, tag_team_members)
+                VALUES (%(name)s, %(tag_team_members)s);
+                """
+    with con:
+
+        cursor.execute(query, {"name": tag["name"], "tag_team_members": tag["members"]})

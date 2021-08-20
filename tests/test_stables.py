@@ -6,10 +6,6 @@ import stables
 from database import cursor, con
 
 
-def fake_stable():
-    return {"Stable Name": "nwo", "ids": [1, 2, 3]}
-
-
 def test_stable_serializer():
     """Tests Dropping and rebuilding stables table"""
 

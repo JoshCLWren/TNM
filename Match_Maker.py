@@ -43,8 +43,6 @@ def main_event(show):
 
 
 def matches(show):
-    print("*" * 88)
-    print(show["matches"][0])
     _twenty_four_seven_match = 15
     vanilla_singles = 50
     multi_man_tag = 73
@@ -309,9 +307,7 @@ def persona_finder(show, contestant):
         if isinstance(column, list):
             for id in column:
                 if id == contestant:
-                    import pdb
 
-                    pdb.set_trace()
                     return
 
 

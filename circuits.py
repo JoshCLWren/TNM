@@ -178,11 +178,6 @@ def patch_circuit(circuit_id, column, new_value):
 
     circuit = cursor.fetchone()
 
-    if column == "wrestlers":
-        import pdb
-
-        pdb.set_trace()
-
     return circuit
 
 

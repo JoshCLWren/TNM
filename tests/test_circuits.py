@@ -5,24 +5,27 @@ import wrestlers
 from test_wrestlers import fake_wrestler
 from database import cursor, con
 
-fake_circuit = {
-    "name": "WWF",
-    "stables": [],
-    "tag_teams": [],
-    "wrestlers": [],
-    "injuries": [],
-    "heels": [],
-    "faces": [],
-    "anti_heroes": [],
-    "tweeners": [],
-    "jobbers": [],
-    "championships": [],
-}
+
+def mock_circuit():
+    return {
+        "name": "WWF",
+        "stables": [],
+        "tag_teams": [],
+        "wrestlers": [],
+        "injuries": [],
+        "heels": [],
+        "faces": [],
+        "anti_heroes": [],
+        "tweeners": [],
+        "jobbers": [],
+        "championships": [],
+    }
 
 
 def test_circuit_serializer():
     """Tests Dropping and Rebuilding table and adding one circuit"""
-    circuits.seed_circuits([fake_circuit])
+
+    circuits.seed_circuits([mock_circuit()])
 
     circuits_in_db = circuits.get_all_circuits()
 
@@ -31,7 +34,7 @@ def test_circuit_serializer():
 
 def test_updating_a_circuit():
     """Tests updating columns of a circuit row by overiding the value"""
-
+    fake_circuit = mock_circuit()
     fake_circuit["id"] = 1
     fake_circuit["name"] = "WWE"
     fake_circuit["stables"] = [1, 2, 3]
