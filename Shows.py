@@ -67,8 +67,8 @@ def create_show(name, match_total):
     return show
 
 
-Match_Maker.matches(show)
-Match_Maker.main_event(tv_show=name)
+# Match_Maker.matches(show)
+# Match_Maker.main_event(tv_show=name)
 
 
 def patch_show_roster(eligible_wrestlers, id):

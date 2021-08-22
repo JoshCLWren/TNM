@@ -49,7 +49,7 @@ def create_wrestlers(amount, gender):
 
 
 def create_circuit(
-    name="WWE",
+    name="WWF",
     stables=[],
     tag_teams=[],
     _wrestlers=[],
@@ -61,7 +61,7 @@ def create_circuit(
     championships=[],
     tweeners=[],
 ):
-    circuit = {
+    return {
         "name": name,
         "stables": stables,
         "tag_teams": tag_teams,
@@ -74,7 +74,6 @@ def create_circuit(
         "jobbers": jobbers,
         "championships": championships,
     }
-    circuits.circuit_serializer([circuit])
 
 
 def fake_stable(ids=[1, 2, 3]):
@@ -98,3 +97,16 @@ def create_tag(amount, members=[1, 2]):
         count += 1
         tag = {"name": fake.slug(), "members": members}
         tag_teams.post_tag_team(**tag)
+
+
+def seed_database():
+    circuits.seed_circuits([create_circuit()])
+
+    wwf = circuits.get_by_id(1)
+
+    import pdb
+
+    pdb.set_trace()
+
+
+seed_database()
