@@ -7,6 +7,7 @@ import circuits
 import Shows
 import stables
 import tag_teams
+import database
 
 fake = Faker("en_US")
 
@@ -39,7 +40,8 @@ def fake_wrestler(
 
 
 def create_wrestlers(amount, gender):
-    """Seed the DB with five male wrestlers"""
+    """Seed the DB with five male(or female) wrestlers"""
+    database.reset_and_delete("wrestlers")
     count = 0
     while count != amount:
 
@@ -76,15 +78,15 @@ def create_circuit(
     }
 
 
-def fake_stable(ids=[1, 2, 3]):
-    return {"Stable Name": fake.slug(), "ids": ids}
+def fake_stable(name, ids=[1, 2, 3]):
+    return {"name": name, "members": ids}
 
 
-def create_stable(amount, ids=[1, 2, 3]):
-    count = 0
-    while count != amount:
-        count += 1
-        stables.post_stable(fake_stable(ids=ids))
+def create_stable(factions):
+    database.reset_and_delete("stables")
+    for faction in factions:
+        stable = fake_stable(faction, factions[faction])
+        stables.post_stable(stable)
 
 
 def fake_tag(members=[1, 2]):
@@ -104,9 +106,25 @@ def seed_database():
 
     wwf = circuits.get_by_id(1)
 
-    import pdb
+    create_wrestlers(20, gender="male")
+    create_wrestlers(20, gender="female")
 
-    pdb.set_trace()
+    grapplers = wrestlers.get_all_wrestlers()
+
+    factions = {
+        "heels": [],
+        "faces": [],
+        "tweeners": [],
+        "jobbers": [],
+        "anti_heroes": [],
+    }
+    counter = 0
+    for faction in factions:
+        while len(factions[faction]) != 4:
+            factions[faction].append(grapplers[counter]["id"])
+            counter += 1
+
+    create_stable(factions)
 
 
 seed_database()

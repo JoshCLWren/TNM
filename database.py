@@ -95,6 +95,13 @@ def shows_table():
         )
 
 
+def reset_and_delete(table):
+    """resets id to zero and deletes the table data"""
+    query = "DELETE FROM"
+    cursor.execute(f"{query} {table};")
+    cursor.execute(f"SELECT SETVAL(pg_get_serial_sequence('{table}', 'id'), 1, false);")
+
+
 def championship():
     # draft for potential championship table
     with con:
