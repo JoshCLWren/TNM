@@ -10,7 +10,13 @@ import seed_db
 def test_stable_serializer():
     """Tests Dropping and rebuilding stables table"""
 
-    stables.seed_stables([seed_db.fake_stable()])
+    fake = seed_db.fake_stable()
+
+    nwo = [{}]
+    nwo[0]["Stable Name"] = fake["name"]
+    nwo[0]["ids"] = fake["members"]
+
+    stables.seed_stables(nwo)
 
     stables_in_db = stables.get_all_stables()
 

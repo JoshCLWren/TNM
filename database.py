@@ -82,7 +82,7 @@ def shows_table():
                     id bigserial PRIMARY KEY,
                     name VARCHAR,
                     busy_wrestlers integer[] DEFAULT '{}',
-                    matches integer[] DEFAULT '{}',
+                    matches integer,
                     eligible_wrestlers integer[] DEFAULT '{}',
                     heels integer[] DEFAULT '{}',
                     faces integer[] DEFAULT '{}',
@@ -90,7 +90,8 @@ def shows_table():
                     jobbers integer[] DEFAULT '{}',
                     anti_heroes integer[] DEFAULT '{}',
                     males integer[] DEFAULT '{}',
-                    females integer[] DEFAULT '{}');
+                    females integer[] DEFAULT '{}',
+                    card text[] default '{}');
             """
         )
 

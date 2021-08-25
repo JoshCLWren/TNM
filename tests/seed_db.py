@@ -39,14 +39,21 @@ def fake_wrestler(
     return fake_wrestler
 
 
-def create_wrestlers(amount, gender):
+def create_wrestlers(amount, gender, reset=True):
     """Seed the DB with five male(or female) wrestlers"""
-    database.reset_and_delete("wrestlers")
+    if reset == True:
+        database.reset_and_delete("wrestlers")
     count = 0
-    while count != amount:
 
+    while count != amount:
         count += 1
-        dude = fake_wrestler(name=fake.name(), gender=gender)
+        if gender == "even":
+            if count % 2 == 0:
+                dude = fake_wrestler(name=fake.name(), gender="male")
+            else:
+                dude = fake_wrestler(name=fake.name(), gender="female")
+        else:
+            dude = fake_wrestler(name=fake.name(), gender=gender)
         wrestlers.post_wrestler(**dude)
 
 
@@ -78,7 +85,7 @@ def create_circuit(
     }
 
 
-def fake_stable(name, ids=[1, 2, 3]):
+def fake_stable(name="nwo", ids=[1, 2, 3]):
     return {"name": name, "members": ids}
 
 
@@ -106,8 +113,7 @@ def seed_database():
 
     wwf = circuits.get_by_id(1)
 
-    create_wrestlers(20, gender="male")
-    create_wrestlers(20, gender="female")
+    create_wrestlers(40, gender="even", reset=True)
 
     grapplers = wrestlers.get_all_wrestlers()
 
@@ -119,12 +125,15 @@ def seed_database():
         "anti_heroes": [],
     }
     counter = 0
+
     for faction in factions:
-        while len(factions[faction]) != 4:
+        while len(factions[faction]) != 8:
             factions[faction].append(grapplers[counter]["id"])
+            wwf[faction].append(grapplers[counter]["id"])
             counter += 1
 
     create_stable(factions)
-
-
-seed_database()
+    for faction in factions:
+        circuits.patch_circuit(1, faction, factions[faction])
+    circuits.patch_circuit(1, "stables", [1, 2, 3, 4, 5])
+    circuits.patch_circuit(1, "wrestlers", [*range(1, 41)])

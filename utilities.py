@@ -77,10 +77,12 @@ def team_sizer(
         genders = "male"
     circuit = circuits.get_by_name(tv_show)
     if len(circuit["stables"]) > 2:
-        team1 = random.choice(circuit["stables"])
-        circuit["stables"].pop(team1)
-        team2 = random.choice(circuit["stables"])
-        circuit["stables"].pop(team2)
+        teams = random.sample(circuit["stables"], 2)
+        team1, team2 = teams
+        # do we need to remove stables anymore?
+        # circuit["stables"].remove(team1)
+        # circuit["stables"].remove(team2)
+
     else:
         team1 = circuit["stables"][0]
         team2 = []

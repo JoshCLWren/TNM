@@ -42,7 +42,7 @@ def main_event(show):
     return main_event
 
 
-def matches(show):
+def matches(show, roll_override=None):
     _twenty_four_seven_match = 15
     vanilla_singles = 50
     multi_man_tag = 73
@@ -54,11 +54,13 @@ def matches(show):
         tag_match = 100
         handicap = 101
 
-    for match in [*range(0, show["matches"][0])]:
+    for match in [*range(0, show["matches"])]:
         match_picker = roll()
+        if roll_override is not None:
+            match_picker = roll_override
         logging.warning(f"Match Roll for index {match} is {match_picker}")
 
-        if match < show["matches"][0] and "CMLL" not in show["name"]:
+        if match < show["matches"] and "CMLL" not in show["name"]:
             if match_picker < _twenty_four_seven_match and show["name"] == "WWE":
                 combatents = combatent_picker()
                 people = combatents[0]
@@ -89,6 +91,8 @@ def matches(show):
                 singles_match(roster_mutation, match)
                 logging.warning(f"Singles Match gendered")
             if match_picker > vanilla_singles and match_picker <= multi_man_tag:
+                # multi man match
+
                 x_man_match = team_sizer(show["name"])
                 roster_mutation = roster_selector(
                     show=show,
@@ -98,7 +102,7 @@ def matches(show):
                     team1=x_man_match["team1"],
                     team2=x_man_match["team2"],
                 )
-                multi_persons_match(x_man_match, match, roster_mutation)
+                multi_persons_match(x_man_match, match, roster_mutation, show)
                 logging.warning("X man/woman Tag Match")
             if (
                 match_picker > multi_man_tag
@@ -117,7 +121,7 @@ def matches(show):
                 )
                 logging.warning(f"{handicap_1} on {handicap_2} Handicap match")
 
-        if match < show["matches"][0] and "CMLL" in show["name"]:
+        if match < show["matches"] and "CMLL" in show["name"]:
             trio = 70
             tag = 85
             singles_lightning = 100
@@ -148,6 +152,9 @@ def matches(show):
                 )
                 singles_match(roster_mutation, match)
                 logging.warning("cmll lightning single fall match")
+
+    # don't think this is working
+    Shows.patch_show_card(show["card"], show["id"])
     print(f"The Main Event will be a {main_event(show)}")
 
 
@@ -190,7 +197,7 @@ def roster_selector(
                 contestants = find_opponent(contestants, gender, show)
     if _stables == True:
         people_on_each_side = people / 2
-
+        people_on_each_side = int(people_on_each_side)
         stable1 = stable_member_mapper(show, team1)
 
         if stable1 == None:
@@ -204,13 +211,13 @@ def roster_selector(
         if stable2 == None:
             team_b = []
             spots_left = people_on_each_side - len(team_a)
-            fillers = random.choices(roster, k=spots_left)
+            fillers = random.sample(roster, k=spots_left)
             for member in fillers:
                 team_a.append(member)
                 roster.remove(member)
 
         if len(stable1) > people_on_each_side:
-            team_a = random.choices(stable1, k=people_on_each_side)
+            team_a = random.sample(stable1, k=people_on_each_side)
             for member in team_a:
                 roster.remove(member)
         elif len(stable1) < people_on_each_side:
@@ -233,6 +240,7 @@ def roster_selector(
             team_a = stable1
         if len(stable2) > people_on_each_side:
             team_b = random.choices(stable2, k=people_on_each_side)
+
             for member in team_b:
                 roster.remove(member)
         elif len(stable2) < people_on_each_side:
@@ -286,7 +294,7 @@ def singles_match(roster_mutation, match):
     print(f"- Match Participants are: {participants_string}")
 
 
-def multi_persons_match(x_man_match, match, roster_mutation):
+def multi_persons_match(x_man_match, match, roster_mutation, show):
     participants_string = match_string(roster_mutation)
     try:
         team_1_name = stables.get_by_id(x_man_match["team1"])["name"]
@@ -296,9 +304,15 @@ def multi_persons_match(x_man_match, match, roster_mutation):
         team_2_name = stables.get_by_id(x_man_match["team2"])["name"]
     except TypeError:
         team_2_name = ""
-    print(f"Match {match} will be a {x_man_match['team_size']} tag match")
-    print(f"{team_1_name} vs {team_2_name}")
-    print(f"- Match Participants are: {participants_string}")
+    line_one = f"Match {match} will be a {x_man_match['team_size']} tag match"
+    line_two = f"{team_1_name} vs {team_2_name}"
+    line_three = f"- Match Participants are: {participants_string}"
+    print(line_one)
+    print(line_two)
+    print(line_three)
+
+    show["card"].append(f"{line_one}, {line_two}, {line_three}")
+
     return participants_string
 
 
@@ -383,14 +397,14 @@ def opponent_dict(show, gender):
 def stable_member_mapper(show, stable_id):
 
     employees = []
-    pool = [value for key, value in show.items() if "ready" in key.lower()]
-    flat_list = [item for sublist in pool for item in sublist]
+
     stable = stables.get_by_id(stable_id)
+
     if stable == None:
         employees = show["eligible_wrestlers"]
     try:
         for member in stable["members"]:
-            for wrestler in flat_list:
+            for wrestler in show["eligible_wrestlers"]:
                 if member == wrestler:
                     employees.append(member)
     except TypeError:
