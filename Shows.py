@@ -19,23 +19,28 @@ def create_show(name, match_total):
     jobbers = []
     anti_heroes = []
 
-    for wrestler in circuit["wrestlers"]:
-        if wrestler not in circuit["injuries"]:
-            eligible_wrestlers.append(wrestler)
-        if wrestler in circuit["heels"]:
-            heels.append(wrestler)
-        elif wrestler in circuit["faces"]:
-            faces.append(wrestler)
-        elif wrestler in circuit["tweeners"]:
-            tweeners.append(wrestler)
-        elif wrestler in circuit["jobbers"]:
-            jobbers.append(wrestler)
-        else:
-            anti_heroes.append(wrestler)
-        if wrestlers.get_by_id(wrestler)["gender"] == "male":
-            males.append(wrestler)
-        else:
-            females.append(wrestler)
+    try:
+        for wrestler in circuit["wrestlers"]:
+            if wrestler not in circuit["injuries"]:
+                eligible_wrestlers.append(wrestler)
+            if wrestler in circuit["heels"]:
+                heels.append(wrestler)
+            elif wrestler in circuit["faces"]:
+                faces.append(wrestler)
+            elif wrestler in circuit["tweeners"]:
+                tweeners.append(wrestler)
+            elif wrestler in circuit["jobbers"]:
+                jobbers.append(wrestler)
+            else:
+                anti_heroes.append(wrestler)
+            if wrestlers.get_by_id(wrestler)["gender"] == "male":
+                males.append(wrestler)
+            else:
+                females.append(wrestler)
+    except TypeError:
+        import pdb
+
+        pdb.set_trace()
 
     show = {
         "name": name,

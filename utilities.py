@@ -73,7 +73,7 @@ def team_sizer(
     logging.warning("Team Sizer")
     team_sizer_roll = roll()
     genders = gender_picker(show=tv_show)
-    if tv_show == "205" or tv_show == "ROH":
+    if tv_show in ["205", "ROH"]:
         genders = "male"
     circuit = circuits.get_by_name(tv_show)
     if len(circuit["stables"]) > 2:

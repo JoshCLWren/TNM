@@ -10,11 +10,6 @@ import seed_db
 import Shows
 
 
-seed_db.seed_database()
-
-circuit = circuits.get_by_name("wwf")
-
-
 # def test_stable_member_mapper_returns_a_stable():
 #     """Tests that the stable_member_mapper returns all hired stable members in a circuit"""
 
@@ -35,6 +30,7 @@ circuit = circuits.get_by_name("wwf")
 
 def test_mutli_man_match():
     """Test that match maker can create a multi man match"""
+    seed_db.seed_database()
 
     raw = Shows.create_show("wwf", 1)
 
