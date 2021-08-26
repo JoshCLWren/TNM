@@ -108,8 +108,9 @@ def create_tag(amount, members=[1, 2]):
         tag_teams.post_tag_team(**tag)
 
 
-def seed_database():
-    circuits.seed_circuits([create_circuit()])
+def seed_database(name="wwf"):
+
+    circuits.seed_circuits([create_circuit(name)])
 
     wwf = circuits.get_by_id(1)
 

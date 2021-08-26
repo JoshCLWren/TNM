@@ -18,6 +18,8 @@ def combatent_picker(one_on_one_seed=10, triangle_seed=60, four_way_seed=100):
 
 
 def gender_picker(male=70, female=99, intergender=100, show="205"):
+    if show in ["205", "cmll"]:
+        return "male"
     gender_roll = roll()
     logging.warning("Gender Picker is below")
     if gender_roll > male and gender_roll < intergender:
@@ -26,8 +28,6 @@ def gender_picker(male=70, female=99, intergender=100, show="205"):
         gender = "male"
     else:
         gender = "intergender"
-    if show == "205":
-        gender = "male"
     logging.warning(gender)
     return gender
 

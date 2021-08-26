@@ -109,9 +109,9 @@ def matches(show, roll_override=None):
         "tag_match": 90,
         "handicap": 100,
     }
-    if show["name"] == "ROH":
+    if show["name"] == "roh":
         match_switcher = {"vanilla_singles": 33, "multi_man_tag": 66, "tag_match": 100}
-    if show["name"] == "CMLL":
+    if show["name"] == "cmll":
         match_switcher = {"trio": 70, "tag": 85, "singles": 100}
 
     for match in [*range(show["matches"])]:
@@ -379,16 +379,6 @@ def gendered_persona(eligible_wrestlers, persona, gender):
     return list(set(eligible_wrestlers[persona]) & set(eligible_wrestlers[gender]))
 
 
-# def opponent_dict(show, gender):
-#     return {
-#         "heels": gendered_persona(eligible_wrestlers, "heels", gender),
-#         "faces": gendered_persona(eligible_wrestlers, "faces", gender),
-#         "tweeners": gendered_persona(eligible_wrestlers, "tweeners", gender),
-#         "jobbers": gendered_persona(eligible_wrestlers, "jobbers", gender),
-#         "anti_heroes": gendered_persona(eligible_wrestlers, "anti_heroes", gender),
-#     }
-
-
 def stable_member_mapper(show, stable_id):
 
     employees = []
@@ -414,12 +404,9 @@ def contestant_tracker(show, gender="male", contestants=[]):
     flat_list = [
         wrestler for wrestler in show["eligible_wrestlers"] if wrestler in gender_pool
     ]
-    try:
-        contestant = random.choice(flat_list)
-    except IndexError:
-        import pdb
 
-        pdb.set_trace()
+    contestant = random.choice(flat_list)
+
     contestants.append(contestant)
     show["eligible_wrestlers"].remove(contestant)
 
