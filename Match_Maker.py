@@ -59,7 +59,7 @@ def singles(show, match):
         people=2,
         gender="Male",
     )
-    singles_match(roster_mutation, match)
+    singles_match(roster_mutation, match, show)
     logging.warning("Singles Match non gendered")
 
 
@@ -229,24 +229,33 @@ def roster_selector(
             "eligible_participants": show["eligible_wrestlers"],
         }
     if _stables == False:
+
         # singles one on one scenario likey or other similiar non tag match
         contestants = contestant_tracker(show, gender, contestants)
         for _ in [*range(1, people)]:
-            # check the persona of contestant[0] and find matches that don't have the same persona
+            # check the persona of contestant[0]
             contestant_one_persona = persona_finder(show, contestants[0])
 
             # check how many people are left to fight of the same gender
 
-            flat_list = gender_divide(show, gender)
+            matching_gender = show["males"] if gender == "Male" else show["females"]
+            flat_list = list(set(matching_gender) & set(show["eligible_wrestlers"]))
 
             opponents_left = len(flat_list)
             # if it's less than five don't worry about personas and fill up the match
             if opponents_left < 5:
                 while len(contestants) != people:
                     contestants = contestant_tracker(show, gender, contestants)
-
-            while len(contestants) != people:
-                contestants = find_opponent(contestants, gender, show)
+            else:
+                # fill the match up with non matching personas
+                personas = {"faces", "heels", "jobbers", "tweeners", "anti_heroes"}
+                personas.remove(contestant_one_persona)
+                opponent_pool = []
+                for personality in personas:
+                    opponent_pool += gendered_persona(flat_list, show, personality)
+                contestant = random.choice(opponent_pool)
+                contestants.append(contestant)
+                show["eligible_wrestlers"].remove(contestant)
     if _stables == True:
         return roster_selector_stables(people, show, team1, roster, team2)
 
@@ -284,10 +293,13 @@ def twenty_four_seven_match(roster_mutation, match, combatents, show):
     return participants_string
 
 
-def singles_match(roster_mutation, match):
+def singles_match(roster_mutation, match, show):
     participants_string = match_string(roster_mutation)
-    print(f"Match {match} will be a male one on one singles match")
-    print(f"- Match Participants are: {participants_string}")
+    line1 = f"Match {match} will be a male one on one singles match"
+    line2 = f"- Match Participants are: {participants_string}"
+    print(line1)
+    print(line2)
+    show["card"].append(f"{line1}, {line2}")
 
 
 def multi_persons_match(x_man_match, match, roster_mutation, show):
@@ -314,69 +326,15 @@ def multi_persons_match(x_man_match, match, roster_mutation, show):
 
 def persona_finder(show, contestant):
     for column in show:
-        if isinstance(column, list):
-            for id in column:
+        if isinstance(show[column], list):
+            for id in show[column]:
                 if id == contestant:
-
-                    return
-
-
-def roster_mapper(roster, show):
-
-    heels = [
-        heel
-        for heel in roster["heels"]
-        if heel in circuits.get_by_name(show["name"])["heels"]
-    ]
-    faces = [
-        face
-        for face in roster["faces"]
-        if face in circuits.get_by_name(show["name"])["faces"]
-    ]
-    tweeners = [
-        tweener
-        for tweener in roster["tweeners"]
-        if tweener in circuits.get_by_name(show["name"])["tweeners"]
-    ]
-    jobbers = [
-        jobber
-        for jobber in roster["jobbers"]
-        if jobber in circuits.get_by_name(show["name"])["jobbers"]
-    ]
-    anti_heroes = [
-        anti_heroe
-        for anti_heroe in roster["anti_heroes"]
-        if anti_heroe in circuits.get_by_name(show["name"])["anti_heroes"]
-    ]
-    try:
-        males = [
-            boy
-            for boy in roster["male"]
-            if wrestlers.get_by_id(boy)["gender"] == "male" and boy in roster
-        ]
-    except KeyError:
-        males = []
-    try:
-        females = [
-            girl
-            for girl in roster["female"]
-            if wrestlers.get_by_id(girl)["gender"] == "female" and girl in roster
-        ]
-    except KeyError:
-        females = []
-    return {
-        "male": males,
-        "female": females,
-        "heels": heels,
-        "faces": faces,
-        "tweeners": tweeners,
-        "jobbers": jobbers,
-        "anti_heroes": anti_heroes,
-    }
+                    return column
 
 
-def gendered_persona(eligible_wrestlers, persona, gender):
-    return list(set(eligible_wrestlers[persona]) & set(eligible_wrestlers[gender]))
+def gendered_persona(flat_list, show, persona):
+
+    return list(set(flat_list) & set(show[persona]))
 
 
 def stable_member_mapper(show, stable_id):
@@ -398,9 +356,9 @@ def stable_member_mapper(show, stable_id):
     return employees
 
 
-def contestant_tracker(show, gender="male", contestants=[]):
+def contestant_tracker(show, gender="Male", contestants=[]):
     """Adds a contestant at random to the contestants array and then removes them from the eligible roster"""
-    gender_pool = show["males"] if gender == "male" else show["females"]
+    gender_pool = show["males"] if gender == "Male" else show["females"]
     flat_list = [
         wrestler for wrestler in show["eligible_wrestlers"] if wrestler in gender_pool
     ]
@@ -411,49 +369,3 @@ def contestant_tracker(show, gender="male", contestants=[]):
     show["eligible_wrestlers"].remove(contestant)
 
     return contestants
-
-
-def gender_divide(show, gender):
-    """takes a show and removes all non lists and then returns a flattened list of the gender passed left."""
-    flat_list = []
-
-    show.pop("name", None)
-    show.pop("id", None)
-    show.pop("matches", None)
-    if gender == "Female":
-        pool = [
-            value for key, value in show.items() if "female" in key.lower()
-        ]  # searches all keys for gender
-        flat_list = [item for sublist in pool for item in sublist]  # flattens the list
-    elif gender == "Male":
-        pool = [
-            value for key, value in show.items() if "female" not in key.lower()
-        ]  # can't query if for 'male' here since it's a part of the word female
-
-        flat_list = [item for sublist in pool for item in sublist]
-
-    else:
-        pool = [value for key, value in show.items() if "ready" in key.lower()]
-        flat_list = [item for sublist in pool for item in sublist]
-    return flat_list
-
-
-def persona_switch(persona_filter, gender, show):
-    """returns the personas a wrestler is not"""
-    # iterate throuch the show lists by gender
-    switcher = {"heels": ["faces", "tweners", "jobbers", "anti_heroes"]}
-    # return the switcher.get(persona_filter)
-    show.pop("name", None)
-    show.pop("id", None)
-    show.pop("matches", None)
-
-
-def find_opponent(contestant, gender, show):
-    """takes the persona passed and finds all wreslters left with no matching persona"""
-
-
-def personality_switch(argument):
-    """returns the corresponding tnm value with a real text equivilant"""
-    switcher = {0: "face", 1: "heel", 2: "tweener", 3: "jobber", 5: "anti-hero"}
-
-    return switcher.get(argument, "nothing")

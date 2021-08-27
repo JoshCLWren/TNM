@@ -1,0 +1,10 @@
+[tool.pytest.ini_options]
+addopts = "-svx --cov=."
+testpaths = [
+    "tests",
+]
+
+[tool.coverage.run]
+omit =["tests/*"]
+[tool.coverage.report]
+omit =["tests/*"]

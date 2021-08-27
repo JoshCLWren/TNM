@@ -42,3 +42,14 @@ def test_trio_match():
     Match_Maker.matches(lucha_show, roll_override=1)
 
     assert "will be a 6 tag match" in lucha_show["card"][0]
+
+
+def test_singles_match():
+    """Test that match maker can create a singles match"""
+    seed_db.seed_database(name="wwf")
+
+    raw = Shows.create_show("wwf", 1)
+
+    Match_Maker.matches(raw, roll_override=49)
+
+    assert "one on one singles match" in raw["card"][0]
