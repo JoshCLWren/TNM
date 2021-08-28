@@ -22,6 +22,8 @@ import logging
 from datetime import datetime
 from roster_builder import roster_builder
 from Match_Maker import matches
+import database
+import Shows
 
 for handler in logging.root.handlers[:]:
     logging.root.removeHandler(handler)
@@ -38,7 +40,8 @@ logging.warning(datetime.today().strftime("%Y-%m-%d-%H:%M:%S"))
 
 def Show(tv_show, match_total=3):
     print(f"Welcome to {tv_show}!")
-    matches(tv_show=tv_show, match_total=match_total)
+    database.shows_table()
+    Shows.create_show(tv_show, match_total)
 
 
 cont = "yes"
@@ -79,6 +82,7 @@ while cont == "yes" or cont == "y":
 
     print(f"How many matches will {tv_show} have?")
     match_total = int(input())
+
     logging.warning(f"Matches = {match_total}")
     logging.warning("Building Show")
 

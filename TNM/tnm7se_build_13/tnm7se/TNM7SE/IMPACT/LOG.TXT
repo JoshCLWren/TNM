@@ -25,3 +25,391 @@ type: r
 type: r
 type: t
 type: r
+Breakdown in: Tessa Blanchard
+Breakdown out
+Breakdown in: Glen Gilberti
+Breakdown out
+Breakdown in: Eddie Edwards
+Breakdown out
+Breakdown in: Killer Kross
+Breakdown out
+Breakdown in: Mahabali Shera
+Breakdown out
+Breakdown in: Josh Alexander
+Breakdown out
+Breakdown in: Ace Austin
+Breakdown out
+Breakdown in: Daga
+Breakdown out
+Breakdown in: Moose
+Breakdown out
+Breakdown in: Luchasaurus
+Breakdown out
+Breakdown in: Taya Valkyrie
+Breakdown out
+Breakdown in: Melissa Santos
+Breakdown out
+Breakdown in: Willie Mack
+Breakdown out
+Breakdown in: Rich Swann
+Breakdown out
+Breakdown in: Sami Callihan
+Breakdown out
+Breakdown in: Rob Van Dam
+Breakdown out
+Breakdown in: Brian Cage
+Breakdown out
+Breakdown in: Jimmy Jacobs
+Breakdown out
+Breakdown in: Rohit Raju
+Breakdown out
+Breakdown in: Dave Crist
+Breakdown out
+Breakdown in: The Deaners (Cody Deaner and Cousin Jake)
+Breakdown out
+Breakdown in: Raj Singh and Rohit Raju
+Breakdown out
+Breakdown in: Rich Swann and Willie Mack
+Breakdown out
+Breakdown in: Johnny Impact and Michael Elgin
+Breakdown out
+Breakdown in: Jake Crist and Brian Cage
+Breakdown out
+Breakdown in: Madison Rayne and The Sandman
+Breakdown out
+Breakdown in: Rosemary and Jake Crist
+Breakdown out
+Breakdown in: Sami Callihan and Eddie Edwards
+Breakdown out
+Breakdown in: Jake Crist and Dave Crist
+Breakdown out
+Breakdown in: Rosemary and Alisha Edwards
+Breakdown out
+Breakdown in: Tessa Blanchard and Scarlett Bordeaux
+Breakdown out
+Breakdown in: Great Muta and Tommy Dreamer
+Breakdown out
+Breakdown in: Rob Van Dam, Sabu and Tommy Dreamer
+Breakdown out
+Breakdown in: The North (Ethan Page and Josh Alexander) and Moose
+Breakdown out
+Breakdown in: The Rascalz (Dez/Trey/Wentz)
+Breakdown out
+Breakdown in: oVe (Dave Crist/Jake Crist/Madman Fulton)
+Breakdown out
+Breakdown in: Taya Valkyrie, Scarlett Bordeaux and Jordynne Grace
+Breakdown out
+Breakdown in: Tessa Blanchard, Su Yung and Rosemary
+Breakdown out
+Brian Cage
+Rich Swann
+Taya Valkyrie
+Tessa Blanchard
+Rob Van Dam
+Killer Kross
+Ace Austin
+Eddie Edwards
+Sami Callihan
+Dave Crist
+Rohit Raju
+Jimmy Jacobs
+Glen Gilberti
+Daga
+Josh Alexander
+Mahabali Shera
+Willie Mack
+Melissa Santos
+Moose
+Used: Brian Cage
+Used: Rich Swann
+Used: Taya Valkyrie
+Adding Rich Swann to top contenders for IMPACT World Championship
+Adding Taya Valkyrie to top contenders for IMPACT World Championship
+Adding Taya Valkyrie to top contenders for IMPACT X Divisiion Championship
+ 1  385 IMPACT World Championship 1 4 Tessa Blanchard 0 0
+Wrestler Tessa Blanchard is a contender for IMPACT World Championship
+ 1  380 IMPACT World Championship 2 5 Rob Van Dam 0 0
+Wrestler Rob Van Dam is a contender for IMPACT World Championship
+ 1  371 IMPACT World Championship 3 6 Killer Kross 0 0
+Wrestler Killer Kross is a contender for IMPACT World Championship
+ 2  348 IMPACT X Divisiion Championship 1 7 Ace Austin 0 0
+Wrestler Ace Austin is a contender for IMPACT X Divisiion Championship
+ 2  362 IMPACT X Divisiion Championship 2 8 Eddie Edwards 0 0
+Wrestler Eddie Edwards is a contender for IMPACT X Divisiion Championship
+ 2  345 IMPACT X Divisiion Championship 3 9 Sami Callihan 0 0
+Wrestler Sami Callihan is a contender for IMPACT X Divisiion Championship
+ 2  360 IMPACT X Divisiion Championship 4 10 Dave Crist 0 0
+Wrestler Dave Crist is a contender for IMPACT X Divisiion Championship
+ 4  381 IMPACT Knockout Championship 1 11 Rohit Raju 0 0
+Wrestler Rohit Raju is a contender for IMPACT Knockout Championship
+ 4  391 IMPACT Knockout Championship 2 12 Jimmy Jacobs 0 0
+Wrestler Jimmy Jacobs is a contender for IMPACT Knockout Championship
+ 4  390 IMPACT Knockout Championship 3 13 Glen Gilberti 0 0
+Wrestler Glen Gilberti is a contender for IMPACT Knockout Championship
+ 4  359 IMPACT Knockout Championship 4 14 Daga 0 0
+Wrestler Daga is a contender for IMPACT Knockout Championship
+ 4  369 IMPACT Knockout Championship 5 15 Josh Alexander 0 0
+Wrestler Josh Alexander is a contender for IMPACT Knockout Championship
+Contenders:
+Brian Cage 1
+Rich Swann 1
+Taya Valkyrie 1
+Tessa Blanchard 1
+Rob Van Dam 1
+Killer Kross 1
+Ace Austin 2
+Eddie Edwards 2
+Sami Callihan 2
+Dave Crist 2
+Rohit Raju 4
+Jimmy Jacobs 4
+Glen Gilberti 4
+Daga 4
+Josh Alexander 4
+Mahabali Shera 0
+Willie Mack 0
+Melissa Santos 0
+Moose 0
+Brian Cage
+Rich Swann
+Taya Valkyrie
+Tessa Blanchard
+Rob Van Dam
+Killer Kross
+Ace Austin
+Eddie Edwards
+Sami Callihan
+Dave Crist
+Rohit Raju
+Jimmy Jacobs
+Glen Gilberti
+Daga
+Josh Alexander
+Mahabali Shera
+Willie Mack
+Melissa Santos
+Moose
+Used: Brian Cage
+Used: Rich Swann
+Used: Taya Valkyrie
+Adding Rich Swann to top contenders for IMPACT World Championship
+Adding Taya Valkyrie to top contenders for IMPACT World Championship
+Adding Taya Valkyrie to top contenders for IMPACT X Divisiion Championship
+ 1  385 IMPACT World Championship 1 4 Tessa Blanchard 0 0
+Wrestler Tessa Blanchard is a contender for IMPACT World Championship
+ 1  380 IMPACT World Championship 2 5 Rob Van Dam 0 0
+Wrestler Rob Van Dam is a contender for IMPACT World Championship
+ 1  371 IMPACT World Championship 3 6 Killer Kross 0 0
+Wrestler Killer Kross is a contender for IMPACT World Championship
+ 2  348 IMPACT X Divisiion Championship 1 7 Ace Austin 0 0
+Wrestler Ace Austin is a contender for IMPACT X Divisiion Championship
+ 2  362 IMPACT X Divisiion Championship 2 8 Eddie Edwards 0 0
+Wrestler Eddie Edwards is a contender for IMPACT X Divisiion Championship
+ 2  345 IMPACT X Divisiion Championship 3 9 Sami Callihan 0 0
+Wrestler Sami Callihan is a contender for IMPACT X Divisiion Championship
+ 2  360 IMPACT X Divisiion Championship 4 10 Dave Crist 0 0
+Wrestler Dave Crist is a contender for IMPACT X Divisiion Championship
+ 4  381 IMPACT Knockout Championship 1 11 Rohit Raju 0 0
+Wrestler Rohit Raju is a contender for IMPACT Knockout Championship
+ 4  391 IMPACT Knockout Championship 2 12 Jimmy Jacobs 0 0
+Wrestler Jimmy Jacobs is a contender for IMPACT Knockout Championship
+ 4  390 IMPACT Knockout Championship 3 13 Glen Gilberti 0 0
+Wrestler Glen Gilberti is a contender for IMPACT Knockout Championship
+ 4  359 IMPACT Knockout Championship 4 14 Daga 0 0
+Wrestler Daga is a contender for IMPACT Knockout Championship
+ 4  369 IMPACT Knockout Championship 5 15 Josh Alexander 0 0
+Wrestler Josh Alexander is a contender for IMPACT Knockout Championship
+Contenders:
+Brian Cage 1
+Rich Swann 1
+Taya Valkyrie 1
+Tessa Blanchard 1
+Rob Van Dam 1
+Killer Kross 1
+Ace Austin 2
+Eddie Edwards 2
+Sami Callihan 2
+Dave Crist 2
+Rohit Raju 4
+Jimmy Jacobs 4
+Glen Gilberti 4
+Daga 4
+Josh Alexander 4
+Mahabali Shera 0
+Willie Mack 0
+Melissa Santos 0
+Moose 0
+The Deaners (Cody Deaner and Cousin Jake)
+Jake Crist and Brian Cage
+Rosemary and Jake Crist
+Rosemary and Alisha Edwards
+Johnny Impact and Michael Elgin
+Tessa Blanchard and Scarlett Bordeaux
+Jake Crist and Dave Crist
+Sami Callihan and Eddie Edwards
+Raj Singh and Rohit Raju
+Rich Swann and Willie Mack
+Madison Rayne and The Sandman
+Adding Rich Swann to top contenders for IMPACT World Championship
+Adding Taya Valkyrie to top contenders for IMPACT World Championship
+Adding Taya Valkyrie to top contenders for IMPACT X Divisiion Championship
+ 3  0 IMPACT World Tag Team Championship 1 1 The Deaners (Cody Deaner and Cousin Jake) 0 0
+Wrestler The Deaners (Cody Deaner and Cousin Jake) is a contender for IMPACT World Tag Team Championship
+ 3  0 IMPACT World Tag Team Championship 2 2 Jake Crist and Brian Cage 0 0
+Wrestler Jake Crist and Brian Cage is a contender for IMPACT World Tag Team Championship
+ 3  0 IMPACT World Tag Team Championship 3 3 Rosemary and Jake Crist 0 0
+Wrestler Rosemary and Jake Crist is a contender for IMPACT World Tag Team Championship
+ 3  0 IMPACT World Tag Team Championship 4 4 Rosemary and Alisha Edwards 0 0
+Wrestler Rosemary and Alisha Edwards is a contender for IMPACT World Tag Team Championship
+ 3  0 IMPACT World Tag Team Championship 5 5 Johnny Impact and Michael Elgin 0 0
+Wrestler Johnny Impact and Michael Elgin is a contender for IMPACT World Tag Team Championship
+Contenders:
+The Deaners (Cody Deaner and Cousin Jake) 3
+Jake Crist and Brian Cage 3
+Rosemary and Jake Crist 3
+Rosemary and Alisha Edwards 3
+Johnny Impact and Michael Elgin 3
+Tessa Blanchard and Scarlett Bordeaux 0
+Jake Crist and Dave Crist 0
+Sami Callihan and Eddie Edwards 0
+Raj Singh and Rohit Raju 0
+Rich Swann and Willie Mack 0
+Madison Rayne and The Sandman 0
+Brian Cage
+Rich Swann
+Taya Valkyrie
+Tessa Blanchard
+Rob Van Dam
+Killer Kross
+Ace Austin
+Eddie Edwards
+Sami Callihan
+Dave Crist
+Rohit Raju
+Jimmy Jacobs
+Glen Gilberti
+Daga
+Josh Alexander
+Mahabali Shera
+Willie Mack
+Melissa Santos
+Moose
+Used: Brian Cage
+Used: Rich Swann
+Used: Taya Valkyrie
+Adding Rich Swann to top contenders for IMPACT World Championship
+Adding Taya Valkyrie to top contenders for IMPACT World Championship
+Adding Taya Valkyrie to top contenders for IMPACT X Divisiion Championship
+ 1  385 IMPACT World Championship 1 4 Tessa Blanchard 0 0
+Wrestler Tessa Blanchard is a contender for IMPACT World Championship
+ 1  380 IMPACT World Championship 2 5 Rob Van Dam 0 0
+Wrestler Rob Van Dam is a contender for IMPACT World Championship
+ 1  371 IMPACT World Championship 3 6 Killer Kross 0 0
+Wrestler Killer Kross is a contender for IMPACT World Championship
+ 2  348 IMPACT X Divisiion Championship 1 7 Ace Austin 0 0
+Wrestler Ace Austin is a contender for IMPACT X Divisiion Championship
+ 2  362 IMPACT X Divisiion Championship 2 8 Eddie Edwards 0 0
+Wrestler Eddie Edwards is a contender for IMPACT X Divisiion Championship
+ 2  345 IMPACT X Divisiion Championship 3 9 Sami Callihan 0 0
+Wrestler Sami Callihan is a contender for IMPACT X Divisiion Championship
+ 2  360 IMPACT X Divisiion Championship 4 10 Dave Crist 0 0
+Wrestler Dave Crist is a contender for IMPACT X Divisiion Championship
+ 4  381 IMPACT Knockout Championship 1 11 Rohit Raju 0 0
+Wrestler Rohit Raju is a contender for IMPACT Knockout Championship
+ 4  391 IMPACT Knockout Championship 2 12 Jimmy Jacobs 0 0
+Wrestler Jimmy Jacobs is a contender for IMPACT Knockout Championship
+ 4  390 IMPACT Knockout Championship 3 13 Glen Gilberti 0 0
+Wrestler Glen Gilberti is a contender for IMPACT Knockout Championship
+ 4  359 IMPACT Knockout Championship 4 14 Daga 0 0
+Wrestler Daga is a contender for IMPACT Knockout Championship
+ 4  369 IMPACT Knockout Championship 5 15 Josh Alexander 0 0
+Wrestler Josh Alexander is a contender for IMPACT Knockout Championship
+Contenders:
+Brian Cage 1
+Rich Swann 1
+Taya Valkyrie 1
+Tessa Blanchard 1
+Rob Van Dam 1
+Killer Kross 1
+Ace Austin 2
+Eddie Edwards 2
+Sami Callihan 2
+Dave Crist 2
+Rohit Raju 4
+Jimmy Jacobs 4
+Glen Gilberti 4
+Daga 4
+Josh Alexander 4
+Mahabali Shera 0
+Willie Mack 0
+Melissa Santos 0
+Moose 0
+Brian Cage
+Rich Swann
+Taya Valkyrie
+Tessa Blanchard
+Rob Van Dam
+Killer Kross
+Ace Austin
+Eddie Edwards
+Sami Callihan
+Dave Crist
+Rohit Raju
+Jimmy Jacobs
+Glen Gilberti
+Daga
+Josh Alexander
+Mahabali Shera
+Willie Mack
+Melissa Santos
+Moose
+Used: Brian Cage
+Used: Rich Swann
+Used: Taya Valkyrie
+Adding Rich Swann to top contenders for IMPACT World Championship
+Adding Taya Valkyrie to top contenders for IMPACT World Championship
+Adding Taya Valkyrie to top contenders for IMPACT X Divisiion Championship
+ 1  385 IMPACT World Championship 1 4 Tessa Blanchard 0 0
+Wrestler Tessa Blanchard is a contender for IMPACT World Championship
+ 1  380 IMPACT World Championship 2 5 Rob Van Dam 0 0
+Wrestler Rob Van Dam is a contender for IMPACT World Championship
+ 1  371 IMPACT World Championship 3 6 Killer Kross 0 0
+Wrestler Killer Kross is a contender for IMPACT World Championship
+ 2  348 IMPACT X Divisiion Championship 1 7 Ace Austin 0 0
+Wrestler Ace Austin is a contender for IMPACT X Divisiion Championship
+ 2  362 IMPACT X Divisiion Championship 2 8 Eddie Edwards 0 0
+Wrestler Eddie Edwards is a contender for IMPACT X Divisiion Championship
+ 2  345 IMPACT X Divisiion Championship 3 9 Sami Callihan 0 0
+Wrestler Sami Callihan is a contender for IMPACT X Divisiion Championship
+ 2  360 IMPACT X Divisiion Championship 4 10 Dave Crist 0 0
+Wrestler Dave Crist is a contender for IMPACT X Divisiion Championship
+ 4  381 IMPACT Knockout Championship 1 11 Rohit Raju 0 0
+Wrestler Rohit Raju is a contender for IMPACT Knockout Championship
+ 4  391 IMPACT Knockout Championship 2 12 Jimmy Jacobs 0 0
+Wrestler Jimmy Jacobs is a contender for IMPACT Knockout Championship
+ 4  390 IMPACT Knockout Championship 3 13 Glen Gilberti 0 0
+Wrestler Glen Gilberti is a contender for IMPACT Knockout Championship
+ 4  359 IMPACT Knockout Championship 4 14 Daga 0 0
+Wrestler Daga is a contender for IMPACT Knockout Championship
+ 4  369 IMPACT Knockout Championship 5 15 Josh Alexander 0 0
+Wrestler Josh Alexander is a contender for IMPACT Knockout Championship
+Contenders:
+Brian Cage 1
+Rich Swann 1
+Taya Valkyrie 1
+Tessa Blanchard 1
+Rob Van Dam 1
+Killer Kross 1
+Ace Austin 2
+Eddie Edwards 2
+Sami Callihan 2
+Dave Crist 2
+Rohit Raju 4
+Jimmy Jacobs 4
+Glen Gilberti 4
+Daga 4
+Josh Alexander 4
+Mahabali Shera 0
+Willie Mack 0
+Melissa Santos 0
+Moose 0

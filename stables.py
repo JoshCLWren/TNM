@@ -39,6 +39,7 @@ def seed_stables(stable_list, drop=True, create_table=True):
         stables_table()
 
     for stable in stable_list:
+
         stable_copy = {}
         stable_copy["name"] = stable["Stable Name"]
         stable_copy["members"] = stable["ids"][1:]
@@ -58,3 +59,75 @@ def get_all_stables():
         cursor.execute("Select * from stables;")
 
     return cursor.fetchall()
+
+
+def get_by_id(id):
+    """Returns the stable specified, if a stable name is passed searches by that instead"""
+
+    if isinstance(id, str):
+        with con:
+            cursor.execute("select * from stables where name = %(name)s;", {"name": id})
+
+    if id == []:
+        return None
+
+    if isinstance(id, int):
+        with con:
+            cursor.execute("select * from stables where id = %(id)s;", {"id": id})
+
+    stable = cursor.fetchone()
+
+    if stable == None:
+        return None
+    return stable
+
+
+def patch_stable(id, column, new_value):
+    """Change the name or members of a stable"""
+
+    stable = get_by_id(id)
+
+    column_type = type(stable[column])
+
+    new_value_type = type(new_value)
+
+    mistypes = []
+
+    if isinstance(stable[column], list):
+        if new_value_type == int:
+            utilities.check_dupes(stable[column], new_value)
+        else:
+            for number in new_value:
+                if isinstance(number, int):
+                    utilities.check_dupes(stable[column], number)
+                else:
+                    mistypes.append(number)
+    else:
+        if new_value_type == column_type:
+            stable[column] = new_value
+        else:
+            return stable
+
+    kwargs = {"id": id, column: stable[column]}
+
+    query = utilities.prepare_columns(table="stables", **kwargs)
+
+    cursor.execute(query, kwargs)
+
+    stable = cursor.fetchone()
+
+    return stable
+
+
+def post_stable(stable):
+    """Adds a stable row to the table"""
+
+    query = """
+                INSERT INTO stables (name, members)
+                VALUES (%(name)s, %(members)s)
+                returning *;
+                """
+    with con:
+        cursor.execute(query, stable)
+
+    return cursor.fetchone()

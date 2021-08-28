@@ -1,5 +1,5 @@
 Start of session
-2021-08-15-13:21:21
+2021-08-25-21:30:52
 Building Migrations
 Building Circuit Databases
 parsing AEW
@@ -4889,6 +4889,54 @@ Adding Personality
 adding Sharlie Rockstar to IMPACT
 Adding Contract Status
 Adding Personality
+adding Aero Star to IMPACT
+Adding Contract Status
+Adding Personality
+adding Blue Demon Jr. to IMPACT
+Adding Contract Status
+Adding Personality
+adding Laredo Kid to IMPACT
+Adding Contract Status
+Adding Personality
+adding Maximo to IMPACT
+Adding Contract Status
+Adding Personality
+adding Psycho Clown to IMPACT
+Adding Contract Status
+Adding Personality
+adding Puma King to IMPACT
+Adding Contract Status
+Adding Personality
+adding Rey Escorpion to IMPACT
+Adding Contract Status
+Adding Personality
+adding El Terrible to IMPACT
+Adding Contract Status
+Adding Personality
+adding El Texano Jr. to IMPACT
+Adding Contract Status
+Adding Personality
+adding Fabi Apache to IMPACT
+Adding Contract Status
+Adding Personality
+adding Dr. Wagner Jr. to IMPACT
+Adding Contract Status
+Adding Personality
+adding Titan to IMPACT
+Adding Contract Status
+Adding Personality
+adding Taurus to IMPACT
+Adding Contract Status
+Adding Personality
+adding Chessman to IMPACT
+Adding Contract Status
+Adding Personality
+adding Monster Clown to IMPACT
+Adding Contract Status
+Adding Personality
+adding La Parka to IMPACT
+Adding Contract Status
+Adding Personality
 parsing MLW
 adding Adam Page to MLW
 Adding Contract Status
@@ -6385,6 +6433,153 @@ adding Yota Tsuji to MLW
 Adding Contract Status
 Adding Personality
 adding Yuya Uemura to MLW
+Adding Contract Status
+Adding Personality
+adding Great Muta to MLW
+Adding Contract Status
+Adding Personality
+adding Akuma to MLW
+Adding Contract Status
+Adding Personality
+adding Blue Panther to MLW
+Adding Contract Status
+Adding Personality
+adding El Hijo Del Signo to MLW
+Adding Contract Status
+Adding Personality
+adding Electrico to MLW
+Adding Contract Status
+Adding Personality
+adding Esfinge to MLW
+Adding Contract Status
+Adding Personality
+adding Espanto Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Felino to MLW
+Adding Contract Status
+Adding Personality
+adding Flyer to MLW
+Adding Contract Status
+Adding Personality
+adding Fuego to MLW
+Adding Contract Status
+Adding Personality
+adding Hechicero to MLW
+Adding Contract Status
+Adding Personality
+adding Oro Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding La Bestia Del Ring to MLW
+Adding Contract Status
+Adding Personality
+adding Polvora to MLW
+Adding Contract Status
+Adding Personality
+adding Rey Bucanero to MLW
+Adding Contract Status
+Adding Personality
+adding Robin to MLW
+Adding Contract Status
+Adding Personality
+adding Star Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Stuka Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Tiger to MLW
+Adding Contract Status
+Adding Personality
+adding Triton to MLW
+Adding Contract Status
+Adding Personality
+adding Austin Theory to MLW
+Adding Contract Status
+Adding Personality
+adding Espiritu to MLW
+Adding Contract Status
+Adding Personality
+adding Sansan to MLW
+Adding Contract Status
+Adding Personality
+adding Templario to MLW
+Adding Contract Status
+Adding Personality
+adding Ciber The Main Man to MLW
+Adding Contract Status
+Adding Personality
+adding Gilbert el Boricua to MLW
+Adding Contract Status
+Adding Personality
+adding Atlantis Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding El Hijo Del Villano III to MLW
+Adding Contract Status
+Adding Personality
+adding El Cautero to MLW
+Adding Contract Status
+Adding Personality
+adding Forastero to MLW
+Adding Contract Status
+Adding Personality
+adding Super Astro Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding The Criszh to MLW
+Adding Contract Status
+Adding Personality
+adding Sharlie Rockstar to MLW
+Adding Contract Status
+Adding Personality
+adding Aero Star to MLW
+Adding Contract Status
+Adding Personality
+adding Blue Demon Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Laredo Kid to MLW
+Adding Contract Status
+Adding Personality
+adding Maximo to MLW
+Adding Contract Status
+Adding Personality
+adding Psycho Clown to MLW
+Adding Contract Status
+Adding Personality
+adding Puma King to MLW
+Adding Contract Status
+Adding Personality
+adding Rey Escorpion to MLW
+Adding Contract Status
+Adding Personality
+adding El Terrible to MLW
+Adding Contract Status
+Adding Personality
+adding El Texano Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Fabi Apache to MLW
+Adding Contract Status
+Adding Personality
+adding Dr. Wagner Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Titan to MLW
+Adding Contract Status
+Adding Personality
+adding Taurus to MLW
+Adding Contract Status
+Adding Personality
+adding Chessman to MLW
+Adding Contract Status
+Adding Personality
+adding Monster Clown to MLW
+Adding Contract Status
+Adding Personality
+adding La Parka to MLW
 Adding Contract Status
 Adding Personality
 parsing NJPW
@@ -7984,6 +8179,54 @@ Adding Personality
 adding Sharlie Rockstar to NJPW
 Adding Contract Status
 Adding Personality
+adding Aero Star to NJPW
+Adding Contract Status
+Adding Personality
+adding Blue Demon Jr. to NJPW
+Adding Contract Status
+Adding Personality
+adding Laredo Kid to NJPW
+Adding Contract Status
+Adding Personality
+adding Maximo to NJPW
+Adding Contract Status
+Adding Personality
+adding Psycho Clown to NJPW
+Adding Contract Status
+Adding Personality
+adding Puma King to NJPW
+Adding Contract Status
+Adding Personality
+adding Rey Escorpion to NJPW
+Adding Contract Status
+Adding Personality
+adding El Terrible to NJPW
+Adding Contract Status
+Adding Personality
+adding El Texano Jr. to NJPW
+Adding Contract Status
+Adding Personality
+adding Fabi Apache to NJPW
+Adding Contract Status
+Adding Personality
+adding Dr. Wagner Jr. to NJPW
+Adding Contract Status
+Adding Personality
+adding Titan to NJPW
+Adding Contract Status
+Adding Personality
+adding Taurus to NJPW
+Adding Contract Status
+Adding Personality
+adding Chessman to NJPW
+Adding Contract Status
+Adding Personality
+adding Monster Clown to NJPW
+Adding Contract Status
+Adding Personality
+adding La Parka to NJPW
+Adding Contract Status
+Adding Personality
 parsing NXT
 adding Adam Page to NXT
 Adding Contract Status
@@ -9579,6 +9822,54 @@ adding The Criszh to NXT
 Adding Contract Status
 Adding Personality
 adding Sharlie Rockstar to NXT
+Adding Contract Status
+Adding Personality
+adding Aero Star to NXT
+Adding Contract Status
+Adding Personality
+adding Blue Demon Jr. to NXT
+Adding Contract Status
+Adding Personality
+adding Laredo Kid to NXT
+Adding Contract Status
+Adding Personality
+adding Maximo to NXT
+Adding Contract Status
+Adding Personality
+adding Psycho Clown to NXT
+Adding Contract Status
+Adding Personality
+adding Puma King to NXT
+Adding Contract Status
+Adding Personality
+adding Rey Escorpion to NXT
+Adding Contract Status
+Adding Personality
+adding El Terrible to NXT
+Adding Contract Status
+Adding Personality
+adding El Texano Jr. to NXT
+Adding Contract Status
+Adding Personality
+adding Fabi Apache to NXT
+Adding Contract Status
+Adding Personality
+adding Dr. Wagner Jr. to NXT
+Adding Contract Status
+Adding Personality
+adding Titan to NXT
+Adding Contract Status
+Adding Personality
+adding Taurus to NXT
+Adding Contract Status
+Adding Personality
+adding Chessman to NXT
+Adding Contract Status
+Adding Personality
+adding Monster Clown to NXT
+Adding Contract Status
+Adding Personality
+adding La Parka to NXT
 Adding Contract Status
 Adding Personality
 parsing ROH
@@ -12437,13 +12728,6 @@ Finding Injured Wrestlers
  Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/WWE/CARD.INJ
 Matches = 1
 Building Show
-32 was rolled with 1 and 101 indexes
-Main even roll = 32
-85 was rolled with 1 and 101 indexes
-Combatent Picker
-[4, 'Fatal Four Way']
-Title is Raw Women's Championship
-#1 contender match
 Building Migrations
 Building Circuit Databases
 parsing AEW
@@ -17333,6 +17617,54 @@ Adding Personality
 adding Sharlie Rockstar to IMPACT
 Adding Contract Status
 Adding Personality
+adding Aero Star to IMPACT
+Adding Contract Status
+Adding Personality
+adding Blue Demon Jr. to IMPACT
+Adding Contract Status
+Adding Personality
+adding Laredo Kid to IMPACT
+Adding Contract Status
+Adding Personality
+adding Maximo to IMPACT
+Adding Contract Status
+Adding Personality
+adding Psycho Clown to IMPACT
+Adding Contract Status
+Adding Personality
+adding Puma King to IMPACT
+Adding Contract Status
+Adding Personality
+adding Rey Escorpion to IMPACT
+Adding Contract Status
+Adding Personality
+adding El Terrible to IMPACT
+Adding Contract Status
+Adding Personality
+adding El Texano Jr. to IMPACT
+Adding Contract Status
+Adding Personality
+adding Fabi Apache to IMPACT
+Adding Contract Status
+Adding Personality
+adding Dr. Wagner Jr. to IMPACT
+Adding Contract Status
+Adding Personality
+adding Titan to IMPACT
+Adding Contract Status
+Adding Personality
+adding Taurus to IMPACT
+Adding Contract Status
+Adding Personality
+adding Chessman to IMPACT
+Adding Contract Status
+Adding Personality
+adding Monster Clown to IMPACT
+Adding Contract Status
+Adding Personality
+adding La Parka to IMPACT
+Adding Contract Status
+Adding Personality
 parsing MLW
 adding Adam Page to MLW
 Adding Contract Status
@@ -18829,6 +19161,153 @@ adding Yota Tsuji to MLW
 Adding Contract Status
 Adding Personality
 adding Yuya Uemura to MLW
+Adding Contract Status
+Adding Personality
+adding Great Muta to MLW
+Adding Contract Status
+Adding Personality
+adding Akuma to MLW
+Adding Contract Status
+Adding Personality
+adding Blue Panther to MLW
+Adding Contract Status
+Adding Personality
+adding El Hijo Del Signo to MLW
+Adding Contract Status
+Adding Personality
+adding Electrico to MLW
+Adding Contract Status
+Adding Personality
+adding Esfinge to MLW
+Adding Contract Status
+Adding Personality
+adding Espanto Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Felino to MLW
+Adding Contract Status
+Adding Personality
+adding Flyer to MLW
+Adding Contract Status
+Adding Personality
+adding Fuego to MLW
+Adding Contract Status
+Adding Personality
+adding Hechicero to MLW
+Adding Contract Status
+Adding Personality
+adding Oro Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding La Bestia Del Ring to MLW
+Adding Contract Status
+Adding Personality
+adding Polvora to MLW
+Adding Contract Status
+Adding Personality
+adding Rey Bucanero to MLW
+Adding Contract Status
+Adding Personality
+adding Robin to MLW
+Adding Contract Status
+Adding Personality
+adding Star Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Stuka Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Tiger to MLW
+Adding Contract Status
+Adding Personality
+adding Triton to MLW
+Adding Contract Status
+Adding Personality
+adding Austin Theory to MLW
+Adding Contract Status
+Adding Personality
+adding Espiritu to MLW
+Adding Contract Status
+Adding Personality
+adding Sansan to MLW
+Adding Contract Status
+Adding Personality
+adding Templario to MLW
+Adding Contract Status
+Adding Personality
+adding Ciber The Main Man to MLW
+Adding Contract Status
+Adding Personality
+adding Gilbert el Boricua to MLW
+Adding Contract Status
+Adding Personality
+adding Atlantis Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding El Hijo Del Villano III to MLW
+Adding Contract Status
+Adding Personality
+adding El Cautero to MLW
+Adding Contract Status
+Adding Personality
+adding Forastero to MLW
+Adding Contract Status
+Adding Personality
+adding Super Astro Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding The Criszh to MLW
+Adding Contract Status
+Adding Personality
+adding Sharlie Rockstar to MLW
+Adding Contract Status
+Adding Personality
+adding Aero Star to MLW
+Adding Contract Status
+Adding Personality
+adding Blue Demon Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Laredo Kid to MLW
+Adding Contract Status
+Adding Personality
+adding Maximo to MLW
+Adding Contract Status
+Adding Personality
+adding Psycho Clown to MLW
+Adding Contract Status
+Adding Personality
+adding Puma King to MLW
+Adding Contract Status
+Adding Personality
+adding Rey Escorpion to MLW
+Adding Contract Status
+Adding Personality
+adding El Terrible to MLW
+Adding Contract Status
+Adding Personality
+adding El Texano Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Fabi Apache to MLW
+Adding Contract Status
+Adding Personality
+adding Dr. Wagner Jr. to MLW
+Adding Contract Status
+Adding Personality
+adding Titan to MLW
+Adding Contract Status
+Adding Personality
+adding Taurus to MLW
+Adding Contract Status
+Adding Personality
+adding Chessman to MLW
+Adding Contract Status
+Adding Personality
+adding Monster Clown to MLW
+Adding Contract Status
+Adding Personality
+adding La Parka to MLW
 Adding Contract Status
 Adding Personality
 parsing NJPW
@@ -20428,6 +20907,54 @@ Adding Personality
 adding Sharlie Rockstar to NJPW
 Adding Contract Status
 Adding Personality
+adding Aero Star to NJPW
+Adding Contract Status
+Adding Personality
+adding Blue Demon Jr. to NJPW
+Adding Contract Status
+Adding Personality
+adding Laredo Kid to NJPW
+Adding Contract Status
+Adding Personality
+adding Maximo to NJPW
+Adding Contract Status
+Adding Personality
+adding Psycho Clown to NJPW
+Adding Contract Status
+Adding Personality
+adding Puma King to NJPW
+Adding Contract Status
+Adding Personality
+adding Rey Escorpion to NJPW
+Adding Contract Status
+Adding Personality
+adding El Terrible to NJPW
+Adding Contract Status
+Adding Personality
+adding El Texano Jr. to NJPW
+Adding Contract Status
+Adding Personality
+adding Fabi Apache to NJPW
+Adding Contract Status
+Adding Personality
+adding Dr. Wagner Jr. to NJPW
+Adding Contract Status
+Adding Personality
+adding Titan to NJPW
+Adding Contract Status
+Adding Personality
+adding Taurus to NJPW
+Adding Contract Status
+Adding Personality
+adding Chessman to NJPW
+Adding Contract Status
+Adding Personality
+adding Monster Clown to NJPW
+Adding Contract Status
+Adding Personality
+adding La Parka to NJPW
+Adding Contract Status
+Adding Personality
 parsing NXT
 adding Adam Page to NXT
 Adding Contract Status
@@ -22023,6 +22550,54 @@ adding The Criszh to NXT
 Adding Contract Status
 Adding Personality
 adding Sharlie Rockstar to NXT
+Adding Contract Status
+Adding Personality
+adding Aero Star to NXT
+Adding Contract Status
+Adding Personality
+adding Blue Demon Jr. to NXT
+Adding Contract Status
+Adding Personality
+adding Laredo Kid to NXT
+Adding Contract Status
+Adding Personality
+adding Maximo to NXT
+Adding Contract Status
+Adding Personality
+adding Psycho Clown to NXT
+Adding Contract Status
+Adding Personality
+adding Puma King to NXT
+Adding Contract Status
+Adding Personality
+adding Rey Escorpion to NXT
+Adding Contract Status
+Adding Personality
+adding El Terrible to NXT
+Adding Contract Status
+Adding Personality
+adding El Texano Jr. to NXT
+Adding Contract Status
+Adding Personality
+adding Fabi Apache to NXT
+Adding Contract Status
+Adding Personality
+adding Dr. Wagner Jr. to NXT
+Adding Contract Status
+Adding Personality
+adding Titan to NXT
+Adding Contract Status
+Adding Personality
+adding Taurus to NXT
+Adding Contract Status
+Adding Personality
+adding Chessman to NXT
+Adding Contract Status
+Adding Personality
+adding Monster Clown to NXT
+Adding Contract Status
+Adding Personality
+adding La Parka to NXT
 Adding Contract Status
 Adding Personality
 parsing ROH
@@ -24879,10 +25454,5 @@ Finding Injured Wrestlers
 Finding Injured Wrestlers
 Finding Injured Wrestlers
  Processing TNM/tnm7se_build_13/tnm7se/TNM7SE/WWE/CARD.INJ
-Matches = 44
+Matches = 11
 Building Show
-5 was rolled with 1 and 101 indexes
-Match Roll for index 1 is 5
-92 was rolled with 1 and 101 indexes
-Combatent Picker
-[4, 'Fatal Four Way']

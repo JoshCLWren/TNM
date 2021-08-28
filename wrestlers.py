@@ -114,10 +114,21 @@ def patch_wrestler(wrestler_id, column, new_value):
 
 def get_by_id(id):
     """Returns a wrestler with the matching id"""
-    with con:
-        cursor.execute("Select * from wrestlers where id = %(id)s;", {"id": id})
+    ids = []
+    if isinstance(id, int):
+        with con:
+            cursor.execute("Select * from wrestlers where id = %(id)s;", {"id": id})
 
-    return cursor.fetchone()
+        return cursor.fetchone()
+    if isinstance(id, list):
+        for _id in id:
+            with con:
+                cursor.execute(
+                    "Select * from wrestlers where id = %(id)s;", {"id": _id}
+                )
+
+                ids.append(cursor.fetchone())
+        return ids
 
 
 def get_all_wrestlers():
@@ -163,3 +174,17 @@ def map_tags_to_wrestlers():
             wrestler["tag_teams"].append(tag["id"])
 
             patch_wrestler(wrestler["id"], "tag_teams", wrestler["tag_teams"])
+
+
+def post_wrestler(**wrestler):
+    """Adds a wrestler row to the table"""
+
+    query = """
+                INSERT INTO WRESTLERS (name, work_rate, push, charisma, weight, gender, tnm_index)
+                VALUES (%(name)s, %(work_rate)s, %(push)s, %(charisma)s, %(weight)s, %(gender)s, %(tnm_index)s)
+                returning *;
+                """
+    with con:
+        cursor.execute(query, wrestler)
+
+    return cursor.fetchone()
