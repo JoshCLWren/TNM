@@ -74,7 +74,6 @@ def big_tag(show, match):
         team2=x_man_match["team2"],
     )
     multi_persons_match(x_man_match, match, roster_mutation, show)
-    logging.warning("X man/woman Tag Match")
 
 
 def match_switch(match_picker_roll, match_switcher):
@@ -134,7 +133,6 @@ def matches(show, roll_override=None):
         else:
             singles(show, match)
 
-    # don't think this is working
     Shows.patch_show_card(show["card"], show["id"])
     print(f"The Main Event will be a {main_event(show)}")
 
