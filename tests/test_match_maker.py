@@ -53,3 +53,13 @@ def test_singles_match():
     Match_Maker.matches(raw, roll_override=49)
 
     assert "one on one singles match" in raw["card"][0]
+
+
+def test_tag_match():
+    """Test that match maker can creat a tag match"""
+
+    seed_db.seed_database(name="wwf")
+
+    raw = Shows.create_show("wwf", 1)
+
+    Match_Maker.matches(raw, roll_override=89)

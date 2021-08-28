@@ -88,7 +88,17 @@ def match_switch(match_picker_roll, match_switcher):
 
 
 def tag(match, show):
-    print(f"Match {match} will be a {tag_match_maker(show=show['name'])}")
+    roster_mutation = roster_selector(
+        show=show,
+        people=4,
+        gender=gender_picker(show=show["name"]),
+        _stables=False,
+        _tags=True,
+    )
+    participants_string = match_string(roster_mutation)
+    line1 = f"- Match Participants are: {participants_string}"
+    line2 = f"Match {match} will be a {tag_match_maker(show=show['name'])}"
+    show["card"].append(f"{line1}, {line2}")
 
 
 def handicap(match):
@@ -126,8 +136,8 @@ def matches(show, roll_override=None):
             singles(show, match)
         elif match_type == "multi_man_tag":
             big_tag(show, match)
-        elif match_type == "tag":
-            tag(show, match)
+        elif match_type == "tag_match":
+            tag(match, show)
         elif match_type == "handicap":
             handicap(match)
         else:
@@ -142,6 +152,15 @@ def roster_selector_247(people, show, gender, roster, contestants):
         contestants = contestant_tracker(show, gender, contestants)
     Shows.patch_show_roster(roster, show["id"])
     return contestants
+
+
+def roster_selector_tags(people, show, roster, gender):
+    people_on_each_side = people / 2
+    people_on_each_side = int(people_on_each_side)
+    circuit = circuits.get_by_name(show["name"])
+    import pdb
+
+    pdb.set_trace()
 
 
 def roster_selector_stables(people, show, team1, roster, team2):
@@ -213,6 +232,7 @@ def roster_selector(
     champion=None,
     gender=None,
     _stables=False,
+    _tags=False,
     team1=[],
     team2=[],
 ):
@@ -220,6 +240,8 @@ def roster_selector(
 
     roster = show["eligible_wrestlers"]
     contestants = []
+    if _tags == True:
+        return roster_selector_tags(people, show, roster, gender)
     if champion == "24/7":
         contestants = roster_selector_247(people, show, gender, roster, contestants)
         return {

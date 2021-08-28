@@ -8,6 +8,7 @@ import Shows
 import stables
 import tag_teams
 import database
+import math
 
 fake = Faker("en_US")
 
@@ -96,7 +97,7 @@ def create_stable(factions):
         stables.post_stable(stable)
 
 
-def fake_tag(members=[1, 2]):
+def fake_tag(members=[2, 4]):
     return {"name": fake.slug(), "members": members}
 
 
@@ -109,6 +110,8 @@ def create_tag(amount, members=[1, 2]):
 
 
 def seed_database(name="wwf"):
+
+    database.reset_and_delete("tagteams")
 
     circuits.seed_circuits([create_circuit(name)])
 
@@ -138,3 +141,21 @@ def seed_database(name="wwf"):
         circuits.patch_circuit(1, faction, factions[faction])
     circuits.patch_circuit(1, "stables", [1, 2, 3, 4, 5])
     circuits.patch_circuit(1, "wrestlers", [*range(1, 41)])
+    wwf = circuits.get_by_id(1)
+    males = []
+    for wrestler in wwf["wrestlers"]:
+        counter = 0
+
+        if wrestler % 2 == 0:
+            males.append(wrestler)
+
+    number_of_tags = len(males) / 2
+    number_of_tags = math.trunc(int(number_of_tags))
+    for num in [*range(number_of_tags)]:
+        members = males[:2]
+        del males[:2]
+
+        create_tag(1, members)
+    tags = tag_teams.get_all_tags()
+    for team in tags:
+        circuits.patch_circuit(1, "tag_teams", team["id"])
