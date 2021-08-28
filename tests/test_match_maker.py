@@ -63,3 +63,5 @@ def test_tag_match():
     raw = Shows.create_show("wwf", 1)
 
     Match_Maker.matches(raw, roll_override=89)
+
+    assert "tag-team contest" in raw["card"][0]

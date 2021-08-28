@@ -39,9 +39,7 @@ def roll(start=1, end=101):
 
 
 def tag_match_maker(teams=24, show="205"):
-    import pdb
 
-    pdb.set_trace()
     logging.warning("Tag Match Maker")
     genders = gender_picker(show=show)
     team_1 = roll(1, teams)

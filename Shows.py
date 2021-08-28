@@ -8,10 +8,7 @@ import utilities
 def create_show(name, match_total):
     """Creates a new show table"""
     circuit = circuits.get_by_name(name)
-    if circuit is None:
-        import pdb
 
-        pdb.set_trace()
     males = []
     females = []
 

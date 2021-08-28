@@ -12,6 +12,7 @@ import circuits
 import wrestlers
 import stables
 import Shows
+import tag_teams
 
 
 def main_event(show):
@@ -154,13 +155,30 @@ def roster_selector_247(people, show, gender, roster, contestants):
     return contestants
 
 
-def roster_selector_tags(people, show, roster, gender):
-    people_on_each_side = people / 2
-    people_on_each_side = int(people_on_each_side)
+def roster_selector_tags(show, roster):
     circuit = circuits.get_by_name(show["name"])
-    import pdb
+    team1, team2 = random.sample(circuit["tag_teams"], 2)
 
-    pdb.set_trace()
+    circuit["tag_teams"].remove(team1)
+    circuit["tag_teams"].remove(team2)
+    circuits.patch_circuit(circuit["id"], "tag_teams", circuit["tag_teams"])
+    wrestlers_in_tags = []
+
+    teams = [team1, team2]
+    for team in teams:
+        tag = tag_teams.get_by_id(team)
+        wrestlers_in_tags += tag["tag_team_members"]
+    # show["busy_wrestlers"] = list(set(show["busy_wrestlers"] + wrestlers_in_tags))
+    for person in wrestlers_in_tags:
+        roster.remove(person)
+
+    return {
+        "contestants": {
+            "team_a": tag_teams.get_by_id(team1)["tag_team_members"],
+            "team_b": tag_teams.get_by_id(team2)["tag_team_members"],
+        },
+        "eligible_participants": roster,
+    }
 
 
 def roster_selector_stables(people, show, team1, roster, team2):
@@ -241,7 +259,7 @@ def roster_selector(
     roster = show["eligible_wrestlers"]
     contestants = []
     if _tags == True:
-        return roster_selector_tags(people, show, roster, gender)
+        return roster_selector_tags(show, roster)
     if champion == "24/7":
         contestants = roster_selector_247(people, show, gender, roster, contestants)
         return {

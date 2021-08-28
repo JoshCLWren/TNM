@@ -103,3 +103,13 @@ def post_tag_team(**tag):
     with con:
 
         cursor.execute(query, {"name": tag["name"], "tag_team_members": tag["members"]})
+
+
+def get_by_id(id):
+    """Get a tag by its id"""
+
+    query = """SELECT * FROM tagteams WHERE id = %(id)s;"""
+    with con:
+        cursor.execute(query, {"id": id})
+
+    return cursor.fetchone()
