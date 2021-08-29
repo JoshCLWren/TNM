@@ -18,24 +18,11 @@ from circuit_assets import circuit_assets
 import migrations
 import circuit_assets
 import time
-import logging
 from datetime import datetime
 from roster_builder import roster_builder
 from Match_Maker import matches
 import database
 import Shows
-
-for handler in logging.root.handlers[:]:
-    logging.root.removeHandler(handler)
-
-logging.basicConfig(
-    filename="applog.txt",
-    filemode="w",
-    format="%(message)s",
-)
-
-logging.warning("Start of session")
-logging.warning(datetime.today().strftime("%Y-%m-%d-%H:%M:%S"))
 
 
 def Show(tv_show, match_total=3):
@@ -50,11 +37,8 @@ while cont == "yes" or cont == "y":
     # build_db = input()
     build_db = "y"
     if build_db == "y":
-        logging.warning("Building Migrations")
         migrations.db_builder()
-        logging.warning("Sleeping 5 seconds")
         # time.sleep(5)
-        logging.warning("Building Circuit Assets")
         circuit_assets.circuit_assets()
     else:
         "Please Proceed"
@@ -82,9 +66,6 @@ while cont == "yes" or cont == "y":
 
     print(f"How many matches will {tv_show} have?")
     match_total = int(input())
-
-    logging.warning(f"Matches = {match_total}")
-    logging.warning("Building Show")
 
     Show(tv_show=tv_show, match_total=match_total)
     print("Again?")
