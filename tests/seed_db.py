@@ -141,6 +141,12 @@ def seed_database(name="wwf"):
         circuits.patch_circuit(1, faction, factions[faction])
     circuits.patch_circuit(1, "stables", [1, 2, 3, 4, 5])
     circuits.patch_circuit(1, "wrestlers", [*range(1, 41)])
+
+    all_stables = stables.get_all_stables()
+
+    for group in all_stables:
+        for member in group["members"]:
+            wrestlers.patch_wrestler(member, "stables", group["id"])
     wwf = circuits.get_by_id(1)
     males = []
     for wrestler in wwf["wrestlers"]:
@@ -159,3 +165,7 @@ def seed_database(name="wwf"):
     tags = tag_teams.get_all_tags()
     for team in tags:
         circuits.patch_circuit(1, "tag_teams", team["id"])
+        for member in team["tag_team_members"]:
+            wrestlers.patch_wrestler(member, "tag_teams", team["id"])
+    for person in grapplers:
+        wrestlers.patch_wrestler(person["id"], "circuits", 1)

@@ -90,8 +90,8 @@ def tag(match, show):
         _tags=True,
     )
     participants_string = match_string(roster_mutation)
-    line1 = f"- Match Participants are: {participants_string}"
-    line2 = f"Match {match} will be a {tag_match_maker(show=show['name'])}"
+    line1 = f"Match {match} will be a tag team match."
+    line2 = f"-Match Participants are: {participants_string}"
     show["card"].append(f"{line1}, {line2}")
 
 
@@ -116,7 +116,9 @@ def matches(show, roll_override=None):
     if show["name"] == "cmll":
         match_switcher = {"trio": 70, "tag": 85, "singles": 100}
 
-    for match in [*range(show["matches"])]:
+    undercard = [*range(1, show["matches"])]
+
+    for match in undercard:
         match_picker = roll()
         if roll_override is not None:
             match_picker = roll_override

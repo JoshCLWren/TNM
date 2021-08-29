@@ -67,8 +67,8 @@ def test_tag_match():
     assert "tag-team contest" in raw["card"][0]
 
 
-def test_match_presentation():
-    """Test that the matches for a show are stored and displayed correctly"""
+def test_undercard_match_presentation():
+    """Test that the undercard matches for a show are stored and displayed correctly"""
 
     seed_db.seed_database(name="wccw")
 
@@ -76,4 +76,5 @@ def test_match_presentation():
 
     Match_Maker.matches(wccw)
 
-    assert "Match 3" in wccw["card"]
+    assert "Match 1" in wccw["card"][0]
+    assert "Match 2" in wccw["card"][1]
