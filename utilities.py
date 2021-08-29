@@ -1,11 +1,9 @@
 import random
-import logging
 import circuits
 
 
 def combatent_picker(one_on_one_seed=10, triangle_seed=60, four_way_seed=100):
     picker = roll()
-    logging.warning("Combatent Picker")
     combatents = ""
     if picker < one_on_one_seed:
         combatents = [2, "One on One"]
@@ -13,7 +11,6 @@ def combatent_picker(one_on_one_seed=10, triangle_seed=60, four_way_seed=100):
         combatents = [3, "Triangle Match"]
     else:
         combatents = [4, "Fatal Four Way"]
-    logging.warning(combatents)
     return combatents
 
 
@@ -21,26 +18,21 @@ def gender_picker(male=70, female=99, intergender=100, show="205"):
     if show in ["205", "cmll"]:
         return "male"
     gender_roll = roll()
-    logging.warning("Gender Picker is below")
     if gender_roll > male and gender_roll < intergender:
         gender = "female"
     elif gender_roll < female:
         gender = "male"
     else:
         gender = "intergender"
-    logging.warning(gender)
     return gender
 
 
 def roll(start=1, end=101):
     the_roll = random.randrange(start, end)
-    logging.warning(f"{the_roll} was rolled with {start} and {end} indexes")
     return the_roll
 
 
 def tag_match_maker(teams=24, show="205"):
-
-    logging.warning("Tag Match Maker")
     genders = gender_picker(show=show)
     team_1 = roll(1, teams)
     team_2 = roll(1, teams)
@@ -71,7 +63,6 @@ def team_sizer(
     ten=1000,
     trio=False,
 ):
-    logging.warning("Team Sizer")
     team_sizer_roll = roll()
     genders = gender_picker(show=tv_show)
     if tv_show in ["205", "ROH"]:
@@ -117,7 +108,6 @@ def team_sizer(
             team_size = 8
         else:
             team_size = 10
-    logging.warning(f"Team size = {team_size}")
     return {"team_size": team_size, "team1": team1, "team2": team2}
 
 
@@ -158,7 +148,6 @@ def title(tv_show="Raw"):
             "Women of Honor World Championship",
         ]
     random_title = random.choice(titles)
-    logging.warning(f"Title is {random_title}")
     return random_title
 
 

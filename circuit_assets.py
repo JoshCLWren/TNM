@@ -5,7 +5,6 @@
 # random match builders need to be heel vs face
 # may need a relational all_wrestlersbase for this.
 
-import logging
 import circuits
 import wrestlers
 import tag_teams
@@ -32,11 +31,9 @@ def map_injuries_to_circuits(all_circuits):
 
         circuit["injuries"] = []
         injured_wrestler_count = 0
-        logging.warning("Finding Injured Wrestlers")
 
         try:
             with open(f"{filepath}{circuit['name']}/CARD.INJ") as injuries:
-                logging.warning(f" Processing {filepath}{circuit['name']}/CARD.INJ")
                 for index, line in enumerate(injuries):
                     if index % 2 == 0:
                         wrestler_id = line.strip()

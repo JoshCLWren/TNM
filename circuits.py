@@ -1,7 +1,6 @@
 from psycopg2.extras import RealDictRow
 import utilities
 from database import con, cursor, circuit_table
-import logging
 import wrestlers
 import circuit_assets
 

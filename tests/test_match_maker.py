@@ -65,3 +65,15 @@ def test_tag_match():
     Match_Maker.matches(raw, roll_override=89)
 
     assert "tag-team contest" in raw["card"][0]
+
+
+def test_match_presentation():
+    """Test that the matches for a show are stored and displayed correctly"""
+
+    seed_db.seed_database(name="wccw")
+
+    wccw = Shows.create_show("wccw", 3)
+
+    Match_Maker.matches(wccw)
+
+    assert "Match 3" in wccw["card"]
