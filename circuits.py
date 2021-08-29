@@ -15,12 +15,10 @@ def circuit_serializer(
     circuit_roster = []
     circuit_counter = 0
 
-    logging.warning("Building Circuit Databases")
     for circuit in circuits:
         with open(
             f"TNM/tnm7se_build_13/tnm7se/TNM7SE/{circuit}/CIRCDB.DAT"
         ) as circuit_db:
-            logging.warning(f"parsing {circuit}")
             circuit_roster.append(
                 {
                     "name": circuit,
@@ -47,10 +45,8 @@ def circuit_serializer(
                     circuit_roster[circuit_counter]["wrestlers"].append(
                         [{"name": line.strip()}]
                     )
-                    logging.warning(f"adding {line.strip()} to {circuit}")
                     circuit_wrestler_name_line_number += 18
                 if index == contract_status:
-                    logging.warning("Adding Contract Status")
                     if int(line.strip()) > 0 and int(line.strip()) < 53:
                         circuit_roster[circuit_counter]["wrestlers"][
                             circuit_roster_count
@@ -61,7 +57,6 @@ def circuit_serializer(
                         ].append({"contract_length": 0})
                     contract_status += 18
                 if index == personality:
-                    logging.warning("Adding Personality")
                     line = int(line.strip())
                     persona = personality_switch(line)
                     circuit_roster[circuit_counter]["wrestlers"][

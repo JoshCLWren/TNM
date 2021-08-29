@@ -1,14 +1,3 @@
-import logging
-
-for handler in logging.root.handlers[:]:
-    logging.root.removeHandler(handler)
-
-logging.basicConfig(
-    filename="migration.log",
-    filemode="w",
-    format="%(message)s",
-)
-logging.warning("migrations.py")
 import wrestlers
 import circuits
 import tag_teams

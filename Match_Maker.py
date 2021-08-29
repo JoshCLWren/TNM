@@ -1,4 +1,3 @@
-import logging
 from utilities import (
     roll,
     combatent_picker,
@@ -21,25 +20,20 @@ def main_event(show):
     title_defense = 99
     battle_royal = 100
     main_event_roll = roll()
-    logging.warning(f"Main even roll = {main_event_roll}")
     main_event = f"debugger"
     if main_event_roll == battle_royal:
         main_event = "20 Man Battle Royal"
-        logging.warning("Main Event20 man battle royal")
     if main_event_roll <= elimination_match:
         main_event = f"{team_sizer(show)} elimination match"
-        logging.warning("X man elimation match")
     if (
         main_event_roll > elimination_match
         and main_event_roll < title_defense
         or main_event_roll == number_1_contender_match
     ):
         main_event = f"{combatent_picker()} #1 contender match for the {title(show)}"
-        logging.warning("#1 contender match")
 
     if main_event_roll > number_1_contender_match and main_event_roll <= title_defense:
         main_event = f"{combatent_picker()} {title(show)}"
-        logging.warning("Title match")
     return main_event
 
 
@@ -61,7 +55,6 @@ def singles(show, match):
         gender="Male",
     )
     singles_match(roster_mutation, match, show)
-    logging.warning("Singles Match non gendered")
 
 
 def big_tag(show, match):
@@ -108,7 +101,6 @@ def handicap(match):
     if handicap_1 == handicap_2:
         handicap_2 = roll(2, 6)
     print(f"Match {match} will be a {handicap_1} on {handicap_2} handicap match")
-    logging.warning(f"{handicap_1} on {handicap_2} Handicap match")
 
 
 def matches(show, roll_override=None):

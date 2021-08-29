@@ -1,10 +1,8 @@
-import logging
 import circuits
 
 
 def roster_builder(tv_show, busy_wrestlers=[]):
     print(busy_wrestlers)
-    logging.warning("Building Roster")
     wwe_products = ["Raw", "Smackdown", "205"]
 
     if tv_show == "ROH":
@@ -17,7 +15,6 @@ def roster_builder(tv_show, busy_wrestlers=[]):
     all_circuits = circuits.get_all_circuits()
 
     for promotion in all_circuits["Circuits"]:
-        logging.warning(f'processing {promotion["circuit_name"]}')
         if promotion["circuit_name"] == circuit:
             male_heels = []
             male_faces = []
