@@ -109,7 +109,7 @@ def create_tag(amount, members=[1, 2]):
         tag_teams.post_tag_team(**tag)
 
 
-def seed_database(name="wwf"):
+def seed_database(name="wwf", wrestler_override=None):
 
     database.reset_and_delete("tagteams")
 
@@ -117,7 +117,10 @@ def seed_database(name="wwf"):
 
     wwf = circuits.get_by_id(1)
 
-    create_wrestlers(40, gender="even", reset=True)
+    if wrestler_override is None:
+        create_wrestlers(40, gender="even", reset=True)
+    else:
+        create_wrestlers(wrestler_override, gender="even", reset=True)
 
     grapplers = wrestlers.get_all_wrestlers()
 
@@ -131,7 +134,7 @@ def seed_database(name="wwf"):
     counter = 0
 
     for faction in factions:
-        while len(factions[faction]) != 8:
+        while len(factions[faction]) != len(grapplers) / 5:
             factions[faction].append(grapplers[counter]["id"])
             wwf[faction].append(grapplers[counter]["id"])
             counter += 1
@@ -140,7 +143,7 @@ def seed_database(name="wwf"):
     for faction in factions:
         circuits.patch_circuit(1, faction, factions[faction])
     circuits.patch_circuit(1, "stables", [1, 2, 3, 4, 5])
-    circuits.patch_circuit(1, "wrestlers", [*range(1, 41)])
+    circuits.patch_circuit(1, "wrestlers", [*range(1, (len(grapplers) + 1))])
 
     all_stables = stables.get_all_stables()
 
