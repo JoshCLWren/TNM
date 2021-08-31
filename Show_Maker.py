@@ -28,17 +28,17 @@ import Shows
 def Show(tv_show, match_total=3):
     print(f"Welcome to {tv_show}!")
     database.shows_table()
-    Shows.create_show(tv_show, match_total)
+    show = Shows.create_show(tv_show, match_total)
+    matches(show)
 
 
 cont = "yes"
 while cont == "yes" or cont == "y":
     print("Build/Update Databases?")
-    # build_db = input()
+    build_db = input()
     build_db = "y"
     if build_db == "y":
         migrations.db_builder()
-        # time.sleep(5)
         circuit_assets.circuit_assets()
     else:
         "Please Proceed"
@@ -49,8 +49,12 @@ while cont == "yes" or cont == "y":
     print("4. IMPACT")
     print("5. CMLL")
     print("6. ROH")
-    tv_input = int(input())
-
+    tv_input = input()
+    try:
+        tv_input = int(tv_input)
+    except Exception:
+        cont = "no"
+        continue
     if tv_input == 1:
         tv_show = "Raw"
     elif tv_input == 2:
@@ -63,6 +67,8 @@ while cont == "yes" or cont == "y":
         tv_show = "CMLL"
     elif tv_input == 6:
         tv_show = "ROH"
+    else:
+        cont = "no"
 
     print(f"How many matches will {tv_show} have?")
     match_total = int(input())

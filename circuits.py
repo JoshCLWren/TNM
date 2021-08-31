@@ -181,11 +181,12 @@ def get_by_name(name):
     if isinstance(name, RealDictRow):
         name = name["name"]
     name = name.lower()
-    wwe_products = ["raw", "smackdwon", "205"]
+    wwe_products = ["raw", "smackdown", "205"]
     if name == "roh":
         name = "cmll"
     if name in wwe_products:
         name = "wwe"
+    name = name.upper()
     with con:
         cursor.execute("Select * from circuits where name = %(name)s;", {"name": name})
 
