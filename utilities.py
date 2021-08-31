@@ -71,13 +71,14 @@ def team_sizer(
     if len(circuit["stables"]) > 2:
         teams = random.sample(circuit["stables"], 2)
         team1, team2 = teams
-        # do we need to remove stables anymore?
-        # circuit["stables"].remove(team1)
-        # circuit["stables"].remove(team2)
+        circuit["stables"].remove(team1)
+        circuit["stables"].remove(team2)
 
     else:
         team1 = circuit["stables"][0]
+        circuit["stables"].remove(team1)
         team2 = []
+    circuit = circuits.patch_circuit(circuit["id"], "stables", circuit["stables"])
     if trio == True:
         return {"team_size": 6, "team1": team1, "team2": team2}
     if genders == "male" or genders == "intergender" and trio == False:

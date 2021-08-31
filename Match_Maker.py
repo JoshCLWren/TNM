@@ -45,6 +45,7 @@ def main_event(show, main_event_roll_override=None):
         combatents = combatent_picker()
         main_event = f"{combatents[1]} {title(show)}"
     show["card"].append(main_event)
+    Shows.patch_show_card(show["card"], show["id"])
     return main_event
 
 
@@ -74,27 +75,10 @@ def matches(show, roll_override=None, main_event_roll_override=None):
 
     undercard = [*range(1, show["matches"])]
 
-    for match in undercard:
-        match_picker = roll()
-        if roll_override is not None:
-            match_picker = roll_override
-        match_type = match_switch(match_picker, match_switcher)
-        if match_type == "_twenty_four_seven_match":
-            twenty_four_seven(show, match)
-        elif match_type == "trio":
-            big_tag(show, match)
-        elif match_type == "vanilla_singles":
-            singles(show, match)
-        elif match_type == "multi_man_tag":
-            big_tag(show, match)
-        elif match_type == "tag_match":
-            tag(match, show)
-        elif match_type == "handicap":
-            handicap(show, match)
-        else:
-            singles(show, match)
+    match_sorter(undercard, roll_override, match_switcher, show)
+
+    show = Shows.get_by_id(show["id"])
     main_event(show, main_event_roll_override)
-    Shows.patch_show_card(show["card"], show["id"])
     for match in show["card"]:
         print(match)
 
@@ -163,5 +147,54 @@ def contestant_tracker(show, gender="Male", contestants=[]):
 
     contestants.append(contestant)
     show["eligible_wrestlers"].remove(contestant)
-
+    Shows.patch_show_roster(show["eligible_wrestlers"], show["id"])
     return contestants
+
+
+def match_sorter(
+    undercard,
+    roll_override,
+    match_switcher,
+    show,
+):
+    for match in undercard:
+        show = Shows.get_by_id(show["id"])
+        match_picker = roll()
+        if roll_override is not None:
+            match_picker = roll_override
+        match_type = match_switch(match_picker, match_switcher)
+        if match_type == "_twenty_four_seven_match":
+            if len(show["eligible_wrestlers"]) > 4:
+                twenty_four_seven(show, match)
+            elif len(show["eligible_wrestlers"]) > 1:
+                singles(show, match)
+            else:
+                continue
+        elif match_type in ["trio", "multi_man_tag"]:
+            if len(show["eligible_wrestlers"]) > 6:
+                big_tag(show, match)
+            elif len(show["eligible_wrestlers"]) > 1:
+                singles(show, match)
+            else:
+                continue
+        elif match_type == "vanilla_singles":
+            if len(show["eligible_wrestlers"]) > 1:
+                singles(show, match)
+            else:
+                continue
+        elif match_type == "tag_match":
+            if len(show["eligible_wrestlers"]) > 4:
+                tag(match, show)
+            elif len(show["eligible_wrestlers"]) > 1:
+                singles(show, match)
+            else:
+                continue
+        elif match_type == "handicap":
+            if len(show["eligible_wrestlers"]) > 6:
+                handicap(show, match)
+            elif len(show["eligible_wrestlers"]) > 1:
+                singles(show, match)
+            else:
+                continue
+        else:
+            singles(show, match)

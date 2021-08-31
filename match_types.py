@@ -9,6 +9,7 @@ from utilities import (
 import stables
 import roster_selectors
 import Match_Maker
+import Shows
 
 
 def twenty_four_seven(show, match):
@@ -56,6 +57,7 @@ def tag(match, show):
     line1 = f"Match {match} will be a tag team match."
     line2 = f"-Match Participants are: {participants_string}"
     show["card"].append(f"{line1} {line2}")
+    Shows.patch_show_card(show["card"], show["id"])
 
 
 def handicap(show, match):
@@ -65,6 +67,7 @@ def handicap(show, match):
         handicap_2 = roll(2, 6)
     line1 = f"Match {match} will be a {handicap_1} on {handicap_2} handicap match"
     show["card"].append(f"{line1}")
+    Shows.patch_show_card(show["card"], show["id"])
 
 
 def twenty_four_seven_match(roster_mutation, match, combatents, show):
@@ -74,6 +77,7 @@ def twenty_four_seven_match(roster_mutation, match, combatents, show):
     print(line1)
     print(line2)
     show["card"].append(f"{line1} {line2}")
+    Shows.patch_show_card(show["card"], show["id"])
 
 
 def singles_match(roster_mutation, match, show):
@@ -83,6 +87,7 @@ def singles_match(roster_mutation, match, show):
     print(line1)
     print(line2)
     show["card"].append(f"{line1} {line2}")
+    Shows.patch_show_card(show["card"], show["id"])
 
 
 def multi_persons_match(x_man_match, match, roster_mutation, show):
@@ -104,3 +109,5 @@ def multi_persons_match(x_man_match, match, roster_mutation, show):
     print(line_three)
 
     show["card"].append(f"{line_one} {line_two} {line_three}")
+
+    Shows.patch_show_card(show["card"], show["id"])

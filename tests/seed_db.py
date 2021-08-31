@@ -113,7 +113,7 @@ def seed_database(name="wwf", wrestler_override=None):
 
     database.reset_and_delete("tagteams")
 
-    circuits.seed_circuits([create_circuit(name)])
+    circuits.seed_circuits([create_circuit(name.upper())])
 
     wwf = circuits.get_by_id(1)
 

@@ -8,7 +8,6 @@ import tag_teams
 def roster_selector_247(people, show, gender, roster, contestants):
     for _ in [*range(people)]:
         contestants = Match_Maker.contestant_tracker(show, gender, contestants)
-    Shows.patch_show_roster(roster, show["id"])
     return contestants
 
 
@@ -30,7 +29,7 @@ def roster_selector_tags(show, roster):
             roster.remove(person)
         except ValueError:
             pass
-
+    Shows.patch_show_roster(roster, show["id"])
     return {
         "contestants": {
             "team_a": tag_teams.get_by_id(team1)["tag_team_members"],
@@ -95,6 +94,7 @@ def roster_selector_stables(people, show, team1, roster, team2):
             roster.remove(member)
     else:
         team_b = stable2
+    Shows.patch_show_roster(roster, show["id"])
     return {
         "contestants": {"team_a": team_a, "team_b": team_b},
         "eligible_participants": roster,

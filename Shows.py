@@ -74,8 +74,29 @@ def create_show(name, match_total):
 
 def patch_show_roster(eligible_wrestlers, id):
     """Takes an updated list of of wrestlers and updates the show row"""
+    unaltered = get_by_id(id)
+    busy_bodies = [
+        x for x in unaltered["eligible_wrestlers"] if x not in eligible_wrestlers
+    ]
+    kwargs = {
+        "eligible_wrestlers": eligible_wrestlers,
+        "id": id,
+        "busy_wrestlers": busy_bodies,
+    }
 
-    kwargs = {"eligible_wrestlers": eligible_wrestlers, "id": id}
+    categories = [
+        "heels",
+        "faces",
+        "tweeners",
+        "jobbers",
+        "anti_heroes",
+        "males",
+        "females",
+    ]
+
+    for category in categories:
+        kwargs[category] = [x for x in unaltered[category] if x not in busy_bodies]
+
     query = utilities.prepare_columns(table="shows", **kwargs)
 
     cursor.execute(query, kwargs)
@@ -96,3 +117,13 @@ def patch_show_card(card, id):
     show = cursor.fetchone()
 
     return show
+
+
+def get_by_id(id):
+    """Get a show by its id"""
+
+    query = """SELECT * FROM shows WHERE id = %(id)s;"""
+    with con:
+        cursor.execute(query, {"id": id})
+
+    return cursor.fetchone()
