@@ -5,6 +5,7 @@ import wrestlers
 import circuit_assets
 import circuits
 import database
+import utilities
 
 
 def championship_serializer(promotions):
@@ -63,3 +64,15 @@ def seed_championships(title_list, drop=True, create_table=True):
 
         with con:
             cursor.execute(query, title)
+
+
+def get_some(columns, many=False):
+    """return either one or more matching rows for fields passed"""
+
+    with con:
+        cursor.execute(utilities.get_by_column("championships", **columns))
+
+    if many is False:
+        return cursor.fetchone()
+    else:
+        return cursor.fetchall()
