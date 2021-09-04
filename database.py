@@ -103,18 +103,15 @@ def reset_and_delete(table):
     cursor.execute(f"SELECT SETVAL(pg_get_serial_sequence('{table}', 'id'), 1, false);")
 
 
-def championship():
-    # draft for potential championship table
+def championships_table():
     with con:
         cursor.execute(
             """
                 CREATE TABLE IF NOT EXISTS CHAMPIONSHIPS(
                     id bigserial PRIMARY KEY,
                     name VARCHAR,
-                    weightclass VARCHAR,
-                    brand_id INTEGER,
                     circuit_id INTEGER,
-                    title_holder INTEGER
+                    title_holder VARCHAR,
                     type VARCHAR
                 );
             """
