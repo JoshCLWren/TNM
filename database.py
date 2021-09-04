@@ -113,9 +113,10 @@ def championship():
                     name VARCHAR,
                     weightclass VARCHAR,
                     brand_id INTEGER,
-                    show_id INTEGER,
+                    circuit_id INTEGER,
                     title_holder INTEGER
-                )
+                    type VARCHAR
+                );
             """
         )
 
