@@ -196,6 +196,10 @@ def match_sorter(
                 continue
         elif match_type == "handicap":
             if len(show["eligible_wrestlers"]) > 6:
+                # getting keyerrprs for this del not sure why
+                import pdb
+
+                pdb.set_trace()
                 handicap(show, match)
                 del match_switcher["handicap"]
             elif len(show["eligible_wrestlers"]) > 1:

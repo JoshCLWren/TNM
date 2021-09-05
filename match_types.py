@@ -92,19 +92,21 @@ def singles_match(roster_mutation, match, show, gender):
 
 def multi_persons_match(x_man_match, match, roster_mutation, show):
     participants_string = Match_Maker.match_string(roster_mutation)
+    teams = participants_string.rsplit("vs")
+
     try:
-        team_1_name = stables.get_by_id(x_man_match["team1"])["name"]
+        team_1_name = f'{stables.get_by_id(x_man_match["team1"])["name"]} ({teams[0]})'
     except TypeError:
-        team_1_name = ""
+        team_1_name = teams[0]
     try:
-        team_2_name = stables.get_by_id(x_man_match["team2"])["name"]
+        team_1_name = f'{stables.get_by_id(x_man_match["team2"])["name"]} ({teams[1]})'
     except TypeError:
-        team_2_name = ""
+        team_2_name = teams[1]
 
     line_one = f"Match {match} will be a {x_man_match['team_size']} tag match"
-    line_two = f"{team_1_name} vs {team_2_name}"
-    line_three = f"- Match Participants are: {participants_string}"
 
-    show["card"].append(f"{line_one} {line_two} {line_three}")
+    line_two = f"{team_1_name} vs {team_2_name}"
+
+    show["card"].append(f"{line_one} {line_two}")
 
     Shows.patch_show_card(show["card"], show["id"])
