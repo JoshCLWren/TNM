@@ -125,6 +125,7 @@ def roster_selector(
     if _tags == True:
         return roster_selector_tags(show, roster)
     if champion == "24/7":
+
         contestants = roster_selector_247(people, show, gender, roster, contestants)
         return {
             "contestants": contestants,

@@ -73,7 +73,7 @@ def matches(show, roll_override=None, main_event_roll_override=None):
     if show["name"] == "cmll":
         match_switcher = {"trio": 70, "tag": 85, "singles": 100}
 
-    undercard = [*range(1, show["matches"])]
+    undercard = [*range(1, min(show["matches"], 11))]
 
     match_sorter(undercard, roll_override, match_switcher, show)
 
@@ -137,7 +137,10 @@ def stable_member_mapper(show, stable_id):
 
 def contestant_tracker(show, gender="Male", contestants=[]):
     """Adds a contestant at random to the contestants array and then removes them from the eligible roster"""
-    gender_pool = show["males"] if gender == "Male" else show["females"]
+    if gender is None:
+        gender_pool = show["males"] + show["females"]
+    else:
+        gender_pool = show["males"] if gender == "Male" else show["females"]
     flat_list = [
         wrestler for wrestler in show["eligible_wrestlers"] if wrestler in gender_pool
     ]
@@ -165,6 +168,7 @@ def match_sorter(
         if match_type == "_twenty_four_seven_match":
             if len(show["eligible_wrestlers"]) > 4:
                 twenty_four_seven(show, match)
+                del match_switcher["_twenty_four_seven_match"]
             elif len(show["eligible_wrestlers"]) > 1:
                 singles(show, match)
             else:
@@ -172,6 +176,8 @@ def match_sorter(
         elif match_type in ["trio", "multi_man_tag"]:
             if len(show["eligible_wrestlers"]) > 6:
                 big_tag(show, match)
+                if show["name"] in ["Raw", "Smackdown"]:
+                    del match_switcher["multi_man_tag"]
             elif len(show["eligible_wrestlers"]) > 1:
                 singles(show, match)
             else:

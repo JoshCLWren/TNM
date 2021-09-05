@@ -34,14 +34,10 @@ def Show(tv_show, match_total=3):
 
 cont = "yes"
 while cont == "yes" or cont == "y":
-    print("Build/Update Databases?")
-    build_db = input()
-    build_db = "y"
-    if build_db == "y":
-        migrations.db_builder()
-        circuit_assets.circuit_assets()
-    else:
-        "Please Proceed"
+
+    migrations.db_builder()
+    circuit_assets.circuit_assets()
+
     print("Which show are you making?")
     print("1. Raw")
     print("2. Smackdown")
@@ -72,7 +68,8 @@ while cont == "yes" or cont == "y":
 
     print(f"How many matches will {tv_show} have?")
     match_total = int(input())
-
+    if match_total > 10:
+        print("Match limiter is at ten.")
     Show(tv_show=tv_show, match_total=match_total)
     print("Again?")
     cont = input()
