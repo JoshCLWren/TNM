@@ -57,7 +57,7 @@ def match_switch(match_picker_roll, match_switcher):
         elif match_picker_roll < match_switcher[value]:
             return value
         else:
-            return "handicap"
+            return "vanilla_singles"
 
 
 def matches(show, roll_override=None, main_event_roll_override=None):
@@ -196,10 +196,6 @@ def match_sorter(
                 continue
         elif match_type == "handicap":
             if len(show["eligible_wrestlers"]) > 6:
-                # getting keyerrprs for this del not sure why
-                import pdb
-
-                pdb.set_trace()
                 handicap(show, match)
                 del match_switcher["handicap"]
             elif len(show["eligible_wrestlers"]) > 1:
