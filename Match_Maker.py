@@ -87,8 +87,7 @@ def match_string(roster_mutation):
     participants_string = ""
     if isinstance(roster_mutation["contestants"], list):
         participants = wrestlers.get_by_id(roster_mutation["contestants"])
-        for participant in participants:
-            participants_string += f"{participant['name']} "
+        participants_string = [participant["name"] for participant in participants]
     if isinstance(roster_mutation["contestants"], dict):
         team_1_string = "".join(
             f'{wrestlers.get_by_id(member)["name"]} '

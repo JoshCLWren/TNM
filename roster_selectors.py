@@ -3,11 +3,18 @@ import random
 import Shows
 import circuits
 import tag_teams
+import Championships
+import wrestlers
 
 
 def roster_selector_247(people, show, gender, roster, contestants):
     for _ in [*range(people)]:
         contestants = Match_Maker.contestant_tracker(show, gender, contestants)
+    title_holder = Championships.get_some({"name": "WWE 24/7 Championship"})[
+        "title_holder"
+    ]
+    champ = wrestlers.get_by_name(title_holder)
+    contestants.append(champ["id"])
     return contestants
 
 

@@ -90,6 +90,17 @@ def fake_stable(name="nwo", ids=[1, 2, 3]):
     return {"name": name, "members": ids}
 
 
+def fake_championship():
+    holder = wrestlers.get_by_id(1)["name"]
+
+    return {
+        "name": "World Title",
+        "circuit_id": 1,
+        "title_holder": holder,
+        "type": "singles",
+    }
+
+
 def create_stable(factions):
     database.reset_and_delete("stables")
     for faction in factions:
@@ -109,7 +120,7 @@ def create_tag(amount, members=[1, 2]):
         tag_teams.post_tag_team(**tag)
 
 
-def seed_database(name="wwf", wrestler_override=None):
+def seed_database(name="wwf", wrestler_override=None, gender="even", reset=True):
 
     database.reset_and_delete("tagteams")
 
@@ -118,9 +129,9 @@ def seed_database(name="wwf", wrestler_override=None):
     wwf = circuits.get_by_id(1)
 
     if wrestler_override is None:
-        create_wrestlers(40, gender="even", reset=True)
+        create_wrestlers(40, gender="even", reset=reset)
     else:
-        create_wrestlers(wrestler_override, gender="even", reset=True)
+        create_wrestlers(wrestler_override, gender=gender, reset=reset)
 
     grapplers = wrestlers.get_all_wrestlers()
 
@@ -133,11 +144,12 @@ def seed_database(name="wwf", wrestler_override=None):
     }
     counter = 0
 
-    for faction in factions:
-        while len(factions[faction]) != len(grapplers) / 5:
-            factions[faction].append(grapplers[counter]["id"])
-            wwf[faction].append(grapplers[counter]["id"])
-            counter += 1
+    if len(grapplers) > 5:
+        for faction in factions:
+            while len(factions[faction]) != len(grapplers) / 5:
+                factions[faction].append(grapplers[counter]["id"])
+                wwf[faction].append(grapplers[counter]["id"])
+                counter += 1
 
     create_stable(factions)
     for faction in factions:

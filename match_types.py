@@ -10,11 +10,13 @@ import stables
 import roster_selectors
 import Match_Maker
 import Shows
+import Championships
+import utilities
 
 
 def twenty_four_seven(show, match):
     combatents = combatent_picker()
-    people = combatents[0]
+    people = combatents[0] - 1
     roster_mutation = roster_selectors.roster_selector(
         show=show,
         people=people,
@@ -71,9 +73,11 @@ def handicap(show, match):
 
 
 def twenty_four_seven_match(roster_mutation, match, combatents, show):
+
     participants_string = Match_Maker.match_string(roster_mutation)
     line1 = f"Match {match} will be a {combatents[1]} 24/7 Title Defense"
-    line2 = f"- Match Participants are: {participants_string}"
+    line2 = "".join(f"{person} vs " for person in participants_string[:-1])
+    line2 += f"the defending champion: {participants_string[-1]}"
     print(line1)
     print(line2)
     show["card"].append(f"{line1} {line2}")

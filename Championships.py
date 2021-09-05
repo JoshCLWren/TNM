@@ -66,11 +66,11 @@ def seed_championships(title_list, drop=True, create_table=True):
             cursor.execute(query, title)
 
 
-def get_some(columns, many=False):
+def get_some(columns=None, many=False):
     """return either one or more matching rows for fields passed"""
 
     with con:
-        cursor.execute(utilities.get_by_column("championships", **columns))
+        cursor.execute(utilities.get_by_column("championships", columns))
 
     if many is False:
         return cursor.fetchone()

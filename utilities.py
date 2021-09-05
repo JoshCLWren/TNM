@@ -161,12 +161,20 @@ def check_dupes(list, item):
 
 
 def field_stringer(method, **kwargs):
-    if method is "put":
+    if method == "put":
         conjunction = ","
-    if method is "get":
-        conjunction = "and"
+        field_string = "".join(
+            f"{field} = %({field})s {conjunction} " for field in kwargs
+        )
 
-    field_string = "".join(f"{field} = %({field})s {conjunction} " for field in kwargs)
+    elif method == "get":
+        kwargs = kwargs["columns"]
+        conjunction = "and"
+        field_string = "".join(
+            f"{field} = '{kwargs[field]}' {conjunction} " for field in kwargs
+        )
+    else:
+        return None
 
     return field_string[: len(field_string) - (len(conjunction) + 1)]
 
@@ -183,4 +191,9 @@ def prepare_columns(table, **kwargs):
 def get_by_column(table, columns):
     """builds a query and returns based on columns passed"""
 
-    return f"SELECT * from {table} where {field_stringer('get', **columns)};"
+    if columns is None:
+        return f"SELECT * FROM {table};"
+
+    return (
+        f"SELECT * from {table} where {field_stringer(method='get', columns=columns)};"
+    )
