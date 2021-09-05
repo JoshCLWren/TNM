@@ -184,7 +184,7 @@ def match_sorter(
                 continue
         elif match_type == "vanilla_singles":
             if len(show["eligible_wrestlers"]) > 1:
-                singles(show, match)
+                singles(show, match, gender=random.choice(["Male", "Female"]))
             else:
                 continue
         elif match_type == "tag_match":
@@ -197,6 +197,7 @@ def match_sorter(
         elif match_type == "handicap":
             if len(show["eligible_wrestlers"]) > 6:
                 handicap(show, match)
+                del match_switcher["handicap"]
             elif len(show["eligible_wrestlers"]) > 1:
                 singles(show, match)
             else:

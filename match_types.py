@@ -25,13 +25,13 @@ def twenty_four_seven(show, match):
     twenty_four_seven_match(roster_mutation, match, combatents, show)
 
 
-def singles(show, match):
+def singles(show, match, gender="Male"):
     roster_mutation = roster_selectors.roster_selector(
         show=show,
         people=2,
-        gender="Male",
+        gender=gender,
     )
-    singles_match(roster_mutation, match, show)
+    singles_match(roster_mutation, match, show, gender)
 
 
 def big_tag(show, match):
@@ -78,18 +78,14 @@ def twenty_four_seven_match(roster_mutation, match, combatents, show):
     line1 = f"Match {match} will be a {combatents[1]} 24/7 Title Defense"
     line2 = "".join(f"{person} vs " for person in participants_string[:-1])
     line2 += f"the defending champion: {participants_string[-1]}"
-    print(line1)
-    print(line2)
     show["card"].append(f"{line1} {line2}")
     Shows.patch_show_card(show["card"], show["id"])
 
 
-def singles_match(roster_mutation, match, show):
+def singles_match(roster_mutation, match, show, gender):
     participants_string = Match_Maker.match_string(roster_mutation)
-    line1 = f"Match {match} will be a male one on one singles match"
-    line2 = f"- Match Participants are: {participants_string}"
-    print(line1)
-    print(line2)
+    line1 = f"Match {match} will be a {gender} one on one singles match!"
+    line2 = f"{participants_string[0]} vs {participants_string[1]}"
     show["card"].append(f"{line1} {line2}")
     Shows.patch_show_card(show["card"], show["id"])
 
@@ -108,9 +104,6 @@ def multi_persons_match(x_man_match, match, roster_mutation, show):
     line_one = f"Match {match} will be a {x_man_match['team_size']} tag match"
     line_two = f"{team_1_name} vs {team_2_name}"
     line_three = f"- Match Participants are: {participants_string}"
-    print(line_one)
-    print(line_two)
-    print(line_three)
 
     show["card"].append(f"{line_one} {line_two} {line_three}")
 
